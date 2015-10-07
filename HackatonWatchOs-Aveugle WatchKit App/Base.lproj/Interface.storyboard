@@ -1,16 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <imageView width="1" height="1" alignment="left" id="HQy-lP-ewE"/>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Ready Itinary Interface Controller-->
+        <scene sceneID="Wdl-od-3bN">
+            <objects>
+                <controller hidesWhenLoading="NO" id="k3Z-OW-iza" customClass="ReadyItinaryInterfaceController">
+                    <items>
+                        <button width="1" height="1" alignment="left" title="Prêt ?" id="1zh-O3-8Wc">
+                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <connections>
+                                <action selector="onTouchReadyButton" destination="k3Z-OW-iza" id="o7B-lw-feF"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="408" y="345"/>
+        </scene>
+        <!--Start Itinerary Interface Controller-->
+        <scene sceneID="Nq3-4j-nQp">
+            <objects>
+                <controller hidesWhenLoading="NO" id="Oll-Rd-z3M" customClass="StartItineraryInterfaceController">
+                    <items>
+                        <label width="1" height="1" alignment="left" text="C'est parti !" textAlignment="center" id="ZnW-rb-1GS">
+                            <color key="textColor" red="0.1261759871" green="0.98033065029999999" blue="0.189768139" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="597" y="345"/>
+        </scene>
+        <!--Itinary Interface Controller-->
+        <scene sceneID="kYF-6P-8GI">
+            <objects>
+                <controller hidesWhenLoading="NO" id="plb-dH-nWW" customClass="ItinaryInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="Cgu-MB-WxX">
+                            <items>
+                                <label width="1" height="32.5" alignment="left" text="Address" id="Fyf-b8-CuM"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="YGo-b3-ThT">
+                            <items>
+                                <label alignment="left" text="Finish in :" id="TWM-KI-ech"/>
+                                <label width="26.5" alignment="left" text="nbKm" id="GUl-gC-2XI"/>
+                                <label alignment="left" text="km" id="0Gr-QO-ePe"/>
+                            </items>
+                        </group>
+                        <group width="136" height="90" alignment="left" id="5aM-7E-1Bf">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" id="jFG-Tm-zed"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="785" y="345"/>
+        </scene>
+        <!--Warning Interface Controller-->
+        <scene sceneID="Poo-vE-hxU">
+            <objects>
+                <controller hidesWhenLoading="NO" id="f3i-mA-u8e" customClass="WarningInterfaceController">
+                    <items>
+                        <button width="1" height="1" alignment="left" title="ButtonWarning" backgroundImage="ZoneARisqueRouge.png" id="EKJ-d4-OUu">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onTouchWarningButton" destination="f3i-mA-u8e" id="07O-Li-KWE"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="971" y="345"/>
+        </scene>
+        <!--Traffic Light Interface Controller-->
+        <scene sceneID="F9z-L0-a12">
+            <objects>
+                <controller hidesWhenLoading="NO" id="qpe-E9-AOK" customClass="TrafficLightInterfaceController">
+                    <items>
+                        <button width="1" height="1" alignment="left" title="ButtonTraficLight" backgroundImage="TraficLight.png" id="Idt-ib-FCd">
+                            <connections>
+                                <action selector="onTouchTrafficLightButton" destination="qpe-E9-AOK" id="enJ-zi-t5q"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1156" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +124,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider=""/>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
