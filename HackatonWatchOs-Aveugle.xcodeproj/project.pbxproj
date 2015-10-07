@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
+		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
+		ECC99A391BC551E400E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A381BC551E400E12082 /* ViewController.m */; };
+		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
+		ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3D1BC551E400E12082 /* Assets.xcassets */; };
+		ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */; };
+		ECC99A461BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ECC99A451BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app */; };
+		ECC99A4C1BC551E400E12082 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A4A1BC551E400E12082 /* Interface.storyboard */; };
+		ECC99A4E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A4D1BC551E400E12082 /* Assets.xcassets */; };
+		ECC99A551BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ECC99A541BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ECC99A5D1BC551E400E12082 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A5C1BC551E400E12082 /* InterfaceController.m */; };
+		ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */; };
+		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
+		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECC99A471BC551E400E12082 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECC99A261BC551E400E12082 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECC99A441BC551E400E12082;
+			remoteInfo = "HackatonWatchOs-Aveugle WatchKit App";
+		};
+		ECC99A561BC551E400E12082 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECC99A261BC551E400E12082 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECC99A531BC551E400E12082;
+			remoteInfo = "HackatonWatchOs-Aveugle WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ECC99A6C1BC551E400E12082 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ECC99A551BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC99A701BC551E400E12082 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				ECC99A461BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ECC99A351BC551E400E12082 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ECC99A371BC551E400E12082 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ECC99A381BC551E400E12082 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ECC99A3B1BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECC99A3D1BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECC99A401BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECC99A421BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC99A451BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC99A4B1BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		ECC99A4D1BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECC99A4F1BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC99A541BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HackatonWatchOs-Aveugle WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC99A5A1BC551E400E12082 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		ECC99A5B1BC551E400E12082 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		ECC99A5C1BC551E400E12082 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		ECC99A5E1BC551E400E12082 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
+		ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
+		ECC99A611BC551E400E12082 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		ECC99A621BC551E400E12082 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		ECC99A641BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECC99A661BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECC99A2B1BC551E400E12082 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC99A511BC551E400E12082 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECC99A251BC551E400E12082 = {
+			isa = PBXGroup;
+			children = (
+				ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */,
+				ECC99A491BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */,
+				ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */,
+				ECC99A2F1BC551E400E12082 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECC99A2F1BC551E400E12082 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */,
+				ECC99A451BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app */,
+				ECC99A541BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A341BC551E400E12082 /* AppDelegate.h */,
+				ECC99A351BC551E400E12082 /* AppDelegate.m */,
+				ECC99A371BC551E400E12082 /* ViewController.h */,
+				ECC99A381BC551E400E12082 /* ViewController.m */,
+				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
+				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
+				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
+				ECC99A421BC551E400E12082 /* Info.plist */,
+				ECC99A311BC551E400E12082 /* Supporting Files */,
+			);
+			path = "HackatonWatchOs-Aveugle";
+			sourceTree = "<group>";
+		};
+		ECC99A311BC551E400E12082 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A321BC551E400E12082 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECC99A491BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A4A1BC551E400E12082 /* Interface.storyboard */,
+				ECC99A4D1BC551E400E12082 /* Assets.xcassets */,
+				ECC99A4F1BC551E400E12082 /* Info.plist */,
+			);
+			path = "HackatonWatchOs-Aveugle WatchKit App";
+			sourceTree = "<group>";
+		};
+		ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A5B1BC551E400E12082 /* InterfaceController.h */,
+				ECC99A5C1BC551E400E12082 /* InterfaceController.m */,
+				ECC99A5E1BC551E400E12082 /* ExtensionDelegate.h */,
+				ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */,
+				ECC99A611BC551E400E12082 /* NotificationController.h */,
+				ECC99A621BC551E400E12082 /* NotificationController.m */,
+				ECC99A641BC551E400E12082 /* Assets.xcassets */,
+				ECC99A661BC551E400E12082 /* Info.plist */,
+				ECC99A591BC551E400E12082 /* Supporting Files */,
+			);
+			path = "HackatonWatchOs-Aveugle WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		ECC99A591BC551E400E12082 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A5A1BC551E400E12082 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECC99A2D1BC551E400E12082 /* HackatonWatchOs-Aveugle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC99A711BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle" */;
+			buildPhases = (
+				ECC99A2A1BC551E400E12082 /* Sources */,
+				ECC99A2B1BC551E400E12082 /* Frameworks */,
+				ECC99A2C1BC551E400E12082 /* Resources */,
+				ECC99A701BC551E400E12082 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECC99A481BC551E400E12082 /* PBXTargetDependency */,
+			);
+			name = "HackatonWatchOs-Aveugle";
+			productName = "HackatonWatchOs-Aveugle";
+			productReference = ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECC99A441BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC99A6D1BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle WatchKit App" */;
+			buildPhases = (
+				ECC99A431BC551E400E12082 /* Resources */,
+				ECC99A6C1BC551E400E12082 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECC99A571BC551E400E12082 /* PBXTargetDependency */,
+			);
+			name = "HackatonWatchOs-Aveugle WatchKit App";
+			productName = "HackatonWatchOs-Aveugle WatchKit App";
+			productReference = ECC99A451BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		ECC99A531BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC99A691BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle WatchKit Extension" */;
+			buildPhases = (
+				ECC99A501BC551E400E12082 /* Sources */,
+				ECC99A511BC551E400E12082 /* Frameworks */,
+				ECC99A521BC551E400E12082 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HackatonWatchOs-Aveugle WatchKit Extension";
+			productName = "HackatonWatchOs-Aveugle WatchKit Extension";
+			productReference = ECC99A541BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECC99A261BC551E400E12082 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Etudiant;
+				TargetAttributes = {
+					ECC99A2D1BC551E400E12082 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					ECC99A441BC551E400E12082 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					ECC99A531BC551E400E12082 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = ECC99A291BC551E400E12082 /* Build configuration list for PBXProject "HackatonWatchOs-Aveugle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECC99A251BC551E400E12082;
+			productRefGroup = ECC99A2F1BC551E400E12082 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECC99A2D1BC551E400E12082 /* HackatonWatchOs-Aveugle */,
+				ECC99A441BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */,
+				ECC99A531BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECC99A2C1BC551E400E12082 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
+				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
+				ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC99A431BC551E400E12082 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC99A4E1BC551E400E12082 /* Assets.xcassets in Resources */,
+				ECC99A4C1BC551E400E12082 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC99A521BC551E400E12082 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECC99A2A1BC551E400E12082 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC99A391BC551E400E12082 /* ViewController.m in Sources */,
+				ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */,
+				ECC99A331BC551E400E12082 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC99A501BC551E400E12082 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */,
+				ECC99A5D1BC551E400E12082 /* InterfaceController.m in Sources */,
+				ECC99A631BC551E400E12082 /* NotificationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECC99A481BC551E400E12082 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECC99A441BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */;
+			targetProxy = ECC99A471BC551E400E12082 /* PBXContainerItemProxy */;
+		};
+		ECC99A571BC551E400E12082 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECC99A531BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */;
+			targetProxy = ECC99A561BC551E400E12082 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ECC99A3A1BC551E400E12082 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECC99A3B1BC551E400E12082 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECC99A401BC551E400E12082 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ECC99A4A1BC551E400E12082 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECC99A4B1BC551E400E12082 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECC99A671BC551E400E12082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ECC99A681BC551E400E12082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECC99A6A1BC551E400E12082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HackatonWatchOs-Aveugle WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		ECC99A6B1BC551E400E12082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HackatonWatchOs-Aveugle WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		ECC99A6E1BC551E400E12082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = HackatonWatchOs_Aveugle_WatchKit_Extension;
+				INFOPLIST_FILE = "HackatonWatchOs-Aveugle WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		ECC99A6F1BC551E400E12082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = HackatonWatchOs_Aveugle_WatchKit_Extension;
+				INFOPLIST_FILE = "HackatonWatchOs-Aveugle WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		ECC99A721BC551E400E12082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "HackatonWatchOs-Aveugle/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ECC99A731BC551E400E12082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "HackatonWatchOs-Aveugle/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECC99A291BC551E400E12082 /* Build configuration list for PBXProject "HackatonWatchOs-Aveugle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC99A671BC551E400E12082 /* Debug */,
+				ECC99A681BC551E400E12082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECC99A691BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC99A6A1BC551E400E12082 /* Debug */,
+				ECC99A6B1BC551E400E12082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ECC99A6D1BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC99A6E1BC551E400E12082 /* Debug */,
+				ECC99A6F1BC551E400E12082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ECC99A711BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC99A721BC551E400E12082 /* Debug */,
+				ECC99A731BC551E400E12082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECC99A261BC551E400E12082 /* Project object */;
+}
