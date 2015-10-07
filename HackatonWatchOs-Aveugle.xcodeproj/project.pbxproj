@@ -21,6 +21,7 @@
 		ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */; };
 		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
+		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		ECC99A621BC551E400E12082 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		ECC99A641BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC99A661BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC99A791BC561FB00E12082 /* VibrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationManager.h; sourceTree = "<group>"; };
+		ECC99A7A1BC561FB00E12082 /* VibrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 		ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				ECC99A781BC561EB00E12082 /* Managers */,
 				ECC99A5B1BC551E400E12082 /* InterfaceController.h */,
 				ECC99A5C1BC551E400E12082 /* InterfaceController.m */,
 				ECC99A5E1BC551E400E12082 /* ExtensionDelegate.h */,
@@ -186,6 +190,15 @@
 				ECC99A5A1BC551E400E12082 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECC99A781BC561EB00E12082 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A791BC561FB00E12082 /* VibrationManager.h */,
+				ECC99A7A1BC561FB00E12082 /* VibrationManager.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +344,7 @@
 			files = (
 				ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */,
 				ECC99A5D1BC551E400E12082 /* InterfaceController.m in Sources */,
+				ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */,
 				ECC99A631BC551E400E12082 /* NotificationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
