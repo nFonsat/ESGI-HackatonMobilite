@@ -79,7 +79,7 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="f3i-mA-u8e" customClass="WarningInterfaceController">
                     <items>
-                        <button width="1" height="1" alignment="left" title="ButtonWarning" backgroundImage="ZoneARisqueRouge.png" id="EKJ-d4-OUu">
+                        <button width="1" height="1" alignment="left" title="ButtonWarning" backgroundImage="ZoneARisqueRouge" id="EKJ-d4-OUu">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onTouchWarningButton" destination="f3i-mA-u8e" id="07O-Li-KWE"/>
@@ -95,7 +95,7 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="qpe-E9-AOK" customClass="TrafficLightInterfaceController">
                     <items>
-                        <button width="1" height="1" alignment="left" title="ButtonTraficLight" backgroundImage="TraficLight.png" id="Idt-ib-FCd">
+                        <button width="1" height="1" alignment="left" title="ButtonTraficLight" backgroundImage="TraficLight" id="Idt-ib-FCd">
                             <connections>
                                 <action selector="onTouchTrafficLightButton" destination="qpe-E9-AOK" id="enJ-zi-t5q"/>
                             </connections>

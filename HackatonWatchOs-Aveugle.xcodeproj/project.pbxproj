@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB9528921BC5656900ECEE3C /* ZoneARisque.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9528911BC5656900ECEE3C /* ZoneARisque.png */; settings = {ASSET_TAGS = (); }; };
-		EB9528941BC5675C00ECEE3C /* ZoneARisqueRouge.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9528931BC5675C00ECEE3C /* ZoneARisqueRouge.png */; settings = {ASSET_TAGS = (); }; };
-		EB9528961BC569E300ECEE3C /* TraficLight.png in Resources */ = {isa = PBXBuildFile; fileRef = EB9528951BC569E300ECEE3C /* TraficLight.png */; settings = {ASSET_TAGS = (); }; };
 		EB9528B31BC5778000ECEE3C /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528A81BC5778000ECEE3C /* InterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B41BC5778000ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B51BC5778000ECEE3C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AC1BC5778000ECEE3C /* ReadyItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
@@ -75,9 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EB9528911BC5656900ECEE3C /* ZoneARisque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZoneARisque.png; path = ../../ZoneARisque.png; sourceTree = "<group>"; };
-		EB9528931BC5675C00ECEE3C /* ZoneARisqueRouge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZoneARisqueRouge.png; path = ../../ZoneARisqueRouge.png; sourceTree = "<group>"; };
-		EB9528951BC569E300ECEE3C /* TraficLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TraficLight.png; path = ../../TraficLight.png; sourceTree = "<group>"; };
 		EB9528A71BC5778000ECEE3C /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		EB9528A81BC5778000ECEE3C /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItinaryInterfaceController.h; sourceTree = "<group>"; };
@@ -216,9 +210,6 @@
 				ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */,
 				ECC99A611BC551E400E12082 /* NotificationController.h */,
 				ECC99A621BC551E400E12082 /* NotificationController.m */,
-				EB9528931BC5675C00ECEE3C /* ZoneARisqueRouge.png */,
-				EB9528951BC569E300ECEE3C /* TraficLight.png */,
-				EB9528911BC5656900ECEE3C /* ZoneARisque.png */,
 				ECC99A641BC551E400E12082 /* Assets.xcassets */,
 				ECC99A661BC551E400E12082 /* Info.plist */,
 				ECC99A591BC551E400E12082 /* Supporting Files */,
@@ -363,10 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB9528921BC5656900ECEE3C /* ZoneARisque.png in Resources */,
-				EB9528941BC5675C00ECEE3C /* ZoneARisqueRouge.png in Resources */,
 				ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */,
-				EB9528961BC569E300ECEE3C /* TraficLight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
