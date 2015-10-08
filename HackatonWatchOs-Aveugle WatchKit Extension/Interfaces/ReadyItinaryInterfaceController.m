@@ -31,7 +31,7 @@
 }
 
 - (IBAction)onTouchReadyButton {
-    [self pushControllerWithName:@"StartItinaryController" context:nil];
+    [WKInterfaceController reloadRootControllersWithNames:@[@"StartItinaryController"] contexts:nil];
 }
 
 @end

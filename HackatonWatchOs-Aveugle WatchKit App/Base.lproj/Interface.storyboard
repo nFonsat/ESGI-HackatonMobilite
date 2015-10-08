@@ -10,7 +10,8 @@
             <objects>
                 <controller identifier="ReadyItinaryController" hidesWhenLoading="NO" id="k3Z-OW-iza" customClass="ReadyItinaryInterfaceController">
                     <items>
-                        <button width="1" height="1" alignment="left" title="Prêt ?" id="1zh-O3-8Wc">
+                        <imageView alignment="center" verticalAlignment="center" image="logo_gme" id="Pwb-en-JIC"/>
+                        <button width="1" height="1" alignment="left" hidden="YES" title="Prêt ?" id="1zh-O3-8Wc">
                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="41"/>
@@ -49,13 +50,6 @@
                         <group width="1" alignment="left" id="Cgu-MB-WxX">
                             <items>
                                 <label width="1" height="32.5" alignment="left" text="Address" id="Fyf-b8-CuM"/>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" id="YGo-b3-ThT">
-                            <items>
-                                <label alignment="left" text="Finish in :" id="TWM-KI-ech"/>
-                                <label width="26.5" alignment="left" text="nbKm" id="GUl-gC-2XI"/>
-                                <label alignment="left" text="km" id="0Gr-QO-ePe"/>
                             </items>
                         </group>
                         <group width="136" height="90" alignment="left" id="5aM-7E-1Bf">

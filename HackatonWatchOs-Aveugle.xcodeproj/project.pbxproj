@@ -144,14 +144,18 @@
 				EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */,
 				EB9528AB1BC5778000ECEE3C /* ReadyItinaryInterfaceController.h */,
 				EB9528AC1BC5778000ECEE3C /* ReadyItinaryInterfaceController.m */,
+				EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */,
+				EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */,
+				EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */,
+				EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */,
+				ECC99A8D1BC6688800E12082 /* RootInterfaceController.h */,
+				ECC99A8E1BC6688800E12082 /* RootInterfaceController.m */,
 				EB9528AD1BC5778000ECEE3C /* StartItineraryInterfaceController.h */,
 				EB9528AE1BC5778000ECEE3C /* StartItineraryInterfaceController.m */,
 				EB9528AF1BC5778000ECEE3C /* TrafficLightInterfaceController.h */,
 				EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */,
 				EB9528B11BC5778000ECEE3C /* WarningInterfaceController.h */,
 				EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */,
-				EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */,
-				EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -409,6 +413,7 @@
 				ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */,
 				EB9528B51BC5778000ECEE3C /* ReadyItinaryInterfaceController.m in Sources */,
 				ECC99A631BC551E400E12082 /* NotificationController.m in Sources */,
+				ECC99A8F1BC6688800E12082 /* RootInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
