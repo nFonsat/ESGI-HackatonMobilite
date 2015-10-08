@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
@@ -19,6 +19,11 @@
                             </connections>
                         </button>
                     </items>
+                    <menu key="menu" id="RMN-sD-mVO">
+                        <items>
+                            <menuItem title="Parler" icon="speaker" id="vzu-EO-ah0"/>
+                        </items>
+                    </menu>
                 </controller>
             </objects>
             <point key="canvasLocation" x="408" y="345"/>
@@ -49,13 +54,6 @@
                         <group width="1" alignment="left" id="Cgu-MB-WxX">
                             <items>
                                 <label width="1" height="32.5" alignment="left" text="Address" id="Fyf-b8-CuM"/>
-                            </items>
-                        </group>
-                        <group width="1" alignment="left" id="YGo-b3-ThT">
-                            <items>
-                                <label alignment="left" text="Finish in :" id="TWM-KI-ech"/>
-                                <label width="26.5" alignment="left" text="nbKm" id="GUl-gC-2XI"/>
-                                <label alignment="left" text="km" id="0Gr-QO-ePe"/>
                             </items>
                         </group>
                         <group width="136" height="90" alignment="left" id="5aM-7E-1Bf">
