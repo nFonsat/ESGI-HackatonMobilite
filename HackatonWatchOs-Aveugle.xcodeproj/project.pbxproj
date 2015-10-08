@@ -27,7 +27,8 @@
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7E1BC580FD00E12082 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
-		ECC99A841BC581B500E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A831BC581B400E12082 /* MapKit.framework */; };
+		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
+		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +110,8 @@
 		ECC99A7A1BC561FB00E12082 /* VibrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationManager.m; sourceTree = "<group>"; };
 		ECC99A7D1BC580FD00E12082 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		ECC99A7E1BC580FD00E12082 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		ECC99A831BC581B400E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC99A841BC581B500E12082 /* MapKit.framework in Frameworks */,
+				ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */,
+				ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +156,8 @@
 		ECC99A251BC551E400E12082 = {
 			isa = PBXGroup;
 			children = (
-				ECC99A831BC581B400E12082 /* MapKit.framework */,
+				ECC99A871BC58AC200E12082 /* MapKit.framework */,
+				ECC99A851BC587DB00E12082 /* CoreLocation.framework */,
 				ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */,
 				ECC99A491BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */,
 				ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */,
@@ -313,6 +317,11 @@
 				TargetAttributes = {
 					ECC99A2D1BC551E400E12082 = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					ECC99A441BC551E400E12082 = {
 						CreatedOnToolsVersion = 7.0.1;
