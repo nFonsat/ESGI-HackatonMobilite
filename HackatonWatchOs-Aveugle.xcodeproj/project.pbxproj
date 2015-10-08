@@ -14,8 +14,17 @@
 		EB9528B71BC5778000ECEE3C /* TrafficLightInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B81BC5778000ECEE3C /* WarningInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D11BC65D7A00ECEE3C /* Address.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D51BC65DEB00ECEE3C /* Trip.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528F81BC6668B00ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528F51BC6668B00ECEE3C /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528F91BC6668B00ECEE3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528F71BC6668B00ECEE3C /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
-		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
 		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
 		ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3D1BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */; };
@@ -27,7 +36,6 @@
 		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
-		ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7E1BC580FD00E12082 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
 		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -89,10 +97,30 @@
 		EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningInterfaceController.m; sourceTree = "<group>"; };
 		EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
 		EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
+		EB9528D01BC65D7A00ECEE3C /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		EB9528D11BC65D7A00ECEE3C /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		EB9528D41BC65DEB00ECEE3C /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		EB9528D51BC65DEB00ECEE3C /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		EB9528D81BC65E3200ECEE3C /* AddressRepositoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressRepositoryFactory.h; sourceTree = "<group>"; };
+		EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressRepositoryFactory.m; sourceTree = "<group>"; };
+		EB9528DB1BC65E4100ECEE3C /* TripRepositoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripRepositoryFactory.h; sourceTree = "<group>"; };
+		EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripRepositoryFactory.m; sourceTree = "<group>"; };
+		EB9528DE1BC65F1300ECEE3C /* IAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAddressRepository.h; sourceTree = "<group>"; };
+		EB9528DF1BC65F3100ECEE3C /* ITripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITripRepository.h; sourceTree = "<group>"; };
+		EB9528E01BC65FA300ECEE3C /* MockAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockAddressRepository.h; sourceTree = "<group>"; };
+		EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockAddressRepository.m; sourceTree = "<group>"; };
+		EB9528E31BC65FB600ECEE3C /* MockTripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockTripRepository.h; sourceTree = "<group>"; };
+		EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTripRepository.m; sourceTree = "<group>"; };
+		EB9528E61BC65FE600ECEE3C /* SerializableAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializableAddressRepository.h; sourceTree = "<group>"; };
+		EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableAddressRepository.m; sourceTree = "<group>"; };
+		EB9528E91BC6600100ECEE3C /* SerializableTripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializableTripRepository.h; sourceTree = "<group>"; };
+		EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableTripRepository.m; sourceTree = "<group>"; };
+		EB9528F41BC6668B00ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EB9528F51BC6668B00ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EB9528F61BC6668B00ECEE3C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EB9528F71BC6668B00ECEE3C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		ECC99A351BC551E400E12082 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ECC99A3B1BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECC99A3D1BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC99A401BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,8 +139,6 @@
 		ECC99A661BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC99A791BC561FB00E12082 /* VibrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationManager.h; sourceTree = "<group>"; };
 		ECC99A7A1BC561FB00E12082 /* VibrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationManager.m; sourceTree = "<group>"; };
-		ECC99A7D1BC580FD00E12082 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ECC99A7E1BC580FD00E12082 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -158,6 +184,137 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		EB9528C31BC65CF500ECEE3C /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528C41BC65CF500ECEE3C /* Address */,
+				EB9528C51BC65CF500ECEE3C /* Trip */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		EB9528C41BC65CF500ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528D01BC65D7A00ECEE3C /* Address.h */,
+				EB9528D11BC65D7A00ECEE3C /* Address.m */,
+				EB9528DE1BC65F1300ECEE3C /* IAddressRepository.h */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528C51BC65CF500ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528D41BC65DEB00ECEE3C /* Trip.h */,
+				EB9528D51BC65DEB00ECEE3C /* Trip.m */,
+				EB9528DF1BC65F3100ECEE3C /* ITripRepository.h */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528C61BC65D0000ECEE3C /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528C71BC65D0000ECEE3C /* Factory */,
+				EB9528CA1BC65D0000ECEE3C /* Mock */,
+				EB9528CD1BC65D0000ECEE3C /* Serialization */,
+			);
+			path = Platforms;
+			sourceTree = "<group>";
+		};
+		EB9528C71BC65D0000ECEE3C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528C81BC65D0000ECEE3C /* Address */,
+				EB9528C91BC65D0000ECEE3C /* Trip */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		EB9528C81BC65D0000ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528D81BC65E3200ECEE3C /* AddressRepositoryFactory.h */,
+				EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528C91BC65D0000ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528DB1BC65E4100ECEE3C /* TripRepositoryFactory.h */,
+				EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528CA1BC65D0000ECEE3C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528CB1BC65D0000ECEE3C /* Address */,
+				EB9528CC1BC65D0000ECEE3C /* Trip */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		EB9528CB1BC65D0000ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E01BC65FA300ECEE3C /* MockAddressRepository.h */,
+				EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528CC1BC65D0000ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E31BC65FB600ECEE3C /* MockTripRepository.h */,
+				EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528CD1BC65D0000ECEE3C /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528CE1BC65D0000ECEE3C /* Address */,
+				EB9528CF1BC65D0000ECEE3C /* Trip */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		EB9528CE1BC65D0000ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E61BC65FE600ECEE3C /* SerializableAddressRepository.h */,
+				EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528CF1BC65D0000ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E91BC6600100ECEE3C /* SerializableTripRepository.h */,
+				EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528F31BC6668B00ECEE3C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528F41BC6668B00ECEE3C /* AppDelegate.h */,
+				EB9528F51BC6668B00ECEE3C /* AppDelegate.m */,
+				EB9528F61BC6668B00ECEE3C /* ViewController.h */,
+				EB9528F71BC6668B00ECEE3C /* ViewController.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		ECC99A251BC551E400E12082 = {
 			isa = PBXGroup;
 			children = (
@@ -183,9 +340,9 @@
 		ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */ = {
 			isa = PBXGroup;
 			children = (
-				ECC99A7C1BC580FD00E12082 /* View */,
-				ECC99A341BC551E400E12082 /* AppDelegate.h */,
-				ECC99A351BC551E400E12082 /* AppDelegate.m */,
+				EB9528F31BC6668B00ECEE3C /* Application */,
+				EB9528C31BC65CF500ECEE3C /* Domains */,
+				EB9528C61BC65D0000ECEE3C /* Platforms */,
 				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
 				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
@@ -244,15 +401,6 @@
 				ECC99A7A1BC561FB00E12082 /* VibrationManager.m */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		ECC99A7C1BC580FD00E12082 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				ECC99A7D1BC580FD00E12082 /* ViewController.h */,
-				ECC99A7E1BC580FD00E12082 /* ViewController.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,9 +539,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */,
-				ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */,
+				EB9528F81BC6668B00ECEE3C /* AppDelegate.m in Sources */,
+				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
+				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
+				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
+				EB9528F91BC6668B00ECEE3C /* ViewController.m in Sources */,
+				EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */,
+				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
+				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
+				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
+				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
