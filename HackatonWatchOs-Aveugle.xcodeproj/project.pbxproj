@@ -15,6 +15,7 @@
 		EC71A5291BC6A069007BB05C /* TrafficLightInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5211BC6A069007BB05C /* TrafficLightInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EC71A52A1BC6A069007BB05C /* WarningInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EC71A5331BC6A552007BB05C /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5321BC6A552007BB05C /* GMMapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5361BC6A7F7007BB05C /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5351BC6A7F7007BB05C /* GMHomePageController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
 		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
 		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
@@ -92,6 +93,8 @@
 		EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningInterfaceController.m; sourceTree = "<group>"; };
 		EC71A5311BC6A552007BB05C /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
 		EC71A5321BC6A552007BB05C /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
+		EC71A5341BC6A7F7007BB05C /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
+		EC71A5351BC6A7F7007BB05C /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 			children = (
 				EC71A5311BC6A552007BB05C /* GMMapViewController.h */,
 				EC71A5321BC6A552007BB05C /* GMMapViewController.m */,
+				EC71A5341BC6A7F7007BB05C /* GMHomePageController.h */,
+				EC71A5351BC6A7F7007BB05C /* GMHomePageController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */,
 				EC71A5331BC6A552007BB05C /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
+				EC71A5361BC6A7F7007BB05C /* GMHomePageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
