@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB9528B41BC5778000ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528B51BC5778000ECEE3C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AC1BC5778000ECEE3C /* ReadyItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528B61BC5778000ECEE3C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AE1BC5778000ECEE3C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528B71BC5778000ECEE3C /* TrafficLightInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528B81BC5778000ECEE3C /* WarningInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5241BC6A069007BB05C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5171BC6A069007BB05C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5251BC6A069007BB05C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5191BC6A069007BB05C /* ItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5261BC6A069007BB05C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A51B1BC6A069007BB05C /* ReadyItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5271BC6A069007BB05C /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A51D1BC6A069007BB05C /* RootInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5281BC6A069007BB05C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A51F1BC6A069007BB05C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5291BC6A069007BB05C /* TrafficLightInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5211BC6A069007BB05C /* TrafficLightInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A52A1BC6A069007BB05C /* WarningInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
 		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
 		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
@@ -75,18 +76,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItinaryInterfaceController.h; sourceTree = "<group>"; };
-		EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItinaryInterfaceController.m; sourceTree = "<group>"; };
-		EB9528AB1BC5778000ECEE3C /* ReadyItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadyItinaryInterfaceController.h; sourceTree = "<group>"; };
-		EB9528AC1BC5778000ECEE3C /* ReadyItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadyItinaryInterfaceController.m; sourceTree = "<group>"; };
-		EB9528AD1BC5778000ECEE3C /* StartItineraryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartItineraryInterfaceController.h; sourceTree = "<group>"; };
-		EB9528AE1BC5778000ECEE3C /* StartItineraryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartItineraryInterfaceController.m; sourceTree = "<group>"; };
-		EB9528AF1BC5778000ECEE3C /* TrafficLightInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficLightInterfaceController.h; sourceTree = "<group>"; };
-		EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightInterfaceController.m; sourceTree = "<group>"; };
-		EB9528B11BC5778000ECEE3C /* WarningInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningInterfaceController.h; sourceTree = "<group>"; };
-		EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningInterfaceController.m; sourceTree = "<group>"; };
-		EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
-		EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
+		EC71A5161BC6A069007BB05C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
+		EC71A5171BC6A069007BB05C /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
+		EC71A5181BC6A069007BB05C /* ItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItinaryInterfaceController.h; sourceTree = "<group>"; };
+		EC71A5191BC6A069007BB05C /* ItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItinaryInterfaceController.m; sourceTree = "<group>"; };
+		EC71A51A1BC6A069007BB05C /* ReadyItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadyItinaryInterfaceController.h; sourceTree = "<group>"; };
+		EC71A51B1BC6A069007BB05C /* ReadyItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadyItinaryInterfaceController.m; sourceTree = "<group>"; };
+		EC71A51C1BC6A069007BB05C /* RootInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInterfaceController.h; sourceTree = "<group>"; };
+		EC71A51D1BC6A069007BB05C /* RootInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInterfaceController.m; sourceTree = "<group>"; };
+		EC71A51E1BC6A069007BB05C /* StartItineraryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartItineraryInterfaceController.h; sourceTree = "<group>"; };
+		EC71A51F1BC6A069007BB05C /* StartItineraryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartItineraryInterfaceController.m; sourceTree = "<group>"; };
+		EC71A5201BC6A069007BB05C /* TrafficLightInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficLightInterfaceController.h; sourceTree = "<group>"; };
+		EC71A5211BC6A069007BB05C /* TrafficLightInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightInterfaceController.m; sourceTree = "<group>"; };
+		EC71A5221BC6A069007BB05C /* WarningInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningInterfaceController.h; sourceTree = "<group>"; };
+		EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningInterfaceController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -137,25 +140,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB9528A61BC5778000ECEE3C /* Interfaces */ = {
+		EC71A5151BC6A069007BB05C /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */,
-				EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */,
-				EB9528AB1BC5778000ECEE3C /* ReadyItinaryInterfaceController.h */,
-				EB9528AC1BC5778000ECEE3C /* ReadyItinaryInterfaceController.m */,
-				EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */,
-				EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */,
-				EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */,
-				EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */,
-				ECC99A8D1BC6688800E12082 /* RootInterfaceController.h */,
-				ECC99A8E1BC6688800E12082 /* RootInterfaceController.m */,
-				EB9528AD1BC5778000ECEE3C /* StartItineraryInterfaceController.h */,
-				EB9528AE1BC5778000ECEE3C /* StartItineraryInterfaceController.m */,
-				EB9528AF1BC5778000ECEE3C /* TrafficLightInterfaceController.h */,
-				EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */,
-				EB9528B11BC5778000ECEE3C /* WarningInterfaceController.h */,
-				EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */,
+				EC71A5161BC6A069007BB05C /* FinishInterfaceController.h */,
+				EC71A5171BC6A069007BB05C /* FinishInterfaceController.m */,
+				EC71A5181BC6A069007BB05C /* ItinaryInterfaceController.h */,
+				EC71A5191BC6A069007BB05C /* ItinaryInterfaceController.m */,
+				EC71A51A1BC6A069007BB05C /* ReadyItinaryInterfaceController.h */,
+				EC71A51B1BC6A069007BB05C /* ReadyItinaryInterfaceController.m */,
+				EC71A51C1BC6A069007BB05C /* RootInterfaceController.h */,
+				EC71A51D1BC6A069007BB05C /* RootInterfaceController.m */,
+				EC71A51E1BC6A069007BB05C /* StartItineraryInterfaceController.h */,
+				EC71A51F1BC6A069007BB05C /* StartItineraryInterfaceController.m */,
+				EC71A5201BC6A069007BB05C /* TrafficLightInterfaceController.h */,
+				EC71A5211BC6A069007BB05C /* TrafficLightInterfaceController.m */,
+				EC71A5221BC6A069007BB05C /* WarningInterfaceController.h */,
+				EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -219,7 +220,7 @@
 		ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				EB9528A61BC5778000ECEE3C /* Interfaces */,
+				EC71A5151BC6A069007BB05C /* Interfaces */,
 				ECC99A781BC561EB00E12082 /* Managers */,
 				ECC99A5E1BC551E400E12082 /* ExtensionDelegate.h */,
 				ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */,
@@ -404,16 +405,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */,
-				EB9528B71BC5778000ECEE3C /* TrafficLightInterfaceController.m in Sources */,
-				EB9528B41BC5778000ECEE3C /* ItinaryInterfaceController.m in Sources */,
+				EC71A52A1BC6A069007BB05C /* WarningInterfaceController.m in Sources */,
+				EC71A5281BC6A069007BB05C /* StartItineraryInterfaceController.m in Sources */,
+				EC71A5241BC6A069007BB05C /* FinishInterfaceController.m in Sources */,
 				ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */,
-				EB9528B61BC5778000ECEE3C /* StartItineraryInterfaceController.m in Sources */,
-				EB9528B81BC5778000ECEE3C /* WarningInterfaceController.m in Sources */,
+				EC71A5251BC6A069007BB05C /* ItinaryInterfaceController.m in Sources */,
 				ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */,
-				EB9528B51BC5778000ECEE3C /* ReadyItinaryInterfaceController.m in Sources */,
+				EC71A5291BC6A069007BB05C /* TrafficLightInterfaceController.m in Sources */,
+				EC71A5271BC6A069007BB05C /* RootInterfaceController.m in Sources */,
+				EC71A5261BC6A069007BB05C /* ReadyItinaryInterfaceController.m in Sources */,
 				ECC99A631BC551E400E12082 /* NotificationController.m in Sources */,
-				ECC99A8F1BC6688800E12082 /* RootInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
