@@ -16,7 +16,6 @@
 		EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
 		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
-		ECC99A391BC551E400E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A381BC551E400E12082 /* ViewController.m */; };
 		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
 		ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3D1BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,9 @@
 		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
+		ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7E1BC580FD00E12082 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
+		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +93,6 @@
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ECC99A351BC551E400E12082 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ECC99A371BC551E400E12082 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ECC99A381BC551E400E12082 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECC99A3B1BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECC99A3D1BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC99A401BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,6 +111,10 @@
 		ECC99A661BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC99A791BC561FB00E12082 /* VibrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationManager.h; sourceTree = "<group>"; };
 		ECC99A7A1BC561FB00E12082 /* VibrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationManager.m; sourceTree = "<group>"; };
+		ECC99A7D1BC580FD00E12082 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		ECC99A7E1BC580FD00E12082 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */,
+				ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +161,8 @@
 		ECC99A251BC551E400E12082 = {
 			isa = PBXGroup;
 			children = (
+				ECC99A871BC58AC200E12082 /* MapKit.framework */,
+				ECC99A851BC587DB00E12082 /* CoreLocation.framework */,
 				ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */,
 				ECC99A491BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */,
 				ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */,
@@ -175,10 +183,9 @@
 		ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */ = {
 			isa = PBXGroup;
 			children = (
+				ECC99A7C1BC580FD00E12082 /* View */,
 				ECC99A341BC551E400E12082 /* AppDelegate.h */,
 				ECC99A351BC551E400E12082 /* AppDelegate.m */,
-				ECC99A371BC551E400E12082 /* ViewController.h */,
-				ECC99A381BC551E400E12082 /* ViewController.m */,
 				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
 				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
@@ -237,6 +244,15 @@
 				ECC99A7A1BC561FB00E12082 /* VibrationManager.m */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		ECC99A7C1BC580FD00E12082 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A7D1BC580FD00E12082 /* ViewController.h */,
+				ECC99A7E1BC580FD00E12082 /* ViewController.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +322,11 @@
 				TargetAttributes = {
 					ECC99A2D1BC551E400E12082 = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					ECC99A441BC551E400E12082 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -370,8 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC99A391BC551E400E12082 /* ViewController.m in Sources */,
 				ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */,
+				ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
