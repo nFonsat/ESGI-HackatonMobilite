@@ -44,14 +44,14 @@
                         <label width="1" height="0.25" alignment="center" text="ESGI" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
                             <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="16"/>
                         </label>
-                        <imageView height="0.5" alignment="center" verticalAlignment="center" id="qY4-Mp-m1J"/>
+                        <imageView width="70" height="70" alignment="center" verticalAlignment="center" id="qY4-Mp-m1J"/>
                         <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" text="250m" textAlignment="center" id="3CM-wj-mvv">
                             <fontDescription key="font" type="boldSystem" pointSize="20"/>
                         </label>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="695" y="643"/>
+            <point key="canvasLocation" x="667" y="643"/>
         </scene>
         <!--FinishController-->
         <scene sceneID="a17-QD-PpJ">
