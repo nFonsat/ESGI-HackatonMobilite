@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "AddressRepositoryFactory.h"
+#import "TripRepositoryFactory.h"
 
 @interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate> {
     @private
@@ -19,6 +21,22 @@
 
 @implementation ViewController
 
+@dynamic addressRepository;
+
+- (id<IAddressRepository>) addressRepository{
+    // SI SINGLETON
+    return [[AddressRepositoryFactory sharedInstance]addressRepository];
+}
+
+@dynamic tripRepository;
+
+- (id<ITripRepository>) tripRepository{
+    // SI SINGLETON
+    return [[TripRepositoryFactory sharedInstance]tripRepository];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,6 +45,19 @@
     [self initLocationManager];
     
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    
+    
+    //*********************Sauvegarde données*********************
+    
+//    NSLog(@"ADDRESS :");
+//    NSLog(@"%@", [self.addressRepository getAll]);
+    NSLog(@"TRIP :");
+    NSLog(@"%@", [self.tripRepository getAll]);
+    
+    //***************************************************************
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IAddressRepository.h"
 
-@interface SerializableAddressRepository : NSObject
+@interface SerializableAddressRepository : NSObject <IAddressRepository>{
+@private
+    NSString* filePath_;
+    NSMutableArray<Address*>* addresslist_;
+}
+
+//+ (instancetype) sharedInstance;
+
+-(instancetype) initWithFileName:(NSString*) filename;
 
 @end
+

@@ -23,8 +23,7 @@ static TripRepositoryFactory* sharedInstance_;
 
 - (id<ITripRepository>)tripRepository{
     if (!tripRepository_){
-        //tripRepository_ = [[MockTripRepository alloc]init];
-        //commenter ou décommenter pour passer d'une sauvegarde à une autre
+        tripRepository_ = [[MockTripRepository alloc]init];
     }
     return tripRepository_;
 }

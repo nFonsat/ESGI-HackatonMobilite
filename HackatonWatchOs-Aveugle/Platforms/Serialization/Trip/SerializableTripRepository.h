@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ITripRepository.h"
 
-@interface SerializableTripRepository : NSObject
+
+@interface SerializableTripRepository : NSObject <ITripRepository>{
+@private
+    NSString* filePath_;
+    NSMutableArray<Trip*>* triplist_;
+}
+
+//+ (instancetype) sharedInstance;
+
+-(instancetype) initWithFileName:(NSString*) filename;
+
 
 @end

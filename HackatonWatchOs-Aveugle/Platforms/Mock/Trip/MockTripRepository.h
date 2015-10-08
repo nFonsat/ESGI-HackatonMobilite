@@ -11,6 +11,8 @@
 
 @interface MockTripRepository : NSObject <ITripRepository>
 
+//@property (nonatomic, strong) NSMutableArray* library;
+
 - (void) saveTrip:(Trip*) tr;
 
 - (void) deleteTrip:(Trip*) tr;

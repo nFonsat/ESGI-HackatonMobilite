@@ -13,7 +13,9 @@
 
 - (void) saveTrip:(Trip *)tr{ }
 
-- (void) deleteTrip:(Trip*) tr{ }
+- (void) deleteTrip:(Trip*) tr{
+
+}
 
 - (NSArray<Trip*>*) getAll {
     NSMutableArray* library = [NSMutableArray new];
@@ -30,19 +32,24 @@
     a2.longitude = @(2.2840189933776855);
     a2.lastUse = [NSDate date];
     
+//    Address* a3 = [[Address alloc] init];
+//    a3.name = @"29 Rue du Buisson Moineau, 95610 Éragny, France";
+//    a3.latitude = @(49.01445529346132);
+//    a3.longitude = @(2.1137309074401855);
+//    a3.lastUse = [NSDate date];
+//    [library addObject:a3];
     
+//    Trip* t1 = [[Trip alloc] init];
+//    t1.name = @"Work - Home";
+//    [t1 setStartAddress:a1];
+//    [t1 setFinishAddress:a2] ;
+//    [library addObject:t1];
     
-    Trip* t1 = [[Trip alloc] init];
-    t1.name = @"Work - Home";
-    [t1 setStartAddress:a1];
-    [t1 setStartAddress:a2] ;
-    [library addObject:t1];
-    
-    /*Trip* t2 = [[Trip alloc] init];
-    t2.name = @"Work - Home";
-    t2.startAddress = ;
-    t2.finishAddress = ;
-    [library addObject:t2];*/
+//    Trip* t2 = [[Trip alloc] init];
+//    t2.name = @"Work - Home";
+//    [t1 setStartAddress:a1];
+//    [t1 setFinishAddress:a3] ;
+//    [library addObject:t2];
     
     return library;
 }

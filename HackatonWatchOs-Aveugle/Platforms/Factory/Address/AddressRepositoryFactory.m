@@ -24,8 +24,7 @@ static AddressRepositoryFactory* sharedInstance_;
 
 - (id<IAddressRepository>)addressRepository{
     if (!addressRepository_){
-        //addressRepository_ = [[MockAddressRepository alloc]init];
-        //commenter ou décommenter pour passer d'une sauvegarde à une autre
+        addressRepository_ = [[MockAddressRepository alloc]init];
     }
     return addressRepository_;
 }

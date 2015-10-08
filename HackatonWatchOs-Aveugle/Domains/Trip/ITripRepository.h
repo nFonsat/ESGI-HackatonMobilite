@@ -13,7 +13,7 @@
 @required
 
 - (void) saveTrip:(Trip*)tr;
-- (void) deleteAddress:(Trip*)tr;
+- (void) deleteTrip:(Trip*)tr;
 - (NSArray<Trip*>*) getAll;
 - (Trip*) searchTripWithName:(NSString*)name;
 

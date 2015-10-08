@@ -31,6 +31,13 @@
     a2.lastUse = [NSDate date];
     [library addObject:a2];
     
+    Address* a3 = [[Address alloc] init];
+    a3.name = @"29 Rue du Buisson Moineau, 95610 Éragny, France";
+    a3.latitude = @(49.01445529346132);
+    a3.longitude = @(2.1137309074401855);
+    a3.lastUse = [NSDate date];
+    [library addObject:a3];
+    
     return library;
 }
 

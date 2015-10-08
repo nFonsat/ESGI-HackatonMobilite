@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "IAddressRepository.h"
+#import "ITripRepository.h"
 
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (nonatomic, readonly) id<IAddressRepository> addressRepository;
+@property (nonatomic, readonly) id<ITripRepository> tripRepository;
 
 @end
 
