@@ -6,9 +6,10 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
+#import "RootInterfaceController.h"
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
-@interface WarningInterfaceController : WKInterfaceController
+@interface WarningInterfaceController : RootInterfaceController
 
 @end

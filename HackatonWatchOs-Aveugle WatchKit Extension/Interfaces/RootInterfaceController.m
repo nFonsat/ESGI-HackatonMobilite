@@ -35,7 +35,9 @@
 }
 
 - (void) speakerAction {
-    NSLog(@"speakerAction");
+    [self presentTextInputControllerWithSuggestions:nil allowedInputMode:WKTextInputModePlain completion:^(NSArray *results) {
+        NSLog(@"%@", results);
+    }];
 }
 
 @end
