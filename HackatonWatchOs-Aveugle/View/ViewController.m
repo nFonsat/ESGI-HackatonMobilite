@@ -42,15 +42,6 @@
     self.mapView.delegate = self;
 }
 
-
-#pragma mark - CoreLocation impl
-
-- (void)initLocationManager {
-    locationManager = [CLLocationManager new];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-}
-
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
     if (!locationFound) {
@@ -74,6 +65,15 @@
         
         [self.mapView setCenterCoordinate:location];
     }
+}
+
+
+#pragma mark - CoreLocation impl
+
+- (void)initLocationManager {
+    locationManager = [CLLocationManager new];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
