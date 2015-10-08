@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB9528B31BC5778000ECEE3C /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528A81BC5778000ECEE3C /* InterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B41BC5778000ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B51BC5778000ECEE3C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AC1BC5778000ECEE3C /* ReadyItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B61BC5778000ECEE3C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AE1BC5778000ECEE3C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
@@ -30,6 +29,7 @@
 		ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7E1BC580FD00E12082 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
 		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
+		ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EB9528A71BC5778000ECEE3C /* InterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		EB9528A81BC5778000ECEE3C /* InterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItinaryInterfaceController.h; sourceTree = "<group>"; };
 		EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItinaryInterfaceController.m; sourceTree = "<group>"; };
 		EB9528AB1BC5778000ECEE3C /* ReadyItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadyItinaryInterfaceController.h; sourceTree = "<group>"; };
@@ -115,6 +113,7 @@
 		ECC99A7E1BC580FD00E12082 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */,
 				ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */,
 				ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */,
 			);
@@ -140,8 +140,6 @@
 		EB9528A61BC5778000ECEE3C /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				EB9528A71BC5778000ECEE3C /* InterfaceController.h */,
-				EB9528A81BC5778000ECEE3C /* InterfaceController.m */,
 				EB9528A91BC5778000ECEE3C /* ItinaryInterfaceController.h */,
 				EB9528AA1BC5778000ECEE3C /* ItinaryInterfaceController.m */,
 				EB9528AB1BC5778000ECEE3C /* ReadyItinaryInterfaceController.h */,
@@ -161,6 +159,7 @@
 		ECC99A251BC551E400E12082 = {
 			isa = PBXGroup;
 			children = (
+				ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */,
 				ECC99A871BC58AC200E12082 /* MapKit.framework */,
 				ECC99A851BC587DB00E12082 /* CoreLocation.framework */,
 				ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */,
@@ -402,7 +401,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */,
-				EB9528B31BC5778000ECEE3C /* InterfaceController.m in Sources */,
 				EB9528B71BC5778000ECEE3C /* TrafficLightInterfaceController.m in Sources */,
 				EB9528B41BC5778000ECEE3C /* ItinaryInterfaceController.m in Sources */,
 				ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */,

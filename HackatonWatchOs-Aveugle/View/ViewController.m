@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate> {
+@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate> {
     @private
     CLLocationManager* locationManager;
     BOOL locationFound;
@@ -109,6 +110,17 @@
     }
     
     NSLog(@"Authorization => %@", statusString);
+}
+
+
+#pragma mark - WCSession impl
+
+- (void) initWCSession {
+    if ([WCSession class]  && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 @end

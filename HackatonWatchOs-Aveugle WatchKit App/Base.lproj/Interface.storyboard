@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
@@ -21,7 +21,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="408" y="345"/>
+            <point key="canvasLocation" x="220" y="247"/>
         </scene>
         <!--StartItinaryController-->
         <scene sceneID="Nq3-4j-nQp">
@@ -39,7 +39,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="597" y="345"/>
+            <point key="canvasLocation" x="468" y="247"/>
         </scene>
         <!--ItinaryController-->
         <scene sceneID="kYF-6P-8GI">
@@ -66,7 +66,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="785" y="345"/>
+            <point key="canvasLocation" x="695" y="643"/>
         </scene>
         <!--WarningController-->
         <scene sceneID="Poo-vE-hxU">
@@ -82,7 +82,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="971" y="345"/>
+            <point key="canvasLocation" x="1153" y="460"/>
         </scene>
         <!--TrafficLightController-->
         <scene sceneID="F9z-L0-a12">
@@ -97,7 +97,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1156" y="345"/>
+            <point key="canvasLocation" x="980" y="460"/>
         </scene>
         <!--FinishController-->
         <scene sceneID="a17-QD-PpJ">
@@ -112,7 +112,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1341" y="345"/>
+            <point key="canvasLocation" x="695" y="247"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
