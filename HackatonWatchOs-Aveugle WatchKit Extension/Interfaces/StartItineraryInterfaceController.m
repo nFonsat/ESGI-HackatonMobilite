@@ -23,8 +23,9 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     
-    [NSThread sleepForTimeInterval:1.0f];
-    [self pushControllerWithName:@"ItinaryController" context:nil];
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    [WKInterfaceController reloadRootControllersWithNames:@[@"ItinaryController"] contexts:nil];
     
     
     [super willActivate];

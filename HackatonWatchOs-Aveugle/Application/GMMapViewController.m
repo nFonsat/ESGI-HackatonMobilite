@@ -1,42 +1,24 @@
 //
-//  ViewController.m
+//  GMMapViewController.m
 //  HackatonWatchOs-Aveugle
 //
-//  Created by Etudiant on 07/10/2015.
+//  Created by Etudiant on 08/10/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GMMapViewController.h"
 #import <CoreLocation/CoreLocation.h>
-#import "AddressRepositoryFactory.h"
-#import "TripRepositoryFactory.h"
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate> {
-    @private
+@interface GMMapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate> {
+@private
     CLLocationManager* locationManager;
     BOOL locationFound;
 }
 
 @end
 
-@implementation ViewController
-
-@dynamic addressRepository;
-
-- (id<IAddressRepository>) addressRepository{
-    // SI SINGLETON
-    return [[AddressRepositoryFactory sharedInstance]addressRepository];
-}
-
-@dynamic tripRepository;
-
-- (id<ITripRepository>) tripRepository{
-    // SI SINGLETON
-    return [[TripRepositoryFactory sharedInstance]tripRepository];
-}
-
-
-
+@implementation GMMapViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -45,19 +27,6 @@
     [self initLocationManager];
     
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
-    
-    
-    //*********************Sauvegarde données*********************
-    
-//    NSLog(@"ADDRESS :");
-//    NSLog(@"%@", [self.addressRepository getAll]);
-    NSLog(@"TRIP :");
-    NSLog(@"%@", [self.tripRepository getAll]);
-    
-    //***************************************************************
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,6 +109,17 @@
     }
     
     NSLog(@"Authorization => %@", statusString);
+}
+
+
+#pragma mark - WCSession impl
+
+- (void) initWCSession {
+    if ([WCSession class]  && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 @end

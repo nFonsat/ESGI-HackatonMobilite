@@ -7,8 +7,9 @@
 //
 
 #import "ReadyItinaryInterfaceController.h"
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ReadyItinaryInterfaceController ()
+@interface ReadyItinaryInterfaceController () <WCSessionDelegate>
 
 @end
 
@@ -16,6 +17,8 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    
+    [self initWCSession];
     
     // Configure interface objects here.
 }
@@ -31,7 +34,26 @@
 }
 
 - (IBAction)onTouchReadyButton {
-    [self pushControllerWithName:@"StartItinaryController" context:nil];
+    [WKInterfaceController reloadRootControllersWithNames:@[@"StartItinaryController"] contexts:nil];
+}
+
+#pragma mark - WCSession impl
+
+- (void) initWCSession {
+    if ([WCSession class] && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+    NSString* msg = [message objectForKey:@"isReady"];
+    
+    if ([msg  isEqual: @"true"]) {
+        [self.logoApp setHidden:true];
+        [self.readyLabel setHidden:false];
+    }
 }
 
 @end
