@@ -7,8 +7,9 @@
 //
 
 #import "ItinaryInterfaceController.h"
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ItinaryInterfaceController ()
+@interface ItinaryInterfaceController () <WCSessionDelegate>
 
 @end
 
@@ -16,6 +17,8 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    
+    [self initWCSession];
     
     // Configure interface objects here.
 }
@@ -30,7 +33,20 @@
     [super didDeactivate];
 }
 
+#pragma mark - WCSession impl
+
+- (void) initWCSession {
+    if ([WCSession class] && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+    NSString* msg = [message objectForKey:@"danger"];
+    
+    [self presentControllerWithName:@"DangerController" context:msg];
+}
+
 @end
-
-
-

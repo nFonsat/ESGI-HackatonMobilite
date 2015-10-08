@@ -1,21 +1,26 @@
 //
-//  WarningInterfaceController.m
+//  DangerInterfaceController.m
 //  HackatonWatchOs-Aveugle
 //
-//  Created by Carole Carré on 07/10/2015.
+//  Created by Etudiant on 08/10/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "WarningInterfaceController.h"
+#import "DangerInterfaceController.h"
+#import "VibrationManager.h"
 
-@interface WarningInterfaceController ()
+@interface DangerInterfaceController () {
+    NSString* imgNamed_;
+}
 
 @end
 
-@implementation WarningInterfaceController
+@implementation DangerInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    
+    imgNamed_ = context;
     
     // Configure interface objects here.
 }
@@ -23,6 +28,12 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    [[VibrationManager sharedInstance] playVibrationFaillure];
+    
+    if (imgNamed_ != nil) {
+        [self.dangerBtn setBackgroundImageNamed:imgNamed_];
+    }
 }
 
 - (void)didDeactivate {
@@ -30,9 +41,9 @@
     [super didDeactivate];
 }
 
-- (IBAction)onTouchWarningButton {
+- (IBAction)onFinishAlert {
+    [self dismissController];
 }
-
 
 @end
 

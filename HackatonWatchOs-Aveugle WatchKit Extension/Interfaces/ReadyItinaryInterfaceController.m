@@ -9,7 +9,7 @@
 #import "ReadyItinaryInterfaceController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ReadyItinaryInterfaceController ()  <WCSessionDelegate>
+@interface ReadyItinaryInterfaceController () <WCSessionDelegate>
 
 @end
 
@@ -49,8 +49,6 @@
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
     NSString* msg = [message objectForKey:@"isReady"];
-    
-    NSLog(@"%@", msg);
     
     if ([msg  isEqual: @"true"]) {
         [self.logoApp setHidden:true];

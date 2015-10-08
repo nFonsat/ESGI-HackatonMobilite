@@ -51,10 +51,20 @@
 
 - (IBAction)onRoadworksDetected:(id)sender {
     NSLog(@"onRoadworksDetected");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"danger" : @"roadwork"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
 }
 
 - (IBAction)onTraficLightDetected:(id)sender {
     NSLog(@"onTraficLightDetected");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"danger" : @"trafic_light"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
 }
 
 @end

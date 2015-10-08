@@ -66,51 +66,34 @@
             </objects>
             <point key="canvasLocation" x="695" y="643"/>
         </scene>
-        <!--WarningController-->
-        <scene sceneID="Poo-vE-hxU">
-            <objects>
-                <controller identifier="WarningController" hidesWhenLoading="NO" id="f3i-mA-u8e" customClass="WarningInterfaceController">
-                    <items>
-                        <button width="1" height="1" alignment="left" title="ButtonWarning" backgroundImage="ZoneARisqueRouge" id="EKJ-d4-OUu">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="onTouchWarningButton" destination="f3i-mA-u8e" id="07O-Li-KWE"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="1153" y="460"/>
-        </scene>
-        <!--TrafficLightController-->
-        <scene sceneID="F9z-L0-a12">
-            <objects>
-                <controller identifier="TrafficLightController" hidesWhenLoading="NO" id="qpe-E9-AOK" customClass="TrafficLightInterfaceController">
-                    <items>
-                        <button width="1" height="1" alignment="left" title="ButtonTraficLight" backgroundImage="TraficLight" id="Idt-ib-FCd">
-                            <connections>
-                                <action selector="onTouchTrafficLightButton" destination="qpe-E9-AOK" id="enJ-zi-t5q"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="980" y="460"/>
-        </scene>
         <!--FinishController-->
         <scene sceneID="a17-QD-PpJ">
             <objects>
                 <controller identifier="FinishController" hidesWhenLoading="NO" id="psp-X0-gMT" customClass="FinishInterfaceController">
                     <items>
-                        <group width="1" height="149" alignment="left" id="T8e-An-QM7">
-                            <items>
-                                <imageView width="1" height="1" alignment="left" image="finish" id="Yrf-pP-CLf"/>
-                            </items>
-                        </group>
+                        <group width="1" height="149" alignment="left" id="T8e-An-QM7"/>
                     </items>
                 </controller>
             </objects>
             <point key="canvasLocation" x="695" y="247"/>
+        </scene>
+        <!--DangerController-->
+        <scene sceneID="sRg-RU-YLG">
+            <objects>
+                <controller identifier="DangerController" hidesWhenLoading="NO" id="HoM-E1-O0T" customClass="DangerInterfaceController">
+                    <items>
+                        <button width="1" alignment="center" verticalAlignment="center" id="EAI-9t-o2l">
+                            <connections>
+                                <action selector="onFinishAlert" destination="HoM-E1-O0T" id="PCy-UW-xeZ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="dangerBtn" destination="EAI-9t-o2l" id="Nvk-Xq-LVI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="915" y="247"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
