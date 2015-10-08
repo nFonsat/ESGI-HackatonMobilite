@@ -10,7 +10,8 @@
             <objects>
                 <controller identifier="ReadyItinaryController" hidesWhenLoading="NO" id="k3Z-OW-iza" customClass="ReadyItinaryInterfaceController">
                     <items>
-                        <button width="1" height="1" alignment="left" title="Prêt ?" id="1zh-O3-8Wc">
+                        <imageView alignment="center" verticalAlignment="center" image="logo_gme" id="Pwb-en-JIC"/>
+                        <button width="1" height="1" alignment="left" hidden="YES" title="Prêt ?" id="1zh-O3-8Wc">
                             <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="41"/>
@@ -21,7 +22,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="408" y="345"/>
+            <point key="canvasLocation" x="394" y="345"/>
         </scene>
         <!--StartItinaryController-->
         <scene sceneID="Nq3-4j-nQp">
