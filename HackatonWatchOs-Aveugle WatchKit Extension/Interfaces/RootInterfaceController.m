@@ -18,7 +18,7 @@
     [super awakeWithContext:context];
     
     [self addMenuItemWithItemIcon:WKMenuItemIconSpeaker
-                            title:@"Parler"
+                            title:@"Parler2"
                            action:@selector(speakerAction) ];
     
     // Configure interface objects here.

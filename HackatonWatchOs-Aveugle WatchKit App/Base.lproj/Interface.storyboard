@@ -19,11 +19,6 @@
                             </connections>
                         </button>
                     </items>
-                    <menu key="menu" id="RMN-sD-mVO">
-                        <items>
-                            <menuItem title="Parler" icon="speaker" id="vzu-EO-ah0"/>
-                        </items>
-                    </menu>
                 </controller>
             </objects>
             <point key="canvasLocation" x="408" y="345"/>
