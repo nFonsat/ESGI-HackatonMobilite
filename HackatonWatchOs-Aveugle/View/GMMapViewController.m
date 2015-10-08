@@ -1,25 +1,24 @@
 //
-//  ViewController.m
+//  GMMapViewController.m
 //  HackatonWatchOs-Aveugle
 //
-//  Created by Etudiant on 07/10/2015.
+//  Created by Etudiant on 08/10/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GMMapViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate> {
-    @private
+@interface GMMapViewController () <MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate> {
+@private
     CLLocationManager* locationManager;
     BOOL locationFound;
 }
 
 @end
 
-@implementation ViewController
-
+@implementation GMMapViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     

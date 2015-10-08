@@ -14,6 +14,7 @@
 		EC71A5281BC6A069007BB05C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A51F1BC6A069007BB05C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EC71A5291BC6A069007BB05C /* TrafficLightInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5211BC6A069007BB05C /* TrafficLightInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EC71A52A1BC6A069007BB05C /* WarningInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EC71A5331BC6A552007BB05C /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC71A5321BC6A552007BB05C /* GMMapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
 		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
 		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
@@ -27,7 +28,6 @@
 		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
-		ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7E1BC580FD00E12082 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
 		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 		ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */; };
@@ -90,6 +90,8 @@
 		EC71A5211BC6A069007BB05C /* TrafficLightInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightInterfaceController.m; sourceTree = "<group>"; };
 		EC71A5221BC6A069007BB05C /* WarningInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningInterfaceController.h; sourceTree = "<group>"; };
 		EC71A5231BC6A069007BB05C /* WarningInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningInterfaceController.m; sourceTree = "<group>"; };
+		EC71A5311BC6A552007BB05C /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
+		EC71A5321BC6A552007BB05C /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,8 +114,6 @@
 		ECC99A661BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC99A791BC561FB00E12082 /* VibrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationManager.h; sourceTree = "<group>"; };
 		ECC99A7A1BC561FB00E12082 /* VibrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationManager.m; sourceTree = "<group>"; };
-		ECC99A7D1BC580FD00E12082 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ECC99A7E1BC580FD00E12082 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -253,8 +253,8 @@
 		ECC99A7C1BC580FD00E12082 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ECC99A7D1BC580FD00E12082 /* ViewController.h */,
-				ECC99A7E1BC580FD00E12082 /* ViewController.m */,
+				EC71A5311BC6A552007BB05C /* GMMapViewController.h */,
+				EC71A5321BC6A552007BB05C /* GMMapViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -396,7 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */,
-				ECC99A7F1BC580FD00E12082 /* ViewController.m in Sources */,
+				EC71A5331BC6A552007BB05C /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
