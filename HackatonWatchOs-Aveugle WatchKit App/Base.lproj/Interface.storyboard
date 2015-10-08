@@ -10,19 +10,16 @@
             <objects>
                 <controller identifier="ReadyItinaryController" hidesWhenLoading="NO" id="k3Z-OW-iza" customClass="ReadyItinaryInterfaceController">
                     <items>
-                        <imageView alignment="center" verticalAlignment="center" image="logo_gme" id="Pwb-en-JIC"/>
-                        <button width="1" height="1" alignment="left" hidden="YES" title="Prêt ?" id="1zh-O3-8Wc">
-                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="41"/>
+                        <button width="1" alignment="left" hidden="YES" backgroundImage="pret" id="Iap-3K-iNP">
                             <connections>
-                                <action selector="onTouchReadyButton" destination="k3Z-OW-iza" id="o7B-lw-feF"/>
+                                <action selector="onTouchReadyButton" destination="k3Z-OW-iza" id="zkB-Nq-3Ug"/>
                             </connections>
                         </button>
+                        <imageView width="1" alignment="center" verticalAlignment="center" image="logo_gme" id="Pwb-en-JIC"/>
                     </items>
                     <connections>
                         <outlet property="logoApp" destination="Pwb-en-JIC" id="ugv-A5-Ouf"/>
-                        <outlet property="readyLabel" destination="1zh-O3-8Wc" id="DVn-Ok-mXf"/>
+                        <outlet property="readyLabel" destination="Iap-3K-iNP" id="CWk-Wc-XDl"/>
                     </connections>
                 </controller>
             </objects>
@@ -33,14 +30,7 @@
             <objects>
                 <controller identifier="StartItinaryController" hidesWhenLoading="NO" id="Oll-Rd-z3M" customClass="StartItineraryInterfaceController">
                     <items>
-                        <label width="1" height="55.5" alignment="left" text="C'est" textAlignment="center" id="ZnW-rb-1GS">
-                            <color key="textColor" red="0.1261759871" green="0.98033065029999999" blue="0.189768139" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="41"/>
-                        </label>
-                        <label width="1" height="45.5" alignment="left" text="parti !" textAlignment="center" id="0pX-66-IhF">
-                            <color key="textColor" red="0.1261759871" green="0.98033065029999999" blue="0.189768139" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" type="system" pointSize="41"/>
-                        </label>
+                        <imageView width="1" height="1" alignment="center" verticalAlignment="center" image="GO" id="bfv-s0-Qh5"/>
                     </items>
                 </controller>
             </objects>
@@ -51,16 +41,13 @@
             <objects>
                 <controller identifier="ItinaryController" hidesWhenLoading="NO" id="plb-dH-nWW" customClass="ItinaryInterfaceController">
                     <items>
-                        <group width="1" alignment="left" id="Cgu-MB-WxX">
-                            <items>
-                                <label width="1" height="32.5" alignment="left" text="Address" id="Fyf-b8-CuM"/>
-                            </items>
-                        </group>
-                        <group width="136" height="90" alignment="left" id="5aM-7E-1Bf">
-                            <items>
-                                <imageView width="1" height="1" alignment="left" id="jFG-Tm-zed"/>
-                            </items>
-                        </group>
+                        <label width="1" height="0.25" alignment="center" text="ESGI" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
+                            <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="16"/>
+                        </label>
+                        <imageView height="0.5" alignment="center" verticalAlignment="center" id="qY4-Mp-m1J"/>
+                        <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" text="250m" textAlignment="center" id="3CM-wj-mvv">
+                            <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                        </label>
                     </items>
                 </controller>
             </objects>
@@ -71,7 +58,7 @@
             <objects>
                 <controller identifier="FinishController" hidesWhenLoading="NO" id="psp-X0-gMT" customClass="FinishInterfaceController">
                     <items>
-                        <group width="1" height="149" alignment="left" id="T8e-An-QM7"/>
+                        <imageView width="1" alignment="center" verticalAlignment="center" image="finish" id="jZU-0S-BRd"/>
                     </items>
                 </controller>
             </objects>
@@ -82,7 +69,7 @@
             <objects>
                 <controller identifier="DangerController" hidesWhenLoading="NO" id="HoM-E1-O0T" customClass="DangerInterfaceController">
                     <items>
-                        <button width="1" alignment="center" verticalAlignment="center" id="EAI-9t-o2l">
+                        <button width="1" height="1" alignment="center" verticalAlignment="center" id="EAI-9t-o2l">
                             <connections>
                                 <action selector="onFinishAlert" destination="HoM-E1-O0T" id="PCy-UW-xeZ"/>
                             </connections>
