@@ -31,6 +31,7 @@
 }
 
 - (IBAction)onTouchReadyButton {
+    [self pushControllerWithName:@"StartItinaryController" context:nil];
 }
 
 @end

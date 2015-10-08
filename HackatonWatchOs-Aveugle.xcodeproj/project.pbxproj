@@ -13,6 +13,7 @@
 		EB9528B61BC5778000ECEE3C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528AE1BC5778000ECEE3C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B71BC5778000ECEE3C /* TrafficLightInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		EB9528B81BC5778000ECEE3C /* WarningInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
 		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
 		ECC99A391BC551E400E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A381BC551E400E12082 /* ViewController.m */; };
@@ -84,6 +85,8 @@
 		EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficLightInterfaceController.m; sourceTree = "<group>"; };
 		EB9528B11BC5778000ECEE3C /* WarningInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarningInterfaceController.h; sourceTree = "<group>"; };
 		EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarningInterfaceController.m; sourceTree = "<group>"; };
+		EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
+		EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				EB9528B01BC5778000ECEE3C /* TrafficLightInterfaceController.m */,
 				EB9528B11BC5778000ECEE3C /* WarningInterfaceController.h */,
 				EB9528B21BC5778000ECEE3C /* WarningInterfaceController.m */,
+				EB9528B91BC57CA400ECEE3C /* FinishInterfaceController.h */,
+				EB9528BA1BC57CA400ECEE3C /* FinishInterfaceController.m */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9528BB1BC57CA400ECEE3C /* FinishInterfaceController.m in Sources */,
 				EB9528B31BC5778000ECEE3C /* InterfaceController.m in Sources */,
 				EB9528B71BC5778000ECEE3C /* TrafficLightInterfaceController.m in Sources */,
 				EB9528B41BC5778000ECEE3C /* ItinaryInterfaceController.m in Sources */,

@@ -1,18 +1,18 @@
 //
-//  StartItineraryInterfaceController.m
+//  FinishInterfaceController.m
 //  HackatonWatchOs-Aveugle
 //
 //  Created by Carole Carré on 07/10/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "StartItineraryInterfaceController.h"
+#import "FinishInterfaceController.h"
 
-@interface StartItineraryInterfaceController ()
+@interface FinishInterfaceController ()
 
 @end
 
-@implementation StartItineraryInterfaceController
+@implementation FinishInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
@@ -22,11 +22,6 @@
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
-    
-    [NSThread sleepForTimeInterval:1.0f];
-    [self pushControllerWithName:@"ItinaryController" context:nil];
-    
-    
     [super willActivate];
 }
 
