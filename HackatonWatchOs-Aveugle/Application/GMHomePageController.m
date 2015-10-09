@@ -7,9 +7,8 @@
 //
 
 #import "GMHomePageController.h"
-#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface GMHomePageController () <WCSessionDelegate>
+@interface GMHomePageController ()
 
 @end
 
@@ -17,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self initWCSession];
     // Do any additional setup after loading the view.
 }
 

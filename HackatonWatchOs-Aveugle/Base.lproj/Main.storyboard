@@ -24,7 +24,7 @@
         <!--GMHomePage-->
         <scene sceneID="ucC-ig-YRX">
             <objects>
-                <viewController title="GMHomePage" id="DGD-t9-AFH" customClass="GMHomePageController" sceneMemberID="viewController">
+                <viewController title="GMHomePage" id="DGD-t9-AFH" customClass="GMTestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mWw-Kl-Yfq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onRoadworksDetected:" destination="DGD-t9-AFH" eventType="touchUpInside" id="Tqj-YR-0Us"/>
+                                    <action selector="onRoadworksDetected:" destination="DGD-t9-AFH" eventType="touchUpInside" id="2gB-9w-tJK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fJp-z4-dyp">
