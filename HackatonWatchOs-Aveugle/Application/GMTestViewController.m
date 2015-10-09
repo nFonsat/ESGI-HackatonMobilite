@@ -78,24 +78,18 @@
     [self sendMessageToWatchWithKey:@"direction" value:@"droite"];
 }
 
-- (IBAction)onDistance100m:(id)sender {
-    NSLog(@"onDistance100m");
-    [self sendMessageToWatchWithKey:@"distance" value:@"100m"];
-}
-
-- (IBAction)onDistance200m:(id)sender {
-    NSLog(@"onDistance200m");
-    [self sendMessageToWatchWithKey:@"distance" value:@"200m"];
-}
-
-- (IBAction)onDistance300m:(id)sender {
-    NSLog(@"onDistance300m");
-    [self sendMessageToWatchWithKey:@"distance" value:@"300m"];
-}
-
 - (IBAction)onFinish:(id)sender {
     NSLog(@"onFinish");
     [self sendMessageToWatchWithKey:@"isFinish" value:@"true"];
+}
+
+- (IBAction)onSlideChange:(UISlider *)sender forEvent:(UIEvent *)event {
+    //NSNumber* number = [NSNumber numberWithFloat:sender.value];
+    NSNumber* number = [NSNumber numberWithFloat:sender.value];
+    
+    NSString* valuseString = [NSString stringWithFormat:@"%dm", number.intValue];
+    
+    [self sendMessageToWatchWithKey:@"distance" value:valuseString];
 }
 
 /*
@@ -107,5 +101,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

@@ -52,9 +52,7 @@
         }
     }
     else if ( (msg = [message objectForKey:@"distance"]) != nil) {
-        if ([msg  isEqual: @"100m"] ^ [msg  isEqual: @"200m"] ^ [msg  isEqual: @"300m"]) {
-            [self.distanceLabel setText:msg];
-        }
+        [self.distanceLabel setText:msg];
     }
     else if ( (msg = [message objectForKey:@"isFinish"]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
