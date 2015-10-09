@@ -12,4 +12,7 @@
 
 @interface ItinaryInterfaceController : RootInterfaceController
 
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *directionImage;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *distanceLabel;
+
 @end

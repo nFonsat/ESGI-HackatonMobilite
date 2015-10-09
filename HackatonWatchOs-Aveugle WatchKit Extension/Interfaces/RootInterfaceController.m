@@ -7,6 +7,7 @@
 //
 
 #import "RootInterfaceController.h"
+#import <WatchConnectivity/WatchConnectivity.h>
 
 @interface RootInterfaceController ()
 
@@ -41,6 +42,3 @@
 }
 
 @end
-
-
-

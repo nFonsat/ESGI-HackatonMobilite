@@ -52,7 +52,7 @@
 - (IBAction)onRoadworksDetected:(id)sender {
     NSLog(@"onRoadworksDetected");
     if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"danger" : @"roadwork"}
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"roadwork"}
                                    replyHandler:nil
                                    errorHandler:nil];
     }
@@ -61,7 +61,71 @@
 - (IBAction)onTraficLightDetected:(id)sender {
     NSLog(@"onTraficLightDetected");
     if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"danger" : @"trafic_light"}
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"trafic_light"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onDirectionLeft:(id)sender {
+    NSLog(@"onDirectionLeft");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"gauche"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onDirectionDirectly:(id)sender {
+    NSLog(@"onDirectionDirectly");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"toutdroit"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onDirectionRight:(id)sender {
+    NSLog(@"onDirectionRight");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"droite"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onDistance100m:(id)sender {
+    NSLog(@"onDistance100m");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"100m"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onDistance200m:(id)sender {
+    NSLog(@"onDistance200m");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"200m"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onDistance300m:(id)sender {
+    NSLog(@"onDistance300m");
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"300m"}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (IBAction)onFinish:(id)sender {
+    NSLog(@"onFinish");
+
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{@"isFinish" : @"true"}
                                    replyHandler:nil
                                    errorHandler:nil];
     }

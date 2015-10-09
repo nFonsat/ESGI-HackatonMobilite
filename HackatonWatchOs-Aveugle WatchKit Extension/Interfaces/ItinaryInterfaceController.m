@@ -44,9 +44,35 @@
 }
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
-    NSString* msg = [message objectForKey:@"danger"];
+    NSMutableString* msg = [message objectForKey:@"itinary"];
     
-    [self presentControllerWithName:@"DangerController" context:msg];
+    if ([msg  isEqual: @"roadwork"] ^ [msg  isEqual: @"trafic_light"]){
+        [self presentControllerWithName:@"DangerController" context:msg];
+    }
+    else if ([msg  isEqual: @"gauche"]) {
+        [self.directionImage setImageNamed:@"gauche"];
+    }
+    else if ([msg  isEqual: @"droite"]) {
+        [self.directionImage setImageNamed:@"droite"];
+    }
+    else if ([msg  isEqual: @"toutdroit"]) {
+        [self.directionImage setImageNamed:@"toutdroit"];
+    }
+    else if ([msg  isEqual: @"100m"]) {
+        [self.distanceLabel setText:@"100m"];
+    }
+    else if ([msg  isEqual: @"200m"]) {
+        [self.distanceLabel setText:@"200m"];
+    }
+    else if ([msg  isEqual: @"300m"]) {
+        [self.distanceLabel setText:@"300m"];
+    }
+    
+    
+    msg = [message objectForKey:@"isFinish"];
+    if ([msg  isEqual: @"true"]) {
+        [self pushControllerWithName:@"FinishController" context:nil];
+    }
 }
 
 @end

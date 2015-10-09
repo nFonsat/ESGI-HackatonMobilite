@@ -9,13 +9,14 @@
 #import "FinishInterfaceController.h"
 
 @interface FinishInterfaceController ()
-
 @end
 
 @implementation FinishInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    
+    
     
     // Configure interface objects here.
 }
@@ -29,6 +30,8 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
+
+
 
 @end
 
