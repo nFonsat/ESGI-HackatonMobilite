@@ -1,22 +1,22 @@
 //
-//  ViewController.m
+//  GMHomePageController.m
 //  HackatonWatchOs-Aveugle
 //
-//  Created by Etudiant on 07/10/2015.
+//  Created by Etudiant on 08/10/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GMHomePageController.h"
 
-@interface ViewController ()
+@interface GMHomePageController ()
 
 @end
 
-@implementation ViewController
+@implementation GMHomePageController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,9 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D11BC65D7A00ECEE3C /* Address.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D51BC65DEB00ECEE3C /* Trip.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529021BC6CF9500ECEE3C /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529031BC6CF9500ECEE3C /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529131BC6D00300ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290A1BC6D00300ECEE3C /* ItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529141BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290C1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529151BC6D00300ECEE3C /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290E1BC6D00300ECEE3C /* RootInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		EB9529161BC6D00300ECEE3C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529101BC6D00300ECEE3C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
-		ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A351BC551E400E12082 /* AppDelegate.m */; };
-		ECC99A391BC551E400E12082 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A381BC551E400E12082 /* ViewController.m */; };
 		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
 		ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3D1BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */; };
@@ -17,10 +32,14 @@
 		ECC99A4C1BC551E400E12082 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A4A1BC551E400E12082 /* Interface.storyboard */; };
 		ECC99A4E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A4D1BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A551BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ECC99A541BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		ECC99A5D1BC551E400E12082 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A5C1BC551E400E12082 /* InterfaceController.m */; };
 		ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */; };
 		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
+		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
+		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
+		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
+		ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */; };
+		ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +85,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB9528D01BC65D7A00ECEE3C /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		EB9528D11BC65D7A00ECEE3C /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		EB9528D41BC65DEB00ECEE3C /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		EB9528D51BC65DEB00ECEE3C /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		EB9528D81BC65E3200ECEE3C /* AddressRepositoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressRepositoryFactory.h; sourceTree = "<group>"; };
+		EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressRepositoryFactory.m; sourceTree = "<group>"; };
+		EB9528DB1BC65E4100ECEE3C /* TripRepositoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripRepositoryFactory.h; sourceTree = "<group>"; };
+		EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripRepositoryFactory.m; sourceTree = "<group>"; };
+		EB9528DE1BC65F1300ECEE3C /* IAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAddressRepository.h; sourceTree = "<group>"; };
+		EB9528DF1BC65F3100ECEE3C /* ITripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITripRepository.h; sourceTree = "<group>"; };
+		EB9528E01BC65FA300ECEE3C /* MockAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockAddressRepository.h; sourceTree = "<group>"; };
+		EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockAddressRepository.m; sourceTree = "<group>"; };
+		EB9528E31BC65FB600ECEE3C /* MockTripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockTripRepository.h; sourceTree = "<group>"; };
+		EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTripRepository.m; sourceTree = "<group>"; };
+		EB9528E61BC65FE600ECEE3C /* SerializableAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializableAddressRepository.h; sourceTree = "<group>"; };
+		EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableAddressRepository.m; sourceTree = "<group>"; };
+		EB9528E91BC6600100ECEE3C /* SerializableTripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializableTripRepository.h; sourceTree = "<group>"; };
+		EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableTripRepository.m; sourceTree = "<group>"; };
+		EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EB9528FD1BC6CF9500ECEE3C /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
+		EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
+		EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
+		EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
+		EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DangerInterfaceController.h; sourceTree = "<group>"; };
+		EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DangerInterfaceController.m; sourceTree = "<group>"; };
+		EB9529071BC6D00300ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
+		EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
+		EB9529091BC6D00300ECEE3C /* ItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItinaryInterfaceController.h; sourceTree = "<group>"; };
+		EB95290A1BC6D00300ECEE3C /* ItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItinaryInterfaceController.m; sourceTree = "<group>"; };
+		EB95290B1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadyItinaryInterfaceController.h; sourceTree = "<group>"; };
+		EB95290C1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadyItinaryInterfaceController.m; sourceTree = "<group>"; };
+		EB95290D1BC6D00300ECEE3C /* RootInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootInterfaceController.h; sourceTree = "<group>"; };
+		EB95290E1BC6D00300ECEE3C /* RootInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootInterfaceController.m; sourceTree = "<group>"; };
+		EB95290F1BC6D00300ECEE3C /* StartItineraryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartItineraryInterfaceController.h; sourceTree = "<group>"; };
+		EB9529101BC6D00300ECEE3C /* StartItineraryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartItineraryInterfaceController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ECC99A341BC551E400E12082 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		ECC99A351BC551E400E12082 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ECC99A371BC551E400E12082 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ECC99A381BC551E400E12082 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ECC99A3B1BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECC99A3D1BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC99A401BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,14 +133,19 @@
 		ECC99A4F1BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECC99A541BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HackatonWatchOs-Aveugle WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A5A1BC551E400E12082 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		ECC99A5B1BC551E400E12082 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		ECC99A5C1BC551E400E12082 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		ECC99A5E1BC551E400E12082 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
 		ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		ECC99A611BC551E400E12082 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
 		ECC99A621BC551E400E12082 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		ECC99A641BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC99A661BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECC99A791BC561FB00E12082 /* VibrationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrationManager.h; sourceTree = "<group>"; };
+		ECC99A7A1BC561FB00E12082 /* VibrationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrationManager.m; sourceTree = "<group>"; };
+		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
+		ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +153,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */,
+				ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */,
+				ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,9 +169,166 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB9528C31BC65CF500ECEE3C /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528C41BC65CF500ECEE3C /* Address */,
+				EB9528C51BC65CF500ECEE3C /* Trip */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		EB9528C41BC65CF500ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528D01BC65D7A00ECEE3C /* Address.h */,
+				EB9528D11BC65D7A00ECEE3C /* Address.m */,
+				EB9528DE1BC65F1300ECEE3C /* IAddressRepository.h */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528C51BC65CF500ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528D41BC65DEB00ECEE3C /* Trip.h */,
+				EB9528D51BC65DEB00ECEE3C /* Trip.m */,
+				EB9528DF1BC65F3100ECEE3C /* ITripRepository.h */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528C61BC65D0000ECEE3C /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528C71BC65D0000ECEE3C /* Factory */,
+				EB9528CA1BC65D0000ECEE3C /* Mock */,
+				EB9528CD1BC65D0000ECEE3C /* Serialization */,
+			);
+			path = Platforms;
+			sourceTree = "<group>";
+		};
+		EB9528C71BC65D0000ECEE3C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528C81BC65D0000ECEE3C /* Address */,
+				EB9528C91BC65D0000ECEE3C /* Trip */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		EB9528C81BC65D0000ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528D81BC65E3200ECEE3C /* AddressRepositoryFactory.h */,
+				EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528C91BC65D0000ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528DB1BC65E4100ECEE3C /* TripRepositoryFactory.h */,
+				EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528CA1BC65D0000ECEE3C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528CB1BC65D0000ECEE3C /* Address */,
+				EB9528CC1BC65D0000ECEE3C /* Trip */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		EB9528CB1BC65D0000ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E01BC65FA300ECEE3C /* MockAddressRepository.h */,
+				EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528CC1BC65D0000ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E31BC65FB600ECEE3C /* MockTripRepository.h */,
+				EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528CD1BC65D0000ECEE3C /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528CE1BC65D0000ECEE3C /* Address */,
+				EB9528CF1BC65D0000ECEE3C /* Trip */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		EB9528CE1BC65D0000ECEE3C /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E61BC65FE600ECEE3C /* SerializableAddressRepository.h */,
+				EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		EB9528CF1BC65D0000ECEE3C /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528E91BC6600100ECEE3C /* SerializableTripRepository.h */,
+				EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		EB9528FA1BC6CF9500ECEE3C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */,
+				EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */,
+				EB9528FD1BC6CF9500ECEE3C /* GMHomePageController.h */,
+				EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */,
+				EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */,
+				EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */,
+				ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */,
+				ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EB9529041BC6D00300ECEE3C /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */,
+				EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */,
+				EB9529071BC6D00300ECEE3C /* FinishInterfaceController.h */,
+				EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */,
+				EB9529091BC6D00300ECEE3C /* ItinaryInterfaceController.h */,
+				EB95290A1BC6D00300ECEE3C /* ItinaryInterfaceController.m */,
+				EB95290B1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.h */,
+				EB95290C1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m */,
+				EB95290D1BC6D00300ECEE3C /* RootInterfaceController.h */,
+				EB95290E1BC6D00300ECEE3C /* RootInterfaceController.m */,
+				EB95290F1BC6D00300ECEE3C /* StartItineraryInterfaceController.h */,
+				EB9529101BC6D00300ECEE3C /* StartItineraryInterfaceController.m */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		ECC99A251BC551E400E12082 = {
 			isa = PBXGroup;
 			children = (
+				ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */,
+				ECC99A871BC58AC200E12082 /* MapKit.framework */,
+				ECC99A851BC587DB00E12082 /* CoreLocation.framework */,
 				ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */,
 				ECC99A491BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */,
 				ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */,
@@ -133,14 +349,12 @@
 		ECC99A301BC551E400E12082 /* HackatonWatchOs-Aveugle */ = {
 			isa = PBXGroup;
 			children = (
-				ECC99A341BC551E400E12082 /* AppDelegate.h */,
-				ECC99A351BC551E400E12082 /* AppDelegate.m */,
-				ECC99A371BC551E400E12082 /* ViewController.h */,
-				ECC99A381BC551E400E12082 /* ViewController.m */,
+				EB9528FA1BC6CF9500ECEE3C /* Application */,
+				EB9528C31BC65CF500ECEE3C /* Domains */,
+				EB9528C61BC65D0000ECEE3C /* Platforms */,
 				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
 				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
-				ECC99A421BC551E400E12082 /* Info.plist */,
 				ECC99A311BC551E400E12082 /* Supporting Files */,
 			);
 			path = "HackatonWatchOs-Aveugle";
@@ -149,6 +363,7 @@
 		ECC99A311BC551E400E12082 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ECC99A421BC551E400E12082 /* Info.plist */,
 				ECC99A321BC551E400E12082 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -167,8 +382,8 @@
 		ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				ECC99A5B1BC551E400E12082 /* InterfaceController.h */,
-				ECC99A5C1BC551E400E12082 /* InterfaceController.m */,
+				EB9529041BC6D00300ECEE3C /* Interfaces */,
+				ECC99A781BC561EB00E12082 /* Managers */,
 				ECC99A5E1BC551E400E12082 /* ExtensionDelegate.h */,
 				ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */,
 				ECC99A611BC551E400E12082 /* NotificationController.h */,
@@ -186,6 +401,15 @@
 				ECC99A5A1BC551E400E12082 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECC99A781BC561EB00E12082 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A791BC561FB00E12082 /* VibrationManager.h */,
+				ECC99A7A1BC561FB00E12082 /* VibrationManager.m */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +479,11 @@
 				TargetAttributes = {
 					ECC99A2D1BC551E400E12082 = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					ECC99A441BC551E400E12082 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -319,9 +548,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC99A391BC551E400E12082 /* ViewController.m in Sources */,
-				ECC99A361BC551E400E12082 /* AppDelegate.m in Sources */,
+				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
+				EB9529031BC6CF9500ECEE3C /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
+				EB9529021BC6CF9500ECEE3C /* GMHomePageController.m in Sources */,
+				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
+				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
+				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
+				EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */,
+				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
+				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
+				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
+				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
+				ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +568,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9529131BC6D00300ECEE3C /* ItinaryInterfaceController.m in Sources */,
+				EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */,
+				EB9529161BC6D00300ECEE3C /* StartItineraryInterfaceController.m in Sources */,
+				EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */,
 				ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */,
-				ECC99A5D1BC551E400E12082 /* InterfaceController.m in Sources */,
+				ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */,
+				EB9529151BC6D00300ECEE3C /* RootInterfaceController.m in Sources */,
+				EB9529141BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m in Sources */,
 				ECC99A631BC551E400E12082 /* NotificationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +802,7 @@
 				ECC99A6B1BC551E400E12082 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECC99A6D1BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +811,7 @@
 				ECC99A6F1BC551E400E12082 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECC99A711BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +820,7 @@
 				ECC99A731BC551E400E12082 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

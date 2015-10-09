@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  GMTestViewController.h
 //  HackatonWatchOs-Aveugle
 //
-//  Created by Etudiant on 07/10/2015.
+//  Created by Etudiant on 09/10/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GMTestViewController : UIViewController
 
 @end
-

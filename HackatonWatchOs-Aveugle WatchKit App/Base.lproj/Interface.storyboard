@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
+        <!--ReadyItinaryController-->
+        <scene sceneID="Wdl-od-3bN">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller identifier="ReadyItinaryController" hidesWhenLoading="NO" id="k3Z-OW-iza" customClass="ReadyItinaryInterfaceController">
+                    <items>
+                        <button width="1" alignment="left" hidden="YES" backgroundImage="pret" id="Iap-3K-iNP">
+                            <connections>
+                                <action selector="onTouchReadyButton" destination="k3Z-OW-iza" id="zkB-Nq-3Ug"/>
+                            </connections>
+                        </button>
+                        <imageView width="1" alignment="center" verticalAlignment="center" image="logo_gme" id="Pwb-en-JIC"/>
+                    </items>
+                    <connections>
+                        <outlet property="logoApp" destination="Pwb-en-JIC" id="ugv-A5-Ouf"/>
+                        <outlet property="readyLabel" destination="Iap-3K-iNP" id="CWk-Wc-XDl"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="247"/>
+        </scene>
+        <!--StartItinaryController-->
+        <scene sceneID="Nq3-4j-nQp">
+            <objects>
+                <controller identifier="StartItinaryController" hidesWhenLoading="NO" id="Oll-Rd-z3M" customClass="StartItineraryInterfaceController">
+                    <items>
+                        <imageView width="1" height="1" alignment="center" verticalAlignment="center" image="GO" id="bfv-s0-Qh5"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="247"/>
+        </scene>
+        <!--ItinaryController-->
+        <scene sceneID="kYF-6P-8GI">
+            <objects>
+                <controller identifier="ItinaryController" hidesWhenLoading="NO" id="plb-dH-nWW" customClass="ItinaryInterfaceController">
+                    <items>
+                        <label width="1" height="0.25" alignment="center" text="ESGI" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
+                            <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="16"/>
+                        </label>
+                        <imageView width="70" height="70" alignment="center" verticalAlignment="center" image="droite" id="qY4-Mp-m1J"/>
+                        <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" text="250m" textAlignment="center" id="3CM-wj-mvv">
+                            <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="directionImage" destination="qY4-Mp-m1J" id="RYp-Vk-F11"/>
+                        <outlet property="distanceLabel" destination="3CM-wj-mvv" id="alF-Id-Gg9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="667" y="643"/>
+        </scene>
+        <!--FinishController-->
+        <scene sceneID="a17-QD-PpJ">
+            <objects>
+                <controller identifier="FinishController" hidesWhenLoading="NO" id="psp-X0-gMT" customClass="FinishInterfaceController">
+                    <items>
+                        <imageView width="1" alignment="center" verticalAlignment="center" image="finish" id="jZU-0S-BRd"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="695" y="247"/>
+        </scene>
+        <!--DangerController-->
+        <scene sceneID="sRg-RU-YLG">
+            <objects>
+                <controller identifier="DangerController" hidesWhenLoading="NO" id="HoM-E1-O0T" customClass="DangerInterfaceController">
+                    <items>
+                        <button width="1" height="1" alignment="center" verticalAlignment="center" id="EAI-9t-o2l">
+                            <connections>
+                                <action selector="onFinishAlert" destination="HoM-E1-O0T" id="PCy-UW-xeZ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="dangerBtn" destination="EAI-9t-o2l" id="Nvk-Xq-LVI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="915" y="247"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +105,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider=""/>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
