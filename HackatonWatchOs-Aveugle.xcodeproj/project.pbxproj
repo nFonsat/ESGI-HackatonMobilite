@@ -39,6 +39,7 @@
 		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
 		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 		ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */; };
+		ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,8 @@
 		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
+		ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +298,8 @@
 				EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */,
 				EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */,
 				EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */,
+				ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */,
+				ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
+				ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,7 @@
         <!--GMHomePage-->
         <scene sceneID="ucC-ig-YRX">
             <objects>
-                <viewController title="GMHomePage" id="DGD-t9-AFH" customClass="GMHomePageController" sceneMemberID="viewController">
+                <viewController title="GMHomePage" id="DGD-t9-AFH" customClass="GMTestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mWw-Kl-Yfq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,17 +39,6 @@
                                     <segue destination="BYZ-38-t0r" kind="push" id="Ch7-N6-CbG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Of-UZ-bKS">
-                                <rect key="frame" x="97" y="152" width="130" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Pret">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="onReadyAction:" destination="DGD-t9-AFH" eventType="touchUpInside" id="9W3-2D-GuT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3os-v6-sAj">
                                 <rect key="frame" x="97" y="256" width="130" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -58,7 +47,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onRoadworksDetected:" destination="DGD-t9-AFH" eventType="touchUpInside" id="Tqj-YR-0Us"/>
+                                    <action selector="onRoadworksDetected:" destination="DGD-t9-AFH" eventType="touchUpInside" id="2gB-9w-tJK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZWS-Eb-bpJ">
@@ -69,7 +58,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTraficLightDetected:" destination="DGD-t9-AFH" eventType="touchUpInside" id="ifi-ev-C1i"/>
+                                    <action selector="onTraficLightDetected:" destination="DGD-t9-AFH" eventType="touchUpInside" id="pVN-Se-JQz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fJp-z4-dyp">
@@ -103,6 +92,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Of-UZ-bKS">
+                                <rect key="frame" x="97" y="152" width="130" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Pret">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReadyAction:" destination="DGD-t9-AFH" eventType="touchUpInside" id="RSg-Vm-oJ3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
