@@ -46,23 +46,14 @@
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
     NSString* msg;
     
-    if ( (msg = [message objectForKey:@"itinary"]) != nil) {
-        if ([msg  isEqual: @"gauche"]) {
-            [self.directionImage setImageNamed:@"gauche"];
+    if ( (msg = [message objectForKey:@"direction"]) != nil) {
+        if ([msg  isEqual: @"gauche"] ^ [msg  isEqual: @"toutdroit"] ^ [msg  isEqual: @"droite"]) {
+            [self.directionImage setImageNamed:msg];
         }
-        else if ([msg  isEqual: @"droite"]) {
-            [self.directionImage setImageNamed:@"droite"];
-        }
-        else if ([msg  isEqual: @"toutdroit"]) {
-            [self.directionImage setImageNamed:@"toutdroit"];
-        } else if ([msg  isEqual: @"100m"]) {
-            [self.distanceLabel setText:@"100m"];
-        }
-        else if ([msg  isEqual: @"200m"]) {
-            [self.distanceLabel setText:@"200m"];
-        }
-        else if ([msg  isEqual: @"300m"]) {
-            [self.distanceLabel setText:@"300m"];
+    }
+    else if ( (msg = [message objectForKey:@"distance"]) != nil) {
+        if ([msg  isEqual: @"100m"] ^ [msg  isEqual: @"200m"] ^ [msg  isEqual: @"300m"]) {
+            [self.distanceLabel setText:msg];
         }
     }
     else if ( (msg = [message objectForKey:@"isFinish"]) != nil){

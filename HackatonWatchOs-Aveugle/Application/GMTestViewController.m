@@ -37,98 +37,65 @@
     }
 }
 
+- (void) sendMessageToWatchWithKey:(NSString *)key value:(NSString*)value {
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{key:value}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
 
 #pragma mark - Action User interface impl
 
 - (IBAction)onReadyAction:(UIButton *)sender {
     NSLog(@"onReadyAction");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"isReady" : @"true"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"isReady" value:@"true"];
 }
 
 - (IBAction)onRoadworksDetected:(UIButton *)sender {
     NSLog(@"onRoadworksDetected");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"danger" : @"roadwork"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"danger" value:@"roadwork"];
 }
 
 - (IBAction)onTraficLightDetected:(UIButton *)sender {
     NSLog(@"onTraficLightDetected");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"danger" : @"trafic_light"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"danger" value:@"trafic_light"];
 }
 
 - (IBAction)onDirectionLeft:(id)sender {
     NSLog(@"onDirectionLeft");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"gauche"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"direction" value:@"gauche"];
 }
 
 - (IBAction)onDirectionDirectly:(id)sender {
     NSLog(@"onDirectionDirectly");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"toutdroit"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"direction" value:@"toutdroit"];
 }
 
 - (IBAction)onDirectionRight:(id)sender {
     NSLog(@"onDirectionRight");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"droite"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"direction" value:@"droite"];
 }
 
 - (IBAction)onDistance100m:(id)sender {
     NSLog(@"onDistance100m");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"100m"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"distance" value:@"100m"];
 }
 
 - (IBAction)onDistance200m:(id)sender {
     NSLog(@"onDistance200m");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"200m"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"distance" value:@"200m"];
 }
 
 - (IBAction)onDistance300m:(id)sender {
     NSLog(@"onDistance300m");
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"itinary" : @"300m"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"distance" value:@"300m"];
 }
 
 - (IBAction)onFinish:(id)sender {
     NSLog(@"onFinish");
-    
-    if ([WCSession defaultSession].reachable) {
-        [[WCSession defaultSession] sendMessage:@{@"isFinish" : @"true"}
-                                   replyHandler:nil
-                                   errorHandler:nil];
-    }
+    [self sendMessageToWatchWithKey:@"isFinish" value:@"true"];
 }
 
 /*
