@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-429" y="506"/>
         </scene>
-        <!--GMHomePage-->
+        <!--GMTextView-->
         <scene sceneID="ucC-ig-YRX">
             <objects>
-                <viewController title="GMHomePage" id="DGD-t9-AFH" customClass="GMTestViewController" sceneMemberID="viewController">
+                <viewController title="GMTextView" id="DGD-t9-AFH" customClass="GMTestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mWw-Kl-Yfq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3b-4C-0Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="506"/>
+            <point key="canvasLocation" x="19" y="506"/>
         </scene>
         <!--GMMapView-->
         <scene sceneID="tne-QT-ifu">

@@ -44,34 +44,32 @@
 }
 
 - (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
-    NSMutableString* msg = [message objectForKey:@"itinary"];
+    NSString* msg;
     
-    if ([msg  isEqual: @"roadwork"] ^ [msg  isEqual: @"trafic_light"]){
+    if ( (msg = [message objectForKey:@"itinary"]) != nil) {
+        if ([msg  isEqual: @"gauche"]) {
+            [self.directionImage setImageNamed:@"gauche"];
+        }
+        else if ([msg  isEqual: @"droite"]) {
+            [self.directionImage setImageNamed:@"droite"];
+        }
+        else if ([msg  isEqual: @"toutdroit"]) {
+            [self.directionImage setImageNamed:@"toutdroit"];
+        } else if ([msg  isEqual: @"100m"]) {
+            [self.distanceLabel setText:@"100m"];
+        }
+        else if ([msg  isEqual: @"200m"]) {
+            [self.distanceLabel setText:@"200m"];
+        }
+        else if ([msg  isEqual: @"300m"]) {
+            [self.distanceLabel setText:@"300m"];
+        }
+    }
+    else if ( (msg = [message objectForKey:@"isFinish"]) != nil){
+        [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
+    }
+    else if ( (msg = [message objectForKey:@"danger"]) != nil){
         [self presentControllerWithName:@"DangerController" context:msg];
-    }
-    else if ([msg  isEqual: @"gauche"]) {
-        [self.directionImage setImageNamed:@"gauche"];
-    }
-    else if ([msg  isEqual: @"droite"]) {
-        [self.directionImage setImageNamed:@"droite"];
-    }
-    else if ([msg  isEqual: @"toutdroit"]) {
-        [self.directionImage setImageNamed:@"toutdroit"];
-    }
-    else if ([msg  isEqual: @"100m"]) {
-        [self.distanceLabel setText:@"100m"];
-    }
-    else if ([msg  isEqual: @"200m"]) {
-        [self.distanceLabel setText:@"200m"];
-    }
-    else if ([msg  isEqual: @"300m"]) {
-        [self.distanceLabel setText:@"300m"];
-    }
-    
-    
-    msg = [message objectForKey:@"isFinish"];
-    if ([msg  isEqual: @"true"]) {
-        [self pushControllerWithName:@"FinishController" context:nil];
     }
 }
 
