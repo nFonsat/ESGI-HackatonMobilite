@@ -53,6 +53,11 @@
     [self sendMessageToWatchWithKey:@"isReady" value:@"true"];
 }
 
+- (IBAction)onStopNavigation:(UIButton *)sender {
+    NSLog(@"onStopNavigation");
+    [self sendMessageToWatchWithKey:@"stopNavigation" value:@"true"];
+}
+
 - (IBAction)onRoadworksDetected:(UIButton *)sender {
     NSLog(@"onRoadworksDetected");
     [self sendMessageToWatchWithKey:@"danger" value:@"roadwork"];

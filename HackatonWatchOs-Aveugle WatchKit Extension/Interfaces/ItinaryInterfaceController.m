@@ -7,9 +7,8 @@
 //
 
 #import "ItinaryInterfaceController.h"
-#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface ItinaryInterfaceController () <WCSessionDelegate>
+@interface ItinaryInterfaceController ()
 
 @end
 
@@ -17,8 +16,6 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    
-    [self initWCSession];
     
     // Configure interface objects here.
 }
@@ -33,34 +30,21 @@
     [super didDeactivate];
 }
 
-#pragma mark - WCSession impl
+#pragma mark - RootCommunication impl
 
-- (void) initWCSession {
-    if ([WCSession class] && [WCSession isSupported]) {
-        WCSession* session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
-}
-
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message {
+    NSLog(@"ItinaryInterfaceController => %@", message);
+    
     NSString* msg;
     
-    if ( (msg = [message objectForKey:@"direction"]) != nil) {
-        if ([msg  isEqual: @"gauche"] ^ [msg  isEqual: @"toutdroit"] ^ [msg  isEqual: @"droite"]) {
-            [self.directionImage setImageNamed:msg];
-        }
+    if ( (msg = [message objectForKey:@"direction"]) != nil && ([msg  isEqual: @"gauche"] || [msg  isEqual: @"toutdroit"] || [msg  isEqual: @"droite"])) {
+        [self.directionImage setImageNamed:msg];
     }
-    else if ( (msg = [message objectForKey:@"distance"]) != nil) {
-        if ([msg  isEqual: @"100m"] ^ [msg  isEqual: @"200m"] ^ [msg  isEqual: @"300m"]) {
-            [self.distanceLabel setText:msg];
-        }
+    else if ( (msg = [message objectForKey:@"distance"]) != nil && ([msg  isEqual: @"100m"] || [msg  isEqual: @"200m"] || [msg  isEqual: @"300m"])) {
+        [self.distanceLabel setText:msg];
     }
-    else if ( (msg = [message objectForKey:@"isFinish"]) != nil){
-        [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
-    }
-    else if ( (msg = [message objectForKey:@"danger"]) != nil){
-        [self presentControllerWithName:@"DangerController" context:msg];
+    else {
+        [super inCommingMsg:message];
     }
 }
 

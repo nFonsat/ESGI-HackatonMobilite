@@ -60,6 +60,17 @@
 
 - (void)inCommingMsg:(NSDictionary<NSString *, id> *)message{
     NSLog(@"RootInterfaceController => %@", message);
+    
+    NSString* msg;
+    if ( (msg = [message objectForKey:@"isFinish"]) != nil){
+        [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
+    }
+    else if ( (msg = [message objectForKey:@"stopNavigation"]) != nil && [msg isEqual:@"true"]){
+        [WKInterfaceController reloadRootControllersWithNames:@[@"ReadyItinaryController"] contexts:nil];
+    }
+    else if ( (msg = [message objectForKey:@"danger"]) != nil){
+        [self presentControllerWithName:@"DangerController" context:msg];
+    }
 }
 
 

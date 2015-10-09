@@ -15,15 +15,16 @@
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-    
-    
-    
     // Configure interface objects here.
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    [NSThread sleepForTimeInterval:10.0f];
+    
+    [WKInterfaceController reloadRootControllersWithNames:@[@"ReadyItinaryController"] contexts:nil];
 }
 
 - (void)didDeactivate {

@@ -27,7 +27,6 @@
     
     [WKInterfaceController reloadRootControllersWithNames:@[@"ItinaryController"] contexts:nil];
     
-    
     [super willActivate];
 }
 
