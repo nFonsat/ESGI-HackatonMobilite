@@ -350,7 +350,6 @@
 				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
 				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
-				ECC99A421BC551E400E12082 /* Info.plist */,
 				ECC99A311BC551E400E12082 /* Supporting Files */,
 			);
 			path = "HackatonWatchOs-Aveugle";
@@ -359,6 +358,7 @@
 		ECC99A311BC551E400E12082 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ECC99A421BC551E400E12082 /* Info.plist */,
 				ECC99A321BC551E400E12082 /* main.m */,
 			);
 			name = "Supporting Files";
