@@ -9,7 +9,7 @@
 #import "RootInterfaceController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 
-@interface RootInterfaceController ()
+@interface RootInterfaceController () <WCSessionDelegate>
 
 @end
 
@@ -18,8 +18,10 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
+    [self initWCSession];
+    
     [self addMenuItemWithItemIcon:WKMenuItemIconSpeaker
-                            title:@"Parler2"
+                            title:@"Parler"
                            action:@selector(speakerAction) ];
     
     // Configure interface objects here.
@@ -40,5 +42,25 @@
         NSLog(@"%@", results);
     }];
 }
+
+
+#pragma mark - WCSession impl
+
+- (void) initWCSession {
+    if ([WCSession class] && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+    [self inCommingMsg:message ];
+}
+
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message{
+    NSLog(@"RootInterfaceController => %@", message);
+}
+
 
 @end

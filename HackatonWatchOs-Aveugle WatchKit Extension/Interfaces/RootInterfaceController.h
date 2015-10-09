@@ -11,4 +11,6 @@
 
 @interface RootInterfaceController : WKInterfaceController
 
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message;
+
 @end
