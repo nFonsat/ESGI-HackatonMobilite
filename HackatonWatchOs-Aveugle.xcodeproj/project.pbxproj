@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7061C18475500D7BE13 /* GMHomePageController.m */; };
+		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
+		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
 		90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAD1F7692EC5B3064D113BA /* libPods.a */; };
 		EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D11BC65D7A00ECEE3C /* Address.m */; };
 		EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D51BC65DEB00ECEE3C /* Trip.m */; };
@@ -17,8 +20,6 @@
 		EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */; };
 		EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */; };
 		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; };
-		EB9529021BC6CF9500ECEE3C /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */; };
-		EB9529031BC6CF9500ECEE3C /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */; };
 		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; };
 		EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */; };
 		EB9529131BC6D00300ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290A1BC6D00300ECEE3C /* ItinaryInterfaceController.m */; };
@@ -40,7 +41,6 @@
 		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
 		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 		ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */; };
-		ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +87,12 @@
 
 /* Begin PBXFileReference section */
 		0DAD1F7692EC5B3064D113BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E9B7051C18475500D7BE13 /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
+		37E9B7061C18475500D7BE13 /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
+		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
+		37E9B7081C18475500D7BE13 /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
+		37E9B7091C18475500D7BE13 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
+		37E9B70A1C18475500D7BE13 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		E414D77ACBA177619F005597 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB9528D01BC65D7A00ECEE3C /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		EB9528D11BC65D7A00ECEE3C /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
@@ -108,10 +114,6 @@
 		EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableTripRepository.m; sourceTree = "<group>"; };
 		EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB9528FD1BC6CF9500ECEE3C /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
-		EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
-		EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
-		EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
 		EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DangerInterfaceController.h; sourceTree = "<group>"; };
 		EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DangerInterfaceController.m; sourceTree = "<group>"; };
 		EB9529071BC6D00300ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
@@ -147,8 +149,6 @@
 		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
-		ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		F970FCF3B7898D13FB881394 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +174,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37E9B7041C18475500D7BE13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37E9B7051C18475500D7BE13 /* GMHomePageController.h */,
+				37E9B7061C18475500D7BE13 /* GMHomePageController.m */,
+				37E9B7071C18475500D7BE13 /* GMMapViewController.h */,
+				37E9B7081C18475500D7BE13 /* GMMapViewController.m */,
+				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
+				37E9B70A1C18475500D7BE13 /* GMTestViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7E037C5DA997B67A5AC21CD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,12 +320,6 @@
 			children = (
 				EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */,
 				EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */,
-				EB9528FD1BC6CF9500ECEE3C /* GMHomePageController.h */,
-				EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */,
-				EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */,
-				EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */,
-				ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */,
-				ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 				EB9528FA1BC6CF9500ECEE3C /* Application */,
 				EB9528C31BC65CF500ECEE3C /* Domains */,
 				EB9528C61BC65D0000ECEE3C /* Platforms */,
+				37E9B7041C18475500D7BE13 /* Views */,
 				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
 				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
@@ -624,9 +632,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
-				EB9529031BC6CF9500ECEE3C /* GMMapViewController.m in Sources */,
+				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
-				EB9529021BC6CF9500ECEE3C /* GMHomePageController.m in Sources */,
+				37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
 				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
 				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
@@ -635,7 +643,7 @@
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
-				ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */,
+				37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
