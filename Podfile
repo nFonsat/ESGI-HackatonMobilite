@@ -8,3 +8,4 @@ xcodeproj 'HackatonWatchOs-Aveugle'
 
 pod "AFNetworking", "~> 2.0"
 pod "AFOAuth2Manager", "~> 2.0"
+pod 'IQKeyboardManager'

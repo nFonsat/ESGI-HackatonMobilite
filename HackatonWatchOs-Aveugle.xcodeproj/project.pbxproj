@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370165481C197EFB009EE86C /* GMLoginViewController.m */; };
+		3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370165491C197EFB009EE86C /* GMLoginViewController.xib */; };
+		370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3701654E1C197F5F009EE86C /* GMRegisterViewController.m */; };
+		370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
+		37E4E51C1C1E060700421E79 /* GMOAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E51B1C1E060700421E79 /* GMOAuthManager.m */; };
 		37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7061C18475500D7BE13 /* GMHomePageController.m */; };
 		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
@@ -88,9 +93,17 @@
 
 /* Begin PBXFileReference section */
 		0DAD1F7692EC5B3064D113BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		370165471C197EFB009EE86C /* GMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLoginViewController.h; sourceTree = "<group>"; };
+		370165481C197EFB009EE86C /* GMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLoginViewController.m; sourceTree = "<group>"; };
+		370165491C197EFB009EE86C /* GMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLoginViewController.xib; sourceTree = "<group>"; };
+		3701654D1C197F5F009EE86C /* GMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRegisterViewController.h; sourceTree = "<group>"; };
+		3701654E1C197F5F009EE86C /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
+		3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
+		37E4E51A1C1E060700421E79 /* GMOAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuthManager.h; sourceTree = "<group>"; };
+		37E4E51B1C1E060700421E79 /* GMOAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuthManager.m; sourceTree = "<group>"; };
 		37E9B7051C18475500D7BE13 /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
 		37E9B7061C18475500D7BE13 /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
 		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
@@ -177,6 +190,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370165411C197EA4009EE86C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				370165471C197EFB009EE86C /* GMLoginViewController.h */,
+				370165481C197EFB009EE86C /* GMLoginViewController.m */,
+				370165491C197EFB009EE86C /* GMLoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3701654C1C197F2C009EE86C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				3701654D1C197F5F009EE86C /* GMRegisterViewController.h */,
+				3701654E1C197F5F009EE86C /* GMRegisterViewController.m */,
+				3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		3732F4531C18499400FA3C0C /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,10 +220,37 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		37E4E5161C1E03A500421E79 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				37E4E5171C1E03CC00421E79 /* OAuth */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		37E4E5171C1E03CC00421E79 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				37E4E51A1C1E060700421E79 /* GMOAuthManager.h */,
+				37E4E51B1C1E060700421E79 /* GMOAuthManager.m */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		37E4E51D1C1E116300421E79 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		37E9B7041C18475500D7BE13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				370165411C197EA4009EE86C /* Login */,
 				3732F4531C18499400FA3C0C /* Main */,
+				3701654C1C197F2C009EE86C /* Register */,
 				37E9B7051C18475500D7BE13 /* GMHomePageController.h */,
 				37E9B7061C18475500D7BE13 /* GMHomePageController.m */,
 				37E9B7071C18475500D7BE13 /* GMMapViewController.h */,
@@ -387,10 +447,10 @@
 			children = (
 				EB9528FA1BC6CF9500ECEE3C /* Application */,
 				EB9528C31BC65CF500ECEE3C /* Domains */,
+				37E4E51D1C1E116300421E79 /* LaunchScreen */,
 				EB9528C61BC65D0000ECEE3C /* Platforms */,
 				37E9B7041C18475500D7BE13 /* Views */,
-				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
-				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
+				37E4E5161C1E03A500421E79 /* Web */,
 				ECC99A311BC551E400E12082 /* Supporting Files */,
 			);
 			path = "HackatonWatchOs-Aveugle";
@@ -399,6 +459,7 @@
 		ECC99A311BC551E400E12082 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A421BC551E400E12082 /* Info.plist */,
 				ECC99A321BC551E400E12082 /* main.m */,
 			);
@@ -568,6 +629,8 @@
 			files = (
 				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
+				3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */,
+				370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */,
 				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +709,7 @@
 			files = (
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
+				37E4E51C1C1E060700421E79 /* GMOAuthManager.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 				37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
@@ -656,6 +720,8 @@
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
+				3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */,
+				370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
 				37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */,
 			);
@@ -699,6 +765,7 @@
 				ECC99A401BC551E400E12082 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		ECC99A4A1BC551E400E12082 /* Interface.storyboard */ = {

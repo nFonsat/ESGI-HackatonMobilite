@@ -19,11 +19,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     GMMainViewController * mainViewController = [GMMainViewController new];
     
-    UINavigationController * navigationViewController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    navigationController.navigationBar.hidden = YES;
     
-    UIWindow * window =  [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.rootViewController = navigationViewController;
-    
+    UIWindow * window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = navigationController;
+
     self.window = window;
     [self.window makeKeyAndVisible];
     

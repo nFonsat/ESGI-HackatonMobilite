@@ -7,6 +7,8 @@
 //
 
 #import "GMMainViewController.h"
+#import "GMOAuthManager.h"
+#import "GMLoginViewController.h"
 
 @interface GMMainViewController ()
 
@@ -17,6 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Guid'me";
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    AFOAuthCredential *credential =
+    [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
+    
+    if (credential == nil) {
+        GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
+        [self.navigationController pushViewController:loginView animated:YES];
+    }
 }
 
 @end
