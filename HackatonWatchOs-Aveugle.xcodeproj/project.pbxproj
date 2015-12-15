@@ -14,7 +14,6 @@
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
-		37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7061C18475500D7BE13 /* GMHomePageController.m */; };
 		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
 		90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAD1F7692EC5B3064D113BA /* libPods.a */; };
@@ -104,8 +103,6 @@
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
 		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
 		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
-		37E9B7051C18475500D7BE13 /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
-		37E9B7061C18475500D7BE13 /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
 		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
 		37E9B7081C18475500D7BE13 /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
 		37E9B7091C18475500D7BE13 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
@@ -259,8 +256,6 @@
 				370165411C197EA4009EE86C /* Login */,
 				3732F4531C18499400FA3C0C /* Main */,
 				3701654C1C197F2C009EE86C /* Register */,
-				37E9B7051C18475500D7BE13 /* GMHomePageController.h */,
-				37E9B7061C18475500D7BE13 /* GMHomePageController.m */,
 				37E9B7071C18475500D7BE13 /* GMMapViewController.h */,
 				37E9B7081C18475500D7BE13 /* GMMapViewController.m */,
 				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
@@ -718,7 +713,6 @@
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
-				37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
 				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
 				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
