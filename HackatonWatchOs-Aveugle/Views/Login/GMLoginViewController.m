@@ -7,13 +7,14 @@
 //
 
 #import "GMLoginViewController.h"
+#import "GMOAuth2Manager.h"
 #import "GMRegisterViewController.h"
 #import "GMMainVIewController.h"
 
 @interface GMLoginViewController ()
 {
     @private
-    GMOAuthManager * manager;
+    GMOAuth2Manager * OAuth2Manager;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameText;
@@ -29,31 +30,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    manager = [GMOAuthManager sharedManager];
-    manager.delegate = self;
+    OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
 
 - (IBAction)loginAction:(UIButton *)sender
 {
-    [manager getAccessTokenWithUsername:self.usernameText.text AndPassword:self.passwordText.text];
+    [OAuth2Manager getAccessTokenWithUsername:self.usernameText.text
+                                     Password:self.passwordText.text
+                                      Success:^(AFOAuthCredential * credential)
+    {
+         GMMainViewController * mainView = [[GMMainViewController alloc] init];
+         [self.navigationController pushViewController:mainView animated:YES];
+    }
+                                      Failure:^(NSError * error)
+    {
+        NSLog(@"Error loginAction => %@", error);
+    }];
 }
 
 - (IBAction)goToRegisterView:(UIButton *)sender
 {
     GMRegisterViewController * registerViewController = [[GMRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerViewController animated:YES];
-}
-
-- (void)oauthTokenSuccess:(id)object
-{
-    GMMainViewController * mainView = [[GMMainViewController alloc] init];
-    [self.navigationController pushViewController:mainView animated:YES];
-}
-
-- (void)oauthTokenError:(NSError *)error
-{
-    NSLog(@"Error loginAction => %@", error);
 }
 
 @end

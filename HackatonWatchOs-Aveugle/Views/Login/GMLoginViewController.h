@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GMOAuthManager.h"
 
-@interface GMLoginViewController : UIViewController <GMOAuthManagerDelegate>
+@interface GMLoginViewController : UIViewController
 
 @end

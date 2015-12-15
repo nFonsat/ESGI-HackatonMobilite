@@ -13,7 +13,7 @@
 		370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
-		37E4E51C1C1E060700421E79 /* GMOAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E51B1C1E060700421E79 /* GMOAuthManager.m */; };
+		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
 		37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7061C18475500D7BE13 /* GMHomePageController.m */; };
 		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
@@ -102,8 +102,8 @@
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
-		37E4E51A1C1E060700421E79 /* GMOAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuthManager.h; sourceTree = "<group>"; };
-		37E4E51B1C1E060700421E79 /* GMOAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuthManager.m; sourceTree = "<group>"; };
+		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
+		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
 		37E9B7051C18475500D7BE13 /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
 		37E9B7061C18475500D7BE13 /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
 		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
@@ -223,6 +223,7 @@
 		37E4E5161C1E03A500421E79 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				37E4E5211C1F705E00421E79 /* API */,
 				37E4E5171C1E03CC00421E79 /* OAuth */,
 			);
 			path = Web;
@@ -231,8 +232,8 @@
 		37E4E5171C1E03CC00421E79 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				37E4E51A1C1E060700421E79 /* GMOAuthManager.h */,
-				37E4E51B1C1E060700421E79 /* GMOAuthManager.m */,
+				37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */,
+				37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -243,6 +244,13 @@
 				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		37E4E5211C1F705E00421E79 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		37E9B7041C18475500D7BE13 /* Views */ = {
@@ -709,7 +717,6 @@
 			files = (
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
-				37E4E51C1C1E060700421E79 /* GMOAuthManager.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 				37E9B70B1C18475500D7BE13 /* GMHomePageController.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
@@ -719,6 +726,7 @@
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
+				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
 				3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */,
 				370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */,
