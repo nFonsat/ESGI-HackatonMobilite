@@ -13,7 +13,7 @@
 
 @interface GMLoginViewController ()
 {
-    @private
+@private
     GMOAuth2Manager * OAuth2Manager;
 }
 
@@ -35,17 +35,17 @@
 
 - (IBAction)loginAction:(UIButton *)sender
 {
-    [OAuth2Manager getAccessTokenWithUsername:self.usernameText.text
-                                     Password:self.passwordText.text
-                                      Success:^(AFOAuthCredential * credential)
-    {
+    [OAuth2Manager loginWithUsername: self.usernameText.text
+                            Password:self.passwordText.text
+                             Success:^(AFOAuthCredential * credential)
+     {
          GMMainViewController * mainView = [[GMMainViewController alloc] init];
          [self.navigationController pushViewController:mainView animated:YES];
-    }
-                                      Failure:^(NSError * error)
-    {
-        NSLog(@"Error loginAction => %@", error);
-    }];
+     }
+                             Failure:^(NSError * error)
+     {
+         NSLog(@"Error loginAction => %@", error);
+     }];
 }
 
 - (IBAction)goToRegisterView:(UIButton *)sender

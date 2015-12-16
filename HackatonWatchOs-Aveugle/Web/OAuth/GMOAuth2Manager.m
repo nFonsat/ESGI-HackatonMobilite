@@ -19,47 +19,44 @@
     return [super initWithBaseURL:baseURL clientID:OAUTH_CLIENT secret:OAUTH_PASSWORD];
 }
 
-
-- (void)getAccessTokenWithUsername:(NSString *)username
-                          Password:(NSString *)password
-                           Success:(void (^)(AFOAuthCredential *credential))success
-                           Failure:(void (^)(NSError *error))failure
+- (void)loginWithUsername:(NSString *)username
+                 Password:(NSString *)password
+                  Success:(void (^)(AFOAuthCredential *credential))success
+                  Failure:(void (^)(NSError *error))failure
 {
-    [self authenticateUsingOAuthWithURLString:@"/oauth/token"
-                                              username:username
-                                              password:password
-                                                 scope:@""
-                                               success:^(AFOAuthCredential *credential) {
-                                                   [AFOAuthCredential storeCredential:credential
-                                                                       withIdentifier:OAUTH_CLIENT];
-                                                   
-                                                   //NSLog(@"Token: %@", credential.accessToken);
-                                                   success(credential);
-                                               }
-                                               failure:^(NSError *error) {
-                                                   failure(error);
-                                                   NSLog(@"Error: %@", error);
-                                               }];
+    [self authenticateUsingOAuthWithURLString:OAUTH_URL
+                                     username:username
+                                     password:password
+                                        scope:@""
+                                      success:^(AFOAuthCredential *credential)
+     {
+         [AFOAuthCredential storeCredential:credential
+                             withIdentifier:OAUTH_CLIENT];
+         success(credential);
+     }
+                                      failure:^(NSError *error)
+     {
+         failure(error);
+     }];
 }
 
-- (void)getRefreshTokenSuccess:(void (^)(AFOAuthCredential *credential))success
-                       Failure:(void (^)(NSError *error))failure
+- (void)refreshTokenSuccess:(void (^)(AFOAuthCredential *credential))success
+                    Failure:(void (^)(NSError *error))failure
 {
+    [self setUseHTTPBasicAuthentication:YES];
     AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
-    
-    [self authenticateUsingOAuthWithURLString:@"/oauth/token"
-                                          refreshToken:credential.refreshToken
-                                               success:^(AFOAuthCredential *credential) {
-                                                   [AFOAuthCredential storeCredential:credential
-                                                                       withIdentifier:OAUTH_CLIENT];
-                                                   
-                                                   //NSLog(@"Token: %@", credential.accessToken);
-                                                   success(credential);
-                                               }
-                                               failure:^(NSError *error) {
-                                                   failure(error);
-                                                   NSLog(@"Error: %@", error);
-                                               }];
+    [self authenticateUsingOAuthWithURLString:OAUTH_URL
+                                 refreshToken:credential.refreshToken
+                                      success:^(AFOAuthCredential *credential)
+     {
+         [AFOAuthCredential storeCredential:credential
+                             withIdentifier:OAUTH_CLIENT];
+         success(credential);
+     }
+                                      failure:^(NSError *error)
+     {
+         failure(error);
+     }];
 }
 
 - (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)request
@@ -85,19 +82,21 @@
                                               success:success
                                               failure:^(AFHTTPRequestOperation *operation, NSError *error)
                 {
-                    NSLog(@"Request return statusCode = %ld", operation.response.statusCode);
-                    NSLog(@"Request return JSON = %@", operation.responseObject);
                     if (operation.response.statusCode == 401)
                     {
-                        [self getRefreshTokenSuccess:^(AFOAuthCredential *credential)
+                        [self refreshTokenSuccess:^(AFOAuthCredential *credential)
                          {
-                             AFHTTPRequestOperation *moperation = [self HTTPRequestOperationWithRequest:request
-                                                                                                success:success
-                                                                                                failure:failure
-                                                                                  checkIfTokenIsExpired:NO];
+                             NSURLRequest * requestForNewOperation = [self requestByAddingHeadersToRequest:request
+                                                                                                Credential:credential];
+                             
+                             AFHTTPRequestOperation * moperation = [self HTTPRequestOperationWithRequest:requestForNewOperation
+                                                                                                 success:success
+                                                                                                 failure:failure
+                                                                                   checkIfTokenIsExpired:NO];
+                             
                              [self.operationQueue addOperation:moperation];
                          }
-                                             Failure:^(NSError *error)
+                                          Failure:^(NSError *error)
                          {
                              failure(nil, error);
                          }];
@@ -107,8 +106,21 @@
                         failure(operation, error);
                     }
                 }];
-        
     }
+}
+
+- (NSURLRequest *)requestByAddingHeadersToRequest:(NSURLRequest *)request Credential:(AFOAuthCredential *) credential
+{
+    NSURL * url = request.URL;
+    NSMutableURLRequest * requestToReturn = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    [requestToReturn setAllHTTPHeaderFields:request.allHTTPHeaderFields];
+    
+    NSString * headerValue = [NSString stringWithFormat:@"Bearer %@", credential.accessToken];
+    [requestToReturn setValue:headerValue forHTTPHeaderField:@"Authorization"];
+    
+    
+    return  requestToReturn;
 }
 
 @end

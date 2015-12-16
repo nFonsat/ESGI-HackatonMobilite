@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFOAuth2Manager/AFOAuth2Manager.h>
 
+#define OAUTH_URL       @"/oauth/token"
 #define OAUTH_CLIENT    @"guid_me_ios"
 #define OAUTH_PASSWORD  @"fraf_uzEch@g5Guh"
 
@@ -16,12 +17,12 @@
 
 - (instancetype)init;
 
-- (void)getAccessTokenWithUsername:(NSString *)username
-                          Password:(NSString *)password
-                           Success:(void (^)(AFOAuthCredential *credential))success
-                           Failure:(void (^)(NSError *error))failure;
+- (void)loginWithUsername:(NSString *)username
+                 Password:(NSString *)password
+                  Success:(void (^)(AFOAuthCredential *credential))success
+                  Failure:(void (^)(NSError *error))failure;
 
-- (void)getRefreshTokenSuccess:(void (^)(AFOAuthCredential *credential))success
-                       Failure:(void (^)(NSError *error))failure;
+- (void)refreshTokenSuccess:(void (^)(AFOAuthCredential *credential))success
+                    Failure:(void (^)(NSError *error))failure;
 
 @end

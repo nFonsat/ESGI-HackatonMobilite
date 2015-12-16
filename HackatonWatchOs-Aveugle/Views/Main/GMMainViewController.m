@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Guid'me";
     
     OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
@@ -35,18 +34,21 @@
     [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
     
     if ([credential.tokenType compare:@"Bearer" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
-        [OAuth2Manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", credential.accessToken] forHTTPHeaderField:@"Authorization"];
+        [OAuth2Manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", credential.accessToken]
+                               forHTTPHeaderField:@"Authorization"];
     }
     
     [OAuth2Manager GET:@"/api/v1/user"
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"Success: %@", responseObject);
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
-             [self.navigationController pushViewController:loginView animated:YES];
-         }];
+            parameters:nil
+               success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        NSLog(@"Success: %@", responseObject);
+    }
+               failure:^(AFHTTPRequestOperation *operation, NSError *error)
+    {
+        GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
+        [self.navigationController pushViewController:loginView animated:YES];
+    }];
 }
 
 @end
