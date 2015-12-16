@@ -7,25 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D11BC65D7A00ECEE3C /* Address.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D51BC65DEB00ECEE3C /* Trip.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */; settings = {ASSET_TAGS = (); }; };
-		EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529021BC6CF9500ECEE3C /* GMHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529031BC6CF9500ECEE3C /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529131BC6D00300ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290A1BC6D00300ECEE3C /* ItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529141BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290C1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529151BC6D00300ECEE3C /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290E1BC6D00300ECEE3C /* RootInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
-		EB9529161BC6D00300ECEE3C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529101BC6D00300ECEE3C /* StartItineraryInterfaceController.m */; settings = {ASSET_TAGS = (); }; };
+		3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370165481C197EFB009EE86C /* GMLoginViewController.m */; };
+		3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370165491C197EFB009EE86C /* GMLoginViewController.xib */; };
+		370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3701654E1C197F5F009EE86C /* GMRegisterViewController.m */; };
+		370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */; };
+		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
+		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
+		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
+		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
+		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
+		90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAD1F7692EC5B3064D113BA /* libPods.a */; };
+		EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D11BC65D7A00ECEE3C /* Address.m */; };
+		EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D51BC65DEB00ECEE3C /* Trip.m */; };
+		EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */; };
+		EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */; };
+		EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */; };
+		EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */; };
+		EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */; };
+		EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */; };
+		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; };
+		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; };
+		EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */; };
+		EB9529131BC6D00300ECEE3C /* ItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290A1BC6D00300ECEE3C /* ItinaryInterfaceController.m */; };
+		EB9529141BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290C1BC6D00300ECEE3C /* ReadyItinaryInterfaceController.m */; };
+		EB9529151BC6D00300ECEE3C /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB95290E1BC6D00300ECEE3C /* RootInterfaceController.m */; };
+		EB9529161BC6D00300ECEE3C /* StartItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529101BC6D00300ECEE3C /* StartItineraryInterfaceController.m */; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
-		ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3A1BC551E400E12082 /* Main.storyboard */; };
 		ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3D1BC551E400E12082 /* Assets.xcassets */; };
 		ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */; };
 		ECC99A461BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ECC99A451BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App.app */; };
@@ -35,11 +42,10 @@
 		ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A5F1BC551E400E12082 /* ExtensionDelegate.m */; };
 		ECC99A631BC551E400E12082 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A621BC551E400E12082 /* NotificationController.m */; };
 		ECC99A651BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A641BC551E400E12082 /* Assets.xcassets */; };
-		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; settings = {ASSET_TAGS = (); }; };
+		ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A7A1BC561FB00E12082 /* VibrationManager.m */; };
 		ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A851BC587DB00E12082 /* CoreLocation.framework */; };
 		ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A871BC58AC200E12082 /* MapKit.framework */; };
 		ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */; };
-		ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0DAD1F7692EC5B3064D113BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		370165471C197EFB009EE86C /* GMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLoginViewController.h; sourceTree = "<group>"; };
+		370165481C197EFB009EE86C /* GMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLoginViewController.m; sourceTree = "<group>"; };
+		370165491C197EFB009EE86C /* GMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLoginViewController.xib; sourceTree = "<group>"; };
+		3701654D1C197F5F009EE86C /* GMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRegisterViewController.h; sourceTree = "<group>"; };
+		3701654E1C197F5F009EE86C /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
+		3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
+		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
+		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
+		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
+		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
+		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
+		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
+		37E9B7081C18475500D7BE13 /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
+		37E9B7091C18475500D7BE13 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
+		37E9B70A1C18475500D7BE13 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
+		E414D77ACBA177619F005597 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB9528D01BC65D7A00ECEE3C /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		EB9528D11BC65D7A00ECEE3C /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		EB9528D41BC65DEB00ECEE3C /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
@@ -105,10 +128,6 @@
 		EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableTripRepository.m; sourceTree = "<group>"; };
 		EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB9528FD1BC6CF9500ECEE3C /* GMHomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHomePageController.h; sourceTree = "<group>"; };
-		EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHomePageController.m; sourceTree = "<group>"; };
-		EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
-		EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
 		EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DangerInterfaceController.h; sourceTree = "<group>"; };
 		EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DangerInterfaceController.m; sourceTree = "<group>"; };
 		EB9529071BC6D00300ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
@@ -123,7 +142,6 @@
 		EB9529101BC6D00300ECEE3C /* StartItineraryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartItineraryInterfaceController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC99A321BC551E400E12082 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ECC99A3B1BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECC99A3D1BC551E400E12082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC99A401BC551E400E12082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECC99A421BC551E400E12082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,8 +162,7 @@
 		ECC99A851BC587DB00E12082 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ECC99A871BC58AC200E12082 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ECC99A891BC65BE200E12082 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
-		ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
+		F970FCF3B7898D13FB881394 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +173,7 @@
 				ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */,
 				ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */,
 				ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */,
+				90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +187,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370165411C197EA4009EE86C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				370165471C197EFB009EE86C /* GMLoginViewController.h */,
+				370165481C197EFB009EE86C /* GMLoginViewController.m */,
+				370165491C197EFB009EE86C /* GMLoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3701654C1C197F2C009EE86C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				3701654D1C197F5F009EE86C /* GMRegisterViewController.h */,
+				3701654E1C197F5F009EE86C /* GMRegisterViewController.m */,
+				3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		3732F4531C18499400FA3C0C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3732F4541C1849C500FA3C0C /* GMMainViewController.h */,
+				3732F4551C1849C500FA3C0C /* GMMainViewController.m */,
+				3732F4561C1849C500FA3C0C /* GMMainViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		37E4E5161C1E03A500421E79 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				37E4E5211C1F705E00421E79 /* API */,
+				37E4E5171C1E03CC00421E79 /* OAuth */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		37E4E5171C1E03CC00421E79 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */,
+				37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		37E4E51D1C1E116300421E79 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		37E4E5211C1F705E00421E79 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		37E9B7041C18475500D7BE13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				370165411C197EA4009EE86C /* Login */,
+				3732F4531C18499400FA3C0C /* Main */,
+				3701654C1C197F2C009EE86C /* Register */,
+				37E9B7071C18475500D7BE13 /* GMMapViewController.h */,
+				37E9B7081C18475500D7BE13 /* GMMapViewController.m */,
+				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
+				37E9B70A1C18475500D7BE13 /* GMTestViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E037C5DA997B67A5AC21CD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DAD1F7692EC5B3064D113BA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB9528C31BC65CF500ECEE3C /* Domains */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,12 +397,6 @@
 			children = (
 				EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */,
 				EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */,
-				EB9528FD1BC6CF9500ECEE3C /* GMHomePageController.h */,
-				EB9528FE1BC6CF9500ECEE3C /* GMHomePageController.m */,
-				EB9528FF1BC6CF9500ECEE3C /* GMMapViewController.h */,
-				EB9529001BC6CF9500ECEE3C /* GMMapViewController.m */,
-				ECEB391F1BC79E7C00FA6EB5 /* GMTestViewController.h */,
-				ECEB39201BC79E7C00FA6EB5 /* GMTestViewController.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -333,6 +430,8 @@
 				ECC99A491BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit App */,
 				ECC99A581BC551E400E12082 /* HackatonWatchOs-Aveugle WatchKit Extension */,
 				ECC99A2F1BC551E400E12082 /* Products */,
+				FED150EBB6930AE3D16563C7 /* Pods */,
+				7E037C5DA997B67A5AC21CD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,10 +450,10 @@
 			children = (
 				EB9528FA1BC6CF9500ECEE3C /* Application */,
 				EB9528C31BC65CF500ECEE3C /* Domains */,
+				37E4E51D1C1E116300421E79 /* LaunchScreen */,
 				EB9528C61BC65D0000ECEE3C /* Platforms */,
-				ECC99A3A1BC551E400E12082 /* Main.storyboard */,
-				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
-				ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */,
+				37E9B7041C18475500D7BE13 /* Views */,
+				37E4E5161C1E03A500421E79 /* Web */,
 				ECC99A311BC551E400E12082 /* Supporting Files */,
 			);
 			path = "HackatonWatchOs-Aveugle";
@@ -363,6 +462,7 @@
 		ECC99A311BC551E400E12082 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ECC99A3D1BC551E400E12082 /* Assets.xcassets */,
 				ECC99A421BC551E400E12082 /* Info.plist */,
 				ECC99A321BC551E400E12082 /* main.m */,
 			);
@@ -412,6 +512,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		FED150EBB6930AE3D16563C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F970FCF3B7898D13FB881394 /* Pods.debug.xcconfig */,
+				E414D77ACBA177619F005597 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,10 +528,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECC99A711BC551E400E12082 /* Build configuration list for PBXNativeTarget "HackatonWatchOs-Aveugle" */;
 			buildPhases = (
+				DC9F1C504C32B650845B5DA9 /* Check Pods Manifest.lock */,
 				ECC99A2A1BC551E400E12082 /* Sources */,
 				ECC99A2B1BC551E400E12082 /* Frameworks */,
 				ECC99A2C1BC551E400E12082 /* Resources */,
 				ECC99A701BC551E400E12082 /* Embed Watch Content */,
+				67F69B7F6B119FE8D5CB0611 /* Embed Pods Frameworks */,
+				458549C1ABBEA9AE196B9467 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -518,9 +630,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
+				3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */,
+				370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */,
 				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
-				ECC99A3C1BC551E400E12082 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,15 +657,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		458549C1ABBEA9AE196B9467 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67F69B7F6B119FE8D5CB0611 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC9F1C504C32B650845B5DA9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ECC99A2A1BC551E400E12082 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
-				EB9529031BC6CF9500ECEE3C /* GMMapViewController.m in Sources */,
+				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
-				EB9529021BC6CF9500ECEE3C /* GMHomePageController.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
 				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
 				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
@@ -559,8 +720,12 @@
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
+				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
+				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
+				3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */,
+				370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
-				ECEB39211BC79E7C00FA6EB5 /* GMTestViewController.m in Sources */,
+				37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,20 +761,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ECC99A3A1BC551E400E12082 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECC99A3B1BC551E400E12082 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ECC99A3F1BC551E400E12082 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ECC99A401BC551E400E12082 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		ECC99A4A1BC551E400E12082 /* Interface.storyboard */ = {
@@ -763,23 +921,29 @@
 		};
 		ECC99A721BC551E400E12082 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F970FCF3B7898D13FB881394 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "HackatonWatchOs-Aveugle/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		ECC99A731BC551E400E12082 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E414D77ACBA177619F005597 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "HackatonWatchOs-Aveugle/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Esgi.HackatonWatchOs-Aveugle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
