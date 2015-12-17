@@ -21,6 +21,7 @@
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     navigationController.navigationBar.hidden = YES;
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UIWindow * window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     window.rootViewController = navigationController;

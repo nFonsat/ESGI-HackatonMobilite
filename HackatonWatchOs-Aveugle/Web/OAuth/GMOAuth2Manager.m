@@ -44,7 +44,12 @@
                     Failure:(void (^)(NSError *error))failure
 {
     [self setUseHTTPBasicAuthentication:YES];
-    AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
+    AFOAuthCredential * credential = [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
+    if (credential == nil) {
+        failure(nil);
+        return;
+    }
+    
     [self authenticateUsingOAuthWithURLString:OAUTH_URL
                                  refreshToken:credential.refreshToken
                                       success:^(AFOAuthCredential *credential)

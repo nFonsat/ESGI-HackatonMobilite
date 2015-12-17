@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMMainViewController">
@@ -12,10 +13,89 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_glasses_white" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-Xr-KlB">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqm-ci-fta">
+                    <rect key="frame" x="0.0" y="180" width="600" height="420"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51g-CS-wnI">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="139"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsF-Xr-Ucf">
+                                    <rect key="frame" x="261" y="32" width="79" height="76"/>
+                                    <state key="normal" image="icon_favorite_gold"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="WsF-Xr-Ucf" firstAttribute="centerX" secondItem="51g-CS-wnI" secondAttribute="centerX" id="1am-Yv-xgu"/>
+                                <constraint firstItem="WsF-Xr-Ucf" firstAttribute="centerY" secondItem="51g-CS-wnI" secondAttribute="centerY" id="kUn-Tp-q5a"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muk-8Y-rkH">
+                            <rect key="frame" x="0.0" y="282" width="600" height="139"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-yd-F3q">
+                                    <rect key="frame" x="262" y="32" width="76" height="75"/>
+                                    <state key="normal" image="icon_danger"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="KU6-yd-F3q" firstAttribute="centerY" secondItem="muk-8Y-rkH" secondAttribute="centerY" id="4YD-MQ-1Jt"/>
+                                <constraint firstItem="KU6-yd-F3q" firstAttribute="centerX" secondItem="muk-8Y-rkH" secondAttribute="centerX" id="Ew9-bO-oei"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDo-EZ-nJf">
+                            <rect key="frame" x="0.0" y="139" width="600" height="143"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccl-j1-Fnc">
+                                    <rect key="frame" x="276" y="34" width="49" height="76"/>
+                                    <state key="normal" image="icon_locator"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Ccl-j1-Fnc" firstAttribute="centerY" secondItem="dDo-EZ-nJf" secondAttribute="centerY" id="RZa-7D-316"/>
+                                <constraint firstItem="Ccl-j1-Fnc" firstAttribute="centerX" secondItem="dDo-EZ-nJf" secondAttribute="centerX" id="aH4-by-rKo"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="muk-8Y-rkH" firstAttribute="top" secondItem="dDo-EZ-nJf" secondAttribute="bottom" id="4bh-OI-tmY"/>
+                        <constraint firstItem="muk-8Y-rkH" firstAttribute="height" secondItem="Lqm-ci-fta" secondAttribute="height" multiplier="0.33" id="8ZW-ro-OvN"/>
+                        <constraint firstItem="51g-CS-wnI" firstAttribute="height" secondItem="Lqm-ci-fta" secondAttribute="height" multiplier="0.33" id="9ID-5v-T6A"/>
+                        <constraint firstItem="51g-CS-wnI" firstAttribute="width" secondItem="Lqm-ci-fta" secondAttribute="width" id="DUY-zA-zYz"/>
+                        <constraint firstAttribute="trailing" secondItem="51g-CS-wnI" secondAttribute="trailing" id="Ge7-LQ-EOc"/>
+                        <constraint firstItem="dDo-EZ-nJf" firstAttribute="height" secondItem="Lqm-ci-fta" secondAttribute="height" multiplier="0.34" id="K3I-Gb-6lR"/>
+                        <constraint firstItem="dDo-EZ-nJf" firstAttribute="top" secondItem="51g-CS-wnI" secondAttribute="bottom" id="bZb-cj-9YR"/>
+                        <constraint firstAttribute="trailing" secondItem="dDo-EZ-nJf" secondAttribute="trailing" id="d6C-ZH-2cM"/>
+                        <constraint firstItem="dDo-EZ-nJf" firstAttribute="width" secondItem="Lqm-ci-fta" secondAttribute="width" id="eVj-gr-JFU"/>
+                        <constraint firstAttribute="trailing" secondItem="muk-8Y-rkH" secondAttribute="trailing" id="k1L-RJ-HU5"/>
+                        <constraint firstItem="51g-CS-wnI" firstAttribute="top" secondItem="Lqm-ci-fta" secondAttribute="top" id="kF4-78-YTG"/>
+                        <constraint firstItem="muk-8Y-rkH" firstAttribute="width" secondItem="Lqm-ci-fta" secondAttribute="width" id="l4m-yL-Hnz"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="Lqm-ci-fta" firstAttribute="top" secondItem="5WT-Xr-KlB" secondAttribute="bottom" id="2WZ-BC-UWe"/>
+                <constraint firstItem="5WT-Xr-KlB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Axy-0w-eQw"/>
+                <constraint firstItem="5WT-Xr-KlB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Erv-A6-GuB"/>
+                <constraint firstAttribute="bottom" secondItem="Lqm-ci-fta" secondAttribute="bottom" id="Fgf-fW-3fx"/>
+                <constraint firstItem="5WT-Xr-KlB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="R6L-xi-nnf"/>
+                <constraint firstItem="Lqm-ci-fta" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xn8-6L-T4F"/>
+                <constraint firstItem="Lqm-ci-fta" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bt5-jn-WGc"/>
+                <constraint firstItem="5WT-Xr-KlB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="hiL-Az-yd4"/>
+            </constraints>
             <point key="canvasLocation" x="410" y="361"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_danger" width="76" height="75"/>
+        <image name="icon_favorite_gold" width="79" height="76"/>
+        <image name="icon_glasses_white" width="251" height="106"/>
+        <image name="icon_locator" width="49" height="76"/>
+    </resources>
 </document>
