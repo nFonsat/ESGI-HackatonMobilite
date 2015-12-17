@@ -10,7 +10,9 @@
 
 #import "GMMainViewController.h"
 #import "GMOAuth2Manager.h"
+
 #import "GMLoginViewController.h"
+#import "GMFavoriteListViewController.h"
 
 @interface GMMainViewController ()
 {
@@ -18,6 +20,7 @@
     GMOAuth2Manager * OAuth2Manager;
 }
 
+- (IBAction)goToFavoriteListView:(UIButton *)sender;
 @end
 
 @implementation GMMainViewController
@@ -30,6 +33,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    self.navigationController.navigationBar.hidden = YES;
+    
     AFOAuthCredential *credential =
     [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
     
@@ -49,6 +54,12 @@
         GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
         [self.navigationController pushViewController:loginView animated:YES];
     }];
+}
+
+- (IBAction)goToFavoriteListView:(UIButton *)sender
+{
+    GMFavoriteListViewController * favoriteView = [[GMFavoriteListViewController alloc] init];
+    [self.navigationController pushViewController:favoriteView animated:YES];
 }
 
 @end

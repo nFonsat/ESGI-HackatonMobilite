@@ -13,6 +13,8 @@
 		370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
+		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
+		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
 		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
@@ -101,6 +103,9 @@
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
+		3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMFavoriteListViewController.h; sourceTree = "<group>"; };
+		3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMFavoriteListViewController.m; sourceTree = "<group>"; };
+		3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMFavoriteListViewController.xib; sourceTree = "<group>"; };
 		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
 		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
 		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
@@ -250,11 +255,30 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		37E4E52B1C235DF500421E79 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */,
+				3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */,
+				3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		37E4E52C1C235E0E00421E79 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		37E9B7041C18475500D7BE13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37E4E52B1C235DF500421E79 /* Favorites */,
 				370165411C197EA4009EE86C /* Login */,
 				3732F4531C18499400FA3C0C /* Main */,
+				37E4E52C1C235E0E00421E79 /* Map */,
 				3701654C1C197F2C009EE86C /* Register */,
 				37E9B7071C18475500D7BE13 /* GMMapViewController.h */,
 				37E9B7081C18475500D7BE13 /* GMMapViewController.m */,
@@ -634,6 +658,7 @@
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
 				3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */,
 				370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */,
+				3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */,
 				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,6 +744,7 @@
 				EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */,
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
+				3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
 				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
