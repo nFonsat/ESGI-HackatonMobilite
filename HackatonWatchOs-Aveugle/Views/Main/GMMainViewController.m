@@ -11,6 +11,7 @@
 #import "GMMainViewController.h"
 #import "GMOAuth2Manager.h"
 #import "GMLoginViewController.h"
+#import "GMLocationHomeViewController.h"
 
 @interface GMMainViewController ()
 {
@@ -18,6 +19,7 @@
     GMOAuth2Manager * OAuth2Manager;
 }
 
+- (IBAction)goToLocationView:(UIButton *)sender;
 @end
 
 @implementation GMMainViewController
@@ -49,6 +51,12 @@
         GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
         [self.navigationController pushViewController:loginView animated:YES];
     }];
+}
+
+- (IBAction)goToLocationView:(UIButton *)sender
+{
+    GMLocationHomeViewController * locationHomeView = [[GMLocationHomeViewController alloc] init];
+    [self.navigationController pushViewController:locationHomeView animated:YES];
 }
 
 @end

@@ -41,6 +41,9 @@
                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccl-j1-Fnc">
                                     <rect key="frame" x="276" y="34" width="49" height="76"/>
                                     <state key="normal" image="home_locator"/>
+                                    <connections>
+                                        <action selector="goToLocationView:" destination="-1" eventType="touchUpInside" id="xXU-Ro-kI4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
