@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_glasses_white" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-Xr-KlB">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glasses_white" translatesAutoresizingMaskIntoConstraints="NO" id="5WT-Xr-KlB">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqm-ci-fta">
@@ -26,8 +26,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="139"/>
                             <subviews>
                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsF-Xr-Ucf">
-                                    <rect key="frame" x="261" y="32" width="79" height="76"/>
-                                    <state key="normal" image="icon_favorite_gold"/>
+                                    <rect key="frame" x="263" y="32" width="75" height="75"/>
+                                    <state key="normal" image="home_favorite_gold"/>
                                 </button>
                             </subviews>
                             <constraints>
@@ -35,30 +35,30 @@
                                 <constraint firstItem="WsF-Xr-Ucf" firstAttribute="centerY" secondItem="51g-CS-wnI" secondAttribute="centerY" id="kUn-Tp-q5a"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muk-8Y-rkH">
-                            <rect key="frame" x="0.0" y="282" width="600" height="139"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-yd-F3q">
-                                    <rect key="frame" x="262" y="32" width="76" height="75"/>
-                                    <state key="normal" image="icon_danger"/>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="KU6-yd-F3q" firstAttribute="centerY" secondItem="muk-8Y-rkH" secondAttribute="centerY" id="4YD-MQ-1Jt"/>
-                                <constraint firstItem="KU6-yd-F3q" firstAttribute="centerX" secondItem="muk-8Y-rkH" secondAttribute="centerX" id="Ew9-bO-oei"/>
-                            </constraints>
-                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDo-EZ-nJf">
                             <rect key="frame" x="0.0" y="139" width="600" height="143"/>
                             <subviews>
                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccl-j1-Fnc">
                                     <rect key="frame" x="276" y="34" width="49" height="76"/>
-                                    <state key="normal" image="icon_locator"/>
+                                    <state key="normal" image="home_locator"/>
                                 </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Ccl-j1-Fnc" firstAttribute="centerY" secondItem="dDo-EZ-nJf" secondAttribute="centerY" id="RZa-7D-316"/>
                                 <constraint firstItem="Ccl-j1-Fnc" firstAttribute="centerX" secondItem="dDo-EZ-nJf" secondAttribute="centerX" id="aH4-by-rKo"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muk-8Y-rkH">
+                            <rect key="frame" x="0.0" y="282" width="600" height="139"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-yd-F3q">
+                                    <rect key="frame" x="262" y="32" width="75" height="75"/>
+                                    <state key="normal" image="home_danger"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="KU6-yd-F3q" firstAttribute="centerY" secondItem="muk-8Y-rkH" secondAttribute="centerY" id="4YD-MQ-1Jt"/>
+                                <constraint firstItem="KU6-yd-F3q" firstAttribute="centerX" secondItem="muk-8Y-rkH" secondAttribute="centerX" id="Ew9-bO-oei"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -93,9 +93,9 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_danger" width="76" height="75"/>
-        <image name="icon_favorite_gold" width="79" height="76"/>
-        <image name="icon_glasses_white" width="251" height="106"/>
-        <image name="icon_locator" width="49" height="76"/>
+        <image name="glasses_white" width="181" height="76"/>
+        <image name="home_danger" width="75" height="75"/>
+        <image name="home_favorite_gold" width="75" height="75"/>
+        <image name="home_locator" width="49" height="76"/>
     </resources>
 </document>

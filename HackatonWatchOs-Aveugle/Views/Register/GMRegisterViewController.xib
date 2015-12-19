@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_glasses_white" id="LAp-oF-5YG">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glasses_white" id="LAp-oF-5YG">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -76,6 +76,6 @@
         </view>
     </objects>
     <resources>
-        <image name="icon_glasses_white" width="176" height="74"/>
+        <image name="glasses_white" width="181" height="76"/>
     </resources>
 </document>
