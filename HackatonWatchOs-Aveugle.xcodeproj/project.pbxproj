@@ -11,8 +11,11 @@
 		3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370165491C197EFB009EE86C /* GMLoginViewController.xib */; };
 		370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3701654E1C197F5F009EE86C /* GMRegisterViewController.m */; };
 		370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */; };
+		372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351731C24FDD200799EC8 /* GMWebLocationAPI.m */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
+		37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD11C24FC3600B9625F /* GMWebAPI.m */; };
+		37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
 		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
@@ -98,9 +101,15 @@
 		3701654D1C197F5F009EE86C /* GMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRegisterViewController.h; sourceTree = "<group>"; };
 		3701654E1C197F5F009EE86C /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
 		3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
+		372351721C24FDD200799EC8 /* GMWebLocationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebLocationAPI.h; sourceTree = "<group>"; };
+		372351731C24FDD200799EC8 /* GMWebLocationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebLocationAPI.m; sourceTree = "<group>"; };
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
+		37D2DFD01C24FC3600B9625F /* GMWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebAPI.h; sourceTree = "<group>"; };
+		37D2DFD11C24FC3600B9625F /* GMWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebAPI.m; sourceTree = "<group>"; };
+		37D2DFD41C24FC3600B9625F /* GMWebUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebUserAPI.h; sourceTree = "<group>"; };
+		37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebUserAPI.m; sourceTree = "<group>"; };
 		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
 		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
 		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
@@ -217,6 +226,33 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		37D2DFCF1C24FC3600B9625F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				37D2DFD01C24FC3600B9625F /* GMWebAPI.h */,
+				37D2DFD11C24FC3600B9625F /* GMWebAPI.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		37D2DFD21C24FC3600B9625F /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				372351721C24FDD200799EC8 /* GMWebLocationAPI.h */,
+				372351731C24FDD200799EC8 /* GMWebLocationAPI.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		37D2DFD31C24FC3600B9625F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				37D2DFD41C24FC3600B9625F /* GMWebUserAPI.h */,
+				37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		37E4E5161C1E03A500421E79 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +282,9 @@
 		37E4E5211C1F705E00421E79 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				37D2DFCF1C24FC3600B9625F /* Core */,
+				37D2DFD21C24FC3600B9625F /* Location */,
+				37D2DFD31C24FC3600B9625F /* User */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -714,12 +753,15 @@
 				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
+				37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */,
 				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
 				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
 				EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */,
+				372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */,
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
+				37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */,
 				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
 				3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */,
