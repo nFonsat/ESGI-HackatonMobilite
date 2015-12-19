@@ -5,13 +5,14 @@
 //  Created by Nicolas Fonsat on 19/12/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
-
+#import <GoogleMaps/GoogleMaps.h>
 #import "GMLocationAddViewController.h"
 
 @interface GMLocationAddViewController ()
 {
     @private
-    NSArray * resultsGoogle;
+    NSArray * _placeResults;
+    GMSPlacesClient * _googleClient;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
@@ -24,7 +25,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        resultsGoogle = [NSArray new];
+        _googleClient = [[GMSPlacesClient alloc] init];
+        
+        _placeResults = [NSArray new];
         
         self.searchBar.delegate = self;
         self.tableView.delegate = self;
@@ -42,14 +45,31 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    NSLog(@"User write : %@", searchText);
+    if (searchText.length >= 3) {
+        GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
+        filter.type = kGMSPlacesAutocompleteTypeFilterNoFilter;
+        
+        [_googleClient autocompleteQuery:searchText
+                                  bounds:nil
+                                  filter:filter
+                                callback:^(NSArray *results, NSError *error) {
+                                    if (error != nil) {
+                                        NSLog(@"Autocomplete error %@", [error localizedDescription]);
+                                        return;
+                                    }
+                                    
+                                    for (GMSAutocompletePrediction* result in results) {
+                                        NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
+                                    }
+                                }];
+    }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return resultsGoogle.count;
+    return _placeResults.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
