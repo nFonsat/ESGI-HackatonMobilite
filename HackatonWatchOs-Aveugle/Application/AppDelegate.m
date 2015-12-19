@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GMMainViewController.h"
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [GMSServices provideAPIKey:@"AIzaSyBlTArM1_K1_Eo6dYuRAWHvh_xqzN72hxs"];
+    
     GMMainViewController * mainViewController = [GMMainViewController new];
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
