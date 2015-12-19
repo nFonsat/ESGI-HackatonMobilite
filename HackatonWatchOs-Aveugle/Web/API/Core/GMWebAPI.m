@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void) authenticateUserWithCredential
+- (void)authenticateUserWithCredential
 {
     AFOAuthCredential *credential =
     [AFOAuthCredential retrieveCredentialWithIdentifier:OAUTH_CLIENT];
