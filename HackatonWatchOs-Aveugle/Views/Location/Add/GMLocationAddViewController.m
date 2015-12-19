@@ -8,6 +8,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "GMLocationAddViewController.h"
 #import "GMPlaceTableViewCell.h"
+#import "GMLocation.h"
 
 @interface GMLocationAddViewController ()
 {
@@ -45,28 +46,33 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if (searchText.length >= 3) {
+    if (searchText.length > 3) {
         GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
         filter.type = kGMSPlacesAutocompleteTypeFilterNoFilter;
         
         [_googleClient autocompleteQuery:searchText
                                   bounds:nil
                                   filter:filter
-                                callback:^(NSArray *results, NSError *error) {
-                                    if (error != nil) {
-                                        NSLog(@"Autocomplete error %@", [error localizedDescription]);
-                                        return;
-                                    }
-                                    
-                                    [_placeResults removeAllObjects];
-                                    
-                                    for (GMSAutocompletePrediction* result in results) {
-                                        NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
-                                        [_placeResults addObject:result.attributedFullText.string];
-                                    }
-                                    
-                                    [self.tableView reloadData];
-                                }];
+                                callback:^(NSArray *results, NSError *error)
+        {
+            if (error != nil) {
+                NSLog(@"Autocomplete error %@", [error localizedDescription]);
+                return;
+            }
+            
+            [_placeResults removeAllObjects];
+            
+            for (GMSAutocompletePrediction* result in results) {
+                //NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
+                GMLocation * location = [[GMLocation alloc] initWithLocationId:result.placeID
+                                                                          Name:result.attributedFullText.string
+                                                                 isGooglePlace:YES];
+                
+                [_placeResults addObject:location];
+            }
+            
+            [self.tableView reloadData];
+        }];
     }
 }
 
@@ -86,8 +92,8 @@
         cell = (GMPlaceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMPlaceIdentifier];
     }
     
-    NSString * label = [_placeResults objectAtIndex:indexPath.row];
-    [cell.placeLabel setText:label];
+    GMLocation * location = [_placeResults objectAtIndex:indexPath.row];
+    [cell loadCellWithPlace:location];
     
     return cell;
 }

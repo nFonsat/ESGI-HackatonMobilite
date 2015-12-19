@@ -12,6 +12,9 @@
 
 - (IBAction)addFavoriteLocation:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView * placeIcon;
+@property (weak, nonatomic) IBOutlet UILabel * placeLabel;
+
 @end
 
 @implementation GMPlaceTableViewCell
@@ -29,6 +32,11 @@
 - (IBAction)addFavoriteLocation:(UIButton *)sender
 {
     NSLog(@"addFavoriteLocation");
+}
+
+- (void) loadCellWithPlace:(GMLocation *)location
+{
+    self.placeLabel.text = location.name;
 }
 
 @end

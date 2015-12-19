@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMLocation.h"
 
 static NSString * const GMPlaceIdentifier = @"PlaceCell";
 
 @interface GMPlaceTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView * placeIcon;
-@property (weak, nonatomic) IBOutlet UILabel * placeLabel;
+- (void) loadCellWithPlace:(GMLocation *)location;
 
 @end
