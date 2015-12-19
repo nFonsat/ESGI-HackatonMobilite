@@ -6,6 +6,7 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "GMWebAPI.h"
 
 @interface GMWebUserAPI : GMWebAPI
