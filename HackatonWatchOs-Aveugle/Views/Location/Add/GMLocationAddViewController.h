@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GMLocationAddViewController : UIViewController
+@interface GMLocationAddViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @end
