@@ -79,14 +79,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell"];
+    GMPlaceTableViewCell *cell = (GMPlaceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMPlaceIdentifier];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlaceCell"];
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"GMPlaceTableViewCell" bundle:nil] forCellReuseIdentifier:GMPlaceIdentifier];
+        cell = (GMPlaceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMPlaceIdentifier];
     }
     
-    cell.textLabel.text = [_placeResults objectAtIndex:indexPath.row];
-    
+    NSString * label = [_placeResults objectAtIndex:indexPath.row];
+    [cell.placeLabel setText:label];
     
     return cell;
 }
