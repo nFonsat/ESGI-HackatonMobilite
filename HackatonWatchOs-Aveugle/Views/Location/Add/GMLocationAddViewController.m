@@ -7,11 +7,12 @@
 //
 #import <GoogleMaps/GoogleMaps.h>
 #import "GMLocationAddViewController.h"
+#import "GMPlaceTableViewCell.h"
 
 @interface GMLocationAddViewController ()
 {
     @private
-    NSArray * _placeResults;
+    NSMutableArray * _placeResults;
     GMSPlacesClient * _googleClient;
 }
 
@@ -26,8 +27,7 @@
 {
     if (self = [super init]) {
         _googleClient = [[GMSPlacesClient alloc] init];
-        
-        _placeResults = [NSArray new];
+        _placeResults = [NSMutableArray new];
         
         self.searchBar.delegate = self;
         self.tableView.delegate = self;
@@ -58,9 +58,14 @@
                                         return;
                                     }
                                     
+                                    [_placeResults removeAllObjects];
+                                    
                                     for (GMSAutocompletePrediction* result in results) {
                                         NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
+                                        [_placeResults addObject:result.attributedFullText.string];
                                     }
+                                    
+                                    [self.tableView reloadData];
                                 }];
     }
 }
@@ -74,7 +79,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlaceCell"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PlaceCell"];
+    }
+    
+    cell.textLabel.text = [_placeResults objectAtIndex:indexPath.row];
+    
+    
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
