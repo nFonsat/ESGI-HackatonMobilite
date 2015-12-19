@@ -6,14 +6,21 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
+#import <GoogleMaps/GoogleMaps.h>
 #import "GMPlaceTableViewCell.h"
 
 @interface GMPlaceTableViewCell ()
-
-- (IBAction)addFavoriteLocation:(UIButton *)sender;
+{
+    @private
+    GMSPlacesClient * _googleClient;
+    GMLocation * _location;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView * placeIcon;
 @property (weak, nonatomic) IBOutlet UILabel * placeLabel;
+@property (weak, nonatomic) IBOutlet UIButton * placeFavoriteBtn;
+
+- (IBAction)addFavoriteLocation:(UIButton *)sender;
 
 @end
 
@@ -22,6 +29,12 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    if (!_location) {
+        self.placeFavoriteBtn.hidden = YES;
+    }
+    
+     _googleClient = [[GMSPlacesClient alloc] init];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -31,12 +44,27 @@
 
 - (IBAction)addFavoriteLocation:(UIButton *)sender
 {
-    NSLog(@"addFavoriteLocation");
+    [_googleClient lookUpPlaceID:_location.locationId
+                        callback:^(GMSPlace *place, NSError *error)
+     {
+         if (error != nil) {
+             NSLog(@"Place Details error %@", [error localizedDescription]);
+             return;
+         }
+         
+         if (place != nil) {
+             
+         } else {
+             NSLog(@"No place details for %@", _location.locationId);
+         }
+     }];
 }
 
 - (void) loadCellWithPlace:(GMLocation *)location
 {
-    self.placeLabel.text = location.name;
+    _location = location;
+    self.placeFavoriteBtn.hidden = NO;
+    self.placeLabel.text = _location.name;
 }
 
 @end

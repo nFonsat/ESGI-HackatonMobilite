@@ -52,6 +52,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="placeFavoriteBtn" destination="Ani-lh-1uk" id="1un-G0-H66"/>
                 <outlet property="placeIcon" destination="xOP-z7-97f" id="Qjw-JW-vuI"/>
                 <outlet property="placeLabel" destination="x4j-B1-iQA" id="qLQ-lQ-0gC"/>
             </connections>
