@@ -16,25 +16,38 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_danger" translatesAutoresizingMaskIntoConstraints="NO" id="xOP-z7-97f">
-                        <rect key="frame" x="8" y="0.0" width="45" height="49.5"/>
+                        <rect key="frame" x="8" y="5" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="45" id="8UX-em-wr6"/>
+                            <constraint firstAttribute="width" constant="40" id="8UX-em-wr6"/>
+                            <constraint firstAttribute="height" constant="40" id="DNV-1i-OSx"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4j-B1-iQA">
-                        <rect key="frame" x="58" y="0.0" width="254" height="49.5"/>
+                        <rect key="frame" x="53" y="0.0" width="234" height="49.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ani-lh-1uk">
+                        <rect key="frame" x="287" y="12" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="5h8-Ls-3bx"/>
+                            <constraint firstAttribute="height" constant="25" id="aLI-r2-8SK"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="home_favorite_gold"/>
+                        <connections>
+                            <action selector="addFavoriteLocation:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CTa-7X-oy4"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Ani-lh-1uk" firstAttribute="leading" secondItem="x4j-B1-iQA" secondAttribute="trailing" id="3ou-RS-p5e"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ani-lh-1uk" secondAttribute="trailing" id="GBe-1m-IHI"/>
                     <constraint firstItem="xOP-z7-97f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L9t-go-suQ"/>
                     <constraint firstItem="x4j-B1-iQA" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="Zdn-ri-FDi"/>
-                    <constraint firstItem="x4j-B1-iQA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="af3-EB-WzH"/>
                     <constraint firstItem="xOP-z7-97f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dLm-hc-5MP"/>
+                    <constraint firstItem="Ani-lh-1uk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dSQ-kb-OSZ"/>
                     <constraint firstItem="x4j-B1-iQA" firstAttribute="leading" secondItem="xOP-z7-97f" secondAttribute="trailing" constant="5" id="fbs-tS-InW"/>
-                    <constraint firstItem="xOP-z7-97f" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="tKE-Fx-8DI"/>
                     <constraint firstItem="x4j-B1-iQA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tg7-ML-Ugf"/>
                 </constraints>
             </tableViewCellContentView>
@@ -47,5 +60,6 @@
     </objects>
     <resources>
         <image name="home_danger" width="75" height="75"/>
+        <image name="home_favorite_gold" width="75" height="75"/>
     </resources>
 </document>

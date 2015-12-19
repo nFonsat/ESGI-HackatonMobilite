@@ -8,6 +8,12 @@
 
 #import "GMPlaceTableViewCell.h"
 
+@interface GMPlaceTableViewCell ()
+
+- (IBAction)addFavoriteLocation:(UIButton *)sender;
+
+@end
+
 @implementation GMPlaceTableViewCell
 
 - (void)awakeFromNib
@@ -18,6 +24,11 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+}
+
+- (IBAction)addFavoriteLocation:(UIButton *)sender
+{
+    NSLog(@"addFavoriteLocation");
 }
 
 @end
