@@ -12,18 +12,18 @@
 
 @synthesize locationId = _locationId;
 @synthesize name = _name;
-@synthesize coordonate = _coordonate;
+@synthesize coordinate = _coordinate;
 @synthesize isGooglePlace = _isGooglePlace;
 
 - (instancetype)initWithLocationId:(NSString *)locationId
                               Name:(NSString *)name
-                        Coordonate:(CLLocation *)coordonate
+                        Coordinate:(CLLocation *)coordinate
                      isGooglePlace:(BOOL)isGooglePlace
 {
     if (self = [super init]) {
         _locationId = locationId;
         _name = name;
-        _coordonate = coordonate;
+        _coordinate = coordinate;
         _isGooglePlace = isGooglePlace;
     }
     
