@@ -7,7 +7,6 @@
 //
 #import <GoogleMaps/GoogleMaps.h>
 #import "GMLocationAddViewController.h"
-#import "GMPlaceTableViewCell.h"
 #import "GMLocation.h"
 
 @interface GMLocationAddViewController ()
@@ -95,9 +94,32 @@
     GMLocation * location = [_placeResults objectAtIndex:indexPath.row];
     [cell loadCellWithPlace:location];
     
+    cell.delegate = self;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
+
+
+
+#pragma mark - GMPlaceTableViewCellDelegate
+
+- (void)didAddFavoriteLocation:(GMLocation *)location forCell:(GMPlaceTableViewCell *)cell
+{
+    [_googleClient lookUpPlaceID:location.locationId
+                        callback:^(GMSPlace *place, NSError *error)
+     {
+         if (error != nil) {
+             NSLog(@"Place Details error %@", [error localizedDescription]);
+             return;
+         }
+         
+         if (place != nil) {
+             
+         } else {
+             NSLog(@"No place details for %@", location.locationId);
+         }
+     }];
+}
 
 @end

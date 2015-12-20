@@ -6,13 +6,11 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import <GoogleMaps/GoogleMaps.h>
 #import "GMPlaceTableViewCell.h"
 
 @interface GMPlaceTableViewCell ()
 {
     @private
-    GMSPlacesClient * _googleClient;
     GMLocation * _location;
 }
 
@@ -33,8 +31,6 @@
     if (!_location) {
         self.placeFavoriteBtn.hidden = YES;
     }
-    
-     _googleClient = [[GMSPlacesClient alloc] init];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -44,20 +40,7 @@
 
 - (IBAction)addFavoriteLocation:(UIButton *)sender
 {
-    [_googleClient lookUpPlaceID:_location.locationId
-                        callback:^(GMSPlace *place, NSError *error)
-     {
-         if (error != nil) {
-             NSLog(@"Place Details error %@", [error localizedDescription]);
-             return;
-         }
-         
-         if (place != nil) {
-             
-         } else {
-             NSLog(@"No place details for %@", _location.locationId);
-         }
-     }];
+    [self.delegate didAddFavoriteLocation:_location forCell:self];
 }
 
 - (void) loadCellWithPlace:(GMLocation *)location

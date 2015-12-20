@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMPlaceTableViewCell.h"
 
-@interface GMLocationAddViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface GMLocationAddViewController : UIViewController
+    <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, GMPlaceTableViewCellDelegate>
 
 @end

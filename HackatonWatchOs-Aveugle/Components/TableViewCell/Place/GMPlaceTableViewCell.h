@@ -9,9 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "GMLocation.h"
 
+@class GMPlaceTableViewCell;
+
 static NSString * const GMPlaceIdentifier = @"PlaceCell";
 
+@protocol GMPlaceTableViewCellDelegate <NSObject>
+
+- (void)didAddFavoriteLocation:(GMLocation *)location forCell:(GMPlaceTableViewCell *)cell;
+
+@end
+
 @interface GMPlaceTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id <GMPlaceTableViewCellDelegate>delegate;
 
 - (void) loadCellWithPlace:(GMLocation *)location;
 
