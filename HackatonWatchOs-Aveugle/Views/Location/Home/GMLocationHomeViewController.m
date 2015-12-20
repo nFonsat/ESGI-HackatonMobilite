@@ -8,15 +8,19 @@
 
 #import "GMLocationHomeViewController.h"
 #import "GMLocationAddViewController.h"
+#import "GMLocationMapViewController.h"
 
 @interface GMLocationHomeViewController ()
 
 - (IBAction)goToAddView:(UIButton *)sender;
+- (IBAction)goToMapView:(UIButton *)sender;
+
 @end
 
 @implementation GMLocationHomeViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 }
 
@@ -25,4 +29,11 @@
     GMLocationAddViewController * locationAddView = [[GMLocationAddViewController alloc] init];
     [self.navigationController pushViewController:locationAddView animated:YES];
 }
+
+- (IBAction)goToMapView:(UIButton *)sender
+{
+    GMLocationMapViewController * locationMapView = [[GMLocationMapViewController alloc] init];
+    [self.navigationController pushViewController:locationMapView animated:YES];
+}
+
 @end

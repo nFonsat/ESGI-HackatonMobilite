@@ -36,6 +36,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Zn-UwO">
                     <rect key="frame" x="259.5" y="340.5" width="80" height="80"/>
                     <state key="normal" backgroundImage="circle_map"/>
+                    <connections>
+                        <action selector="goToMapView:" destination="-1" eventType="touchUpInside" id="rbi-S4-nLJ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yd-Ch-XJZ">
                     <rect key="frame" x="340.5" y="260.5" width="80" height="80"/>
