@@ -10,6 +10,6 @@
 #import "GMPlaceTableViewCell.h"
 
 @interface GMLocationAddViewController : UIViewController
-    <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, GMPlaceTableViewCellDelegate>
+    <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate , GMPlaceTableViewCellDelegate>
 
 @end

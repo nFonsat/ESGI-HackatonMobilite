@@ -8,12 +8,15 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "GMLocationAddViewController.h"
 #import "GMLocation.h"
+#import "GMWebLocationAPI.h"
 
 @interface GMLocationAddViewController ()
 {
     @private
     NSMutableArray * _placeResults;
     GMSPlacesClient * _googleClient;
+    GMWebLocationAPI * _locationWebAPI;
+    GMSPlace * _placeToAdded;
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
@@ -26,8 +29,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _googleClient = [[GMSPlacesClient alloc] init];
-        _placeResults = [NSMutableArray new];
+        _locationWebAPI = [[GMWebLocationAPI alloc] init];
+        _googleClient   = [[GMSPlacesClient alloc] init];
+        _placeResults   = [NSMutableArray new];
         
         self.searchBar.delegate = self;
         self.tableView.delegate = self;
@@ -115,11 +119,59 @@
          }
          
          if (place != nil) {
+             _placeToAdded = place;
+             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm location"
+                                                              message:@"Confirm name location"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
              
+             alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+             UITextField * textField = [alert textFieldAtIndex:0];
+             textField.text = place.name;
+             [alert show];
          } else {
              NSLog(@"No place details for %@", location.locationId);
          }
      }];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            break;
+        }
+        
+        case 1:
+        {
+            UITextField * textField = [alertView textFieldAtIndex:0];
+            if (!textField.text) {
+                return;
+            }
+            
+            CLLocation * location = [[CLLocation alloc] initWithLatitude:_placeToAdded.coordinate.latitude
+                                                               longitude:_placeToAdded.coordinate.longitude];
+            
+            [_locationWebAPI postLocationWithName:textField.text
+                                         Location:location
+                                          Success:^(id responseObject)
+            {
+                NSLog(@"Success: %@", responseObject);
+            }
+                                          Failure:^(NSError *error)
+            {
+                NSLog(@"Error: %@", error.userInfo);
+            }];
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 
 @end
