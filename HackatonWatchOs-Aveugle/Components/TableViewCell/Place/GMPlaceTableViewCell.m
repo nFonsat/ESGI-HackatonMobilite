@@ -11,7 +11,7 @@
 @interface GMPlaceTableViewCell ()
 {
     @private
-    GMLocation * _location;
+    GMSAutocompletePrediction * _prediction;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView * placeIcon;
@@ -28,7 +28,7 @@
 {
     [super awakeFromNib];
     
-    if (!_location) {
+    if (!_prediction) {
         self.placeFavoriteBtn.hidden = YES;
     }
 }
@@ -40,14 +40,14 @@
 
 - (IBAction)addFavoriteLocation:(UIButton *)sender
 {
-    [self.delegate didAddFavoriteLocation:_location forCell:self];
+    [self.delegate didAddFutureFavoriteLocation:_prediction forCell:self];
 }
 
-- (void) loadCellWithPlace:(GMLocation *)location
+- (void) loadCellWithPrediction:(GMSAutocompletePrediction *)prediction
 {
-    _location = location;
+    _prediction = prediction;
     self.placeFavoriteBtn.hidden = NO;
-    self.placeLabel.text = _location.name;
+    self.placeLabel.text = _prediction.attributedFullText.string;
 }
 
 @end

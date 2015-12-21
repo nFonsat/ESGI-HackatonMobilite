@@ -82,8 +82,8 @@
     _needUpdateUserLocation = _centerOnUserPosition;
     
     if (!_centerOnUserPosition && _locationForZoom) {
-        CLLocationDegrees latitude = _locationForZoom.coordinate.coordinate.latitude;
-        CLLocationDegrees longitude = _locationForZoom.coordinate.coordinate.longitude;
+        CLLocationDegrees latitude = _locationForZoom.coordinate.latitude;
+        CLLocationDegrees longitude = _locationForZoom.coordinate.longitude;
         [self zoomOnLatitude:latitude andLongitude:longitude];
     }
 }

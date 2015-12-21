@@ -13,22 +13,18 @@
 {
     NSString * _locationId;
     NSString * _name;
-    CLLocation * _coordinate;
-    BOOL _isGooglePlace;
+    CLLocationCoordinate2D _coordinate;
 }
 
 @property (nonatomic, strong) NSString * locationId;
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) CLLocation * coordinate;
-@property (nonatomic, assign, readonly) BOOL isGooglePlace;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 - (instancetype)initWithLocationId:(NSString *)locationId
                               Name:(NSString *)name
-                        Coordinate:(CLLocation *)coordinate
-                     isGooglePlace:(BOOL)isGooglePlace;
+                        Coordinate:(CLLocationCoordinate2D)coordinate;
 
 - (instancetype)initWithLocationId:(NSString *)locationId
-                              Name:(NSString *)name
-                     isGooglePlace:(BOOL)isGooglePlace;
+                              Name:(NSString *)name;
 
 @end

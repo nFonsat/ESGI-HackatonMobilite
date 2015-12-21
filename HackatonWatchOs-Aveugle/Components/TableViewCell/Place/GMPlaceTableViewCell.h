@@ -6,8 +6,8 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
+@import GoogleMaps;
 #import <UIKit/UIKit.h>
-#import "GMLocation.h"
 
 @class GMPlaceTableViewCell;
 
@@ -15,7 +15,7 @@ static NSString * const GMPlaceIdentifier = @"PlaceCell";
 
 @protocol GMPlaceTableViewCellDelegate <NSObject>
 
-- (void)didAddFavoriteLocation:(GMLocation *)location forCell:(GMPlaceTableViewCell *)cell;
+- (void)didAddFutureFavoriteLocation:(GMSAutocompletePrediction *)prediction forCell:(GMPlaceTableViewCell *)cell;
 
 @end
 
@@ -23,6 +23,6 @@ static NSString * const GMPlaceIdentifier = @"PlaceCell";
 
 @property (nonatomic, weak) id <GMPlaceTableViewCellDelegate>delegate;
 
-- (void) loadCellWithPlace:(GMLocation *)location;
+- (void)loadCellWithPrediction:(GMSAutocompletePrediction *)prediction;
 
 @end

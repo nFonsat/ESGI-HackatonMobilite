@@ -13,7 +13,7 @@
 @interface GMLocationAddViewController ()
 {
     @private
-    NSMutableArray * _placeResults;
+    NSMutableArray<GMSAutocompletePrediction *> * _placeResults;
     GMSPlacesClient * _googleClient;
     GMWebLocationAPI * _locationWebAPI;
     GMSPlace * _placeToAdded;
@@ -65,13 +65,10 @@
             
             [_placeResults removeAllObjects];
             
-            for (GMSAutocompletePrediction* result in results) {
+            for (GMSAutocompletePrediction * result in results) {
                 //NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
-                GMLocation * location = [[GMLocation alloc] initWithLocationId:result.placeID
-                                                                          Name:result.attributedFullText.string
-                                                                 isGooglePlace:YES];
                 
-                [_placeResults addObject:location];
+                [_placeResults addObject:result];
             }
             
             [self.tableView reloadData];
@@ -95,8 +92,8 @@
         cell = (GMPlaceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMPlaceIdentifier];
     }
     
-    GMLocation * location = [_placeResults objectAtIndex:indexPath.row];
-    [cell loadCellWithPlace:location];
+    GMSAutocompletePrediction * prediction = [_placeResults objectAtIndex:indexPath.row];
+    [cell loadCellWithPrediction:prediction];
     
     cell.delegate = self;
     return cell;
@@ -108,9 +105,9 @@
 
 #pragma mark - GMPlaceTableViewCellDelegate
 
-- (void)didAddFavoriteLocation:(GMLocation *)location forCell:(GMPlaceTableViewCell *)cell
+- (void)didAddFutureFavoriteLocation:(GMSAutocompletePrediction *)prediction forCell:(GMPlaceTableViewCell *)cell;
 {
-    [_googleClient lookUpPlaceID:location.locationId
+    [_googleClient lookUpPlaceID:prediction.placeID
                         callback:^(GMSPlace *place, NSError *error)
      {
          if (error != nil) {
@@ -130,7 +127,7 @@
              textField.text = place.name;
              [alert show];
          } else {
-             NSLog(@"No place details for %@", location.locationId);
+             NSLog(@"No place details for %@", prediction.placeID);
          }
      }];
 }
