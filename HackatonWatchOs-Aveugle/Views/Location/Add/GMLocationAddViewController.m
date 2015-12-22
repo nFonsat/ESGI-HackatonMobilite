@@ -77,6 +77,17 @@
     return count > 3 && ![lastChar isEqualToString:@" "];
 }
 
+- (void)displayErrorForGoogleSearch:(NSError *)error
+{
+    if (error != nil) {
+        NSLog(@"Place Details error %@", [error localizedDescription]);
+    }
+    else {
+        NSLog(@"No place details");
+    }
+}
+
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -148,12 +159,7 @@
     }
                               Faillure:^(NSError *error)
     {
-        if (error != nil) {
-            NSLog(@"Place Details error %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"No place details for %@", prediction.placeID);
-        }
+        [self displayErrorForGoogleSearch:error];
     }];
 }
 
@@ -177,12 +183,7 @@
      }
                               Faillure:^(NSError *error)
      {
-         if (error != nil) {
-             NSLog(@"Place Details error %@", [error localizedDescription]);
-         }
-         else {
-             NSLog(@"No place details for %@", prediction.placeID);
-         }
+         [self displayErrorForGoogleSearch:error];
      }];
 }
 
