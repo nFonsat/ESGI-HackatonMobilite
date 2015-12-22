@@ -5,10 +5,12 @@
 //  Created by Nicolas Fonsat on 19/12/2015.
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
-#import <GoogleMaps/GoogleMaps.h>
 #import "GMLocationAddViewController.h"
+#import "GMLocationMapViewController.h"
 #import "GMLocation.h"
 #import "GMWebLocationAPI.h"
+
+@import GoogleMaps;
 
 @interface GMLocationAddViewController ()
 {
@@ -43,6 +45,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+#pragma mark - GMLocationAddViewController Helper
+
+- (void)searchGooglePlaceWithPlaceID:(NSString *)placeID
+                             Success:(void (^)(GMSPlace *place))sucess
+                            Faillure:(void (^)(NSError *error))faillure
+{
+    [_googleClient lookUpPlaceID:placeID
+                        callback:^(GMSPlace *place, NSError *error)
+     {
+         if (error != nil) {
+             faillure(error);
+             return;
+         }
+         
+         if (place != nil) {
+             sucess(place);
+         } else {
+             faillure(nil);
+         }
+     }];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -101,32 +125,52 @@
 
 #pragma mark - UITableViewDelegate
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GMSAutocompletePrediction * prediction = _placeResults[indexPath.row];
+    
+    [self searchGooglePlaceWithPlaceID:prediction.placeID
+                               Success:^(GMSPlace *place)
+    {
+        GMLocation * location = [[GMLocation alloc] initWithLocationId:place.placeID Name:place.name Coordinate:place.coordinate];
+        GMLocationMapViewController * mapView = [[GMLocationMapViewController alloc] initWithGMLocation:location];
+        [self.navigationController pushViewController:mapView animated:YES];
+    }
+                              Faillure:^(NSError *error)
+    {
+        if (error != nil) {
+            NSLog(@"Place Details error %@", [error localizedDescription]);
+        }
+        else {
+            NSLog(@"No place details for %@", prediction.placeID);
+        }
+    }];
+}
 
 #pragma mark - GMPlaceTableViewCellDelegate
 
 - (void)didAddFutureFavoriteLocation:(GMSAutocompletePrediction *)prediction forCell:(GMPlaceTableViewCell *)cell;
 {
-    [_googleClient lookUpPlaceID:prediction.placeID
-                        callback:^(GMSPlace *place, NSError *error)
+    [self searchGooglePlaceWithPlaceID:prediction.placeID
+                               Success:^(GMSPlace * place)
+     {
+         _placeToAdded = place;
+         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm location"
+                                                          message:@"Confirm name location"
+                                                         delegate:self
+                                                cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+         
+         alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+         UITextField * textField = [alert textFieldAtIndex:0];
+         textField.text = place.name;
+         [alert show];
+     }
+                              Faillure:^(NSError *error)
      {
          if (error != nil) {
              NSLog(@"Place Details error %@", [error localizedDescription]);
-             return;
          }
-         
-         if (place != nil) {
-             _placeToAdded = place;
-             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Confirm location"
-                                                              message:@"Confirm name location"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
-             
-             alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-             UITextField * textField = [alert textFieldAtIndex:0];
-             textField.text = place.name;
-             [alert show];
-         } else {
+         else {
              NSLog(@"No place details for %@", prediction.placeID);
          }
      }];
