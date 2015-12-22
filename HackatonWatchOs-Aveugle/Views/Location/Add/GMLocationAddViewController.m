@@ -69,11 +69,23 @@
      }];
 }
 
+- (BOOL)verificationAutocompleteForString:(NSString *)string
+{
+    NSInteger count = string.length;
+    NSString * lastChar = [string substringFromIndex:count - 1];
+    
+    return count > 3 && ![lastChar isEqualToString:@" "];
+}
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if (searchText.length > 3) {
+    if([searchText isEqualToString:@""]){
+        [_placeResults removeAllObjects];
+        [self.tableView reloadData];
+    }
+    else if ([self verificationAutocompleteForString:searchText]) {
         GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
         filter.type = kGMSPlacesAutocompleteTypeFilterNoFilter;
         
@@ -90,8 +102,6 @@
             [_placeResults removeAllObjects];
             
             for (GMSAutocompletePrediction * result in results) {
-                //NSLog(@"Result '%@' with placeID %@", result.attributedFullText.string, result.placeID);
-                
                 [_placeResults addObject:result];
             }
             
