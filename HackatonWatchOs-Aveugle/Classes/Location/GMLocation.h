@@ -21,10 +21,12 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 - (instancetype)initWithLocationId:(NSString *)locationId
+                              Name:(NSString *)name;
+
+- (instancetype)initWithLocationId:(NSString *)locationId
                               Name:(NSString *)name
                         Coordinate:(CLLocationCoordinate2D)coordinate;
 
-- (instancetype)initWithLocationId:(NSString *)locationId
-                              Name:(NSString *)name;
+- (instancetype)initFromJsonDictionary:(NSDictionary *)json;
 
 @end

@@ -8,11 +8,26 @@
 
 #import "GMLocation.h"
 
+@interface GMLocation ()
+
+@end
+
 @implementation GMLocation
 
 @synthesize locationId = _locationId;
 @synthesize name = _name;
 @synthesize coordinate = _coordinate;
+
+- (instancetype)initWithLocationId:(NSString *)locationId
+                              Name:(NSString *)name
+{
+    if (self = [super init]) {
+        _locationId = locationId;
+        _name = name;
+    }
+    
+    return self;
+}
 
 - (instancetype)initWithLocationId:(NSString *)locationId
                               Name:(NSString *)name
@@ -27,12 +42,19 @@
     return self;
 }
 
-- (instancetype)initWithLocationId:(NSString *)locationId
-                              Name:(NSString *)name
+- (instancetype)initFromJsonDictionary:(NSDictionary *)json
 {
     if (self = [super init]) {
-        _locationId = locationId;
-        _name = name;
+        
+        _locationId = [json objectForKey:@"_id"];
+        _name = [json objectForKey:@"name"];
+        
+        NSDictionary * coordinateObject = [json objectForKey:@"coordonate"];
+        NSArray<NSNumber *> * geometry = [coordinateObject objectForKey:@"geometry"];
+        
+        CLLocation * loc = [[CLLocation alloc] initWithLatitude:geometry[0].doubleValue longitude:geometry[1].doubleValue];
+        
+        _coordinate = loc.coordinate;
     }
     
     return self;
