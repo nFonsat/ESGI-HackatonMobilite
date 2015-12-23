@@ -68,6 +68,12 @@
     
     if (!_centerOnUserPosition && _locationForZoom) {
         [self zoomOnCoordinate:_locationForZoom.coordinate];
+        
+        MKPointAnnotation * point = [[MKPointAnnotation alloc] init];
+        point.coordinate = _locationForZoom.coordinate;
+        point.title = _locationForZoom.name;
+        
+        [self.mapView addAnnotation:point];
     }
 }
 
