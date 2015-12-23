@@ -52,25 +52,10 @@
 
 #pragma mark - GMLocationMapViewController Helper
 
-- (void) zoomOnLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude
+- (void) zoomOnCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    
-    span.latitudeDelta = 0.005;
-    span.longitudeDelta = 0.005;
-    
-    CLLocationCoordinate2D location;
-    
-    location.latitude = latitude;
-    location.longitude = longitude;
-    
-    region.span = span;
-    region.center = location;
-    
-    [self.mapView setRegion:region animated:YES];
-    
-    [self.mapView setCenterCoordinate:location];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
 #pragma mark - MapView
@@ -82,9 +67,7 @@
     _needUpdateUserLocation = _centerOnUserPosition;
     
     if (!_centerOnUserPosition && _locationForZoom) {
-        CLLocationDegrees latitude = _locationForZoom.coordinate.latitude;
-        CLLocationDegrees longitude = _locationForZoom.coordinate.longitude;
-        [self zoomOnLatitude:latitude andLongitude:longitude];
+        [self zoomOnCoordinate:_locationForZoom.coordinate];
     }
 }
 
@@ -92,10 +75,7 @@
 {
     if (_needUpdateUserLocation) {
         _needUpdateUserLocation = NO;
-        
-        CLLocationDegrees latitude = userLocation.coordinate.latitude;
-        CLLocationDegrees longitude = userLocation.coordinate.longitude;
-        [self zoomOnLatitude:latitude andLongitude:longitude];
+        [self zoomOnCoordinate:userLocation.coordinate];
     }
 }
 
