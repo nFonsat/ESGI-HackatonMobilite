@@ -421,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				37E4E52B1C235DF500421E79 /* Favorites */,
+				372351761C25084800799EC8 /* Location */,
 				370165411C197EA4009EE86C /* Login */,
 				3732F4531C18499400FA3C0C /* Main */,
 				37E4E52C1C235E0E00421E79 /* Map */,

@@ -10,6 +10,7 @@
 #import "GMWebUserAPI.h"
 #import "GMLoginViewController.h"
 #import "GMFavoriteListViewController.h"
+#import "GMLocationHomeViewController.h"
 
 @interface GMMainViewController ()
 {
@@ -18,6 +19,7 @@
 }
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender;
+- (IBAction)goToLocationView:(UIButton *)sender;
 @end
 
 @implementation GMMainViewController
@@ -45,6 +47,12 @@
 {
     GMFavoriteListViewController * favoriteView = [[GMFavoriteListViewController alloc] init];
     [self.navigationController pushViewController:favoriteView animated:YES];
+}
+
+- (IBAction)goToLocationView:(UIButton *)sender
+{
+    GMLocationHomeViewController * locationHomeView = [[GMLocationHomeViewController alloc] init];
+    [self.navigationController pushViewController:locationHomeView animated:YES];
 }
 
 @end
