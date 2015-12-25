@@ -9,6 +9,7 @@
 #import "GMMainViewController.h"
 #import "GMWebUserAPI.h"
 #import "GMLoginViewController.h"
+#import "GMLocationHomeViewController.h"
 
 @interface GMMainViewController ()
 {
@@ -16,6 +17,7 @@
     GMWebUserAPI * webUserManager;
 }
 
+- (IBAction)goToLocationView:(UIButton *)sender;
 @end
 
 @implementation GMMainViewController
@@ -37,6 +39,12 @@
           GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
           [self.navigationController pushViewController:loginView animated:YES];
       }];
+}
+
+- (IBAction)goToLocationView:(UIButton *)sender
+{
+    GMLocationHomeViewController * locationHomeView = [[GMLocationHomeViewController alloc] init];
+    [self.navigationController pushViewController:locationHomeView animated:YES];
 }
 
 @end

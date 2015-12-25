@@ -41,7 +41,7 @@
     NSDictionary * parameters = @{
                                   @"name":name,
                                   @"latitude": @(location.coordinate.latitude),
-                                  @"longitude": @(location.coordinate.latitude),
+                                  @"longitude": @(location.coordinate.longitude),
                                   };
     
     
