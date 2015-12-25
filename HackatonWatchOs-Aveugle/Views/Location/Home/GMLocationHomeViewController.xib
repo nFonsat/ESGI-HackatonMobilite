@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMLocationHomeViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRE-RG-gBm">
+                    <rect key="frame" x="259.5" y="260.5" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="dby-FW-aig"/>
+                        <constraint firstAttribute="height" constant="80" id="q9Y-dx-82O"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2G-eJ-qet">
+                    <rect key="frame" x="260.5" y="180.5" width="80" height="80"/>
+                    <state key="normal" backgroundImage="circle_add"/>
+                    <connections>
+                        <action selector="goToAddView:" destination="-1" eventType="touchUpInside" id="02L-se-I81"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJq-fv-B2G">
+                    <rect key="frame" x="179.5" y="260.5" width="80" height="80"/>
+                    <state key="normal" backgroundImage="circle_star"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Zn-UwO">
+                    <rect key="frame" x="259.5" y="340.5" width="80" height="80"/>
+                    <state key="normal" backgroundImage="circle_map"/>
+                    <connections>
+                        <action selector="goToMapView:" destination="-1" eventType="touchUpInside" id="rbi-S4-nLJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yd-Ch-XJZ">
+                    <rect key="frame" x="340.5" y="260.5" width="80" height="80"/>
+                    <state key="normal" backgroundImage="circle_history"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="XJq-fv-B2G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8aF-vS-YL7"/>
+                <constraint firstItem="QOQ-Zn-UwO" firstAttribute="width" secondItem="vRE-RG-gBm" secondAttribute="width" id="Ej0-w6-DRN"/>
+                <constraint firstItem="QOQ-Zn-UwO" firstAttribute="top" secondItem="vRE-RG-gBm" secondAttribute="bottom" id="FJC-bB-mES"/>
+                <constraint firstItem="QOQ-Zn-UwO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="G82-4b-Jc5"/>
+                <constraint firstItem="vRE-RG-gBm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IRJ-Zl-MDU"/>
+                <constraint firstItem="1Yd-Ch-XJZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="QbG-HL-PDW"/>
+                <constraint firstItem="XJq-fv-B2G" firstAttribute="height" secondItem="vRE-RG-gBm" secondAttribute="height" id="QvR-QV-d5s"/>
+                <constraint firstItem="c2G-eJ-qet" firstAttribute="width" secondItem="vRE-RG-gBm" secondAttribute="width" id="Zio-Kx-nCS"/>
+                <constraint firstItem="QOQ-Zn-UwO" firstAttribute="leading" secondItem="XJq-fv-B2G" secondAttribute="trailing" id="bYz-Oz-3pR"/>
+                <constraint firstItem="QOQ-Zn-UwO" firstAttribute="height" secondItem="vRE-RG-gBm" secondAttribute="height" id="cCZ-K1-bTl"/>
+                <constraint firstItem="c2G-eJ-qet" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cUa-aB-heX"/>
+                <constraint firstItem="vRE-RG-gBm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dk2-xs-BsN"/>
+                <constraint firstItem="c2G-eJ-qet" firstAttribute="height" secondItem="vRE-RG-gBm" secondAttribute="height" id="nvs-jb-bna"/>
+                <constraint firstItem="XJq-fv-B2G" firstAttribute="width" secondItem="vRE-RG-gBm" secondAttribute="width" id="pRo-58-4df"/>
+                <constraint firstItem="vRE-RG-gBm" firstAttribute="top" secondItem="c2G-eJ-qet" secondAttribute="bottom" id="sv7-VS-T16"/>
+                <constraint firstItem="1Yd-Ch-XJZ" firstAttribute="width" secondItem="vRE-RG-gBm" secondAttribute="width" id="t0M-Lg-FHs"/>
+                <constraint firstItem="1Yd-Ch-XJZ" firstAttribute="height" secondItem="vRE-RG-gBm" secondAttribute="height" id="tHu-Vc-0Nm"/>
+                <constraint firstItem="1Yd-Ch-XJZ" firstAttribute="leading" secondItem="c2G-eJ-qet" secondAttribute="trailing" id="uP2-2c-8NJ"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle_add" width="101" height="101"/>
+        <image name="circle_history" width="101" height="101"/>
+        <image name="circle_map" width="101" height="101"/>
+        <image name="circle_star" width="101" height="101"/>
+    </resources>
+</document>
