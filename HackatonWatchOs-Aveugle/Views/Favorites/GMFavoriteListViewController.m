@@ -21,8 +21,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBar.translucent = NO;;
+    
 }
 
 @end

@@ -26,10 +26,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="139"/>
                             <subviews>
                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsF-Xr-Ucf">
-                                    <rect key="frame" x="261" y="32" width="79" height="76"/>
-                                    <state key="normal" image="icon_favorite_gold"/>
+                                    <rect key="frame" x="263" y="32" width="75" height="75"/>
+                                    <state key="normal" image="home_favorite_gold"/>
                                     <connections>
-                                        <action selector="goToFavoriteListView:" destination="-1" eventType="touchUpInside" id="pW0-xZ-6XZ"/>
+                                        <action selector="goToFavoriteListView:" destination="-1" eventType="touchUpInside" id="pyU-tE-Ytd"/>
                                     </connections>
                                 </button>
                             </subviews>

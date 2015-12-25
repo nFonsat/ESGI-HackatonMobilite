@@ -16,6 +16,8 @@
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
 		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
 		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
+		37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD11C24FC3600B9625F /* GMWebAPI.m */; };
+		37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
 		37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B7081C18475500D7BE13 /* GMMapViewController.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
@@ -109,6 +111,10 @@
 		3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMFavoriteListViewController.h; sourceTree = "<group>"; };
 		3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMFavoriteListViewController.m; sourceTree = "<group>"; };
 		3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMFavoriteListViewController.xib; sourceTree = "<group>"; };
+		37D2DFD01C24FC3600B9625F /* GMWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebAPI.h; sourceTree = "<group>"; };
+		37D2DFD11C24FC3600B9625F /* GMWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebAPI.m; sourceTree = "<group>"; };
+		37D2DFD41C24FC3600B9625F /* GMWebUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebUserAPI.h; sourceTree = "<group>"; };
+		37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebUserAPI.m; sourceTree = "<group>"; };
 		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
 		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
 		37E9B7071C18475500D7BE13 /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
