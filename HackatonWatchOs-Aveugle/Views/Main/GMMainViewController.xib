@@ -28,6 +28,9 @@
                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsF-Xr-Ucf">
                                     <rect key="frame" x="263" y="32" width="75" height="75"/>
                                     <state key="normal" image="home_favorite_gold"/>
+                                    <connections>
+                                        <action selector="goToFavoriteListView:" destination="-1" eventType="touchUpInside" id="pyU-tE-Ytd"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
