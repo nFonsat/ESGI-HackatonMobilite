@@ -8,6 +8,7 @@
 
 #import "GMFavoriteListViewController.h"
 #import "GMWebLocationAPI.h"
+#import "GMLocation.h"
 
 @interface GMFavoriteListViewController ()
 {
@@ -46,8 +47,8 @@
     {
         NSLog(@"Success : %@", responseObject);
         for (NSDictionary * locationJson in responseObject) {
-            NSLog(@"Object location : %@", locationJson);
-            [_favoriteLocations addObject:[locationJson objectForKey:@"name"]];
+            GMLocation * location = [[GMLocation alloc] initFromJsonDictionary:locationJson];
+            [_favoriteLocations addObject:location];
         }
         
         [self.tableView reloadData];
@@ -73,7 +74,9 @@
         cell = [[UITableViewCell alloc] init];
     }
     
-    cell.textLabel.text = _favoriteLocations[indexPath.row];
+    GMLocation * location = _favoriteLocations[indexPath.row];
+    
+    cell.textLabel.text = location.name;
     
     return cell;
 }
