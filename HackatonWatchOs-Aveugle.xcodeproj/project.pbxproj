@@ -21,6 +21,8 @@
 		3723519E1C25A5D400799EC8 /* GMPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723519C1C25A5D400799EC8 /* GMPlaceTableViewCell.m */; };
 		3723519F1C25A5D400799EC8 /* GMPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723519D1C25A5D400799EC8 /* GMPlaceTableViewCell.xib */; };
 		372351A51C25BB7B00799EC8 /* GMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A41C25BB7B00799EC8 /* GMLocation.m */; };
+		372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */; };
+		372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
 		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
@@ -128,6 +130,9 @@
 		3723519D1C25A5D400799EC8 /* GMPlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		372351A31C25BB7B00799EC8 /* GMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocation.h; sourceTree = "<group>"; };
 		372351A41C25BB7B00799EC8 /* GMLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocation.m; sourceTree = "<group>"; };
+		372351A71C2DCA7A00799EC8 /* GMLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationTableViewCell.h; sourceTree = "<group>"; };
+		372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationTableViewCell.m; sourceTree = "<group>"; };
+		372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationTableViewCell.xib; sourceTree = "<group>"; };
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
@@ -295,6 +300,7 @@
 		372351991C25A5D400799EC8 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				372351A61C2DCA3B00799EC8 /* Location */,
 				3723519A1C25A5D400799EC8 /* Place */,
 			);
 			path = TableViewCell;
@@ -323,6 +329,16 @@
 			children = (
 				372351A31C25BB7B00799EC8 /* GMLocation.h */,
 				372351A41C25BB7B00799EC8 /* GMLocation.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		372351A61C2DCA3B00799EC8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				372351A71C2DCA7A00799EC8 /* GMLocationTableViewCell.h */,
+				372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */,
+				372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -806,6 +822,7 @@
 				372351861C25084800799EC8 /* GMLocationHomeViewController.xib in Resources */,
 				372351881C25084800799EC8 /* GMLocationMapViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
+				372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */,
 				3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */,
 				372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */,
 				370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */,
@@ -887,6 +904,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */,
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				37E9B70C1C18475500D7BE13 /* GMMapViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
