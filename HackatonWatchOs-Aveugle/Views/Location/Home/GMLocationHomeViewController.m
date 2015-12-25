@@ -9,11 +9,13 @@
 #import "GMLocationHomeViewController.h"
 #import "GMLocationAddViewController.h"
 #import "GMLocationMapViewController.h"
+#import "GMFavoriteListViewController.h"
 
 @interface GMLocationHomeViewController ()
 
 - (IBAction)goToAddView:(UIButton *)sender;
 - (IBAction)goToMapView:(UIButton *)sender;
+- (IBAction)goToFavoriteView:(UIButton *)sender;
 
 @end
 
@@ -34,6 +36,12 @@
 {
     GMLocationMapViewController * locationMapView = [[GMLocationMapViewController alloc] init];
     [self.navigationController pushViewController:locationMapView animated:YES];
+}
+
+- (IBAction)goToFavoriteView:(UIButton *)sender
+{
+    GMFavoriteListViewController * favoriteView = [[GMFavoriteListViewController alloc] init];
+    [self.navigationController pushViewController:favoriteView animated:YES];
 }
 
 @end
