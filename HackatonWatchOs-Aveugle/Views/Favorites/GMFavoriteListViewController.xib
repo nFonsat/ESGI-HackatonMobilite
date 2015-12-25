@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMFavoriteListViewController">
             <connections>
+                <outlet property="tableView" destination="vqh-lx-il9" id="o4B-Fr-N9r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,6 +21,10 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="hCO-ut-bP5"/>
+                        <outlet property="delegate" destination="-1" id="4Hu-Qr-bgX"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

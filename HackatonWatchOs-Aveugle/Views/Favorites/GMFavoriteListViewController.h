@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GMFavoriteListViewController : UIViewController
+@interface GMFavoriteListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
