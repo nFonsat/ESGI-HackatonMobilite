@@ -6,8 +6,6 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import <AFOAuth2Manager/AFOAuth2Manager.h>
-
 #import "GMMainViewController.h"
 #import "GMOAuth2Manager.h"
 
@@ -17,7 +15,7 @@
 @interface GMMainViewController ()
 {
     @private
-    GMOAuth2Manager * OAuth2Manager;
+    GMWebUserAPI * webUserManager;
 }
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender;
@@ -28,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    OAuth2Manager = [[GMOAuth2Manager alloc] init];
+    webUserManager = [[GMWebUserAPI alloc] init];
 }
 
 - (void)viewDidAppear:(BOOL)animated

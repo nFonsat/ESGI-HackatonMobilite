@@ -8,9 +8,13 @@
 
 #import "GMRegisterViewController.h"
 #import "GMLoginViewController.h"
-#import "AFNetworking.h"
+#import "GMWebUserAPI.h"
 
 @interface GMRegisterViewController ()
+{
+    @private
+    GMWebUserAPI * webUserManager;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField * usernameText;
 @property (weak, nonatomic) IBOutlet UITextField * emailText;
@@ -26,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    webUserManager = [[GMWebUserAPI alloc] init];
 }
 
 - (IBAction)registerAction:(UIButton *)sender {    
@@ -34,23 +40,17 @@
         return;
     }
     
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
-    
-    NSDictionary *parameters = @{
-                                 @"email": self.emailText.text,
-                                 @"username": self.usernameText.text,
-                                 @"password": self.passwordText.text,
-                                 };
-    
-    [manager POST:@"http://95.85.51.133/api/v1/user"
-       parameters:parameters
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              NSLog(@"JSON: %@", responseObject);
-          }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Error: %@", error);
-          }
-     ];
+    [webUserManager postUserWithEmail:self.emailText.text
+                             Username:self.usernameText.text
+                             Password:self.passwordText.text
+                              Success:^(id responseObject)
+     {
+         NSLog(@"JSON: %@", responseObject);
+     }
+                              Failure:^(NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 }
 
 - (IBAction)goToLoginView:(UIButton *)sender {
