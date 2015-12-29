@@ -15,7 +15,7 @@
 @interface GMFavoriteListViewController ()
 {
     @private
-    NSMutableArray * _favoriteLocations;
+    NSMutableArray<GMLocation *> * _favoriteLocations;
     GMWebLocationAPI * _locationWebAPI;
 }
 
