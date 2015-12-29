@@ -60,4 +60,9 @@
     return self;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"{%@[%f;%f]}", _name, _coordinate.latitude, _coordinate.longitude];
+}
+
 @end
