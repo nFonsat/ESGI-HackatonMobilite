@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370165481C197EFB009EE86C /* GMLoginViewController.m */; };
-		3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 370165491C197EFB009EE86C /* GMLoginViewController.xib */; };
-		370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3701654E1C197F5F009EE86C /* GMRegisterViewController.m */; };
-		370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */; };
+		3710D1D81C32507900307CD5 /* GMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710D1D21C32507900307CD5 /* GMLoginViewController.m */; };
+		3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3710D1D31C32507900307CD5 /* GMLoginViewController.xib */; };
+		3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710D1D61C32507900307CD5 /* GMRegisterViewController.m */; };
+		3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */; };
 		372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351731C24FDD200799EC8 /* GMWebLocationAPI.m */; };
 		372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351791C25084800799EC8 /* GMLocationAddViewController.m */; };
 		372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */; };
@@ -108,12 +108,12 @@
 
 /* Begin PBXFileReference section */
 		0DAD1F7692EC5B3064D113BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		370165471C197EFB009EE86C /* GMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLoginViewController.h; sourceTree = "<group>"; };
-		370165481C197EFB009EE86C /* GMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLoginViewController.m; sourceTree = "<group>"; };
-		370165491C197EFB009EE86C /* GMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLoginViewController.xib; sourceTree = "<group>"; };
-		3701654D1C197F5F009EE86C /* GMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRegisterViewController.h; sourceTree = "<group>"; };
-		3701654E1C197F5F009EE86C /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
-		3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
+		3710D1D11C32507900307CD5 /* GMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLoginViewController.h; sourceTree = "<group>"; };
+		3710D1D21C32507900307CD5 /* GMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLoginViewController.m; sourceTree = "<group>"; };
+		3710D1D31C32507900307CD5 /* GMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLoginViewController.xib; sourceTree = "<group>"; };
+		3710D1D51C32507900307CD5 /* GMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRegisterViewController.h; sourceTree = "<group>"; };
+		3710D1D61C32507900307CD5 /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
+		3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
 		372351721C24FDD200799EC8 /* GMWebLocationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebLocationAPI.h; sourceTree = "<group>"; };
 		372351731C24FDD200799EC8 /* GMWebLocationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebLocationAPI.m; sourceTree = "<group>"; };
 		372351781C25084800799EC8 /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
@@ -229,22 +229,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		370165411C197EA4009EE86C /* Login */ = {
+		3710D1CF1C32507900307CD5 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				370165471C197EFB009EE86C /* GMLoginViewController.h */,
-				370165481C197EFB009EE86C /* GMLoginViewController.m */,
-				370165491C197EFB009EE86C /* GMLoginViewController.xib */,
+				3710D1D01C32507900307CD5 /* Login */,
+				3710D1D41C32507900307CD5 /* Register */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		3710D1D01C32507900307CD5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3710D1D11C32507900307CD5 /* GMLoginViewController.h */,
+				3710D1D21C32507900307CD5 /* GMLoginViewController.m */,
+				3710D1D31C32507900307CD5 /* GMLoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		3701654C1C197F2C009EE86C /* Register */ = {
+		3710D1D41C32507900307CD5 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				3701654D1C197F5F009EE86C /* GMRegisterViewController.h */,
-				3701654E1C197F5F009EE86C /* GMRegisterViewController.m */,
-				3701654F1C197F5F009EE86C /* GMRegisterViewController.xib */,
+				3710D1D51C32507900307CD5 /* GMRegisterViewController.h */,
+				3710D1D61C32507900307CD5 /* GMRegisterViewController.m */,
+				3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -426,22 +435,13 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
-		37E4E52C1C235E0E00421E79 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		37E9B7041C18475500D7BE13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				37E4E52B1C235DF500421E79 /* Favorites */,
 				372351761C25084800799EC8 /* Location */,
-				370165411C197EA4009EE86C /* Login */,
 				3732F4531C18499400FA3C0C /* Main */,
-				37E4E52C1C235E0E00421E79 /* Map */,
-				3701654C1C197F2C009EE86C /* Register */,
+				3710D1CF1C32507900307CD5 /* Security */,
 				37E9B7071C18475500D7BE13 /* GMMapViewController.h */,
 				37E9B7081C18475500D7BE13 /* GMMapViewController.m */,
 				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
@@ -819,13 +819,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
+				3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */,
 				372351861C25084800799EC8 /* GMLocationHomeViewController.xib in Resources */,
+				3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */,
 				372351881C25084800799EC8 /* GMLocationMapViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
 				372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */,
-				3701654B1C197EFB009EE86C /* GMLoginViewController.xib in Resources */,
 				372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */,
-				370165511C197F5F009EE86C /* GMRegisterViewController.xib in Resources */,
 				3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */,
 				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
 				3723519F1C25A5D400799EC8 /* GMPlaceTableViewCell.xib in Resources */,
@@ -924,10 +924,10 @@
 				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
 				372351871C25084800799EC8 /* GMLocationMapViewController.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
-				3701654A1C197EFB009EE86C /* GMLoginViewController.m in Sources */,
-				370165501C197F5F009EE86C /* GMRegisterViewController.m in Sources */,
 				372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
+				3710D1D81C32507900307CD5 /* GMLoginViewController.m in Sources */,
+				3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */,
 				372351851C25084800799EC8 /* GMLocationHomeViewController.m in Sources */,
 				37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */,
 			);
