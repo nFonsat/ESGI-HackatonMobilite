@@ -12,12 +12,16 @@
 {
     @private
     CLLocationManager * _locationManager;
+    MKRoute * _routeDetails;
     GMLocation * _locationForZoom;
     BOOL _centerOnUserPosition;
     BOOL _needUpdateUserLocation;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
+@property (weak, nonatomic) IBOutlet UIButton * navigateBtn;
+
+- (IBAction)navigateAction:(UIButton *)sender;
 
 @end
 
@@ -50,9 +54,11 @@
     [self initMapView];
 }
 
+
+
 #pragma mark - GMLocationMapViewController Helper
 
-- (void) zoomOnCoordinate:(CLLocationCoordinate2D)coordinate
+- (void)zoomOnCoordinate:(CLLocationCoordinate2D)coordinate
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 800, 800);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
@@ -62,6 +68,7 @@
 
 - (void)initMapView
 {
+    self.navigateBtn.hidden = YES;
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
     _needUpdateUserLocation = _centerOnUserPosition;
@@ -74,6 +81,7 @@
         point.title = _locationForZoom.name;
         
         [self.mapView addAnnotation:point];
+        self.navigateBtn.hidden = NO;
     }
 }
 
@@ -88,6 +96,15 @@
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
     NSLog(@"MapKit didFailToLocateUserWithError : %@", error.localizedDescription);
+}
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer  * routeLineRenderer = [[MKPolylineRenderer alloc] initWithPolyline:_routeDetails.polyline];
+    
+    routeLineRenderer.strokeColor = [UIColor greenColor];
+    routeLineRenderer.lineWidth = 5;
+    
+    return routeLineRenderer;
 }
 
 #pragma mark - CoreLocation
@@ -130,6 +147,43 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"CoreLocation didFailWithError : %@", error.localizedDescription);
+}
+
+- (IBAction)navigateAction:(UIButton *)sender
+{
+    MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
+    [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
+    
+    MKPlacemark * placeMarkDestination = [[MKPlacemark alloc] initWithCoordinate:_locationForZoom.coordinate addressDictionary:nil];
+    [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placeMarkDestination]];
+    
+    directionsRequest.transportType = MKDirectionsTransportTypeWalking;
+    
+    MKDirections * directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
+    {
+        if (error) {
+            NSLog(@"Error %@", error.description);
+        }
+        else {
+            _routeDetails = response.routes.lastObject;
+            
+            [self.mapView addOverlay:_routeDetails.polyline];
+            NSLog(@"Distance : %d", (int) _routeDetails.distance);
+            
+            NSString * allSteps = @"";
+            for (int i = 0; i < _routeDetails.steps.count; i++) {
+                MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
+                NSString *newStep = step.instructions;
+                
+                allSteps = [allSteps stringByAppendingString:newStep];
+                allSteps = [allSteps stringByAppendingString:@"\n\n"];
+            }
+            NSLog(@"Steps : %@",  allSteps);
+            sender.hidden = YES;
+        }
+    }];
 }
 
 @end
