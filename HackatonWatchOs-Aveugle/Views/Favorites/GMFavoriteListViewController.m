@@ -7,6 +7,7 @@
 //
 
 #import "GMFavoriteListViewController.h"
+#import "GMLocationMapViewController.h"
 #import "GMLocationTableViewCell.h"
 #import "GMWebLocationAPI.h"
 #import "GMLocation.h"
@@ -46,7 +47,6 @@
 {
     [_locationWebAPI getLocationsSuccess:^(id responseObject)
     {
-        NSLog(@"Success : %@", responseObject);
         for (NSDictionary * locationJson in responseObject) {
             GMLocation * location = [[GMLocation alloc] initFromJsonDictionary:locationJson];
             [_favoriteLocations addObject:location];
@@ -82,7 +82,45 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GMLocation * location = _favoriteLocations[indexPath.row];
+    
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+        {
+            [_locationWebAPI deleteLocationWithLocationId:location.locationId
+                                                  Success:^(id responseObject)
+            {
+                [_favoriteLocations removeObject:location];
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+                                                  Failure:^(NSError * error)
+            {
+                NSLog(@"Error : %@", error.localizedDescription);
+            }];
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GMLocation * location = _favoriteLocations[indexPath.row];
+    GMLocationMapViewController * mapView = [[GMLocationMapViewController alloc] initWithGMLocation:location];
+    [self.navigationController pushViewController:mapView animated:YES];
+}
 
 
 
