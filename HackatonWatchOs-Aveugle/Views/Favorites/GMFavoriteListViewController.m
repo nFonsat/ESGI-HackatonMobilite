@@ -7,6 +7,7 @@
 //
 
 #import "GMFavoriteListViewController.h"
+#import "GMLocationTableViewCell.h"
 #import "GMWebLocationAPI.h"
 #import "GMLocation.h"
 
@@ -68,15 +69,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:@"FavoriteCell"];
+    GMLocationTableViewCell * cell = (GMLocationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMLocationIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] init];
+        [tableView registerNib:[UINib nibWithNibName:@"GMLocationTableViewCell" bundle:nil] forCellReuseIdentifier:GMLocationIdentifier];
+        cell = (GMLocationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMLocationIdentifier];
     }
     
     GMLocation * location = _favoriteLocations[indexPath.row];
-    
-    cell.textLabel.text = location.name;
+    [cell loadCellWithLocation:location];
     
     return cell;
 }

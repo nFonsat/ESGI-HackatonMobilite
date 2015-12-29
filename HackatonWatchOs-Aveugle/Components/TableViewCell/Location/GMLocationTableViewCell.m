@@ -8,6 +8,15 @@
 
 #import "GMLocationTableViewCell.h"
 
+@interface GMLocationTableViewCell ()
+{
+    @private
+}
+
+@property (weak, nonatomic) IBOutlet UILabel * placeLabel;
+
+@end
+
 @implementation GMLocationTableViewCell
 
 - (void)awakeFromNib
@@ -18,6 +27,11 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+}
+
+- (void)loadCellWithLocation:(GMLocation *)location
+{
+    self.placeLabel.text = location.name;
 }
 
 @end

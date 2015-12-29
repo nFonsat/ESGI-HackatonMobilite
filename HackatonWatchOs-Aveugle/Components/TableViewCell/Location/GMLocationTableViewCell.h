@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMLOcation.h"
+
+static NSString * const GMLocationIdentifier = @"LocationCell";
 
 @interface GMLocationTableViewCell : UITableViewCell
+
+- (void)loadCellWithLocation:(GMLocation *)location;
 
 @end
