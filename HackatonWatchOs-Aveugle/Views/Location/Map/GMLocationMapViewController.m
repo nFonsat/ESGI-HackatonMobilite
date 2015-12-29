@@ -62,7 +62,7 @@
 
 - (void)initMapView
 {
-    self.mapView.showsUserLocation = _centerOnUserPosition;
+    self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
     _needUpdateUserLocation = _centerOnUserPosition;
     
