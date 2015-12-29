@@ -7,12 +7,15 @@
 //
 
 #import "GMFavoriteListViewController.h"
+#import "GMLocationMapViewController.h"
+#import "GMLocationTableViewCell.h"
 #import "GMWebLocationAPI.h"
+#import "GMLocation.h"
 
 @interface GMFavoriteListViewController ()
 {
     @private
-    NSMutableArray * _favoriteLocations;
+    NSMutableArray<GMLocation *> * _favoriteLocations;
     GMWebLocationAPI * _locationWebAPI;
 }
 
@@ -44,10 +47,9 @@
 {
     [_locationWebAPI getLocationsSuccess:^(id responseObject)
     {
-        NSLog(@"Success : %@", responseObject);
         for (NSDictionary * locationJson in responseObject) {
-            NSLog(@"Object location : %@", locationJson);
-            [_favoriteLocations addObject:[locationJson objectForKey:@"name"]];
+            GMLocation * location = [[GMLocation alloc] initFromJsonDictionary:locationJson];
+            [_favoriteLocations addObject:location];
         }
         
         [self.tableView reloadData];
@@ -67,18 +69,58 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:@"FavoriteCell"];
+    GMLocationTableViewCell * cell = (GMLocationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMLocationIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] init];
+        [tableView registerNib:[UINib nibWithNibName:@"GMLocationTableViewCell" bundle:nil] forCellReuseIdentifier:GMLocationIdentifier];
+        cell = (GMLocationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:GMLocationIdentifier];
     }
     
-    cell.textLabel.text = _favoriteLocations[indexPath.row];
+    GMLocation * location = _favoriteLocations[indexPath.row];
+    [cell loadCellWithLocation:location];
     
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GMLocation * location = _favoriteLocations[indexPath.row];
+    
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+        {
+            [_locationWebAPI deleteLocationWithLocationId:location.locationId
+                                                  Success:^(id responseObject)
+            {
+                [_favoriteLocations removeObject:location];
+                [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+                                                  Failure:^(NSError * error)
+            {
+                NSLog(@"Error : %@", error.localizedDescription);
+            }];
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GMLocation * location = _favoriteLocations[indexPath.row];
+    GMLocationMapViewController * mapView = [[GMLocationMapViewController alloc] initWithGMLocation:location];
+    [self.navigationController pushViewController:mapView animated:YES];
+}
 
 
 

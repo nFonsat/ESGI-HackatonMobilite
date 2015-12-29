@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +14,35 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_favorite_gold" translatesAutoresizingMaskIntoConstraints="NO" id="dKd-7C-zl0">
+                        <rect key="frame" x="8" y="7" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ozw-Xe-8Zl"/>
+                            <constraint firstAttribute="width" constant="30" id="qFZ-nL-bMq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pip-Gl-Zqm">
+                        <rect key="frame" x="43" y="11.5" width="269" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Pip-Gl-Zqm" secondAttribute="trailing" id="66z-Vx-MkP"/>
+                    <constraint firstItem="Pip-Gl-Zqm" firstAttribute="leading" secondItem="dKd-7C-zl0" secondAttribute="trailing" constant="5" id="Lz2-qu-QZs"/>
+                    <constraint firstItem="dKd-7C-zl0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="THo-hl-ufY"/>
+                    <constraint firstItem="Pip-Gl-Zqm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fZj-Kl-snV"/>
+                    <constraint firstItem="dKd-7C-zl0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="rLh-J0-DkN"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="placeLabel" destination="Pip-Gl-Zqm" id="us3-pY-N98"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="home_favorite_gold" width="75" height="75"/>
+    </resources>
 </document>
