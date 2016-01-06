@@ -16,12 +16,17 @@
     GMLocation * _locationForZoom;
     BOOL _centerOnUserPosition;
     BOOL _needUpdateUserLocation;
+    BOOL _startNavigation;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
+@property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
+
 @property (weak, nonatomic) IBOutlet UIButton * navigateBtn;
+@property (weak, nonatomic) IBOutlet UIButton * magnifierBtn;
 
 - (IBAction)navigateAction:(UIButton *)sender;
+- (IBAction)magnifierAction:(UIButton *)sender;
 
 @end
 
@@ -31,6 +36,7 @@
 {
     if (self = [super init]) {
         [self initLocationManager];
+        _startNavigation = NO;
         _centerOnUserPosition = YES;
     }
 
@@ -51,6 +57,10 @@
 {
     [super viewDidLoad];
     
+    self.searchBar.hidden = YES;
+    
+    [self stopNavigation];
+    
     [self initMapView];
 }
 
@@ -64,11 +74,18 @@
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
+- (void) enabledNavigateBtn:(BOOL)enabled
+{
+    self.navigateBtn.hidden = !enabled;
+    self.navigateBtn.userInteractionEnabled = enabled;
+}
+
 #pragma mark - MapView
 
 - (void)initMapView
 {
-    self.navigateBtn.hidden = YES;
+    [self enabledNavigateBtn:NO];
+    
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
     _needUpdateUserLocation = _centerOnUserPosition;
@@ -81,7 +98,7 @@
         point.title = _locationForZoom.name;
         
         [self.mapView addAnnotation:point];
-        self.navigateBtn.hidden = NO;
+        [self enabledNavigateBtn:YES];
     }
 }
 
@@ -105,6 +122,59 @@
     routeLineRenderer.lineWidth = 5;
     
     return routeLineRenderer;
+}
+
+- (void)calculateDirection
+{
+    [self enabledNavigateBtn:NO];
+    
+    MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
+    [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
+    
+    MKPlacemark * placeMarkDestination = [[MKPlacemark alloc] initWithCoordinate:_locationForZoom.coordinate addressDictionary:nil];
+    [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placeMarkDestination]];
+    
+    directionsRequest.transportType = MKDirectionsTransportTypeWalking;
+    
+    MKDirections * directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
+     {
+         if (error) {
+             NSLog(@"Error %@", error.description);
+             [self stopNavigation];
+         }
+         else {
+             _routeDetails = response.routes.lastObject;
+             
+             [self.mapView addOverlay:_routeDetails.polyline];
+             NSLog(@"Distance : %d", (int) _routeDetails.distance);
+             
+             NSString * allSteps = @"";
+             for (int i = 0; i < _routeDetails.steps.count; i++) {
+                 MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
+                 NSString *newStep = step.instructions;
+                 
+                 allSteps = [allSteps stringByAppendingString:newStep];
+                 allSteps = [allSteps stringByAppendingString:@"\n\n"];
+             }
+             NSLog(@"Steps : %@",  allSteps);
+             
+             [self startNavigation];
+         }
+     }];
+}
+
+- (void) startNavigation
+{
+    _startNavigation = YES;
+    [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+}
+
+- (void) stopNavigation
+{
+    _startNavigation = NO;
+    [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
 }
 
 #pragma mark - CoreLocation
@@ -151,39 +221,17 @@
 
 - (IBAction)navigateAction:(UIButton *)sender
 {
-    MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
-    [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
-    
-    MKPlacemark * placeMarkDestination = [[MKPlacemark alloc] initWithCoordinate:_locationForZoom.coordinate addressDictionary:nil];
-    [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placeMarkDestination]];
-    
-    directionsRequest.transportType = MKDirectionsTransportTypeWalking;
-    
-    MKDirections * directions = [[MKDirections alloc] initWithRequest:directionsRequest];
-    
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
-    {
-        if (error) {
-            NSLog(@"Error %@", error.description);
-        }
-        else {
-            _routeDetails = response.routes.lastObject;
-            
-            [self.mapView addOverlay:_routeDetails.polyline];
-            NSLog(@"Distance : %d", (int) _routeDetails.distance);
-            
-            NSString * allSteps = @"";
-            for (int i = 0; i < _routeDetails.steps.count; i++) {
-                MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
-                NSString *newStep = step.instructions;
-                
-                allSteps = [allSteps stringByAppendingString:newStep];
-                allSteps = [allSteps stringByAppendingString:@"\n\n"];
-            }
-            NSLog(@"Steps : %@",  allSteps);
-            sender.hidden = YES;
-        }
-    }];
+    if (!_startNavigation) {
+        [self calculateDirection];
+    }
+    else {
+        [self stopNavigation];
+    }
+}
+
+- (IBAction)magnifierAction:(UIButton *)sender
+{
+    self.searchBar.hidden = !self.searchBar.hidden;
 }
 
 @end

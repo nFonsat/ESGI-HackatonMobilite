@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMLocationMapViewController">
             <connections>
+                <outlet property="magnifierBtn" destination="aDR-os-ign" id="fOE-mN-AnZ"/>
                 <outlet property="mapView" destination="6Py-wr-7mA" id="zOO-UN-dgL"/>
-                <outlet property="navigateBtn" destination="XJj-df-liD" id="hsK-Cq-fJr"/>
+                <outlet property="navigateBtn" destination="p6R-W4-G83" id="jWk-KV-gcT"/>
+                <outlet property="searchBar" destination="cTW-bU-hSd" id="YxJ-QL-RPi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,27 +22,55 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-wr-7mA">
                     <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                 </mapView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-df-liD">
-                    <rect key="frame" x="210" y="470" width="180" height="30"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Navigate">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="navigateAction:" destination="-1" eventType="touchUpInside" id="xIZ-Dj-HwI"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmL-LB-B7u">
+                    <rect key="frame" x="538" y="499" width="47" height="86"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-W4-G83">
+                            <rect key="frame" x="8" y="8" width="31" height="31"/>
+                            <state key="normal" image="map-locator"/>
+                            <connections>
+                                <action selector="navigateAction:" destination="-1" eventType="touchUpInside" id="jge-e8-sPi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDR-os-ign">
+                            <rect key="frame" x="8" y="47" width="31" height="31"/>
+                            <state key="normal" image="magnifier"/>
+                            <connections>
+                                <action selector="magnifierAction:" destination="-1" eventType="touchUpInside" id="7zO-mu-BPv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="p6R-W4-G83" firstAttribute="top" secondItem="BmL-LB-B7u" secondAttribute="top" constant="8" id="1IQ-5u-CaW"/>
+                        <constraint firstItem="aDR-os-ign" firstAttribute="leading" secondItem="BmL-LB-B7u" secondAttribute="leading" constant="8" id="3HD-jc-weo"/>
+                        <constraint firstAttribute="trailing" secondItem="p6R-W4-G83" secondAttribute="trailing" constant="8" id="4U0-1R-9FC"/>
+                        <constraint firstItem="p6R-W4-G83" firstAttribute="leading" secondItem="BmL-LB-B7u" secondAttribute="leading" constant="8" id="4zE-QG-OfR"/>
+                        <constraint firstAttribute="trailing" secondItem="aDR-os-ign" secondAttribute="trailing" constant="8" id="KL6-Tb-PRH"/>
+                        <constraint firstAttribute="bottom" secondItem="aDR-os-ign" secondAttribute="bottom" constant="8" id="lvL-pm-Kjw"/>
+                        <constraint firstItem="aDR-os-ign" firstAttribute="top" secondItem="p6R-W4-G83" secondAttribute="bottom" constant="8" id="wnv-vb-Dbn"/>
+                    </constraints>
+                </view>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-bU-hSd">
+                    <rect key="frame" x="20" y="48" width="561" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6Py-wr-7mA" secondAttribute="bottom" id="3dY-6b-jKX"/>
+                <constraint firstItem="cTW-bU-hSd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Fpq-ia-Zow"/>
+                <constraint firstAttribute="trailing" secondItem="BmL-LB-B7u" secondAttribute="trailing" constant="15" id="PvN-pa-STd"/>
+                <constraint firstItem="cTW-bU-hSd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="48" id="Qp0-l1-De1"/>
+                <constraint firstAttribute="bottom" secondItem="BmL-LB-B7u" secondAttribute="bottom" constant="15" id="V5d-7Y-Rhd"/>
                 <constraint firstAttribute="trailing" secondItem="6Py-wr-7mA" secondAttribute="trailing" id="WgA-4A-ibd"/>
                 <constraint firstItem="6Py-wr-7mA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="abV-3f-cjn"/>
-                <constraint firstItem="XJj-df-liD" firstAttribute="width" secondItem="6Py-wr-7mA" secondAttribute="width" multiplier="0.3" id="bhe-P4-k3s"/>
-                <constraint firstItem="XJj-df-liD" firstAttribute="centerX" secondItem="6Py-wr-7mA" secondAttribute="centerX" id="k5w-Yp-iBb"/>
-                <constraint firstAttribute="bottom" secondItem="XJj-df-liD" secondAttribute="bottom" constant="100" id="o6p-Jo-2x9"/>
+                <constraint firstItem="cTW-bU-hSd" firstAttribute="centerX" secondItem="6Py-wr-7mA" secondAttribute="centerX" id="sVV-BZ-Kox"/>
                 <constraint firstItem="6Py-wr-7mA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xOv-HY-tEu"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="magnifier" width="31" height="31"/>
+        <image name="map-locator" width="31" height="31"/>
+    </resources>
 </document>
