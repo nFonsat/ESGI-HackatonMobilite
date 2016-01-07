@@ -17,13 +17,21 @@
     BOOL _centerOnUserPosition;
     BOOL _needUpdateUserLocation;
     BOOL _startNavigation;
+    BOOL _bottomBarIsOpen;
 }
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintBottomOnBottomBar;
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
 
 @property (weak, nonatomic) IBOutlet UIButton * navigateBtn;
 @property (weak, nonatomic) IBOutlet UIButton * magnifierBtn;
+
+@property (weak, nonatomic) IBOutlet UIView * bottomBar;
+@property (weak, nonatomic) IBOutlet UILabel * distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel * directionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView * arrowImg;
 
 - (IBAction)navigateAction:(UIButton *)sender;
 - (IBAction)magnifierAction:(UIButton *)sender;
@@ -62,8 +70,26 @@
     [self stopNavigation];
     
     [self initMapView];
+    
+    [self hideBottomBar];
 }
 
+#pragma mark - GMLocationMapViewController Action
+
+- (IBAction)navigateAction:(UIButton *)sender
+{
+    if (!_startNavigation) {
+        [self calculateDirection];
+    }
+    else {
+        [self stopNavigation];
+    }
+}
+
+- (IBAction)magnifierAction:(UIButton *)sender
+{
+    self.searchBar.hidden = !self.searchBar.hidden;
+}
 
 
 #pragma mark - GMLocationMapViewController Helper
@@ -78,6 +104,35 @@
 {
     self.navigateBtn.hidden = !enabled;
     self.navigateBtn.userInteractionEnabled = enabled;
+}
+
+- (void)showBottomBar
+{
+    [_constraintBottomOnBottomBar setConstant:0];
+    _bottomBarIsOpen = YES;
+}
+
+- (void)showBottomBarWithAnimation
+{
+    [UIView animateWithDuration:1 animations:^(void)
+     {
+         [self showBottomBar];
+     }];
+}
+
+- (void)hideBottomBar
+{
+    CGSize bottomBarSize = self.bottomBar.frame.size;
+    [_constraintBottomOnBottomBar setConstant:(-bottomBarSize.height)];
+    _bottomBarIsOpen = NO;
+}
+
+- (void)hideBottomBarWithAnimation
+{
+    [UIView animateWithDuration:1 animations:^(void)
+     {
+         [self hideBottomBar];
+     }];
 }
 
 #pragma mark - MapView
@@ -217,21 +272,6 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"CoreLocation didFailWithError : %@", error.localizedDescription);
-}
-
-- (IBAction)navigateAction:(UIButton *)sender
-{
-    if (!_startNavigation) {
-        [self calculateDirection];
-    }
-    else {
-        [self stopNavigation];
-    }
-}
-
-- (IBAction)magnifierAction:(UIButton *)sender
-{
-    self.searchBar.hidden = !self.searchBar.hidden;
 }
 
 @end
