@@ -71,7 +71,8 @@
     
     [self initMapView];
     
-    [self hideBottomBar];
+    [self turnArrowToCenter];
+    [self showBottomBar];
 }
 
 #pragma mark - GMLocationMapViewController Action
@@ -133,6 +134,21 @@
      {
          [self hideBottomBar];
      }];
+}
+
+- (void)turnArrowToCenter
+{
+    _arrowImg.transform = CGAffineTransformMakeRotation(0);
+}
+
+- (void)turnArrowToRight
+{
+    _arrowImg.transform = CGAffineTransformMakeRotation(M_PI_2);
+}
+
+- (void)turnArrowToLeft
+{
+    _arrowImg.transform = CGAffineTransformMakeRotation(-M_PI_2);
 }
 
 #pragma mark - MapView
