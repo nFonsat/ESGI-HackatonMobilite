@@ -71,8 +71,7 @@
     
     [self initMapView];
     
-    [self turnArrowToCenter];
-    [self showBottomBar];
+    [self hideBottomBar];
 }
 
 #pragma mark - GMLocationMapViewController Action
@@ -151,6 +150,80 @@
     _arrowImg.transform = CGAffineTransformMakeRotation(-M_PI_2);
 }
 
+- (void) startNavigation
+{
+    _startNavigation = YES;
+    [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+    [self showBottomBarWithAnimation];
+}
+
+- (void) stopNavigation
+{
+    _startNavigation = NO;
+    [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
+    [self hideBottomBarWithAnimation];
+}
+
+- (void)calculateDirection
+{
+    [self enabledNavigateBtn:NO];
+    
+    MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
+    [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
+    
+    MKPlacemark * placeMarkDestination = [[MKPlacemark alloc] initWithCoordinate:_locationForZoom.coordinate addressDictionary:nil];
+    [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placeMarkDestination]];
+    
+    directionsRequest.transportType = MKDirectionsTransportTypeWalking;
+    
+    MKDirections * directions = [[MKDirections alloc] initWithRequest:directionsRequest];
+    
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
+     {
+         if (error) {
+             NSLog(@"Error %@", error.description);
+             [self stopNavigation];
+         }
+         else {
+             _routeDetails = response.routes.lastObject;
+             
+             [self.mapView removeOverlays:self.mapView.overlays];
+             [self.mapView addOverlay:_routeDetails.polyline];
+             NSLog(@"Distance : %d", (int) _routeDetails.distance);
+             
+             NSString * allSteps = @"";
+             for (int i = 0; i < _routeDetails.steps.count; i++) {
+                 MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
+                 NSString *newStep = step.instructions;
+                 
+                 allSteps = [allSteps stringByAppendingString:newStep];
+                 allSteps = [allSteps stringByAppendingString:@"\n\n"];
+             }
+             NSLog(@"Steps : %@",  allSteps);
+             
+             [self loadNextInstruction: _routeDetails.steps[1]];
+             
+             [self startNavigation];
+         }
+     }];
+}
+
+- (void)loadNextInstruction:(MKRouteStep *)instruction
+{
+    _distanceLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    _directionLabel.text = instruction.instructions;
+    
+    if ([instruction.instructions rangeOfString:@"right"].location != NSNotFound) {
+        [self turnArrowToRight];
+    }
+    else if ([instruction.instructions rangeOfString:@"left"].location != NSNotFound){
+        [self turnArrowToLeft];
+    }
+    else {
+        [self turnArrowToCenter];
+    }
+}
+
 #pragma mark - MapView
 
 - (void)initMapView
@@ -179,6 +252,10 @@
         _needUpdateUserLocation = NO;
         [self zoomOnCoordinate:userLocation.coordinate];
     }
+    
+    if (_startNavigation) {
+        [self calculateDirection];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
@@ -187,65 +264,15 @@
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
-    MKPolylineRenderer  * routeLineRenderer = [[MKPolylineRenderer alloc] initWithPolyline:_routeDetails.polyline];
-    
-    routeLineRenderer.strokeColor = [UIColor greenColor];
-    routeLineRenderer.lineWidth = 5;
-    
-    return routeLineRenderer;
-}
 
-- (void)calculateDirection
-{
-    [self enabledNavigateBtn:NO];
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineRenderer *pr = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+        pr.strokeColor = [UIColor greenColor];
+        pr.lineWidth = 5;
+        return pr;
+    }
     
-    MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
-    [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
-    
-    MKPlacemark * placeMarkDestination = [[MKPlacemark alloc] initWithCoordinate:_locationForZoom.coordinate addressDictionary:nil];
-    [directionsRequest setDestination:[[MKMapItem alloc] initWithPlacemark:placeMarkDestination]];
-    
-    directionsRequest.transportType = MKDirectionsTransportTypeWalking;
-    
-    MKDirections * directions = [[MKDirections alloc] initWithRequest:directionsRequest];
-    
-    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
-     {
-         if (error) {
-             NSLog(@"Error %@", error.description);
-             [self stopNavigation];
-         }
-         else {
-             _routeDetails = response.routes.lastObject;
-             
-             [self.mapView addOverlay:_routeDetails.polyline];
-             NSLog(@"Distance : %d", (int) _routeDetails.distance);
-             
-             NSString * allSteps = @"";
-             for (int i = 0; i < _routeDetails.steps.count; i++) {
-                 MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
-                 NSString *newStep = step.instructions;
-                 
-                 allSteps = [allSteps stringByAppendingString:newStep];
-                 allSteps = [allSteps stringByAppendingString:@"\n\n"];
-             }
-             NSLog(@"Steps : %@",  allSteps);
-             
-             [self startNavigation];
-         }
-     }];
-}
-
-- (void) startNavigation
-{
-    _startNavigation = YES;
-    [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
-}
-
-- (void) stopNavigation
-{
-    _startNavigation = NO;
-    [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
+    return nil;
 }
 
 #pragma mark - CoreLocation

@@ -115,8 +115,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOB-XM-L2r">
                             <rect key="frame" x="128" y="0.0" width="344" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tourner à droite" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNn-4J-iMs">
-                                    <rect key="frame" x="114" y="15" width="115.5" height="19.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tourner à droiteajn jknbfkjnb rfkn  jnfjkndjkn  jfevdjknfdnf jnfvjknvdjn  jnfvdjknv" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNn-4J-iMs">
+                                    <rect key="frame" x="0.5" y="0.0" width="344" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -124,6 +124,8 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="rNn-4J-iMs" firstAttribute="centerX" secondItem="zOB-XM-L2r" secondAttribute="centerX" id="3fK-md-14h"/>
+                                <constraint firstItem="rNn-4J-iMs" firstAttribute="width" secondItem="zOB-XM-L2r" secondAttribute="width" id="Y3R-TH-iIR"/>
+                                <constraint firstItem="rNn-4J-iMs" firstAttribute="height" secondItem="zOB-XM-L2r" secondAttribute="height" id="aah-TK-0cG"/>
                                 <constraint firstItem="rNn-4J-iMs" firstAttribute="centerY" secondItem="zOB-XM-L2r" secondAttribute="centerY" id="vg2-fi-HbM"/>
                             </constraints>
                         </view>
