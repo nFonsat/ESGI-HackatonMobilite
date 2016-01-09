@@ -11,6 +11,7 @@
 		3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3710D1D31C32507900307CD5 /* GMLoginViewController.xib */; };
 		3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710D1D61C32507900307CD5 /* GMRegisterViewController.m */; };
 		3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */; };
+		3710D1DD1C32643D00307CD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3710D1DC1C32643D00307CD5 /* CoreGraphics.framework */; };
 		372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351731C24FDD200799EC8 /* GMWebLocationAPI.m */; };
 		372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351791C25084800799EC8 /* GMLocationAddViewController.m */; };
 		372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */; };
@@ -114,6 +115,7 @@
 		3710D1D51C32507900307CD5 /* GMRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRegisterViewController.h; sourceTree = "<group>"; };
 		3710D1D61C32507900307CD5 /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
 		3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
+		3710D1DC1C32643D00307CD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		372351721C24FDD200799EC8 /* GMWebLocationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebLocationAPI.h; sourceTree = "<group>"; };
 		372351731C24FDD200799EC8 /* GMWebLocationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebLocationAPI.m; sourceTree = "<group>"; };
 		372351781C25084800799EC8 /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3710D1DD1C32643D00307CD5 /* CoreGraphics.framework in Frameworks */,
 				ECC99A8A1BC65BE200E12082 /* WatchConnectivity.framework in Frameworks */,
 				ECC99A881BC58AC200E12082 /* MapKit.framework in Frameworks */,
 				ECC99A861BC587DB00E12082 /* CoreLocation.framework in Frameworks */,
@@ -453,6 +456,7 @@
 		7E037C5DA997B67A5AC21CD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3710D1DC1C32643D00307CD5 /* CoreGraphics.framework */,
 				0DAD1F7692EC5B3064D113BA /* libPods.a */,
 			);
 			name = Frameworks;
