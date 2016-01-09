@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "GMPlaceTableViewCell.h"
+#import "GMBaseViewController.h"
 
-@interface GMLocationAddViewController : UIViewController
+@interface GMLocationAddViewController : GMBaseViewController
     <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate , GMPlaceTableViewCellDelegate>
 
 @end
