@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMBaseViewController.h"
 
-@interface GMFavoriteListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GMFavoriteListViewController : GMBaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "GMLocationMapViewController.h"
+#import "UIColor+GMColor.h"
 
 @interface GMLocationMapViewController ()
 {
@@ -75,6 +76,18 @@
     [self initMapView];
     
     [self stopNavigation];
+}
+
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor mapColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Map";
 }
 
 #pragma mark - GMLocationMapViewController Action

@@ -11,6 +11,8 @@
 #import "GMLocationTableViewCell.h"
 #import "GMWebLocationAPI.h"
 #import "GMLocation.h"
+#import "UIColor+GMColor.h"
+
 
 @interface GMFavoriteListViewController ()
 {
@@ -46,6 +48,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     _favoriteLocations = [NSMutableArray new];
     
     [_locationWebAPI getLocationsSuccess:^(id responseObject)
@@ -61,6 +65,18 @@
     {
         NSLog(@"Error : %@", error.localizedDescription);
     }];
+}
+
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor favoriteColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Favorite address";
 }
 
 #pragma mark - UITableViewDataSource

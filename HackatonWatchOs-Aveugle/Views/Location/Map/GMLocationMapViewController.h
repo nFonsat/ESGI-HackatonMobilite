@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMBaseViewController.h"
 #import "GMLocation.h"
 
 @import MapKit;
 @import CoreLocation;
 
-@interface GMLocationMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface GMLocationMapViewController : GMBaseViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 - (instancetype)initWithGMLocation:(GMLocation *)location;
 
