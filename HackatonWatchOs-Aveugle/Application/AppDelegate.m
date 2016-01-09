@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GMMainViewController.h"
+#import "GMNavigationController.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -22,7 +23,7 @@
     
     GMMainViewController * mainViewController = [GMMainViewController new];
     
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    GMNavigationController * navigationController = [[GMNavigationController alloc] initWithRootViewController:mainViewController];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UIWindow * window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
