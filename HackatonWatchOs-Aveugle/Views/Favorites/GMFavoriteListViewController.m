@@ -15,9 +15,11 @@
 @interface GMFavoriteListViewController ()
 {
     @private
-    NSMutableArray<GMLocation *> * _favoriteLocations;
-    GMWebLocationAPI * _locationWebAPI;
 }
+
+@property (nonatomic, strong) NSMutableArray<GMLocation *> * favoriteLocations;
+@property (nonatomic, strong) GMWebLocationAPI * locationWebAPI;
+
 
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
 
@@ -29,7 +31,6 @@
 {
     if (self = [super init]) {
         _locationWebAPI = [[GMWebLocationAPI alloc] init];
-        _favoriteLocations = [NSMutableArray new];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -45,6 +46,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    _favoriteLocations = [NSMutableArray new];
+    
     [_locationWebAPI getLocationsSuccess:^(id responseObject)
     {
         for (NSDictionary * locationJson in responseObject) {
