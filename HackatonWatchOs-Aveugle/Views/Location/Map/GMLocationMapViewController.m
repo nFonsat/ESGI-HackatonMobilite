@@ -21,6 +21,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintBottomOnBottomBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintTopOnTopBar;
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
@@ -29,9 +30,13 @@
 @property (weak, nonatomic) IBOutlet UIButton * magnifierBtn;
 
 @property (weak, nonatomic) IBOutlet UIView * bottomBar;
-@property (weak, nonatomic) IBOutlet UILabel * distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel * distanceToNextStepLabel;
 @property (weak, nonatomic) IBOutlet UILabel * directionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView * arrowImg;
+
+@property (weak, nonatomic) IBOutlet UIView * topBar;
+@property (weak, nonatomic) IBOutlet UILabel * destinationLabel;
+@property (weak, nonatomic) IBOutlet UILabel * distanceToDestinationLabel;
 
 - (IBAction)navigateAction:(UIButton *)sender;
 - (IBAction)magnifierAction:(UIButton *)sender;
@@ -67,11 +72,9 @@
     
     self.searchBar.hidden = YES;
     
-    [self stopNavigation];
-    
     [self initMapView];
     
-    [self hideBottomBar];
+    [self stopNavigation];
 }
 
 #pragma mark - GMLocationMapViewController Action
@@ -106,32 +109,36 @@
     self.navigateBtn.userInteractionEnabled = enabled;
 }
 
-- (void)showBottomBar
+- (void)showBarNavigation
 {
     [_constraintBottomOnBottomBar setConstant:0];
+    [_constraintTopOnTopBar setConstant:20];
     _bottomBarIsOpen = YES;
 }
 
-- (void)showBottomBarWithAnimation
+- (void)showBarNavigationWithAnimation
 {
     [UIView animateWithDuration:1 animations:^(void)
      {
-         [self showBottomBar];
+         [self showBarNavigation];
      }];
 }
 
-- (void)hideBottomBar
+- (void)hideBarNavigation
 {
-    CGSize bottomBarSize = self.bottomBar.frame.size;
+    CGSize bottomBarSize = _bottomBar.frame.size;
+    CGSize topBarSize    = _topBar.frame.size;
+    
     [_constraintBottomOnBottomBar setConstant:(-bottomBarSize.height)];
+    [_constraintTopOnTopBar setConstant:(-topBarSize.height)];
     _bottomBarIsOpen = NO;
 }
 
-- (void)hideBottomBarWithAnimation
+- (void)hideBarNavigationWithAnimation
 {
     [UIView animateWithDuration:1 animations:^(void)
      {
-         [self hideBottomBar];
+         [self hideBarNavigation];
      }];
 }
 
@@ -154,20 +161,19 @@
 {
     _startNavigation = YES;
     [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
-    [self showBottomBarWithAnimation];
+    [self showBarNavigationWithAnimation];
 }
 
 - (void) stopNavigation
 {
     _startNavigation = NO;
     [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
-    [self hideBottomBarWithAnimation];
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self hideBarNavigationWithAnimation];
 }
 
 - (void)calculateDirection
 {
-    [self enabledNavigateBtn:NO];
-    
     MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
     [directionsRequest setSource:[MKMapItem mapItemForCurrentLocation]];
     
@@ -202,6 +208,7 @@
              NSLog(@"Steps : %@",  allSteps);
              
              [self loadNextInstruction: _routeDetails.steps[1]];
+             [self loadGeneralInstruction:_routeDetails];
              
              [self startNavigation];
          }
@@ -210,7 +217,7 @@
 
 - (void)loadNextInstruction:(MKRouteStep *)instruction
 {
-    _distanceLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    _distanceToNextStepLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _directionLabel.text = instruction.instructions;
     
     if ([instruction.instructions rangeOfString:@"right"].location != NSNotFound) {
@@ -222,6 +229,12 @@
     else {
         [self turnArrowToCenter];
     }
+}
+
+- (void) loadGeneralInstruction:(MKRoute *)instruction
+{
+    _distanceToDestinationLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    _destinationLabel.text = _locationForZoom.name;
 }
 
 #pragma mark - MapView
