@@ -14,6 +14,12 @@
 
 + (UIColor *)mapColor;
 
++ (UIColor *)navigationColor;
+
++ (UIColor *)historyColor;
+
++ (UIColor *)dangerColor;
+
 + (UIColor *)randomColor;
 
 @end

@@ -20,6 +20,21 @@
     return [UIColor trueColorWithRed:0 green:196 blue:203 alpha:1];
 }
 
++ (UIColor *)navigationColor
+{
+    return [UIColor trueColorWithRed:0 green:190 blue:72 alpha:1];
+}
+
++ (UIColor *)historyColor
+{
+    return [UIColor trueColorWithRed:250 green:0 blue:150 alpha:1];
+}
+
++ (UIColor *)dangerColor
+{
+    return [UIColor trueColorWithRed:179 green:58 blue:58 alpha:1];
+}
+
 + (UIColor *)randomColor
 {
     NSLog(@"arc4random() : %u", arc4random());
