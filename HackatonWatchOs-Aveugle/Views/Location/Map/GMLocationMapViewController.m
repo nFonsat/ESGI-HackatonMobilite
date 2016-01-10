@@ -125,7 +125,7 @@
 - (void)showBarNavigation
 {
     [_constraintBottomOnBottomBar setConstant:0];
-    [_constraintTopOnTopBar setConstant:20];
+    [_constraintTopOnTopBar setConstant:0];
     _bottomBarIsOpen = YES;
 }
 
