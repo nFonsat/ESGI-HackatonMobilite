@@ -15,8 +15,6 @@
 		372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351731C24FDD200799EC8 /* GMWebLocationAPI.m */; };
 		372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351791C25084800799EC8 /* GMLocationAddViewController.m */; };
 		372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */; };
-		372351851C25084800799EC8 /* GMLocationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723517D1C25084800799EC8 /* GMLocationHomeViewController.m */; };
-		372351861C25084800799EC8 /* GMLocationHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723517E1C25084800799EC8 /* GMLocationHomeViewController.xib */; };
 		372351871C25084800799EC8 /* GMLocationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351811C25084800799EC8 /* GMLocationMapViewController.m */; };
 		372351881C25084800799EC8 /* GMLocationMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372351821C25084800799EC8 /* GMLocationMapViewController.xib */; };
 		3723519E1C25A5D400799EC8 /* GMPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723519C1C25A5D400799EC8 /* GMPlaceTableViewCell.m */; };
@@ -31,6 +29,8 @@
 		37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACA1C4110D900FC751C /* GMNavigationController.m */; };
 		37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACE1C41874500FC751C /* GMBaseViewController.m */; };
 		37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36AD51C418BCC00FC751C /* UIColor+GMColor.m */; };
+		37B36AE01C42BAF700FC751C /* GMLocationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ADE1C42BAF700FC751C /* GMLocationHomeViewController.m */; };
+		37B36AE11C42BAF700FC751C /* GMLocationHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B36ADF1C42BAF700FC751C /* GMLocationHomeViewController.xib */; };
 		37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD11C24FC3600B9625F /* GMWebAPI.m */; };
 		37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
@@ -124,9 +124,6 @@
 		372351781C25084800799EC8 /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
 		372351791C25084800799EC8 /* GMLocationAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationAddViewController.m; sourceTree = "<group>"; };
 		3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationAddViewController.xib; sourceTree = "<group>"; };
-		3723517C1C25084800799EC8 /* GMLocationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationHomeViewController.h; sourceTree = "<group>"; };
-		3723517D1C25084800799EC8 /* GMLocationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationHomeViewController.m; sourceTree = "<group>"; };
-		3723517E1C25084800799EC8 /* GMLocationHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationHomeViewController.xib; sourceTree = "<group>"; };
 		372351801C25084800799EC8 /* GMLocationMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationMapViewController.h; sourceTree = "<group>"; };
 		372351811C25084800799EC8 /* GMLocationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationMapViewController.m; sourceTree = "<group>"; };
 		372351821C25084800799EC8 /* GMLocationMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationMapViewController.xib; sourceTree = "<group>"; };
@@ -150,6 +147,9 @@
 		37B36ACE1C41874500FC751C /* GMBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMBaseViewController.m; sourceTree = "<group>"; };
 		37B36AD41C418BCC00FC751C /* UIColor+GMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GMColor.h"; sourceTree = "<group>"; };
 		37B36AD51C418BCC00FC751C /* UIColor+GMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GMColor.m"; sourceTree = "<group>"; };
+		37B36ADD1C42BAF700FC751C /* GMLocationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationHomeViewController.h; sourceTree = "<group>"; };
+		37B36ADE1C42BAF700FC751C /* GMLocationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationHomeViewController.m; sourceTree = "<group>"; };
+		37B36ADF1C42BAF700FC751C /* GMLocationHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationHomeViewController.xib; sourceTree = "<group>"; };
 		37D2DFD01C24FC3600B9625F /* GMWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebAPI.h; sourceTree = "<group>"; };
 		37D2DFD11C24FC3600B9625F /* GMWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebAPI.m; sourceTree = "<group>"; };
 		37D2DFD41C24FC3600B9625F /* GMWebUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebUserAPI.h; sourceTree = "<group>"; };
@@ -274,7 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				372351771C25084800799EC8 /* Add */,
-				3723517B1C25084800799EC8 /* Home */,
 				3723517F1C25084800799EC8 /* Map */,
 			);
 			path = Location;
@@ -288,16 +287,6 @@
 				3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */,
 			);
 			path = Add;
-			sourceTree = "<group>";
-		};
-		3723517B1C25084800799EC8 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				3723517C1C25084800799EC8 /* GMLocationHomeViewController.h */,
-				3723517D1C25084800799EC8 /* GMLocationHomeViewController.m */,
-				3723517E1C25084800799EC8 /* GMLocationHomeViewController.xib */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		3723517F1C25084800799EC8 /* Map */ = {
@@ -403,6 +392,16 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		37B36ADC1C42BAF700FC751C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				37B36ADD1C42BAF700FC751C /* GMLocationHomeViewController.h */,
+				37B36ADE1C42BAF700FC751C /* GMLocationHomeViewController.m */,
+				37B36ADF1C42BAF700FC751C /* GMLocationHomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		37D2DFCF1C24FC3600B9625F /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +480,7 @@
 			children = (
 				37B36ACC1C4186FA00FC751C /* BaseViewController */,
 				37E4E52B1C235DF500421E79 /* Favorites */,
+				37B36ADC1C42BAF700FC751C /* Home */,
 				372351761C25084800799EC8 /* Location */,
 				3732F4531C18499400FA3C0C /* Main */,
 				3710D1CF1C32507900307CD5 /* Security */,
@@ -861,9 +861,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B36AE11C42BAF700FC751C /* GMLocationHomeViewController.xib in Resources */,
 				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
 				3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */,
-				372351861C25084800799EC8 /* GMLocationHomeViewController.xib in Resources */,
 				3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */,
 				372351881C25084800799EC8 /* GMLocationMapViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
@@ -974,7 +974,7 @@
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
 				3710D1D81C32507900307CD5 /* GMLoginViewController.m in Sources */,
 				3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */,
-				372351851C25084800799EC8 /* GMLocationHomeViewController.m in Sources */,
+				37B36AE01C42BAF700FC751C /* GMLocationHomeViewController.m in Sources */,
 				37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
