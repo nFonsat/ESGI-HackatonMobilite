@@ -29,11 +29,11 @@
     [self.navigationController.navigationBar.topItem setBackBarButtonItem:backButton];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setBarTintColor:[self getBarTintColor]];
     
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
 }
 
 - (UIColor *)getBarTintColor
