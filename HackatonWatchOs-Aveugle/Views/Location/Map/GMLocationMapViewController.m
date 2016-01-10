@@ -7,6 +7,7 @@
 //
 
 #import "GMLocationMapViewController.h"
+#import "UIColor+GMColor.h"
 
 @interface GMLocationMapViewController ()
 {
@@ -77,6 +78,18 @@
     [self stopNavigation];
 }
 
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor mapColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Map";
+}
+
 #pragma mark - GMLocationMapViewController Action
 
 - (IBAction)navigateAction:(UIButton *)sender
@@ -112,7 +125,7 @@
 - (void)showBarNavigation
 {
     [_constraintBottomOnBottomBar setConstant:0];
-    [_constraintTopOnTopBar setConstant:20];
+    [_constraintTopOnTopBar setConstant:0];
     _bottomBarIsOpen = YES;
 }
 

@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWM-dY-Nva">
-                    <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LM4-aJ-ZBc">
                             <rect key="frame" x="0.0" y="0.0" width="430" height="50"/>
@@ -80,10 +80,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qb9-N9-N3Z">
-                    <rect key="frame" x="0.0" y="70" width="600" height="480"/>
+                    <rect key="frame" x="0.0" y="50" width="600" height="500"/>
                     <subviews>
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-wr-7mA">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                         </mapView>
                         <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTW-bU-hSd">
                             <rect key="frame" x="30" y="15" width="540" height="44"/>
@@ -94,7 +94,7 @@
                             </scopeButtonTitles>
                         </searchBar>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmL-LB-B7u">
-                            <rect key="frame" x="550" y="392" width="30" height="78"/>
+                            <rect key="frame" x="550" y="412" width="30" height="78"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-W4-G83">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
@@ -209,7 +209,7 @@
                 <constraint firstItem="BWM-dY-Nva" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="91Z-j8-VJd"/>
                 <constraint firstItem="VQN-yt-ppo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9mT-Rl-uIE"/>
                 <constraint firstAttribute="trailing" secondItem="Qb9-N9-N3Z" secondAttribute="trailing" id="I33-J9-qQ2"/>
-                <constraint firstItem="BWM-dY-Nva" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="TW8-qw-rdG"/>
+                <constraint firstItem="BWM-dY-Nva" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TW8-qw-rdG"/>
                 <constraint firstItem="VQN-yt-ppo" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bTZ-wh-x5J"/>
                 <constraint firstItem="Qb9-N9-N3Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dNd-9o-71N"/>
                 <constraint firstItem="BWM-dY-Nva" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="eB5-ec-xCj"/>

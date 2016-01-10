@@ -9,6 +9,7 @@
 #import "GMLocationMapViewController.h"
 #import "GMLocation.h"
 #import "GMWebLocationAPI.h"
+#import "UIColor+GMColor.h"
 
 @import GoogleMaps;
 
@@ -45,6 +46,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor navigationColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Search address";
 }
 
 #pragma mark - GMLocationAddViewController Helper
