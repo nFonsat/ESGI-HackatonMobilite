@@ -220,7 +220,7 @@
             CLLocation * location = [[CLLocation alloc] initWithLatitude:_placeToAdded.coordinate.latitude
                                                                longitude:_placeToAdded.coordinate.longitude];
             
-            [_locationWebAPI postLocationWithName:textField.text
+            [_locationWebAPI postNewLocationWithName:textField.text
                                          Location:location
                                           Success:^(id responseObject)
             {

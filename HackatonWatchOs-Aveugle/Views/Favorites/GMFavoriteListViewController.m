@@ -52,7 +52,7 @@
     
     _favoriteLocations = [NSMutableArray new];
     
-    [_locationWebAPI getLocationsSuccess:^(id responseObject)
+    [_locationWebAPI getFavoritesSuccess:^(id responseObject)
     {
         for (NSDictionary * locationJson in responseObject) {
             GMLocation * location = [[GMLocation alloc] initFromJsonDictionary:locationJson];

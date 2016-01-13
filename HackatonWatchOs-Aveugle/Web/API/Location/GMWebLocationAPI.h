@@ -16,6 +16,12 @@
 - (void)getLocationsSuccess:(void (^)(id responseObject))success
                      Failure:(void (^)(NSError *error))failure;
 
+- (void)getFavoritesSuccess:(void (^)(id responseObject))success
+                    Failure:(void (^)(NSError *error))failure;
+
+- (void)getHistoriesSuccess:(void (^)(id responseObject))success
+                    Failure:(void (^)(NSError *error))failure;
+
 - (void)postLocationWithName:(NSString *)name
                      Location:(CLLocation *)location
                       Success:(void (^)(id responseObject))success
@@ -30,9 +36,25 @@
                               Success:(void (^)(id responseObject))success
                               Failure:(void (^)(NSError *error))failure;
 
-
 - (void)deleteLocationWithLocationId:(NSString *)locationId
                               Success:(void (^)(id responseObject))success
                               Failure:(void (^)(NSError *error))failure;
+
+- (void)playLocation:(NSString *)locationId
+             Success:(void (^)(id responseObject))success
+             Failure:(void (^)(NSError *error))failure;
+
+- (void)postNewLocationWithName:(NSString *)name
+                    Location:(CLLocation *)location
+                     Success:(void (^)(id responseObject))success
+                     Failure:(void (^)(NSError *error))failure;
+
+- (void)postFavoriteLocation:(NSString *)locationId
+                     Success:(void (^)(id responseObject))success
+                     Failure:(void (^)(NSError *error))failure;
+
+- (void)deleteFavoriteLocation:(NSString *)locationId
+                       Success:(void (^)(id responseObject))success
+                       Failure:(void (^)(NSError *error))failure;
 
 @end

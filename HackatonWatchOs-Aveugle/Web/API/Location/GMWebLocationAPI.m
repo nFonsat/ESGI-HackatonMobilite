@@ -31,6 +31,38 @@
      }];
 }
 
+- (void)getFavoritesSuccess:(void (^)(id responseObject))success
+                    Failure:(void (^)(NSError *error))failure
+{
+    [self authenticateUserWithCredential];
+    [self.OAuth2Manager GET:[NSString stringWithFormat:@"%@/all?favorite",self.baseURL]
+                 parameters:nil
+                    success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         success(responseObject);
+     }
+                    failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         failure(error);
+     }];
+}
+
+- (void)getHistoriesSuccess:(void (^)(id responseObject))success
+                    Failure:(void (^)(NSError *error))failure
+{
+    [self authenticateUserWithCredential];
+    [self.OAuth2Manager GET:[NSString stringWithFormat:@"%@/all?favorite",self.baseURL]
+                 parameters:nil
+                    success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         success(responseObject);
+     }
+                    failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         failure(error);
+     }];
+}
+
 - (void)postLocationWithName:(NSString *)name
                      Location:(CLLocation *)location
                       Success:(void (^)(id responseObject))success
@@ -104,6 +136,83 @@
 {
     [self authenticateUserWithCredential];
     [self.OAuth2Manager DELETE:[NSString stringWithFormat:@"%@/%@",self.baseURL, locationId]
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         success(responseObject);
+     }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         failure(error);
+     }];
+}
+
+- (void)playLocation:(NSString *)locationId
+             Success:(void (^)(id responseObject))success
+             Failure:(void (^)(NSError *error))failure
+{
+    [self authenticateUserWithCredential];
+    [self.OAuth2Manager POST:[NSString stringWithFormat:@"%@/play/%@",self.baseURL, locationId]
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         success(responseObject);
+     }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         failure(error);
+     }];
+}
+- (void)postNewLocationWithName:(NSString *)name
+                       Location:(CLLocation *)location
+                        Success:(void (^)(id responseObject))success
+                        Failure:(void (^)(NSError *error))failure
+{
+    [self authenticateUserWithCredential];
+    
+    NSDictionary * parameters = @{
+                                  @"name":name,
+                                  @"latitude": @(location.coordinate.latitude),
+                                  @"longitude": @(location.coordinate.longitude),
+                                  @"isfavorite": @YES,
+                                  };
+    
+    
+    [self.OAuth2Manager POST:self.baseURL
+                  parameters:parameters
+                     success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         success(responseObject);
+     }
+                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         failure(error);
+     }];
+}
+
+- (void)postFavoriteLocation:(NSString *)locationId
+                     Success:(void (^)(id responseObject))success
+                     Failure:(void (^)(NSError *error))failure
+{
+    [self authenticateUserWithCredential];
+    [self.OAuth2Manager POST:[NSString stringWithFormat:@"%@/favorite/%@",self.baseURL, locationId]
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         success(responseObject);
+     }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         failure(error);
+     }];
+}
+
+- (void)deleteFavoriteLocation:(NSString *)locationId
+                       Success:(void (^)(id responseObject))success
+                       Failure:(void (^)(NSError *error))failure
+{
+    [self authenticateUserWithCredential];
+    [self.OAuth2Manager DELETE:[NSString stringWithFormat:@"%@/favorite/%@",self.baseURL, locationId]
                     parameters:nil
                        success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
