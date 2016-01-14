@@ -51,7 +51,7 @@
                     Failure:(void (^)(NSError *error))failure
 {
     [self authenticateUserWithCredential];
-    [self.OAuth2Manager GET:[NSString stringWithFormat:@"%@/all?favorite",self.baseURL]
+    [self.OAuth2Manager GET:[NSString stringWithFormat:@"%@/all?history",self.baseURL]
                  parameters:nil
                     success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
