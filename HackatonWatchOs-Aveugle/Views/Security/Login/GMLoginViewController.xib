@@ -33,7 +33,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6o-tt-NG1">
                             <rect key="frame" x="20" y="130" width="520" height="30"/>
                             <color key="backgroundColor" red="0.97992056230000002" green="0.99971922270000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Login">
+                            <state key="normal" title="Sign in">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -44,7 +44,7 @@
                             <rect key="frame" x="20" y="190" width="520" height="30"/>
                             <color key="backgroundColor" red="0.97992056230000002" green="0.99971922270000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Sign in">
+                            <state key="normal" title="Sign up">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
