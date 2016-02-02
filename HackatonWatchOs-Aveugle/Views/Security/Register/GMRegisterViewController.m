@@ -7,14 +7,13 @@
 //
 
 #import "GMRegisterViewController.h"
-#import "GMMainVIewController.h"
+#import "GMLoginViewController.h"
 #import "GMWebUserAPI.h"
 
 @interface GMRegisterViewController ()
 {
     @private
     GMWebUserAPI * webUserManager;
-    GMOAuth2Manager * OAuth2Manager;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField * usernameText;
@@ -33,72 +32,30 @@
     [super viewDidLoad];
     
     webUserManager = [[GMWebUserAPI alloc] init];
+}
+
+- (IBAction)registerAction:(UIButton *)sender {    
+    if (![self.passwordText.text isEqual: self.confirmPasswordText.text]) {
+        NSLog(@"Problème password : %@ != %@", self.passwordText.text, self.confirmPasswordText.text);
+        return;
+    }
     
-    OAuth2Manager = [[GMOAuth2Manager alloc] init];
-}
-
-- (UIColor *)getBarTintColor
-{
-    return [UIColor blackColor];
-}
-
-- (NSString *)getTitle
-{
-    return @"Sign up";
-}
-
-- (UIColor *)getTitleColor
-{
-    return [UIColor whiteColor];
-}
-
-- (IBAction)registerAction:(UIButton *)sender {
-    if ([self formIsValid]) {
-        [webUserManager postUserWithEmail:self.emailText.text
-                                 Username:self.usernameText.text
-                                 Password:self.passwordText.text
-                                  Success:^(id responseObject)
-         {
-             [OAuth2Manager loginWithUsername:self.usernameText.text
-                                     Password:self.passwordText.text
-                                      Success:^(AFOAuthCredential * credential)
-              {
-                  GMMainViewController * mainView = [[GMMainViewController alloc] init];
-                  [self.navigationController setViewControllers:@[mainView] animated:YES];
-              }
-                                      Failure:^(NSError * error)
-              {
-                  NSLog(@"Error loginAction => %@", error);
-              }];
-         }
-                                  Failure:^(NSError *error)
-         {
-             NSLog(@"Error: %@", error);
-         }];
-    }
-    else {
-        NSLog(@"Update form");
-    }
+    [webUserManager postUserWithEmail:self.emailText.text
+                             Username:self.usernameText.text
+                             Password:self.passwordText.text
+                              Success:^(id responseObject)
+     {
+         NSLog(@"JSON: %@", responseObject);
+     }
+                              Failure:^(NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 }
 
 - (IBAction)goToLoginView:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-
-- (BOOL)formIsValid
-{
-    if ([self.usernameText.text isEqualToString:@""] || [self.emailText.text isEqualToString:@""]
-        || [self.passwordText.text isEqualToString:@""]|| [self.confirmPasswordText.text isEqualToString:@""]) {
-        return NO;
-    }
-    else if (![self.passwordText.text isEqual: self.confirmPasswordText.text]) {
-        NSLog(@"Problème password : %@ != %@", self.passwordText.text, self.confirmPasswordText.text);
-        return NO;
-    }
-    else {
-        return YES;
-    }
+    GMLoginViewController * loginViewController = [[GMLoginViewController alloc] init];
+    [self.navigationController pushViewController:loginViewController animated:YES];
 }
 
 @end

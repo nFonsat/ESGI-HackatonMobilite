@@ -9,13 +9,9 @@
 #import "AppDelegate.h"
 #import "GMMainViewController.h"
 #import "GMNavigationController.h"
-#import "GMWebUserAPI.h"
-#import "GMLoginViewController.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
-
-@property(nonatomic, strong) GMWebUserAPI * webUserManager;
 
 @end
 
@@ -23,35 +19,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     [GMSServices provideAPIKey:@"AIzaSyBlTArM1_K1_Eo6dYuRAWHvh_xqzN72hxs"];
     
-    _webUserManager = [[GMWebUserAPI alloc] init];
+    GMMainViewController * mainViewController = [GMMainViewController new];
     
-    [_webUserManager getUserWithSuccess:^(id responseObject)
-     {
-         GMMainViewController * mainViewController = [GMMainViewController new];
-         [self application:application withRootViewController:mainViewController];
-     }
-                               Failure:^(NSError *error)
-     {
-         GMLoginViewController * loginView = [GMLoginViewController new];
-         [self application:application withRootViewController:loginView];
-     }];
-    
-    return YES;
-}
-
-- (void)application:(UIApplication *)application withRootViewController:(UIViewController *)rootViewController
-{
-    GMNavigationController * navigationController = [[GMNavigationController alloc] initWithRootViewController:rootViewController];
+    GMNavigationController * navigationController = [[GMNavigationController alloc] initWithRootViewController:mainViewController];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     UIWindow * window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     window.rootViewController = navigationController;
-    
+
     self.window = window;
     [self.window makeKeyAndVisible];
+    
+    return YES;
 }
 
 @end

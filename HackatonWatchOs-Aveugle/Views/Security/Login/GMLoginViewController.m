@@ -33,60 +33,25 @@
     OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
 
-- (UIColor *)getBarTintColor
-{
-    return [UIColor blackColor];
-}
-
-- (NSString *)getTitle
-{
-    return @"Sign in";
-}
-
-- (UIColor *)getTitleColor
-{
-    return [UIColor whiteColor];
-}
-
 - (IBAction)loginAction:(UIButton *)sender
 {
-    NSString * username = self.usernameText.text;
-    NSString * password = self.passwordText.text;
-    
-    if ([self formIsValid]) {
-        [OAuth2Manager loginWithUsername:username
-                                Password:password
-                                 Success:^(AFOAuthCredential * credential)
-         {
-             GMMainViewController * mainView = [[GMMainViewController alloc] init];
-             [self.navigationController pushViewController:mainView animated:YES];
-         }
-                                 Failure:^(NSError * error)
-         {
-             NSLog(@"Error loginAction => %@", error);
-         }];
-    }
-    else {
-        NSLog(@"Update form");
-    }
-    
-    
+    [OAuth2Manager loginWithUsername: self.usernameText.text
+                            Password:self.passwordText.text
+                             Success:^(AFOAuthCredential * credential)
+     {
+         GMMainViewController * mainView = [[GMMainViewController alloc] init];
+         [self.navigationController pushViewController:mainView animated:YES];
+     }
+                             Failure:^(NSError * error)
+     {
+         NSLog(@"Error loginAction => %@", error);
+     }];
 }
 
 - (IBAction)goToRegisterView:(UIButton *)sender
 {
     GMRegisterViewController * registerViewController = [[GMRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerViewController animated:YES];
-}
-
-- (BOOL)formIsValid
-{
-    if ([self.usernameText.text isEqualToString:@""] || [self.passwordText.text isEqualToString:@""]) {
-        return NO;
-    }
-    else {
-        return YES;
-    }
 }
 
 @end
