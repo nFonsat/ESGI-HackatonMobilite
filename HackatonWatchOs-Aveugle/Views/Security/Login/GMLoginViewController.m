@@ -33,6 +33,21 @@
     OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
 
+- (UIColor *)getBarTintColor
+{
+    return [UIColor blackColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Sign in";
+}
+
+- (UIColor *)getTitleColor
+{
+    return [UIColor whiteColor];
+}
+
 - (IBAction)loginAction:(UIButton *)sender
 {
     [OAuth2Manager loginWithUsername: self.usernameText.text
