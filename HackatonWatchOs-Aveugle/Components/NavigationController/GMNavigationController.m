@@ -8,6 +8,7 @@
 
 #import "GMNavigationController.h"
 #import "GMMainViewController.h"
+#import "GMLoginViewController.h"
 
 @interface GMNavigationController ()
 
@@ -55,10 +56,11 @@
 - (void) needToHideNavigationBar
 {
     NSArray< UIViewController *> * viewControllers = [self viewControllers];
+
     if (_viewControllerToDisplay != nil && [_viewControllerToDisplay isKindOfClass:[GMMainViewController class]]) {
         self.navigationBar.hidden = YES;
     }
-    else if (_viewControllerToDisplay == nil && viewControllers.count <= 2){
+    else if (_viewControllerToDisplay == nil && viewControllers.count <= 2 && ![viewControllers[0] isKindOfClass:[GMLoginViewController class]]){
         self.navigationBar.hidden = YES;
     }
     else {
