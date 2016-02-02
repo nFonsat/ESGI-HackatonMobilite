@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMBaseViewController.h"
 
-@interface GMRegisterViewController : UIViewController
+@interface GMRegisterViewController : GMBaseViewController
 
 @end

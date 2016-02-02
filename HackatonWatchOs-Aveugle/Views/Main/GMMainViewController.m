@@ -13,34 +13,16 @@
 #import "GMLocationHomeViewController.h"
 
 @interface GMMainViewController ()
-{
-    @private
-    GMWebUserAPI * webUserManager;
-}
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender;
 - (IBAction)goToLocationView:(UIButton *)sender;
+
 @end
 
 @implementation GMMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    webUserManager = [[GMWebUserAPI alloc] init];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-     [webUserManager getUserWithSuccess:^(id responseObject)
-      {
-          NSLog(@"Success: %@", responseObject);
-      }
-                                Failure:^(NSError *error)
-      {
-          GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
-          [self.navigationController pushViewController:loginView animated:YES];
-      }];
 }
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender
