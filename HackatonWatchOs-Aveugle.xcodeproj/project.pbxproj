@@ -20,6 +20,7 @@
 		372351A51C25BB7B00799EC8 /* GMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A41C25BB7B00799EC8 /* GMLocation.m */; };
 		372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */; };
 		372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */; };
+		37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37295D621C6234020011CAD7 /* GMDangerWebAPI.m */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
 		374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374EDE631C60E14000E96BEC /* GMLocationMapViewController.m */; };
@@ -133,6 +134,8 @@
 		372351A71C2DCA7A00799EC8 /* GMLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationTableViewCell.h; sourceTree = "<group>"; };
 		372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationTableViewCell.m; sourceTree = "<group>"; };
 		372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationTableViewCell.xib; sourceTree = "<group>"; };
+		37295D611C6234020011CAD7 /* GMDangerWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerWebAPI.h; sourceTree = "<group>"; };
+		37295D621C6234020011CAD7 /* GMDangerWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerWebAPI.m; sourceTree = "<group>"; };
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
@@ -346,6 +349,15 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		37295D601C6232A00011CAD7 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37295D611C6234020011CAD7 /* GMDangerWebAPI.h */,
+				37295D621C6234020011CAD7 /* GMDangerWebAPI.m */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
 		3732F4531C18499400FA3C0C /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				37D2DFCF1C24FC3600B9625F /* Core */,
+				37295D601C6232A00011CAD7 /* Danger */,
 				37D2DFD21C24FC3600B9625F /* Location */,
 				37D2DFD31C24FC3600B9625F /* User */,
 			);
@@ -975,6 +988,7 @@
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */,
+				37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */,
 				37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */,
 				3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
