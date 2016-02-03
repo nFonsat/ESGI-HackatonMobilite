@@ -10,12 +10,14 @@
 #import "GMLocationAddViewController.h"
 #import "GMLocationMapViewController.h"
 #import "GMFavoriteListViewController.h"
+#import "GMHistoriesViewController.h"
 
 @interface GMLocationHomeViewController ()
 
 - (IBAction)goToAddView:(UIButton *)sender;
 - (IBAction)goToMapView:(UIButton *)sender;
 - (IBAction)goToFavoriteView:(UIButton *)sender;
+- (IBAction)goToHistoryView:(UIButton *)sender;
 
 @end
 
@@ -42,6 +44,12 @@
 {
     GMFavoriteListViewController * favoriteView = [[GMFavoriteListViewController alloc] init];
     [self.navigationController pushViewController:favoriteView animated:YES];
+}
+
+- (IBAction)goToHistoryView:(UIButton *)sender
+{
+    GMHistoriesViewController * historyView = [[GMHistoriesViewController alloc] init];
+    [self.navigationController pushViewController:historyView animated:YES];
 }
 
 @end

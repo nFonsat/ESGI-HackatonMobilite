@@ -13,11 +13,15 @@
 {
     NSString * _locationId;
     NSString * _name;
+    NSDate * _lastUsed;
+    NSNumber * _navigateTo;
     CLLocationCoordinate2D _coordinate;
 }
 
 @property (nonatomic, strong) NSString * locationId;
 @property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSDate * lastUsed;
+@property (nonatomic, strong) NSNumber * navigateTo;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 - (instancetype)initWithLocationId:(NSString *)locationId
