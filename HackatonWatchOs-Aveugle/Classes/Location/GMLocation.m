@@ -14,9 +14,11 @@
 
 @implementation GMLocation
 
-@synthesize locationId = _locationId;
-@synthesize name = _name;
-@synthesize coordinate = _coordinate;
+@synthesize locationId  = _locationId;
+@synthesize name        = _name;
+@synthesize coordinate  = _coordinate;
+@synthesize navigateTo  = _navigateTo;
+@synthesize lastUsed    = _lastUsed;
 
 - (instancetype)initWithLocationId:(NSString *)locationId
                               Name:(NSString *)name
@@ -47,9 +49,17 @@
     if (self = [super init]) {
         
         _locationId = [json objectForKey:@"_id"];
-        _name = [json objectForKey:@"name"];
+        _name       = [json objectForKey:@"name"];
+        _navigateTo = [json objectForKey:@"navigateTo"];
         
-        NSDictionary * coordinateObject = [json objectForKey:@"coordonate"];
+        if(_navigateTo.longValue > 0) {
+            NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+            [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+            _lastUsed = [formatter dateFromString:[json objectForKey:@"lastUsed"]];
+        }
+        
+        NSDictionary * coordinateObject = [json objectForKey:@"coordinate"];
         NSArray<NSNumber *> * geometry = [coordinateObject objectForKey:@"geometry"];
         
         CLLocation * loc = [[CLLocation alloc] initWithLatitude:geometry[0].doubleValue longitude:geometry[1].doubleValue];

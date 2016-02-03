@@ -63,7 +63,7 @@
 
 - (UIColor *)getTitleColor
 {
-    return [UIColor blackColor];
+    return [UIColor whiteColor];
 }
 
 @end
