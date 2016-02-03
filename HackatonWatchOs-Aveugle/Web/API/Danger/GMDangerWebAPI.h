@@ -8,6 +8,7 @@
 
 #import <MapKit/MapKit.h>
 #import "GMWebAPI.h"
+#import "GMTypeDanger.h"
 
 @interface GMDangerWebAPI : GMWebAPI
 
@@ -24,7 +25,7 @@
 
 - (void)postDangerWithName:(NSString *)name
                   Location:(CLLocation *)location
-                    TypeId:(NSString *)typeId
+                      Type:(GMTypeDanger *)type
                    Success:(void (^)(id responseObject))success
                    Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure;
 
@@ -34,7 +35,7 @@
 
 - (void)updateDangerWithDangerId:(NSString *)dangerId
                          NewName:(NSString *)newName
-                       NewTypeId:(NSString *)newTypeId
+                         NewType:(GMTypeDanger *)newType
                          Success:(void (^)(id responseObject))success
                          Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure;
 

@@ -29,6 +29,8 @@
 		374EDE781C61073F00E96BEC /* GMHistoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */; };
 		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
 		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
+		37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E01C62B81E004F8353 /* GMDanger.m */; };
+		37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */; };
 		37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACA1C4110D900FC751C /* GMNavigationController.m */; };
 		37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACE1C41874500FC751C /* GMBaseViewController.m */; };
 		37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36AD51C418BCC00FC751C /* UIColor+GMColor.m */; };
@@ -148,6 +150,10 @@
 		3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMFavoriteListViewController.h; sourceTree = "<group>"; };
 		3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMFavoriteListViewController.m; sourceTree = "<group>"; };
 		3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMFavoriteListViewController.xib; sourceTree = "<group>"; };
+		37AB80DF1C62B81E004F8353 /* GMDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDanger.h; sourceTree = "<group>"; };
+		37AB80E01C62B81E004F8353 /* GMDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDanger.m; sourceTree = "<group>"; };
+		37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTypeDanger.h; sourceTree = "<group>"; };
+		37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTypeDanger.m; sourceTree = "<group>"; };
 		37B36AC91C4110D900FC751C /* GMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMNavigationController.h; sourceTree = "<group>"; };
 		37B36ACA1C4110D900FC751C /* GMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMNavigationController.m; sourceTree = "<group>"; };
 		37B36ACD1C41874500FC751C /* GMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBaseViewController.h; sourceTree = "<group>"; };
@@ -325,7 +331,9 @@
 		372351A11C25BAE500799EC8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37AB80DE1C62B809004F8353 /* Danger */,
 				372351A21C25BAE500799EC8 /* Location */,
+				37AB80E21C62BC04004F8353 /* TypeDanger */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -386,6 +394,24 @@
 				374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		37AB80DE1C62B809004F8353 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80DF1C62B81E004F8353 /* GMDanger.h */,
+				37AB80E01C62B81E004F8353 /* GMDanger.m */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
+		37AB80E21C62BC04004F8353 /* TypeDanger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */,
+				37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */,
+			);
+			path = TypeDanger;
 			sourceTree = "<group>";
 		};
 		37B36AC81C4110B300FC751C /* NavigationController */ = {
@@ -988,6 +1014,7 @@
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */,
+				37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */,
 				37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */,
 				37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */,
 				3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */,
@@ -995,6 +1022,7 @@
 				37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */,
 				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
 				37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */,
+				37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
 				372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,

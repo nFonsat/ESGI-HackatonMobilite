@@ -71,7 +71,7 @@
 
 - (void)postDangerWithName:(NSString *)name
                   Location:(CLLocation *)location
-                    TypeId:(NSString *)typeId
+                      Type:(GMTypeDanger *)type
                    Success:(void (^)(id responseObject))success
                    Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure
 {
@@ -81,7 +81,7 @@
                                   @"name":name,
                                   @"latitude": @(location.coordinate.latitude),
                                   @"longitude": @(location.coordinate.longitude),
-                                  @"typeId": typeId,
+                                  @"typeId": type.typeDangerId,
                                   };
     
     
@@ -116,7 +116,7 @@
 
 - (void)updateDangerWithDangerId:(NSString *)dangerId
                          NewName:(NSString *)newName
-                       NewTypeId:(NSString *)newTypeId
+                         NewType:(GMTypeDanger *)newType
                          Success:(void (^)(id responseObject))success
                          Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure
 {
@@ -124,7 +124,7 @@
     
     NSDictionary * parameters = @{
                                   @"name":newName,
-                                  @"typeId":newTypeId,
+                                  @"typeId":newType.typeDangerId,
                                   };
     
     [self.OAuth2Manager PUT:[NSString stringWithFormat:@"%@/%@",self.baseURL, dangerId]
