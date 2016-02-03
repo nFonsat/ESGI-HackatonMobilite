@@ -7,12 +7,14 @@
 //
 
 #import "GMLocationMapViewController.h"
+#import "GMWebLocationAPI.h"
 #import "UIColor+GMColor.h"
 
 @interface GMLocationMapViewController ()
 {
     @private
     CLLocationManager * _locationManager;
+    GMWebLocationAPI * _locationWeb;
     MKRoute * _routeDetails;
     GMLocation * _locationForZoom;
     BOOL _centerOnUserPosition;
@@ -49,6 +51,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
+        _locationWeb = [[GMWebLocationAPI alloc] init];
         [self initLocationManager];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
@@ -95,7 +98,17 @@
 - (IBAction)navigateAction:(UIButton *)sender
 {
     if (!_startNavigation) {
-        [self calculateDirection];
+        [_locationWeb playLocation:_locationForZoom.locationId
+                           Success:^(id responseObject)
+        {
+            NSLog(@"%@", responseObject);
+            [self calculateDirection];
+        }
+                           Failure:^(NSError * error)
+        {
+            NSLog(@"%@", error);
+            [self calculateDirection];
+        }];
     }
     else {
         [self stopNavigation];
