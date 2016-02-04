@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIColor+GMColor.h"
 
 @interface GMBaseViewController : UIViewController
 

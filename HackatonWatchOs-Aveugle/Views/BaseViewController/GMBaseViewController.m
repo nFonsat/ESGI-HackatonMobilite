@@ -10,6 +10,8 @@
 
 @interface GMBaseViewController ()
 
+- (UIColor *)getBackgroundColor;
+
 - (UIColor *)getBarTintColor;
 
 - (UIColor *)getTintColor;
@@ -36,6 +38,8 @@
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [self getTitleColor]}];
     
     self.navigationController.navigationBar.translucent = NO;
+    
+    [self.view setBackgroundColor:[self getBackgroundColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,6 +48,11 @@
     [self.navigationController.navigationBar setTintColor:[self getTintColor]];
     
     [super viewWillAppear:animated];
+}
+
+- (UIColor *)getBackgroundColor
+{
+    return [UIColor blackColor];
 }
 
 - (UIColor *)getBarTintColor

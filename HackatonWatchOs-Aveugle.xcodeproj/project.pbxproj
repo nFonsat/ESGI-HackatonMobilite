@@ -31,6 +31,8 @@
 		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
 		37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E01C62B81E004F8353 /* GMDanger.m */; };
 		37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */; };
+		37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E81C632AFC004F8353 /* GMDangerViewController.m */; };
+		37AB80EB1C632AFC004F8353 /* GMDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */; };
 		37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACA1C4110D900FC751C /* GMNavigationController.m */; };
 		37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACE1C41874500FC751C /* GMBaseViewController.m */; };
 		37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36AD51C418BCC00FC751C /* UIColor+GMColor.m */; };
@@ -154,6 +156,9 @@
 		37AB80E01C62B81E004F8353 /* GMDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDanger.m; sourceTree = "<group>"; };
 		37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTypeDanger.h; sourceTree = "<group>"; };
 		37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTypeDanger.m; sourceTree = "<group>"; };
+		37AB80E71C632AFC004F8353 /* GMDangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerViewController.h; sourceTree = "<group>"; };
+		37AB80E81C632AFC004F8353 /* GMDangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerViewController.m; sourceTree = "<group>"; };
+		37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMDangerViewController.xib; sourceTree = "<group>"; };
 		37B36AC91C4110D900FC751C /* GMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMNavigationController.h; sourceTree = "<group>"; };
 		37B36ACA1C4110D900FC751C /* GMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMNavigationController.m; sourceTree = "<group>"; };
 		37B36ACD1C41874500FC751C /* GMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBaseViewController.h; sourceTree = "<group>"; };
@@ -414,6 +419,16 @@
 			path = TypeDanger;
 			sourceTree = "<group>";
 		};
+		37AB80E61C632ACE004F8353 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80E71C632AFC004F8353 /* GMDangerViewController.h */,
+				37AB80E81C632AFC004F8353 /* GMDangerViewController.m */,
+				37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
 		37B36AC81C4110B300FC751C /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				37B36ACC1C4186FA00FC751C /* BaseViewController */,
+				37AB80E61C632ACE004F8353 /* Danger */,
 				37E4E52B1C235DF500421E79 /* Favorites */,
 				374EDE731C61072500E96BEC /* History */,
 				37B36ADC1C42BAF700FC751C /* Home */,
@@ -914,6 +930,7 @@
 				37B36AE11C42BAF700FC751C /* GMLocationHomeViewController.xib in Resources */,
 				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
 				3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */,
+				37AB80EB1C632AFC004F8353 /* GMDangerViewController.xib in Resources */,
 				3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
 				372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */,
@@ -1001,6 +1018,7 @@
 				372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */,
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */,
+				37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */,
 				374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
