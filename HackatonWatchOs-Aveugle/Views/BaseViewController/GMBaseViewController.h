@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+GMColor.h"
 
-@interface GMBaseViewController : UIViewController
+@import CoreLocation;
+
+@interface GMBaseViewController : UIViewController <CLLocationManagerDelegate>
 
 @end

@@ -13,7 +13,6 @@
 @interface GMLocationMapViewController ()
 {
     @private
-    CLLocationManager * _locationManager;
     GMWebLocationAPI * _locationWeb;
     MKRoute * _routeDetails;
     GMLocation * _locationForZoom;
@@ -52,7 +51,6 @@
 {
     if (self = [super init]) {
         _locationWeb = [[GMWebLocationAPI alloc] init];
-        [self initLocationManager];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
     }
@@ -312,48 +310,6 @@
     }
     
     return nil;
-}
-
-#pragma mark - CoreLocation
-
-- (void)initLocationManager
-{
-    _locationManager = [CLLocationManager new];
-    _locationManager.delegate = self;
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-}
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
-{
-    switch (status) {
-        case kCLAuthorizationStatusNotDetermined:
-            [_locationManager requestAlwaysAuthorization];
-            break;
-            
-        case kCLAuthorizationStatusRestricted:
-            [_locationManager requestAlwaysAuthorization];
-            break;
-            
-        case kCLAuthorizationStatusDenied:
-            [_locationManager requestAlwaysAuthorization];
-            break;
-            
-        case kCLAuthorizationStatusAuthorizedAlways:
-            [_locationManager startUpdatingLocation];
-            break;
-            
-        case kCLAuthorizationStatusAuthorizedWhenInUse:
-            [_locationManager startUpdatingLocation];
-            break;
-            
-        default:
-            break;
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    NSLog(@"CoreLocation didFailWithError : %@", error.localizedDescription);
 }
 
 @end
