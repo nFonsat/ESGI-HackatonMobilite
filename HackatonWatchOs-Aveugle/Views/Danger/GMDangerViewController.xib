@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMDangerViewController">
             <connections>
+                <outlet property="mapView" destination="hfm-dU-24N" id="g09-Sm-2st"/>
+                <outlet property="nameField" destination="Yoy-TO-Ynk" id="93Z-y9-WKz"/>
+                <outlet property="typeButton" destination="2rc-Cy-xIX" id="bZt-et-G5Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,19 +35,38 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-Cy-xIX">
+                    <rect key="frame" x="20" y="140" width="560" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Press to select type">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="selectTypeAction:" destination="-1" eventType="touchUpInside" id="4xI-8y-9PA"/>
+                    </connections>
+                </button>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hfm-dU-24N">
                     <rect key="frame" x="20" y="210" width="560" height="251.5"/>
                 </mapView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gm_current-location" translatesAutoresizingMaskIntoConstraints="NO" id="w9Z-Eh-DaE">
+                    <rect key="frame" x="274.5" y="311" width="51" height="50"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2F0-ht-6Vv">
                     <rect key="frame" x="20" y="492" width="560" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E2-c9-bzB">
                             <rect key="frame" x="490" y="0.0" width="70" height="70"/>
                             <state key="normal" image="gm_x-mark"/>
+                            <connections>
+                                <action selector="cancelDangerAction:" destination="-1" eventType="touchUpInside" id="6mK-w4-Sss"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3g-mn-5Sh">
                             <rect key="frame" x="395" y="0.0" width="70" height="70"/>
                             <state key="normal" image="gm_checkmark"/>
+                            <connections>
+                                <action selector="validDangerAction:" destination="-1" eventType="touchUpInside" id="lsi-Uc-dTQ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -55,13 +77,6 @@
                         <constraint firstItem="g3g-mn-5Sh" firstAttribute="top" secondItem="2F0-ht-6Vv" secondAttribute="top" id="val-wE-sfZ"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-Cy-xIX">
-                    <rect key="frame" x="20" y="140.5" width="560" height="30"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="Press to select type">
-                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -77,9 +92,11 @@
                 <constraint firstAttribute="trailing" secondItem="1wO-Ol-J8e" secondAttribute="trailing" constant="20" id="P28-6j-sAg"/>
                 <constraint firstItem="1wO-Ol-J8e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Tyl-cw-yFG"/>
                 <constraint firstItem="hfm-dU-24N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="UjZ-rR-6CJ"/>
+                <constraint firstItem="w9Z-Eh-DaE" firstAttribute="centerX" secondItem="hfm-dU-24N" secondAttribute="centerX" id="YOK-yg-Oga"/>
                 <constraint firstAttribute="trailing" secondItem="2rc-Cy-xIX" secondAttribute="trailing" constant="20" id="a8P-WB-RoY"/>
                 <constraint firstItem="2F0-ht-6Vv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="eah-57-t4Y"/>
                 <constraint firstAttribute="trailing" secondItem="Yoy-TO-Ynk" secondAttribute="trailing" constant="20" id="gXG-5c-swX"/>
+                <constraint firstItem="w9Z-Eh-DaE" firstAttribute="centerY" secondItem="hfm-dU-24N" secondAttribute="centerY" id="jb7-wq-fCy"/>
                 <constraint firstItem="1wO-Ol-J8e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="qkY-yh-Rng"/>
                 <constraint firstItem="2rc-Cy-xIX" firstAttribute="top" secondItem="wRI-BX-Ip5" secondAttribute="bottom" constant="10" id="uog-2e-7if"/>
                 <constraint firstItem="hfm-dU-24N" firstAttribute="top" secondItem="2rc-Cy-xIX" secondAttribute="bottom" constant="40" id="x9U-vR-jYX"/>
@@ -90,6 +107,7 @@
     </objects>
     <resources>
         <image name="gm_checkmark" width="70" height="70"/>
+        <image name="gm_current-location" width="51" height="50"/>
         <image name="gm_x-mark" width="70" height="70"/>
     </resources>
 </document>
