@@ -7,6 +7,7 @@
 //
 
 #import "GMDangerViewController.h"
+#import "GMTypeDangerViewController.h"
 
 @interface GMDangerViewController ()
 {
@@ -76,9 +77,12 @@
     return @"Danger";
 }
 
+#pragma mark - GMDangerViewController Action
+
 - (IBAction)selectTypeAction:(UIButton *)sender
 {
-    
+    GMTypeDangerViewController * typesDanger = [GMTypeDangerViewController new];
+    [self.navigationController pushViewController:typesDanger animated:YES];
 }
 
 - (IBAction)validDangerAction:(UIButton *)sender
