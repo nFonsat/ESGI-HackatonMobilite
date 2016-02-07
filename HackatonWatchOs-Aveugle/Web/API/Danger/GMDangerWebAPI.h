@@ -18,13 +18,13 @@
 - (void)getDangersSuccess:(void (^)(id responseObject))success
                   Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure;
 
-- (void)getDangersFromCenter:(CLLocation *)center
+- (void)getDangersFromCenter:(CLLocationCoordinate2D)centerCoordinate
                       Distance:(NSNumber *)distance
                      Success:(void (^)(id responseObject))success
                      Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure;
 
 - (void)postDangerWithName:(NSString *)name
-                  Location:(CLLocation *)location
+                Coordinate:(CLLocationCoordinate2D)coordinate
                       Type:(GMTypeDanger *)type
                    Success:(void (^)(id responseObject))success
                    Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure;

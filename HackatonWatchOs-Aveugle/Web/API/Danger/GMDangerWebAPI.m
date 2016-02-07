@@ -47,15 +47,15 @@
      }];
 }
 
-- (void)getDangersFromCenter:(CLLocation *)center
+- (void)getDangersFromCenter:(CLLocationCoordinate2D)centerCoordinate
                     Distance:(NSNumber *)distance
                      Success:(void (^)(id responseObject))success
                      Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure
 {
     [self authenticateUserWithCredential];
     
-    CLLocationDegrees latitude = center.coordinate.latitude;
-    CLLocationDegrees longitude = center.coordinate.latitude;
+    CLLocationDegrees latitude = centerCoordinate.latitude;
+    CLLocationDegrees longitude = centerCoordinate.longitude;
     
     [self.OAuth2Manager GET:[NSString stringWithFormat:@"%@/all?latitude=%f&longitude=%f&distance=%ld", self.baseURL, latitude, longitude, distance.longValue]
                  parameters:nil
@@ -70,7 +70,7 @@
 }
 
 - (void)postDangerWithName:(NSString *)name
-                  Location:(CLLocation *)location
+                Coordinate:(CLLocationCoordinate2D)coordinate
                       Type:(GMTypeDanger *)type
                    Success:(void (^)(id responseObject))success
                    Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure
@@ -79,8 +79,8 @@
     
     NSDictionary * parameters = @{
                                   @"name":name,
-                                  @"latitude": @(location.coordinate.latitude),
-                                  @"longitude": @(location.coordinate.longitude),
+                                  @"latitude": @(coordinate.latitude),
+                                  @"longitude": @(coordinate.longitude),
                                   @"typeId": type.typeDangerId,
                                   };
     
