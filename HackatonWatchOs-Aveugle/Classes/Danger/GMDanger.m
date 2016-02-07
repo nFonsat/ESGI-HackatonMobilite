@@ -47,4 +47,24 @@
     return [self initWithDangerId:dangerId Name:name TypeDanger:type Coordinate:coordinate];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"{%@:[%f,%f]:%@}", _name, _coordinate.latitude, _coordinate.longitude, _type.name];
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if (self == object) {
+        return YES;
+    }
+    
+    if (![object isKindOfClass:[GMDanger class]]) {
+        return NO;
+    }
+    
+    GMDanger * dangerToCompare = (GMDanger *)object;
+    return ((dangerToCompare.coordinate.latitude == self.coordinate.latitude)
+            && (dangerToCompare.coordinate.longitude == self.coordinate.longitude));
+}
+
 @end
