@@ -8,18 +8,23 @@
 
 #import "GMLocationMapViewController.h"
 #import "GMWebLocationAPI.h"
+#import "GMDangerWebAPI.h"
+#import "GMDanger.h"
 #import "UIColor+GMColor.h"
 
 @interface GMLocationMapViewController ()
 {
-    @private
+@private
     GMWebLocationAPI * _locationWeb;
+    GMDangerWebAPI * _dangerWebAPI;
+    NSMutableArray<GMDanger *> * _dangersOnMap;
     MKRoute * _routeDetails;
     GMLocation * _locationForZoom;
     BOOL _centerOnUserPosition;
     BOOL _needUpdateUserLocation;
     BOOL _startNavigation;
     BOOL _bottomBarIsOpen;
+    BOOL _mapFullyRendered;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintBottomOnBottomBar;
@@ -51,8 +56,10 @@
 {
     if (self = [super init]) {
         _locationWeb = [[GMWebLocationAPI alloc] init];
+        _dangerWebAPI = [[GMDangerWebAPI alloc] init];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
+        _mapFullyRendered = NO;
     }
 
     return self;
@@ -77,6 +84,11 @@
     [self initMapView];
     
     [self stopNavigation];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    _dangersOnMap = [NSMutableArray new];
 }
 
 #pragma mark - GMBaseViewController
@@ -123,7 +135,7 @@
 
 - (void)zoomOnCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 800, 800);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
@@ -255,10 +267,28 @@
     }
 }
 
-- (void) loadGeneralInstruction:(MKRoute *)instruction
+- (void)loadGeneralInstruction:(MKRoute *)instruction
 {
     _distanceToDestinationLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _destinationLabel.text = _locationForZoom.name;
+}
+
+- (void)addDangerOnMap:(GMDanger *)danger
+{
+    
+    if (![_dangersOnMap containsObject:danger]) {
+        [_dangersOnMap addObject:danger];
+        
+        MKPointAnnotation * point = [[MKPointAnnotation alloc] init];
+        point.coordinate = danger.coordinate;
+        point.title = danger.name;
+        
+        [self.mapView addAnnotation:point];
+    }
+}
+
+- (void)detectDangerForUserLocation:(MKUserLocation *)userLocation
+{
 }
 
 #pragma mark - MapView
@@ -293,6 +323,8 @@
     if (_startNavigation) {
         [self calculateDirection];
     }
+    
+    [self detectDangerForUserLocation:userLocation];
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
@@ -310,6 +342,35 @@
     }
     
     return nil;
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    if (_mapFullyRendered) {
+        MKMapRect mRect = self.mapView.visibleMapRect;
+        MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMinX(mRect), MKMapRectGetMidY(mRect));
+        MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMaxX(mRect), MKMapRectGetMidY(mRect));
+        CLLocationDistance distance = MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/2;
+        
+        [_dangerWebAPI getDangersFromCenter:self.mapView.region.center
+                                   Distance:@(distance)
+                                    Success:^(id responseObject)
+         {
+             for (NSDictionary * dangerJson in responseObject) {
+                 GMDanger * danger = [[GMDanger alloc]initFromJsonDictionary:dangerJson];
+                 [self addDangerOnMap:danger];
+             }
+         }
+                                    Failure:^(AFHTTPRequestOperation * operation, NSError *error)
+         {
+             NSLog(@"Failure : %@", operation.responseObject);
+         }];
+    }
+}
+
+- (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
+{
+    _mapFullyRendered = fullyRendered;
 }
 
 @end
