@@ -37,4 +37,9 @@
     return [self initWithTypeDangerId:typeId Name:name Icon:icon];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"{%@:%@}", _name, _icon];
+}
+
 @end
