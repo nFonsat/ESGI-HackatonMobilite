@@ -7,7 +7,6 @@
 //
 
 #import "GMTypeDangerViewController.h"
-#import "GMTypeDanger.h"
 #import "GMDangerWebAPI.h"
 
 @interface GMTypeDangerViewController ()
@@ -91,6 +90,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GMTypeDanger * typeDanger = _typesDanger[indexPath.row];
+    [self.delegate userDidChooseTypeDanger:typeDanger];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

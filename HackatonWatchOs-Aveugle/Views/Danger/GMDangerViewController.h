@@ -7,8 +7,10 @@
 //
 
 #import "GMBaseViewController.h"
+#import "GMTypeDangerViewController.h"
+
 @import MapKit;
 
-@interface GMDangerViewController : GMBaseViewController <MKMapViewDelegate>
+@interface GMDangerViewController : GMBaseViewController <MKMapViewDelegate, GMTypeDangerViewControllerDelegate>
 
 @end

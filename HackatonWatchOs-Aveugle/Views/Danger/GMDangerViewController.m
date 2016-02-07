@@ -7,12 +7,14 @@
 //
 
 #import "GMDangerViewController.h"
-#import "GMTypeDangerViewController.h"
+#import "GMDangerWebAPI.h"
 
 @interface GMDangerViewController ()
 {
     @private
     BOOL _needUpdateUserLocation;
+    GMTypeDanger * _typeDanger;
+    GMDangerWebAPI * _dangerWebAPI;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
@@ -33,11 +35,53 @@
 {
     [super viewDidLoad];
     
-    [self initMapView];
+    _dangerWebAPI = [[GMDangerWebAPI alloc] init];
     
+    [self initMapView];
     
     self.typeButton.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
     self.typeButton.layer.cornerRadius = 5;
+}
+
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor dangerColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Danger";
+}
+
+#pragma mark - GMDangerViewController Helper UI
+
+- (void)updateTypeDangerBtn
+{
+    if (_typeDanger != nil) {
+        [self.typeButton setTitle:_typeDanger.name forState:UIControlStateNormal];
+        [self.typeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    else {
+        [self.typeButton setTitle:@"Press to select type" forState:UIControlStateNormal];
+        [self.typeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    }
+}
+
+- (BOOL)formIsValid
+{
+    NSString * name = self.nameField.text;
+    if (name == nil || [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0) {
+        NSLog(@"Define name");
+        return NO;
+    }
+    else if (_typeDanger == nil) {
+        NSLog(@"Define type of danger");
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - MapView
@@ -65,34 +109,47 @@
     _needUpdateUserLocation = YES;
 }
 
-#pragma mark - GMBaseViewController
-
-- (UIColor *)getBarTintColor
-{
-    return [UIColor dangerColor];
-}
-
-- (NSString *)getTitle
-{
-    return @"Danger";
-}
-
 #pragma mark - GMDangerViewController Action
 
 - (IBAction)selectTypeAction:(UIButton *)sender
 {
-    GMTypeDangerViewController * typesDanger = [GMTypeDangerViewController new];
-    [self.navigationController pushViewController:typesDanger animated:YES];
+    GMTypeDangerViewController * typesDangerView = [GMTypeDangerViewController new];
+    typesDangerView.delegate = self;
+    [self.navigationController pushViewController:typesDangerView animated:YES];
 }
 
 - (IBAction)validDangerAction:(UIButton *)sender
 {
-    NSLog(@"Coordinate : %f,%f", self.mapView.centerCoordinate.latitude, self.mapView.centerCoordinate.longitude);
+    if ([self formIsValid]) {
+        NSString * name = self.nameField.text;
+        CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
+        
+        [_dangerWebAPI postDangerWithName:name
+                               Coordinate:coordinate
+                                     Type:_typeDanger
+                                  Success:^(id responseObject)
+         {
+             NSLog(@"Success : %@", responseObject);
+             [self.navigationController popViewControllerAnimated:YES];
+         }
+                                  Failure:^(AFHTTPRequestOperation * operation, NSError *error)
+         {
+             NSLog(@"Failure : %@", operation.responseObject);
+         }];
+    }
 }
 
 - (IBAction)cancelDangerAction:(UIButton *)sender
 {
-    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - GMTypeDangerViewControllerDelegate
+
+- (void)userDidChooseTypeDanger:(GMTypeDanger *)typeDanger
+{
+    _typeDanger = typeDanger;
+    [self updateTypeDangerBtn];
 }
 
 @end
