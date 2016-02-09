@@ -289,6 +289,27 @@
 
 - (void)detectDangerForUserLocation:(MKUserLocation *)userLocation
 {
+    GMDanger * dangerSignal = nil;
+    
+    for (GMDanger * danger in _dangersOnMap) {
+        if ([self danger:danger isNearUserLocation:userLocation AndDistance:5]) {
+            dangerSignal = danger;
+            break;
+        }
+    }
+    
+    if (dangerSignal != nil) {
+        NSLog(@"Find danger to signal : %@", dangerSignal);
+    }
+    
+}
+
+- (BOOL)danger:(GMDanger *)danger isNearUserLocation:(MKUserLocation *)userLocation AndDistance:(CLLocationDistance)distance
+{
+    double xPosition = danger.coordinate.latitude - userLocation.coordinate.latitude;
+    double yPosition = danger.coordinate.longitude - userLocation.coordinate.longitude;
+    
+    return sqrt(pow(xPosition, 2) + pow(yPosition, 2)) < distance;
 }
 
 #pragma mark - MapView
