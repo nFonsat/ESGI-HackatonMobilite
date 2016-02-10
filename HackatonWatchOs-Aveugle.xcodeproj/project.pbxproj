@@ -20,14 +20,21 @@
 		372351A51C25BB7B00799EC8 /* GMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A41C25BB7B00799EC8 /* GMLocation.m */; };
 		372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */; };
 		372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */; };
+		37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37295D621C6234020011CAD7 /* GMDangerWebAPI.m */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
+		37458BF61C66BC1300B8549B /* GMTypeDangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37458BF41C66BC1300B8549B /* GMTypeDangerViewController.m */; };
+		37458BF71C66BC1300B8549B /* GMTypeDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37458BF51C66BC1300B8549B /* GMTypeDangerViewController.xib */; };
 		374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374EDE631C60E14000E96BEC /* GMLocationMapViewController.m */; };
 		374EDE661C60E14000E96BEC /* GMLocationMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE641C60E14000E96BEC /* GMLocationMapViewController.xib */; };
 		374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374EDE751C61073F00E96BEC /* GMHistoriesViewController.m */; };
 		374EDE781C61073F00E96BEC /* GMHistoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */; };
 		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
 		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
+		37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E01C62B81E004F8353 /* GMDanger.m */; };
+		37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */; };
+		37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E81C632AFC004F8353 /* GMDangerViewController.m */; };
+		37AB80EB1C632AFC004F8353 /* GMDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */; };
 		37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACA1C4110D900FC751C /* GMNavigationController.m */; };
 		37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACE1C41874500FC751C /* GMBaseViewController.m */; };
 		37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36AD51C418BCC00FC751C /* UIColor+GMColor.m */; };
@@ -133,9 +140,14 @@
 		372351A71C2DCA7A00799EC8 /* GMLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationTableViewCell.h; sourceTree = "<group>"; };
 		372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationTableViewCell.m; sourceTree = "<group>"; };
 		372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationTableViewCell.xib; sourceTree = "<group>"; };
+		37295D611C6234020011CAD7 /* GMDangerWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerWebAPI.h; sourceTree = "<group>"; };
+		37295D621C6234020011CAD7 /* GMDangerWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerWebAPI.m; sourceTree = "<group>"; };
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
+		37458BF31C66BC1300B8549B /* GMTypeDangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTypeDangerViewController.h; sourceTree = "<group>"; };
+		37458BF41C66BC1300B8549B /* GMTypeDangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTypeDangerViewController.m; sourceTree = "<group>"; };
+		37458BF51C66BC1300B8549B /* GMTypeDangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMTypeDangerViewController.xib; sourceTree = "<group>"; };
 		374EDE621C60E14000E96BEC /* GMLocationMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationMapViewController.h; sourceTree = "<group>"; };
 		374EDE631C60E14000E96BEC /* GMLocationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationMapViewController.m; sourceTree = "<group>"; };
 		374EDE641C60E14000E96BEC /* GMLocationMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationMapViewController.xib; sourceTree = "<group>"; };
@@ -145,6 +157,13 @@
 		3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMFavoriteListViewController.h; sourceTree = "<group>"; };
 		3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMFavoriteListViewController.m; sourceTree = "<group>"; };
 		3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMFavoriteListViewController.xib; sourceTree = "<group>"; };
+		37AB80DF1C62B81E004F8353 /* GMDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDanger.h; sourceTree = "<group>"; };
+		37AB80E01C62B81E004F8353 /* GMDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDanger.m; sourceTree = "<group>"; };
+		37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTypeDanger.h; sourceTree = "<group>"; };
+		37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTypeDanger.m; sourceTree = "<group>"; };
+		37AB80E71C632AFC004F8353 /* GMDangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerViewController.h; sourceTree = "<group>"; };
+		37AB80E81C632AFC004F8353 /* GMDangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerViewController.m; sourceTree = "<group>"; };
+		37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMDangerViewController.xib; sourceTree = "<group>"; };
 		37B36AC91C4110D900FC751C /* GMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMNavigationController.h; sourceTree = "<group>"; };
 		37B36ACA1C4110D900FC751C /* GMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMNavigationController.m; sourceTree = "<group>"; };
 		37B36ACD1C41874500FC751C /* GMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBaseViewController.h; sourceTree = "<group>"; };
@@ -322,7 +341,9 @@
 		372351A11C25BAE500799EC8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37AB80DE1C62B809004F8353 /* Danger */,
 				372351A21C25BAE500799EC8 /* Location */,
+				37AB80E21C62BC04004F8353 /* TypeDanger */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -346,6 +367,15 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		37295D601C6232A00011CAD7 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37295D611C6234020011CAD7 /* GMDangerWebAPI.h */,
+				37295D621C6234020011CAD7 /* GMDangerWebAPI.m */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
 		3732F4531C18499400FA3C0C /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +384,16 @@
 				3732F4561C1849C500FA3C0C /* GMMainViewController.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		37458BEA1C66B9B900B8549B /* TypeDanger */ = {
+			isa = PBXGroup;
+			children = (
+				37458BF31C66BC1300B8549B /* GMTypeDangerViewController.h */,
+				37458BF41C66BC1300B8549B /* GMTypeDangerViewController.m */,
+				37458BF51C66BC1300B8549B /* GMTypeDangerViewController.xib */,
+			);
+			path = TypeDanger;
 			sourceTree = "<group>";
 		};
 		374EDE611C60E14000E96BEC /* Map */ = {
@@ -374,6 +414,34 @@
 				374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		37AB80DE1C62B809004F8353 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80DF1C62B81E004F8353 /* GMDanger.h */,
+				37AB80E01C62B81E004F8353 /* GMDanger.m */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
+		37AB80E21C62BC04004F8353 /* TypeDanger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */,
+				37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */,
+			);
+			path = TypeDanger;
+			sourceTree = "<group>";
+		};
+		37AB80E61C632ACE004F8353 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80E71C632AFC004F8353 /* GMDangerViewController.h */,
+				37AB80E81C632AFC004F8353 /* GMDangerViewController.m */,
+				37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */,
+			);
+			path = Danger;
 			sourceTree = "<group>";
 		};
 		37B36AC81C4110B300FC751C /* NavigationController */ = {
@@ -470,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				37D2DFCF1C24FC3600B9625F /* Core */,
+				37295D601C6232A00011CAD7 /* Danger */,
 				37D2DFD21C24FC3600B9625F /* Location */,
 				37D2DFD31C24FC3600B9625F /* User */,
 			);
@@ -490,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				37B36ACC1C4186FA00FC751C /* BaseViewController */,
+				37AB80E61C632ACE004F8353 /* Danger */,
 				37E4E52B1C235DF500421E79 /* Favorites */,
 				374EDE731C61072500E96BEC /* History */,
 				37B36ADC1C42BAF700FC751C /* Home */,
@@ -497,6 +567,7 @@
 				3732F4531C18499400FA3C0C /* Main */,
 				374EDE611C60E14000E96BEC /* Map */,
 				3710D1CF1C32507900307CD5 /* Security */,
+				37458BEA1C66B9B900B8549B /* TypeDanger */,
 				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
 				37E9B70A1C18475500D7BE13 /* GMTestViewController.m */,
 			);
@@ -875,10 +946,12 @@
 				37B36AE11C42BAF700FC751C /* GMLocationHomeViewController.xib in Resources */,
 				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
 				3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */,
+				37AB80EB1C632AFC004F8353 /* GMDangerViewController.xib in Resources */,
 				3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
 				372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */,
 				372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */,
+				37458BF71C66BC1300B8549B /* GMTypeDangerViewController.xib in Resources */,
 				3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */,
 				374EDE661C60E14000E96BEC /* GMLocationMapViewController.xib in Resources */,
 				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
@@ -962,11 +1035,13 @@
 				372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */,
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */,
+				37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */,
 				374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
 				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
 				372351A51C25BB7B00799EC8 /* GMLocation.m in Sources */,
 				3723519E1C25A5D400799EC8 /* GMPlaceTableViewCell.m in Sources */,
+				37458BF61C66BC1300B8549B /* GMTypeDangerViewController.m in Sources */,
 				37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */,
 				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
 				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
@@ -975,12 +1050,15 @@
 				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
 				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
 				37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */,
+				37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */,
+				37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */,
 				37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */,
 				3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */,
 				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
 				37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */,
 				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
 				37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */,
+				37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
 				372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */,
 				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,

@@ -11,11 +11,13 @@
 #import "GMLoginViewController.h"
 #import "GMFavoriteListViewController.h"
 #import "GMLocationHomeViewController.h"
+#import "GMDangerViewController.h"
 
 @interface GMMainViewController ()
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender;
 - (IBAction)goToLocationView:(UIButton *)sender;
+- (IBAction)goToDangerView:(UIButton *)sender;
 
 @end
 
@@ -35,6 +37,12 @@
 {
     GMLocationHomeViewController * locationHomeView = [[GMLocationHomeViewController alloc] init];
     [self.navigationController pushViewController:locationHomeView animated:YES];
+}
+
+- (IBAction)goToDangerView:(UIButton *)sender
+{
+    GMDangerViewController * dangerView = [[GMDangerViewController alloc] init];
+    [self.navigationController pushViewController:dangerView animated:YES];
 }
 
 @end
