@@ -282,6 +282,7 @@
         MKPointAnnotation * point = [[MKPointAnnotation alloc] init];
         point.coordinate = danger.coordinate;
         point.title = danger.name;
+        point.subtitle = danger.type.name;
         
         [self.mapView addAnnotation:point];
     }
@@ -392,6 +393,38 @@
 - (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
 {
     _mapFullyRendered = fullyRendered;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *pinView = nil;
+    
+    if(annotation != mapView.userLocation)
+    {
+        static NSString * defaultPinID = @"com.invasivecode.pin";
+        
+        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        
+        if ( pinView == nil ) {
+            pinView = [[MKAnnotationView alloc]
+                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        }
+        
+        pinView.canShowCallout = YES;
+        
+        if ([annotation.subtitle isEqualToString:kAlertTraffic]) {
+            pinView.image = [UIImage imageNamed:@"gm_alert_traffic"];
+        }
+        else if ([annotation.subtitle isEqualToString:kAlertDanger]) {
+            pinView.image = [UIImage imageNamed:@"gm_alert_danger"];
+        }
+        else if ([annotation.subtitle isEqualToString:kAlertTmp]) {
+            pinView.image = [UIImage imageNamed:@"gm_alert_tmp"];
+        }
+        
+    }
+    
+    return pinView;
 }
 
 @end

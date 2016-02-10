@@ -10,6 +10,12 @@
 #import <Foundation/Foundation.h>
 #import "GMTypeDanger.h"
 
+static NSString * const kAlertDanger    = @"alert";
+
+static NSString * const kAlertTraffic   = @"trafic";
+
+static NSString * const kAlertTmp       = @"temporary";
+
 @interface GMDanger : NSObject
 {
     NSString * _dangerId;
