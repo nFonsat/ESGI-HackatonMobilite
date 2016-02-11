@@ -12,7 +12,7 @@
 
 @import CoreLocation;
 
-@interface GMBaseViewController : UIViewController <CLLocationManagerDelegate>
+@interface GMBaseViewController : UIViewController <CLLocationManagerDelegate, JFMinimalNotificationDelegate>
 
 - (void)showDefaultNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
 

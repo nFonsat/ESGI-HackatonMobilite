@@ -146,9 +146,16 @@
     
     notification.edgePadding = UIEdgeInsetsMake(0, 0, 10, 0);
     
+    notification.delegate = self;
+    
     [self.view addSubview:notification];
     
     [notification show];
+}
+
+- (void)minimalNotificationDidDismissNotification:(JFMinimalNotification *)notification
+{
+    _notification = nil;
 }
 
 
