@@ -63,7 +63,7 @@
     }
                                  Failure:^(NSError * error)
     {
-        [self showErrorNotificationWithTitle:@"Error" Message:@"Impossible to load favorite location"];
+        [self showErrorNotificationWithMessage:@"Impossible to load favorite location"];
     }];
 }
 
@@ -121,7 +121,7 @@
             }
                                                   Failure:^(NSError * error)
             {
-                [self showErrorNotificationWithTitle:@"Error" Message:@"Impossible to remove favorite location"];
+                [self showErrorNotificationWithMessage:@"Impossible to remove favorite location"];
             }];
             
             break;

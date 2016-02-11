@@ -102,14 +102,14 @@
     [self showNotificationWithStyle:JFMinimalNotificationStyleDefault Title:title Message:msg];
 }
 
-- (void)showErrorNotificationWithTitle:(NSString *)title Message:(NSString *)msg
+- (void)showErrorNotificationWithMessage:(NSString *)msg;
 {
-    [self showNotificationWithStyle:JFMinimalNotificationStyleError Title:title Message:msg];
+    [self showNotificationWithStyle:JFMinimalNotificationStyleError Title:@"Error" Message:msg];
 }
 
-- (void)showSuccessNotificationWithTitle:(NSString *)title Message:(NSString *)msg
+- (void)showSuccessNotificationWithMessage:(NSString *)msg
 {
-    [self showNotificationWithStyle:JFMinimalNotificationStyleSuccess Title:title Message:msg];
+    [self showNotificationWithStyle:JFMinimalNotificationStyleSuccess Title:@"Success" Message:msg];
 }
 
 - (void)showInfoNotificationWithTitle:(NSString *)title Message:(NSString *)msg
@@ -117,9 +117,9 @@
     [self showNotificationWithStyle:JFMinimalNotificationStyleInfo Title:title Message:msg];
 }
 
-- (void)showWarningNotificationWithTitle:(NSString *)title Message:(NSString *)msg
+- (void)showWarningNotificationMessage:(NSString *)msg
 {
-    [self showNotificationWithStyle:JFMinimalNotificationStyleWarning Title:title Message:msg];
+    [self showNotificationWithStyle:JFMinimalNotificationStyleWarning Title:@"Warning" Message:msg];
 }
 
 - (void)showNotificationWithStyle:(JFMinimalNotificationStyle)style Title:(NSString *)title Message:(NSString *)msg
@@ -198,7 +198,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [self showErrorNotificationWithTitle:@"Error" Message:@"Error for location. Check the state of your GPS"];
+    [self showErrorNotificationWithMessage:@"Error for location. Check the state of your GPS"];
 }
 
 @end

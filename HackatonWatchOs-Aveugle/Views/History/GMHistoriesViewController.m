@@ -62,7 +62,7 @@
      }
                                  Failure:^(NSError * error)
      {
-         [self showErrorNotificationWithTitle:@"Error" Message:@"Impossible to load histories"];
+         [self showErrorNotificationWithMessage:@"Impossible to load histories"];
      }];
 }
 

@@ -16,12 +16,12 @@
 
 - (void)showDefaultNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
 
-- (void)showErrorNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
+- (void)showErrorNotificationWithMessage:(NSString *)msg;
 
-- (void)showSuccessNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
+- (void)showSuccessNotificationWithMessage:(NSString *)msg;
 
 - (void)showInfoNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
 
-- (void)showWarningNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
+- (void)showWarningNotificationMessage:(NSString *)msg;
 
 @end

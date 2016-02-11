@@ -73,11 +73,11 @@
 {
     NSString * name = self.nameField.text;
     if (name == nil || [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0) {
-        [self showErrorNotificationWithTitle:@"Error" Message:@"Name of danger is undefined"];
+        [self showErrorNotificationWithMessage:@"Name of danger is undefined"];
         return NO;
     }
     else if (_typeDanger == nil) {
-        [self showErrorNotificationWithTitle:@"Error" Message:@"Type of danger is undefined"];
+        [self showErrorNotificationWithMessage:@"Type of danger is undefined"];
         return NO;
     }
     
@@ -105,7 +105,7 @@
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
-    [self showErrorNotificationWithTitle:@"Error" Message:@"Cannot located user"];
+    [self showErrorNotificationWithMessage:@"Impossible located user"];
     _needUpdateUserLocation = YES;
 }
 
@@ -133,7 +133,7 @@
          }
                                   Failure:^(AFHTTPRequestOperation * operation, NSError *error)
          {
-             [self showErrorNotificationWithTitle:@"Error" Message:@"Danger is not saved"];
+             [self showErrorNotificationWithMessage:@"Danger is not saved"];
          }];
     }
 }
