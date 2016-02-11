@@ -73,11 +73,11 @@
 {
     NSString * name = self.nameField.text;
     if (name == nil || [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0) {
-        NSLog(@"Define name");
+        [self showErrorNotificationWithTitle:@"Error" Message:@"Name of danger is undefined"];
         return NO;
     }
     else if (_typeDanger == nil) {
-        NSLog(@"Define type of danger");
+        [self showErrorNotificationWithTitle:@"Error" Message:@"Type of danger is undefined"];
         return NO;
     }
     
@@ -105,7 +105,7 @@
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
-    NSLog(@"MapKit didFailToLocateUserWithError : %@", error.localizedDescription);
+    [self showErrorNotificationWithTitle:@"Error" Message:@"Cannot located user"];
     _needUpdateUserLocation = YES;
 }
 
@@ -129,12 +129,11 @@
                                      Type:_typeDanger
                                   Success:^(id responseObject)
          {
-             NSLog(@"Success : %@", responseObject);
              [self.navigationController popViewControllerAnimated:YES];
          }
                                   Failure:^(AFHTTPRequestOperation * operation, NSError *error)
          {
-             NSLog(@"Failure : %@", operation.responseObject);
+             [self showErrorNotificationWithTitle:@"Error" Message:@"Danger is not saved"];
          }];
     }
 }
