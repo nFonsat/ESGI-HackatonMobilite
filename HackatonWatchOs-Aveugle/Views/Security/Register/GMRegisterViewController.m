@@ -13,8 +13,8 @@
 @interface GMRegisterViewController ()
 {
     @private
-    GMWebUserAPI * webUserManager;
-    GMOAuth2Manager * OAuth2Manager;
+    GMWebUserAPI * _webUserManager;
+    GMOAuth2Manager * _OAuth2Manager;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField * usernameText;
@@ -32,10 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    webUserManager = [[GMWebUserAPI alloc] init];
+    _webUserManager = [[GMWebUserAPI alloc] init];
     
-    OAuth2Manager = [[GMOAuth2Manager alloc] init];
+    _OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
+
+#pragma mark - GMBaseViewController
 
 - (UIColor *)getBarTintColor
 {
@@ -52,14 +54,58 @@
     return [UIColor whiteColor];
 }
 
+#pragma mark - GMRegisterViewController Action
+
+- (BOOL)formIsValid
+{
+    NSString * username = self.usernameText.text;
+    NSString * email = self.emailText.text;
+    NSString * password = self.passwordText.text;
+    NSString * confirmPassword = self.confirmPasswordText.text;
+    NSString * errorMsg = nil;
+    
+    if (username == nil || [username isEmpty]) {
+        errorMsg = @"Username is not valid";
+        return NO;
+    }
+    else if (email == nil || [email isEmpty] || ![email isEmailValid]) {
+        errorMsg = @"Email is not valid";
+        return NO;
+    }
+    else if (password == nil || [password isEmpty]) {
+        errorMsg = @"Password is not valid";
+        return NO;
+    }
+    else if (confirmPassword == nil || [confirmPassword isEmpty]) {
+        errorMsg = @"Confirm password is not valid";
+        return NO;
+    }
+    else if (![confirmPassword isEqualToString:password]) {
+        errorMsg = @"The confirm password must match the password";
+        return NO;
+    }
+    else if (password.length < 7) {
+        errorMsg = @"The password is too short";
+        return NO;
+    }
+    
+    if (errorMsg != nil) {
+        [self showErrorNotificationWithMessage:errorMsg];
+    }
+    
+    return YES;
+}
+
+#pragma mark - GMRegisterViewController Action
+
 - (IBAction)registerAction:(UIButton *)sender {
     if ([self formIsValid]) {
-        [webUserManager postUserWithEmail:self.emailText.text
+        [_webUserManager postUserWithEmail:self.emailText.text
                                  Username:self.usernameText.text
                                  Password:self.passwordText.text
                                   Success:^(id responseObject)
          {
-             [OAuth2Manager loginWithUsername:self.usernameText.text
+             [_OAuth2Manager loginWithUsername:self.usernameText.text
                                      Password:self.passwordText.text
                                       Success:^(AFOAuthCredential * credential)
               {
@@ -68,37 +114,18 @@
               }
                                       Failure:^(NSError * error)
               {
-                  NSLog(@"Error loginAction => %@", error);
+                  [self showErrorNotificationWithMessage:[NSString stringWithFormat:@"Error during authentication"]];
               }];
          }
                                   Failure:^(NSError *error)
          {
-             NSLog(@"Error: %@", error);
+             [self showErrorNotificationWithMessage:[NSString stringWithFormat:@"Error during sign up"]];
          }];
-    }
-    else {
-        NSLog(@"Update form");
     }
 }
 
 - (IBAction)goToLoginView:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-
-- (BOOL)formIsValid
-{
-    if ([self.usernameText.text isEqualToString:@""] || [self.emailText.text isEqualToString:@""]
-        || [self.passwordText.text isEqualToString:@""]|| [self.confirmPasswordText.text isEqualToString:@""]) {
-        return NO;
-    }
-    else if (![self.passwordText.text isEqual: self.confirmPasswordText.text]) {
-        NSLog(@"Problème password : %@ != %@", self.passwordText.text, self.confirmPasswordText.text);
-        return NO;
-    }
-    else {
-        return YES;
-    }
 }
 
 @end

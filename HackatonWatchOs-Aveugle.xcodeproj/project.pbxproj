@@ -29,6 +29,7 @@
 		374EDE661C60E14000E96BEC /* GMLocationMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE641C60E14000E96BEC /* GMLocationMapViewController.xib */; };
 		374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374EDE751C61073F00E96BEC /* GMHistoriesViewController.m */; };
 		374EDE781C61073F00E96BEC /* GMHistoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */; };
+		377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777649F1C6E5AB3002B7A3D /* NSString+String.m */; };
 		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
 		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
 		37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E01C62B81E004F8353 /* GMDanger.m */; };
@@ -154,6 +155,8 @@
 		374EDE741C61073F00E96BEC /* GMHistoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHistoriesViewController.h; sourceTree = "<group>"; };
 		374EDE751C61073F00E96BEC /* GMHistoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHistoriesViewController.m; sourceTree = "<group>"; };
 		374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMHistoriesViewController.xib; sourceTree = "<group>"; };
+		3777649E1C6E5AB3002B7A3D /* NSString+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+String.h"; sourceTree = "<group>"; };
+		3777649F1C6E5AB3002B7A3D /* NSString+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+String.m"; sourceTree = "<group>"; };
 		3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMFavoriteListViewController.h; sourceTree = "<group>"; };
 		3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMFavoriteListViewController.m; sourceTree = "<group>"; };
 		3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMFavoriteListViewController.xib; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 			children = (
 				37B36AD01C418B9300FC751C /* Color */,
 				37B36AC81C4110B300FC751C /* NavigationController */,
+				3777649D1C6E5A34002B7A3D /* String */,
 				372351991C25A5D400799EC8 /* TableViewCell */,
 			);
 			path = Components;
@@ -414,6 +418,15 @@
 				374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		3777649D1C6E5A34002B7A3D /* String */ = {
+			isa = PBXGroup;
+			children = (
+				3777649E1C6E5AB3002B7A3D /* NSString+String.h */,
+				3777649F1C6E5AB3002B7A3D /* NSString+String.m */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 		37AB80DE1C62B809004F8353 /* Danger */ = {
@@ -1035,6 +1048,7 @@
 				372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */,
 				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */,
+				377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */,
 				37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */,
 				374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,

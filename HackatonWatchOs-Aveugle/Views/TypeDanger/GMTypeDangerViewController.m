@@ -47,7 +47,7 @@
     }
                                  Failure:^(AFHTTPRequestOperation * operation, NSError * error)
     {
-        NSLog(@"Error : %@", operation.responseData);
+        [self showErrorNotificationWithMessage:@"Impossible to load type of danger"];
     }];
 }
 

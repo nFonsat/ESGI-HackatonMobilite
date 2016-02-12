@@ -37,7 +37,6 @@
 
 + (UIColor *)randomColor
 {
-    NSLog(@"arc4random() : %u", arc4random());
     CGFloat hue = ( arc4random() % 256 / 256.0 );
     CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;
     CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;

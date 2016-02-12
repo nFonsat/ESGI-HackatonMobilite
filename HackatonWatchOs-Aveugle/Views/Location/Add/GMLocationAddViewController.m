@@ -93,10 +93,10 @@
 - (void)displayErrorForGoogleSearch:(NSError *)error
 {
     if (error != nil) {
-        NSLog(@"Place Details error %@", [error localizedDescription]);
+        [self showErrorNotificationWithMessage:[error localizedDescription]];
     }
     else {
-        NSLog(@"No place details");
+        [self showErrorNotificationWithMessage:@"No place details"];
     }
 }
 
@@ -119,7 +119,7 @@
                                 callback:^(NSArray *results, NSError *error)
         {
             if (error != nil) {
-                NSLog(@"Autocomplete error %@", [error localizedDescription]);
+                [self showErrorNotificationWithMessage:[error localizedDescription]];
                 return;
             }
             
@@ -224,11 +224,12 @@
                                          Location:location
                                           Success:^(id responseObject)
             {
-                NSLog(@"Success: %@", responseObject);
+                GMLocation * location = [[GMLocation alloc]initFromJsonDictionary:responseObject];
+                [self showSuccessNotificationWithMessage:[NSString stringWithFormat:@"%@ is added to favorite location", location.name]];
             }
                                           Failure:^(NSError *error)
             {
-                NSLog(@"Error: %@", error.userInfo);
+                [self showErrorNotificationWithMessage:@"Location is not saved"];
             }];
             
             break;

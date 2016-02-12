@@ -111,12 +111,10 @@
         [_locationWeb playLocation:_locationForZoom.locationId
                            Success:^(id responseObject)
         {
-            NSLog(@"%@", responseObject);
             [self calculateDirection];
         }
                            Failure:^(NSError * error)
         {
-            NSLog(@"%@", error);
             [self calculateDirection];
         }];
     }
@@ -223,7 +221,7 @@
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
      {
          if (error) {
-             NSLog(@"Error %@", error.description);
+             [self showErrorNotificationWithMessage:[error localizedDescription]];
              [self stopNavigation];
          }
          else {
@@ -231,7 +229,6 @@
              
              [self.mapView removeOverlays:self.mapView.overlays];
              [self.mapView addOverlay:_routeDetails.polyline];
-             NSLog(@"Distance : %d", (int) _routeDetails.distance);
              
              NSString * allSteps = @"";
              for (int i = 0; i < _routeDetails.steps.count; i++) {
@@ -241,7 +238,6 @@
                  allSteps = [allSteps stringByAppendingString:newStep];
                  allSteps = [allSteps stringByAppendingString:@"\n\n"];
              }
-             NSLog(@"Steps : %@",  allSteps);
              
              [self loadNextInstruction: _routeDetails.steps[1]];
              [self loadGeneralInstruction:_routeDetails];
@@ -300,7 +296,8 @@
     }
     
     if (dangerSignal != nil) {
-        NSLog(@"Find danger to signal : %@", dangerSignal);
+        NSString * signal = [NSString stringWithFormat:@"Danger ! ! ! %@", dangerSignal.name];
+        [self showWarningNotificationMessage:signal];
     }
     
 }
@@ -351,7 +348,7 @@
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
-    NSLog(@"MapKit didFailToLocateUserWithError : %@", error.localizedDescription);
+    [self showErrorNotificationWithMessage:@"Impossible localized user"];
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
@@ -385,7 +382,7 @@
          }
                                     Failure:^(AFHTTPRequestOperation * operation, NSError *error)
          {
-             NSLog(@"Failure : %@", operation.responseObject);
+             [self showErrorNotificationWithMessage:@"Impossible load danger"];
          }];
     }
 }

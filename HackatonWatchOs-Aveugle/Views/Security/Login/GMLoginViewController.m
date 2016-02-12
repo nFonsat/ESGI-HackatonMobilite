@@ -14,7 +14,7 @@
 @interface GMLoginViewController ()
 {
 @private
-    GMOAuth2Manager * OAuth2Manager;
+    GMOAuth2Manager * _OAuth2Manager;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameText;
@@ -30,8 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    OAuth2Manager = [[GMOAuth2Manager alloc] init];
+    _OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
+
+#pragma mark - GMBaseViewController
 
 - (UIColor *)getBarTintColor
 {
@@ -48,13 +50,34 @@
     return [UIColor whiteColor];
 }
 
+#pragma mark - GMLoginViewController Helper UI
+
+- (BOOL)formIsValid
+{
+    NSString * username = self.usernameText.text;
+    NSString * password = self.passwordText.text;
+    
+    if (username == nil || [username isEmpty]) {
+        [self showErrorNotificationWithMessage:@"Username is not valid"];
+        return NO;
+    }
+    else if (password == nil || [password isEmpty]) {
+        [self showErrorNotificationWithMessage:@"Password is not valid"];
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark - GMLoginViewController Action
+
 - (IBAction)loginAction:(UIButton *)sender
 {
     NSString * username = self.usernameText.text;
     NSString * password = self.passwordText.text;
     
     if ([self formIsValid]) {
-        [OAuth2Manager loginWithUsername:username
+        [_OAuth2Manager loginWithUsername:username
                                 Password:password
                                  Success:^(AFOAuthCredential * credential)
          {
@@ -63,11 +86,8 @@
          }
                                  Failure:^(NSError * error)
          {
-             NSLog(@"Error loginAction => %@", error);
+             [self showErrorNotificationWithMessage:@"Username/Password is not valid"];
          }];
-    }
-    else {
-        NSLog(@"Update form");
     }
     
     
@@ -77,16 +97,6 @@
 {
     GMRegisterViewController * registerViewController = [[GMRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerViewController animated:YES];
-}
-
-- (BOOL)formIsValid
-{
-    if ([self.usernameText.text isEqualToString:@""] || [self.passwordText.text isEqualToString:@""]) {
-        return NO;
-    }
-    else {
-        return YES;
-    }
 }
 
 @end
