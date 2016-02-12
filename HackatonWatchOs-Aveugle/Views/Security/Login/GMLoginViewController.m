@@ -9,12 +9,11 @@
 #import "GMLoginViewController.h"
 #import "GMOAuth2Manager.h"
 #import "GMRegisterViewController.h"
-#import "GMMainVIewController.h"
 
 @interface GMLoginViewController ()
 {
 @private
-    GMOAuth2Manager * OAuth2Manager;
+    GMOAuth2Manager * _OAuth2Manager;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameText;
@@ -30,22 +29,66 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    OAuth2Manager = [[GMOAuth2Manager alloc] init];
+    _OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
+
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor blackColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Sign in";
+}
+
+- (UIColor *)getTitleColor
+{
+    return [UIColor whiteColor];
+}
+
+#pragma mark - GMLoginViewController Helper UI
+
+- (BOOL)formIsValid
+{
+    NSString * username = self.usernameText.text;
+    NSString * password = self.passwordText.text;
+    
+    if (username == nil || [username isEmpty]) {
+        [self showErrorNotificationWithMessage:@"Username is not valid"];
+        return NO;
+    }
+    else if (password == nil || [password isEmpty]) {
+        [self showErrorNotificationWithMessage:@"Password is not valid"];
+        return NO;
+    }
+    
+    return YES;
+}
+
+#pragma mark - GMLoginViewController Action
 
 - (IBAction)loginAction:(UIButton *)sender
 {
-    [OAuth2Manager loginWithUsername: self.usernameText.text
-                            Password:self.passwordText.text
-                             Success:^(AFOAuthCredential * credential)
-     {
-         GMMainViewController * mainView = [[GMMainViewController alloc] init];
-         [self.navigationController pushViewController:mainView animated:YES];
-     }
-                             Failure:^(NSError * error)
-     {
-         NSLog(@"Error loginAction => %@", error);
-     }];
+    NSString * username = self.usernameText.text;
+    NSString * password = self.passwordText.text;
+    
+    if ([self formIsValid]) {
+        [_OAuth2Manager loginWithUsername:username
+                                Password:password
+                                 Success:^(AFOAuthCredential * credential)
+         {
+             [self login];
+         }
+                                 Failure:^(NSError * error)
+         {
+             [self showErrorNotificationWithMessage:@"Username/Password is not valid"];
+         }];
+    }
+    
+    
 }
 
 - (IBAction)goToRegisterView:(UIButton *)sender

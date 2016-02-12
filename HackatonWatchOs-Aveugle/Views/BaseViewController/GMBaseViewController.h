@@ -7,7 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JFMinimalNotifications/JFMinimalNotification.h>
+#import "UIColor+GMColor.h"
+#import "NSString+String.h"
 
-@interface GMBaseViewController : UIViewController
+@import CoreLocation;
+
+@interface GMBaseViewController : UIViewController <CLLocationManagerDelegate, JFMinimalNotificationDelegate>
+
+- (void)showDefaultNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
+
+- (void)showErrorNotificationWithMessage:(NSString *)msg;
+
+- (void)showSuccessNotificationWithMessage:(NSString *)msg;
+
+- (void)showInfoNotificationWithTitle:(NSString *)title Message:(NSString *)msg;
+
+- (void)showWarningNotificationMessage:(NSString *)msg;
+
+- (void)login;
+
+- (void)logout;
 
 @end

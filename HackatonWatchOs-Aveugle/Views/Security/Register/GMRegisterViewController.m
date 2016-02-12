@@ -7,13 +7,13 @@
 //
 
 #import "GMRegisterViewController.h"
-#import "GMLoginViewController.h"
-#import "GMWebUserAPI.h"
+#import "GMUserWebAPI.h"
 
 @interface GMRegisterViewController ()
 {
     @private
-    GMWebUserAPI * webUserManager;
+    GMUserWebAPI * _webUserManager;
+    GMOAuth2Manager * _OAuth2Manager;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField * usernameText;
@@ -31,31 +31,99 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    webUserManager = [[GMWebUserAPI alloc] init];
+    _webUserManager = [[GMUserWebAPI alloc] init];
+    
+    _OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }
 
-- (IBAction)registerAction:(UIButton *)sender {    
-    if (![self.passwordText.text isEqual: self.confirmPasswordText.text]) {
-        NSLog(@"Problème password : %@ != %@", self.passwordText.text, self.confirmPasswordText.text);
-        return;
+#pragma mark - GMBaseViewController
+
+- (UIColor *)getBarTintColor
+{
+    return [UIColor blackColor];
+}
+
+- (NSString *)getTitle
+{
+    return @"Sign up";
+}
+
+- (UIColor *)getTitleColor
+{
+    return [UIColor whiteColor];
+}
+
+#pragma mark - GMRegisterViewController Action
+
+- (BOOL)formIsValid
+{
+    NSString * username = self.usernameText.text;
+    NSString * email = self.emailText.text;
+    NSString * password = self.passwordText.text;
+    NSString * confirmPassword = self.confirmPasswordText.text;
+    NSString * errorMsg = nil;
+    
+    if (username == nil || [username isEmpty]) {
+        errorMsg = @"Username is not valid";
+        return NO;
+    }
+    else if (email == nil || [email isEmpty] || ![email isEmailValid]) {
+        errorMsg = @"Email is not valid";
+        return NO;
+    }
+    else if (password == nil || [password isEmpty]) {
+        errorMsg = @"Password is not valid";
+        return NO;
+    }
+    else if (confirmPassword == nil || [confirmPassword isEmpty]) {
+        errorMsg = @"Confirm password is not valid";
+        return NO;
+    }
+    else if (![confirmPassword isEqualToString:password]) {
+        errorMsg = @"The confirm password must match the password";
+        return NO;
+    }
+    else if (password.length < 7) {
+        errorMsg = @"The password is too short";
+        return NO;
     }
     
-    [webUserManager postUserWithEmail:self.emailText.text
-                             Username:self.usernameText.text
-                             Password:self.passwordText.text
-                              Success:^(id responseObject)
-     {
-         NSLog(@"JSON: %@", responseObject);
-     }
-                              Failure:^(NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+    if (errorMsg != nil) {
+        [self showErrorNotificationWithMessage:errorMsg];
+    }
+    
+    return YES;
+}
+
+#pragma mark - GMRegisterViewController Action
+
+- (IBAction)registerAction:(UIButton *)sender {
+    if ([self formIsValid]) {
+        [_webUserManager postUserWithEmail:self.emailText.text
+                                 Username:self.usernameText.text
+                                 Password:self.passwordText.text
+                                  Success:^(id responseObject)
+         {
+             [_OAuth2Manager loginWithUsername:self.usernameText.text
+                                     Password:self.passwordText.text
+                                      Success:^(AFOAuthCredential * credential)
+              {
+                  [self login];
+              }
+                                      Failure:^(NSError * error)
+              {
+                  [self showErrorNotificationWithMessage:[NSString stringWithFormat:@"Error during authentication"]];
+              }];
+         }
+                                  Failure:^(NSError *error)
+         {
+             [self showErrorNotificationWithMessage:[NSString stringWithFormat:@"Error during sign up"]];
+         }];
+    }
 }
 
 - (IBAction)goToLoginView:(UIButton *)sender {
-    GMLoginViewController * loginViewController = [[GMLoginViewController alloc] init];
-    [self.navigationController pushViewController:loginViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

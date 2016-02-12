@@ -12,38 +12,41 @@
 		3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3710D1D61C32507900307CD5 /* GMRegisterViewController.m */; };
 		3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */; };
 		3710D1DD1C32643D00307CD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3710D1DC1C32643D00307CD5 /* CoreGraphics.framework */; };
-		372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351731C24FDD200799EC8 /* GMWebLocationAPI.m */; };
-		372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351791C25084800799EC8 /* GMLocationAddViewController.m */; };
-		372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */; };
+		372351741C24FDD200799EC8 /* GMLocationWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351731C24FDD200799EC8 /* GMLocationWebAPI.m */; };
 		3723519E1C25A5D400799EC8 /* GMPlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3723519C1C25A5D400799EC8 /* GMPlaceTableViewCell.m */; };
 		3723519F1C25A5D400799EC8 /* GMPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3723519D1C25A5D400799EC8 /* GMPlaceTableViewCell.xib */; };
 		372351A51C25BB7B00799EC8 /* GMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A41C25BB7B00799EC8 /* GMLocation.m */; };
 		372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */; };
 		372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */; };
+		37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37295D621C6234020011CAD7 /* GMDangerWebAPI.m */; };
 		3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3732F4551C1849C500FA3C0C /* GMMainViewController.m */; };
 		3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3732F4561C1849C500FA3C0C /* GMMainViewController.xib */; };
+		37458BF61C66BC1300B8549B /* GMTypeDangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37458BF41C66BC1300B8549B /* GMTypeDangerViewController.m */; };
+		37458BF71C66BC1300B8549B /* GMTypeDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37458BF51C66BC1300B8549B /* GMTypeDangerViewController.xib */; };
 		374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374EDE631C60E14000E96BEC /* GMLocationMapViewController.m */; };
 		374EDE661C60E14000E96BEC /* GMLocationMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE641C60E14000E96BEC /* GMLocationMapViewController.xib */; };
+		374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 374EDE751C61073F00E96BEC /* GMHistoriesViewController.m */; };
+		374EDE781C61073F00E96BEC /* GMHistoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */; };
+		377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777649F1C6E5AB3002B7A3D /* NSString+String.m */; };
+		377764A41C6E67A5002B7A3D /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377764A21C6E67A5002B7A3D /* GMLocationAddViewController.m */; };
+		377764A51C6E67A5002B7A3D /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 377764A31C6E67A5002B7A3D /* GMLocationAddViewController.xib */; };
+		377764B31C6E7BF1002B7A3D /* GMDangerAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 377764B21C6E7BF1002B7A3D /* GMDangerAnnotation.m */; };
 		3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */; };
 		3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */; };
+		37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E01C62B81E004F8353 /* GMDanger.m */; };
+		37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */; };
+		37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AB80E81C632AFC004F8353 /* GMDangerViewController.m */; };
+		37AB80EB1C632AFC004F8353 /* GMDangerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */; };
 		37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACA1C4110D900FC751C /* GMNavigationController.m */; };
 		37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ACE1C41874500FC751C /* GMBaseViewController.m */; };
 		37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36AD51C418BCC00FC751C /* UIColor+GMColor.m */; };
 		37B36AE01C42BAF700FC751C /* GMLocationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B36ADE1C42BAF700FC751C /* GMLocationHomeViewController.m */; };
 		37B36AE11C42BAF700FC751C /* GMLocationHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37B36ADF1C42BAF700FC751C /* GMLocationHomeViewController.xib */; };
 		37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD11C24FC3600B9625F /* GMWebAPI.m */; };
-		37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */; };
+		37D2DFD71C24FC3600B9625F /* GMUserWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD51C24FC3600B9625F /* GMUserWebAPI.m */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
 		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
 		90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAD1F7692EC5B3064D113BA /* libPods.a */; };
-		EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D11BC65D7A00ECEE3C /* Address.m */; };
-		EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D51BC65DEB00ECEE3C /* Trip.m */; };
-		EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */; };
-		EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */; };
-		EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */; };
-		EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */; };
-		EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */; };
-		EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */; };
 		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; };
 		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; };
 		EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */; };
@@ -118,11 +121,8 @@
 		3710D1D61C32507900307CD5 /* GMRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRegisterViewController.m; sourceTree = "<group>"; };
 		3710D1D71C32507900307CD5 /* GMRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMRegisterViewController.xib; sourceTree = "<group>"; };
 		3710D1DC1C32643D00307CD5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		372351721C24FDD200799EC8 /* GMWebLocationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebLocationAPI.h; sourceTree = "<group>"; };
-		372351731C24FDD200799EC8 /* GMWebLocationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebLocationAPI.m; sourceTree = "<group>"; };
-		372351781C25084800799EC8 /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
-		372351791C25084800799EC8 /* GMLocationAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationAddViewController.m; sourceTree = "<group>"; };
-		3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationAddViewController.xib; sourceTree = "<group>"; };
+		372351721C24FDD200799EC8 /* GMLocationWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationWebAPI.h; sourceTree = "<group>"; };
+		372351731C24FDD200799EC8 /* GMLocationWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationWebAPI.m; sourceTree = "<group>"; };
 		3723519B1C25A5D400799EC8 /* GMPlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMPlaceTableViewCell.h; sourceTree = "<group>"; };
 		3723519C1C25A5D400799EC8 /* GMPlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMPlaceTableViewCell.m; sourceTree = "<group>"; };
 		3723519D1C25A5D400799EC8 /* GMPlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMPlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -131,15 +131,37 @@
 		372351A71C2DCA7A00799EC8 /* GMLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationTableViewCell.h; sourceTree = "<group>"; };
 		372351A81C2DCA7A00799EC8 /* GMLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationTableViewCell.m; sourceTree = "<group>"; };
 		372351A91C2DCA7A00799EC8 /* GMLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationTableViewCell.xib; sourceTree = "<group>"; };
+		37295D611C6234020011CAD7 /* GMDangerWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerWebAPI.h; sourceTree = "<group>"; };
+		37295D621C6234020011CAD7 /* GMDangerWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerWebAPI.m; sourceTree = "<group>"; };
 		3732F4541C1849C500FA3C0C /* GMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMainViewController.h; sourceTree = "<group>"; };
 		3732F4551C1849C500FA3C0C /* GMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMainViewController.m; sourceTree = "<group>"; };
 		3732F4561C1849C500FA3C0C /* GMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMainViewController.xib; sourceTree = "<group>"; };
+		37458BF31C66BC1300B8549B /* GMTypeDangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTypeDangerViewController.h; sourceTree = "<group>"; };
+		37458BF41C66BC1300B8549B /* GMTypeDangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTypeDangerViewController.m; sourceTree = "<group>"; };
+		37458BF51C66BC1300B8549B /* GMTypeDangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMTypeDangerViewController.xib; sourceTree = "<group>"; };
 		374EDE621C60E14000E96BEC /* GMLocationMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationMapViewController.h; sourceTree = "<group>"; };
 		374EDE631C60E14000E96BEC /* GMLocationMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationMapViewController.m; sourceTree = "<group>"; };
 		374EDE641C60E14000E96BEC /* GMLocationMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationMapViewController.xib; sourceTree = "<group>"; };
+		374EDE741C61073F00E96BEC /* GMHistoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHistoriesViewController.h; sourceTree = "<group>"; };
+		374EDE751C61073F00E96BEC /* GMHistoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHistoriesViewController.m; sourceTree = "<group>"; };
+		374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMHistoriesViewController.xib; sourceTree = "<group>"; };
+		3777649E1C6E5AB3002B7A3D /* NSString+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+String.h"; sourceTree = "<group>"; };
+		3777649F1C6E5AB3002B7A3D /* NSString+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+String.m"; sourceTree = "<group>"; };
+		377764A11C6E67A5002B7A3D /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
+		377764A21C6E67A5002B7A3D /* GMLocationAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLocationAddViewController.m; sourceTree = "<group>"; };
+		377764A31C6E67A5002B7A3D /* GMLocationAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationAddViewController.xib; sourceTree = "<group>"; };
+		377764B11C6E7BF1002B7A3D /* GMDangerAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerAnnotation.h; sourceTree = "<group>"; };
+		377764B21C6E7BF1002B7A3D /* GMDangerAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerAnnotation.m; sourceTree = "<group>"; };
 		3793B9C11C23605A00B30447 /* GMFavoriteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMFavoriteListViewController.h; sourceTree = "<group>"; };
 		3793B9C21C23605A00B30447 /* GMFavoriteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMFavoriteListViewController.m; sourceTree = "<group>"; };
 		3793B9C31C23605A00B30447 /* GMFavoriteListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMFavoriteListViewController.xib; sourceTree = "<group>"; };
+		37AB80DF1C62B81E004F8353 /* GMDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDanger.h; sourceTree = "<group>"; };
+		37AB80E01C62B81E004F8353 /* GMDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDanger.m; sourceTree = "<group>"; };
+		37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTypeDanger.h; sourceTree = "<group>"; };
+		37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTypeDanger.m; sourceTree = "<group>"; };
+		37AB80E71C632AFC004F8353 /* GMDangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDangerViewController.h; sourceTree = "<group>"; };
+		37AB80E81C632AFC004F8353 /* GMDangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDangerViewController.m; sourceTree = "<group>"; };
+		37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMDangerViewController.xib; sourceTree = "<group>"; };
 		37B36AC91C4110D900FC751C /* GMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMNavigationController.h; sourceTree = "<group>"; };
 		37B36ACA1C4110D900FC751C /* GMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMNavigationController.m; sourceTree = "<group>"; };
 		37B36ACD1C41874500FC751C /* GMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMBaseViewController.h; sourceTree = "<group>"; };
@@ -151,31 +173,13 @@
 		37B36ADF1C42BAF700FC751C /* GMLocationHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMLocationHomeViewController.xib; sourceTree = "<group>"; };
 		37D2DFD01C24FC3600B9625F /* GMWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebAPI.h; sourceTree = "<group>"; };
 		37D2DFD11C24FC3600B9625F /* GMWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebAPI.m; sourceTree = "<group>"; };
-		37D2DFD41C24FC3600B9625F /* GMWebUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebUserAPI.h; sourceTree = "<group>"; };
-		37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebUserAPI.m; sourceTree = "<group>"; };
+		37D2DFD41C24FC3600B9625F /* GMUserWebAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUserWebAPI.h; sourceTree = "<group>"; };
+		37D2DFD51C24FC3600B9625F /* GMUserWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUserWebAPI.m; sourceTree = "<group>"; };
 		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
 		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
 		37E9B7091C18475500D7BE13 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
 		37E9B70A1C18475500D7BE13 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		E414D77ACBA177619F005597 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EB9528D01BC65D7A00ECEE3C /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
-		EB9528D11BC65D7A00ECEE3C /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
-		EB9528D41BC65DEB00ECEE3C /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
-		EB9528D51BC65DEB00ECEE3C /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
-		EB9528D81BC65E3200ECEE3C /* AddressRepositoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressRepositoryFactory.h; sourceTree = "<group>"; };
-		EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressRepositoryFactory.m; sourceTree = "<group>"; };
-		EB9528DB1BC65E4100ECEE3C /* TripRepositoryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripRepositoryFactory.h; sourceTree = "<group>"; };
-		EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripRepositoryFactory.m; sourceTree = "<group>"; };
-		EB9528DE1BC65F1300ECEE3C /* IAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAddressRepository.h; sourceTree = "<group>"; };
-		EB9528DF1BC65F3100ECEE3C /* ITripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITripRepository.h; sourceTree = "<group>"; };
-		EB9528E01BC65FA300ECEE3C /* MockAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockAddressRepository.h; sourceTree = "<group>"; };
-		EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockAddressRepository.m; sourceTree = "<group>"; };
-		EB9528E31BC65FB600ECEE3C /* MockTripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockTripRepository.h; sourceTree = "<group>"; };
-		EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTripRepository.m; sourceTree = "<group>"; };
-		EB9528E61BC65FE600ECEE3C /* SerializableAddressRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializableAddressRepository.h; sourceTree = "<group>"; };
-		EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableAddressRepository.m; sourceTree = "<group>"; };
-		EB9528E91BC6600100ECEE3C /* SerializableTripRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializableTripRepository.h; sourceTree = "<group>"; };
-		EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializableTripRepository.m; sourceTree = "<group>"; };
 		EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DangerInterfaceController.h; sourceTree = "<group>"; };
@@ -270,19 +274,11 @@
 		372351761C25084800799EC8 /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				372351771C25084800799EC8 /* Add */,
+				377764A11C6E67A5002B7A3D /* GMLocationAddViewController.h */,
+				377764A21C6E67A5002B7A3D /* GMLocationAddViewController.m */,
+				377764A31C6E67A5002B7A3D /* GMLocationAddViewController.xib */,
 			);
 			path = Location;
-			sourceTree = "<group>";
-		};
-		372351771C25084800799EC8 /* Add */ = {
-			isa = PBXGroup;
-			children = (
-				372351781C25084800799EC8 /* GMLocationAddViewController.h */,
-				372351791C25084800799EC8 /* GMLocationAddViewController.m */,
-				3723517A1C25084800799EC8 /* GMLocationAddViewController.xib */,
-			);
-			path = Add;
 			sourceTree = "<group>";
 		};
 		372351891C251D3700799EC8 /* Components */ = {
@@ -290,6 +286,8 @@
 			children = (
 				37B36AD01C418B9300FC751C /* Color */,
 				37B36AC81C4110B300FC751C /* NavigationController */,
+				377764AA1C6E7A3F002B7A3D /* PointAnnotation */,
+				3777649D1C6E5A34002B7A3D /* String */,
 				372351991C25A5D400799EC8 /* TableViewCell */,
 			);
 			path = Components;
@@ -317,7 +315,9 @@
 		372351A11C25BAE500799EC8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37AB80DE1C62B809004F8353 /* Danger */,
 				372351A21C25BAE500799EC8 /* Location */,
+				37AB80E21C62BC04004F8353 /* TypeDanger */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -341,6 +341,15 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		37295D601C6232A00011CAD7 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37295D611C6234020011CAD7 /* GMDangerWebAPI.h */,
+				37295D621C6234020011CAD7 /* GMDangerWebAPI.m */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
 		3732F4531C18499400FA3C0C /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +360,16 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		37458BEA1C66B9B900B8549B /* TypeDanger */ = {
+			isa = PBXGroup;
+			children = (
+				37458BF31C66BC1300B8549B /* GMTypeDangerViewController.h */,
+				37458BF41C66BC1300B8549B /* GMTypeDangerViewController.m */,
+				37458BF51C66BC1300B8549B /* GMTypeDangerViewController.xib */,
+			);
+			path = TypeDanger;
+			sourceTree = "<group>";
+		};
 		374EDE611C60E14000E96BEC /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +378,62 @@
 				374EDE641C60E14000E96BEC /* GMLocationMapViewController.xib */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		374EDE731C61072500E96BEC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				374EDE741C61073F00E96BEC /* GMHistoriesViewController.h */,
+				374EDE751C61073F00E96BEC /* GMHistoriesViewController.m */,
+				374EDE761C61073F00E96BEC /* GMHistoriesViewController.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		3777649D1C6E5A34002B7A3D /* String */ = {
+			isa = PBXGroup;
+			children = (
+				3777649E1C6E5AB3002B7A3D /* NSString+String.h */,
+				3777649F1C6E5AB3002B7A3D /* NSString+String.m */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		377764AA1C6E7A3F002B7A3D /* PointAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				377764B11C6E7BF1002B7A3D /* GMDangerAnnotation.h */,
+				377764B21C6E7BF1002B7A3D /* GMDangerAnnotation.m */,
+			);
+			path = PointAnnotation;
+			sourceTree = "<group>";
+		};
+		37AB80DE1C62B809004F8353 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80DF1C62B81E004F8353 /* GMDanger.h */,
+				37AB80E01C62B81E004F8353 /* GMDanger.m */,
+			);
+			path = Danger;
+			sourceTree = "<group>";
+		};
+		37AB80E21C62BC04004F8353 /* TypeDanger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80E31C62BC2D004F8353 /* GMTypeDanger.h */,
+				37AB80E41C62BC2D004F8353 /* GMTypeDanger.m */,
+			);
+			path = TypeDanger;
+			sourceTree = "<group>";
+		};
+		37AB80E61C632ACE004F8353 /* Danger */ = {
+			isa = PBXGroup;
+			children = (
+				37AB80E71C632AFC004F8353 /* GMDangerViewController.h */,
+				37AB80E81C632AFC004F8353 /* GMDangerViewController.m */,
+				37AB80E91C632AFC004F8353 /* GMDangerViewController.xib */,
+			);
+			path = Danger;
 			sourceTree = "<group>";
 		};
 		37B36AC81C4110B300FC751C /* NavigationController */ = {
@@ -410,8 +485,8 @@
 		37D2DFD21C24FC3600B9625F /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				372351721C24FDD200799EC8 /* GMWebLocationAPI.h */,
-				372351731C24FDD200799EC8 /* GMWebLocationAPI.m */,
+				372351721C24FDD200799EC8 /* GMLocationWebAPI.h */,
+				372351731C24FDD200799EC8 /* GMLocationWebAPI.m */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -419,8 +494,8 @@
 		37D2DFD31C24FC3600B9625F /* User */ = {
 			isa = PBXGroup;
 			children = (
-				37D2DFD41C24FC3600B9625F /* GMWebUserAPI.h */,
-				37D2DFD51C24FC3600B9625F /* GMWebUserAPI.m */,
+				37D2DFD41C24FC3600B9625F /* GMUserWebAPI.h */,
+				37D2DFD51C24FC3600B9625F /* GMUserWebAPI.m */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -455,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				37D2DFCF1C24FC3600B9625F /* Core */,
+				37295D601C6232A00011CAD7 /* Danger */,
 				37D2DFD21C24FC3600B9625F /* Location */,
 				37D2DFD31C24FC3600B9625F /* User */,
 			);
@@ -475,12 +551,15 @@
 			isa = PBXGroup;
 			children = (
 				37B36ACC1C4186FA00FC751C /* BaseViewController */,
+				37AB80E61C632ACE004F8353 /* Danger */,
 				37E4E52B1C235DF500421E79 /* Favorites */,
+				374EDE731C61072500E96BEC /* History */,
 				37B36ADC1C42BAF700FC751C /* Home */,
 				372351761C25084800799EC8 /* Location */,
 				3732F4531C18499400FA3C0C /* Main */,
 				374EDE611C60E14000E96BEC /* Map */,
 				3710D1CF1C32507900307CD5 /* Security */,
+				37458BEA1C66B9B900B8549B /* TypeDanger */,
 				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
 				37E9B70A1C18475500D7BE13 /* GMTestViewController.m */,
 			);
@@ -494,126 +573,6 @@
 				0DAD1F7692EC5B3064D113BA /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EB9528C31BC65CF500ECEE3C /* Domains */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528C41BC65CF500ECEE3C /* Address */,
-				EB9528C51BC65CF500ECEE3C /* Trip */,
-			);
-			path = Domains;
-			sourceTree = "<group>";
-		};
-		EB9528C41BC65CF500ECEE3C /* Address */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528D01BC65D7A00ECEE3C /* Address.h */,
-				EB9528D11BC65D7A00ECEE3C /* Address.m */,
-				EB9528DE1BC65F1300ECEE3C /* IAddressRepository.h */,
-			);
-			path = Address;
-			sourceTree = "<group>";
-		};
-		EB9528C51BC65CF500ECEE3C /* Trip */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528D41BC65DEB00ECEE3C /* Trip.h */,
-				EB9528D51BC65DEB00ECEE3C /* Trip.m */,
-				EB9528DF1BC65F3100ECEE3C /* ITripRepository.h */,
-			);
-			path = Trip;
-			sourceTree = "<group>";
-		};
-		EB9528C61BC65D0000ECEE3C /* Platforms */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528C71BC65D0000ECEE3C /* Factory */,
-				EB9528CA1BC65D0000ECEE3C /* Mock */,
-				EB9528CD1BC65D0000ECEE3C /* Serialization */,
-			);
-			path = Platforms;
-			sourceTree = "<group>";
-		};
-		EB9528C71BC65D0000ECEE3C /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528C81BC65D0000ECEE3C /* Address */,
-				EB9528C91BC65D0000ECEE3C /* Trip */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		EB9528C81BC65D0000ECEE3C /* Address */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528D81BC65E3200ECEE3C /* AddressRepositoryFactory.h */,
-				EB9528D91BC65E3200ECEE3C /* AddressRepositoryFactory.m */,
-			);
-			path = Address;
-			sourceTree = "<group>";
-		};
-		EB9528C91BC65D0000ECEE3C /* Trip */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528DB1BC65E4100ECEE3C /* TripRepositoryFactory.h */,
-				EB9528DC1BC65E4100ECEE3C /* TripRepositoryFactory.m */,
-			);
-			path = Trip;
-			sourceTree = "<group>";
-		};
-		EB9528CA1BC65D0000ECEE3C /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528CB1BC65D0000ECEE3C /* Address */,
-				EB9528CC1BC65D0000ECEE3C /* Trip */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
-		EB9528CB1BC65D0000ECEE3C /* Address */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528E01BC65FA300ECEE3C /* MockAddressRepository.h */,
-				EB9528E11BC65FA300ECEE3C /* MockAddressRepository.m */,
-			);
-			path = Address;
-			sourceTree = "<group>";
-		};
-		EB9528CC1BC65D0000ECEE3C /* Trip */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528E31BC65FB600ECEE3C /* MockTripRepository.h */,
-				EB9528E41BC65FB600ECEE3C /* MockTripRepository.m */,
-			);
-			path = Trip;
-			sourceTree = "<group>";
-		};
-		EB9528CD1BC65D0000ECEE3C /* Serialization */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528CE1BC65D0000ECEE3C /* Address */,
-				EB9528CF1BC65D0000ECEE3C /* Trip */,
-			);
-			path = Serialization;
-			sourceTree = "<group>";
-		};
-		EB9528CE1BC65D0000ECEE3C /* Address */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528E61BC65FE600ECEE3C /* SerializableAddressRepository.h */,
-				EB9528E71BC65FE600ECEE3C /* SerializableAddressRepository.m */,
-			);
-			path = Address;
-			sourceTree = "<group>";
-		};
-		EB9528CF1BC65D0000ECEE3C /* Trip */ = {
-			isa = PBXGroup;
-			children = (
-				EB9528E91BC6600100ECEE3C /* SerializableTripRepository.h */,
-				EB9528EA1BC6600100ECEE3C /* SerializableTripRepository.m */,
-			);
-			path = Trip;
 			sourceTree = "<group>";
 		};
 		EB9528FA1BC6CF9500ECEE3C /* Application */ = {
@@ -675,9 +634,7 @@
 				EB9528FA1BC6CF9500ECEE3C /* Application */,
 				372351A11C25BAE500799EC8 /* Classes */,
 				372351891C251D3700799EC8 /* Components */,
-				EB9528C31BC65CF500ECEE3C /* Domains */,
 				37E4E51D1C1E116300421E79 /* LaunchScreen */,
-				EB9528C61BC65D0000ECEE3C /* Platforms */,
 				37E9B7041C18475500D7BE13 /* Views */,
 				37E4E5161C1E03A500421E79 /* Web */,
 				ECC99A311BC551E400E12082 /* Supporting Files */,
@@ -859,14 +816,17 @@
 				37B36AE11C42BAF700FC751C /* GMLocationHomeViewController.xib in Resources */,
 				3732F4581C1849C500FA3C0C /* GMMainViewController.xib in Resources */,
 				3710D1DB1C32507900307CD5 /* GMRegisterViewController.xib in Resources */,
+				377764A51C6E67A5002B7A3D /* GMLocationAddViewController.xib in Resources */,
+				37AB80EB1C632AFC004F8353 /* GMDangerViewController.xib in Resources */,
 				3710D1D91C32507900307CD5 /* GMLoginViewController.xib in Resources */,
 				ECC99A411BC551E400E12082 /* LaunchScreen.storyboard in Resources */,
 				372351AB1C2DCA7A00799EC8 /* GMLocationTableViewCell.xib in Resources */,
-				372351841C25084800799EC8 /* GMLocationAddViewController.xib in Resources */,
+				37458BF71C66BC1300B8549B /* GMTypeDangerViewController.xib in Resources */,
 				3793B9C51C23605A00B30447 /* GMFavoriteListViewController.xib in Resources */,
 				374EDE661C60E14000E96BEC /* GMLocationMapViewController.xib in Resources */,
 				ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */,
 				3723519F1C25A5D400799EC8 /* GMPlaceTableViewCell.xib in Resources */,
+				374EDE781C61073F00E96BEC /* GMHistoriesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,29 +903,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */,
-				EB9528DD1BC65E4100ECEE3C /* TripRepositoryFactory.m in Sources */,
 				374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */,
+				377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */,
+				37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */,
+				374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,
-				EB9528D61BC65DEB00ECEE3C /* Trip.m in Sources */,
 				372351A51C25BB7B00799EC8 /* GMLocation.m in Sources */,
 				3723519E1C25A5D400799EC8 /* GMPlaceTableViewCell.m in Sources */,
-				37D2DFD71C24FC3600B9625F /* GMWebUserAPI.m in Sources */,
-				EB9528E21BC65FA300ECEE3C /* MockAddressRepository.m in Sources */,
+				37458BF61C66BC1300B8549B /* GMTypeDangerViewController.m in Sources */,
+				37D2DFD71C24FC3600B9625F /* GMUserWebAPI.m in Sources */,
 				EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */,
-				EB9528DA1BC65E3200ECEE3C /* AddressRepositoryFactory.m in Sources */,
-				372351741C24FDD200799EC8 /* GMWebLocationAPI.m in Sources */,
-				EB9528D21BC65D7A00ECEE3C /* Address.m in Sources */,
-				EB9528E81BC65FE600ECEE3C /* SerializableAddressRepository.m in Sources */,
+				372351741C24FDD200799EC8 /* GMLocationWebAPI.m in Sources */,
+				377764A41C6E67A5002B7A3D /* GMLocationAddViewController.m in Sources */,
 				37B36ACB1C4110D900FC751C /* GMNavigationController.m in Sources */,
+				37AB80E51C62BC2D004F8353 /* GMTypeDanger.m in Sources */,
+				37295D631C6234020011CAD7 /* GMDangerWebAPI.m in Sources */,
 				37B36ACF1C41874500FC751C /* GMBaseViewController.m in Sources */,
 				3793B9C41C23605A00B30447 /* GMFavoriteListViewController.m in Sources */,
-				EB9528EB1BC6600100ECEE3C /* SerializableTripRepository.m in Sources */,
 				37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */,
 				37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */,
+				377764B31C6E7BF1002B7A3D /* GMDangerAnnotation.m in Sources */,
 				37B36AD61C418BCC00FC751C /* UIColor+GMColor.m in Sources */,
+				37AB80E11C62B81E004F8353 /* GMDanger.m in Sources */,
 				3732F4571C1849C500FA3C0C /* GMMainViewController.m in Sources */,
-				372351831C25084800799EC8 /* GMLocationAddViewController.m in Sources */,
-				EB9528E51BC65FB600ECEE3C /* MockTripRepository.m in Sources */,
 				3710D1D81C32507900307CD5 /* GMLoginViewController.m in Sources */,
 				3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */,
 				37B36AE01C42BAF700FC751C /* GMLocationHomeViewController.m in Sources */,

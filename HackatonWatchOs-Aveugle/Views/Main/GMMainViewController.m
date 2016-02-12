@@ -7,40 +7,23 @@
 //
 
 #import "GMMainViewController.h"
-#import "GMWebUserAPI.h"
-#import "GMLoginViewController.h"
 #import "GMFavoriteListViewController.h"
 #import "GMLocationHomeViewController.h"
+#import "GMDangerViewController.h"
 
 @interface GMMainViewController ()
-{
-    @private
-    GMWebUserAPI * webUserManager;
-}
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender;
 - (IBAction)goToLocationView:(UIButton *)sender;
+- (IBAction)goToDangerView:(UIButton *)sender;
+- (IBAction)logoutAction:(UIButton *)sender;
+
 @end
 
 @implementation GMMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    webUserManager = [[GMWebUserAPI alloc] init];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-     [webUserManager getUserWithSuccess:^(id responseObject)
-      {
-          NSLog(@"Success: %@", responseObject);
-      }
-                                Failure:^(NSError *error)
-      {
-          GMLoginViewController * loginView = [[GMLoginViewController alloc] init];
-          [self.navigationController pushViewController:loginView animated:YES];
-      }];
 }
 
 - (IBAction)goToFavoriteListView:(UIButton *)sender
@@ -53,6 +36,17 @@
 {
     GMLocationHomeViewController * locationHomeView = [[GMLocationHomeViewController alloc] init];
     [self.navigationController pushViewController:locationHomeView animated:YES];
+}
+
+- (IBAction)goToDangerView:(UIButton *)sender
+{
+    GMDangerViewController * dangerView = [[GMDangerViewController alloc] init];
+    [self.navigationController pushViewController:dangerView animated:YES];
+}
+
+- (IBAction)logoutAction:(UIButton *)sender
+{
+    [self logout];
 }
 
 @end

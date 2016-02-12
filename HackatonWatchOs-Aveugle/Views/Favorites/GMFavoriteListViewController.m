@@ -9,7 +9,7 @@
 #import "GMFavoriteListViewController.h"
 #import "GMLocationMapViewController.h"
 #import "GMLocationTableViewCell.h"
-#import "GMWebLocationAPI.h"
+#import "GMLocationWebAPI.h"
 #import "GMLocation.h"
 #import "UIColor+GMColor.h"
 
@@ -20,7 +20,7 @@
 }
 
 @property (nonatomic, strong) NSMutableArray<GMLocation *> * favoriteLocations;
-@property (nonatomic, strong) GMWebLocationAPI * locationWebAPI;
+@property (nonatomic, strong) GMLocationWebAPI * locationWebAPI;
 
 
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
@@ -32,7 +32,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _locationWebAPI = [[GMWebLocationAPI alloc] init];
+        _locationWebAPI = [[GMLocationWebAPI alloc] init];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
@@ -63,7 +63,7 @@
     }
                                  Failure:^(NSError * error)
     {
-        NSLog(@"Error : %@", error.localizedDescription);
+        [self showErrorNotificationWithMessage:@"Impossible to load favorite location"];
     }];
 }
 
@@ -121,7 +121,7 @@
             }
                                                   Failure:^(NSError * error)
             {
-                NSLog(@"Error : %@", error.localizedDescription);
+                [self showErrorNotificationWithMessage:@"Impossible to remove favorite location"];
             }];
             
             break;

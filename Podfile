@@ -10,3 +10,4 @@ pod "AFNetworking", "~> 2.0"
 pod "AFOAuth2Manager", "~> 2.0"
 pod 'IQKeyboardManager'
 pod 'GoogleMaps'
+pod 'JFMinimalNotifications', '~> 0.0.6'

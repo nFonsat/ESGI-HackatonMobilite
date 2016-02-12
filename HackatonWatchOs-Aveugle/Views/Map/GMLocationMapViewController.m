@@ -7,18 +7,25 @@
 //
 
 #import "GMLocationMapViewController.h"
+#import "GMLocationWebAPI.h"
+#import "GMDangerWebAPI.h"
+#import "GMDanger.h"
+#import "GMDangerAnnotation.h"
 #import "UIColor+GMColor.h"
 
 @interface GMLocationMapViewController ()
 {
-    @private
-    CLLocationManager * _locationManager;
+@private
+    GMLocationWebAPI * _locationWeb;
+    GMDangerWebAPI * _dangerWebAPI;
+    NSMutableArray<GMDanger *> * _dangersOnMap;
     MKRoute * _routeDetails;
     GMLocation * _locationForZoom;
     BOOL _centerOnUserPosition;
     BOOL _needUpdateUserLocation;
     BOOL _startNavigation;
     BOOL _bottomBarIsOpen;
+    BOOL _mapFullyRendered;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintBottomOnBottomBar;
@@ -49,9 +56,11 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        [self initLocationManager];
+        _locationWeb = [[GMLocationWebAPI alloc] init];
+        _dangerWebAPI = [[GMDangerWebAPI alloc] init];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
+        _mapFullyRendered = NO;
     }
 
     return self;
@@ -78,6 +87,11 @@
     [self stopNavigation];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    _dangersOnMap = [NSMutableArray new];
+}
+
 #pragma mark - GMBaseViewController
 
 - (UIColor *)getBarTintColor
@@ -95,7 +109,15 @@
 - (IBAction)navigateAction:(UIButton *)sender
 {
     if (!_startNavigation) {
-        [self calculateDirection];
+        [_locationWeb playLocation:_locationForZoom.locationId
+                           Success:^(id responseObject)
+        {
+            [self calculateDirection];
+        }
+                           Failure:^(NSError * error)
+        {
+            [self calculateDirection];
+        }];
     }
     else {
         [self stopNavigation];
@@ -112,7 +134,7 @@
 
 - (void)zoomOnCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 800, 800);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
@@ -200,7 +222,7 @@
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error)
      {
          if (error) {
-             NSLog(@"Error %@", error.description);
+             [self showErrorNotificationWithMessage:[error localizedDescription]];
              [self stopNavigation];
          }
          else {
@@ -208,7 +230,6 @@
              
              [self.mapView removeOverlays:self.mapView.overlays];
              [self.mapView addOverlay:_routeDetails.polyline];
-             NSLog(@"Distance : %d", (int) _routeDetails.distance);
              
              NSString * allSteps = @"";
              for (int i = 0; i < _routeDetails.steps.count; i++) {
@@ -218,7 +239,6 @@
                  allSteps = [allSteps stringByAppendingString:newStep];
                  allSteps = [allSteps stringByAppendingString:@"\n\n"];
              }
-             NSLog(@"Steps : %@",  allSteps);
              
              [self loadNextInstruction: _routeDetails.steps[1]];
              [self loadGeneralInstruction:_routeDetails];
@@ -244,10 +264,52 @@
     }
 }
 
-- (void) loadGeneralInstruction:(MKRoute *)instruction
+- (void)loadGeneralInstruction:(MKRoute *)instruction
 {
     _distanceToDestinationLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _destinationLabel.text = _locationForZoom.name;
+}
+
+- (void)addDangerOnMap:(GMDanger *)danger
+{
+    
+    if (![_dangersOnMap containsObject:danger]) {
+        [_dangersOnMap addObject:danger];
+        
+        GMDangerAnnotation * point = [[GMDangerAnnotation alloc] init];
+        point.coordinate = danger.coordinate;
+        point.title = danger.name;
+        point.subtitle = danger.type.name;
+        point.danger = danger;
+        
+        [self.mapView addAnnotation:point];
+    }
+}
+
+- (void)detectDangerForUserLocation:(MKUserLocation *)userLocation
+{
+    GMDanger * dangerSignal = nil;
+    
+    for (GMDanger * danger in _dangersOnMap) {
+        if ([self danger:danger isNearUserLocation:userLocation AndDistance:5]) {
+            dangerSignal = danger;
+            break;
+        }
+    }
+    
+    if (dangerSignal != nil) {
+        NSString * signal = [NSString stringWithFormat:@"Danger ! ! ! %@", dangerSignal.name];
+        [self showWarningNotificationMessage:signal];
+    }
+    
+}
+
+- (BOOL)danger:(GMDanger *)danger isNearUserLocation:(MKUserLocation *)userLocation AndDistance:(CLLocationDistance)distance
+{
+    double xPosition = danger.coordinate.latitude - userLocation.coordinate.latitude;
+    double yPosition = danger.coordinate.longitude - userLocation.coordinate.longitude;
+    
+    return sqrt(pow(xPosition, 2) + pow(yPosition, 2)) < distance;
 }
 
 #pragma mark - MapView
@@ -282,11 +344,13 @@
     if (_startNavigation) {
         [self calculateDirection];
     }
+    
+    [self detectDangerForUserLocation:userLocation];
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
-    NSLog(@"MapKit didFailToLocateUserWithError : %@", error.localizedDescription);
+    [self showErrorNotificationWithMessage:@"Impossible localized user"];
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
@@ -301,46 +365,65 @@
     return nil;
 }
 
-#pragma mark - CoreLocation
-
-- (void)initLocationManager
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    _locationManager = [CLLocationManager new];
-    _locationManager.delegate = self;
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-}
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
-{
-    switch (status) {
-        case kCLAuthorizationStatusNotDetermined:
-            [_locationManager requestAlwaysAuthorization];
-            break;
-            
-        case kCLAuthorizationStatusRestricted:
-            [_locationManager requestAlwaysAuthorization];
-            break;
-            
-        case kCLAuthorizationStatusDenied:
-            [_locationManager requestAlwaysAuthorization];
-            break;
-            
-        case kCLAuthorizationStatusAuthorizedAlways:
-            [_locationManager startUpdatingLocation];
-            break;
-            
-        case kCLAuthorizationStatusAuthorizedWhenInUse:
-            [_locationManager startUpdatingLocation];
-            break;
-            
-        default:
-            break;
+    if (_mapFullyRendered) {
+        MKMapRect mRect = self.mapView.visibleMapRect;
+        MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMinX(mRect), MKMapRectGetMidY(mRect));
+        MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMaxX(mRect), MKMapRectGetMidY(mRect));
+        CLLocationDistance distance = MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/2;
+        
+        [_dangerWebAPI getDangersFromCenter:self.mapView.region.center
+                                   Distance:@(distance)
+                                    Success:^(id responseObject)
+         {
+             for (NSDictionary * dangerJson in responseObject) {
+                 GMDanger * danger = [[GMDanger alloc]initFromJsonDictionary:dangerJson];
+                 [self addDangerOnMap:danger];
+             }
+         }
+                                    Failure:^(AFHTTPRequestOperation * operation, NSError *error)
+         {
+             [self showErrorNotificationWithMessage:@"Impossible load danger"];
+         }];
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+- (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
 {
-    NSLog(@"CoreLocation didFailWithError : %@", error.localizedDescription);
+    _mapFullyRendered = fullyRendered;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *pinView = nil;
+    
+    if([annotation isKindOfClass: [GMDangerAnnotation class]])
+    {
+        static NSString * defaultPinID = @"com.invasivecode.pin";
+        
+        pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        
+        if ( pinView == nil ) {
+            pinView = [[MKAnnotationView alloc]
+                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        }
+        
+        pinView.canShowCallout = YES;
+        
+        if ([annotation.subtitle isEqualToString:kAlertTraffic]) {
+            pinView.image = [UIImage imageNamed:@"gm_alert_traffic"];
+        }
+        else if ([annotation.subtitle isEqualToString:kAlertDanger]) {
+            pinView.image = [UIImage imageNamed:@"gm_alert_danger"];
+        }
+        else if ([annotation.subtitle isEqualToString:kAlertTmp]) {
+            pinView.image = [UIImage imageNamed:@"gm_alert_tmp"];
+        }
+        
+    }
+    
+    return pinView;
 }
 
 @end
