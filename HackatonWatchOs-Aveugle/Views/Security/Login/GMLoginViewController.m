@@ -55,17 +55,20 @@
 {
     NSString * username = self.usernameText.text;
     NSString * password = self.passwordText.text;
+    NSString * errorMsg = nil;
     
     if (username == nil || [username isEmpty]) {
-        [self showErrorNotificationWithMessage:@"Username is not valid"];
-        return NO;
+        errorMsg = @"Username is not valid";
     }
     else if (password == nil || [password isEmpty]) {
-        [self showErrorNotificationWithMessage:@"Password is not valid"];
-        return NO;
+        errorMsg = @"Password is not valid";
     }
     
-    return YES;
+    if (errorMsg != nil) {
+        [self showErrorNotificationWithMessage:errorMsg];
+    }
+    
+    return errorMsg == nil;
 }
 
 #pragma mark - GMLoginViewController Action

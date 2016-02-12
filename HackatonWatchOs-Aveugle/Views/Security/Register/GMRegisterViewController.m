@@ -65,34 +65,28 @@
     
     if (username == nil || [username isEmpty]) {
         errorMsg = @"Username is not valid";
-        return NO;
     }
     else if (email == nil || [email isEmpty] || ![email isEmailValid]) {
         errorMsg = @"Email is not valid";
-        return NO;
     }
     else if (password == nil || [password isEmpty]) {
         errorMsg = @"Password is not valid";
-        return NO;
     }
     else if (confirmPassword == nil || [confirmPassword isEmpty]) {
         errorMsg = @"Confirm password is not valid";
-        return NO;
     }
     else if (![confirmPassword isEqualToString:password]) {
         errorMsg = @"The confirm password must match the password";
-        return NO;
     }
     else if (password.length < 7) {
         errorMsg = @"The password is too short";
-        return NO;
     }
     
     if (errorMsg != nil) {
         [self showErrorNotificationWithMessage:errorMsg];
     }
     
-    return YES;
+    return errorMsg == nil;
 }
 
 #pragma mark - GMRegisterViewController Action
