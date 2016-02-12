@@ -82,7 +82,7 @@
                                  Success:^(AFOAuthCredential * credential)
          {
              GMMainViewController * mainView = [[GMMainViewController alloc] init];
-             [self.navigationController pushViewController:mainView animated:YES];
+             [self.navigationController setViewControllers:@[mainView] animated:YES];
          }
                                  Failure:^(NSError * error)
          {
