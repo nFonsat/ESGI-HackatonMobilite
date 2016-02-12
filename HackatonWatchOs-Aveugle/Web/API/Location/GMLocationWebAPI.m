@@ -6,9 +6,9 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "GMWebLocationAPI.h"
+#import "GMLocationWebAPI.h"
 
-@implementation GMWebLocationAPI
+@implementation GMLocationWebAPI
 
 - (instancetype)init
 {

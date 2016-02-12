@@ -8,7 +8,7 @@
 #import "GMLocationAddViewController.h"
 #import "GMLocationMapViewController.h"
 #import "GMLocation.h"
-#import "GMWebLocationAPI.h"
+#import "GMLocationWebAPI.h"
 #import "UIColor+GMColor.h"
 
 @import GoogleMaps;
@@ -18,7 +18,7 @@
     @private
     NSMutableArray<GMSAutocompletePrediction *> * _placeResults;
     GMSPlacesClient * _googleClient;
-    GMWebLocationAPI * _locationWebAPI;
+    GMLocationWebAPI * _locationWebAPI;
     GMSPlace * _placeToAdded;
 }
 
@@ -32,7 +32,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _locationWebAPI = [[GMWebLocationAPI alloc] init];
+        _locationWebAPI = [[GMLocationWebAPI alloc] init];
         _googleClient   = [[GMSPlacesClient alloc] init];
         _placeResults   = [NSMutableArray new];
         

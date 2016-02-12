@@ -7,7 +7,7 @@
 //
 
 #import "GMLocationMapViewController.h"
-#import "GMWebLocationAPI.h"
+#import "GMLocationWebAPI.h"
 #import "GMDangerWebAPI.h"
 #import "GMDanger.h"
 #import "UIColor+GMColor.h"
@@ -15,7 +15,7 @@
 @interface GMLocationMapViewController ()
 {
 @private
-    GMWebLocationAPI * _locationWeb;
+    GMLocationWebAPI * _locationWeb;
     GMDangerWebAPI * _dangerWebAPI;
     NSMutableArray<GMDanger *> * _dangersOnMap;
     MKRoute * _routeDetails;
@@ -55,7 +55,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _locationWeb = [[GMWebLocationAPI alloc] init];
+        _locationWeb = [[GMLocationWebAPI alloc] init];
         _dangerWebAPI = [[GMDangerWebAPI alloc] init];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
