@@ -7,6 +7,9 @@
 //
 
 #import "GMBaseViewController.h"
+#import "GMOAuth2Manager.h"
+#import "GMLoginViewController.h"
+#import "GMMainViewController.h"
 
 @interface GMBaseViewController ()
 {
@@ -158,6 +161,20 @@
     _notification = nil;
 }
 
+#pragma mark - Security Authentication
+
+- (void)login
+{
+    GMMainViewController * mainView = [[GMMainViewController alloc]init];
+    [self.navigationController setViewControllers:@[mainView] animated:YES];
+}
+
+- (void)logout
+{
+    [AFOAuthCredential deleteCredentialWithIdentifier:OAUTH_CLIENT];
+    GMLoginViewController * loginView = [[GMLoginViewController alloc]init];
+    [self.navigationController setViewControllers:@[loginView] animated:YES];
+}
 
 #pragma mark - CoreLocation
 

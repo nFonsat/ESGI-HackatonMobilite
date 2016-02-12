@@ -7,8 +7,6 @@
 //
 
 #import "GMMainViewController.h"
-#import "GMUserWebAPI.h"
-#import "GMLoginViewController.h"
 #import "GMFavoriteListViewController.h"
 #import "GMLocationHomeViewController.h"
 #import "GMDangerViewController.h"
@@ -18,6 +16,7 @@
 - (IBAction)goToFavoriteListView:(UIButton *)sender;
 - (IBAction)goToLocationView:(UIButton *)sender;
 - (IBAction)goToDangerView:(UIButton *)sender;
+- (IBAction)logoutAction:(UIButton *)sender;
 
 @end
 
@@ -43,6 +42,11 @@
 {
     GMDangerViewController * dangerView = [[GMDangerViewController alloc] init];
     [self.navigationController pushViewController:dangerView animated:YES];
+}
+
+- (IBAction)logoutAction:(UIButton *)sender
+{
+    [self logout];
 }
 
 @end

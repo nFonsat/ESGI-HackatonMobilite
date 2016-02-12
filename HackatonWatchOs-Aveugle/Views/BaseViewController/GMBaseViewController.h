@@ -25,4 +25,8 @@
 
 - (void)showWarningNotificationMessage:(NSString *)msg;
 
+- (void)login;
+
+- (void)logout;
+
 @end

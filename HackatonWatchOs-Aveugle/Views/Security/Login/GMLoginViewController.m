@@ -9,7 +9,6 @@
 #import "GMLoginViewController.h"
 #import "GMOAuth2Manager.h"
 #import "GMRegisterViewController.h"
-#import "GMMainVIewController.h"
 
 @interface GMLoginViewController ()
 {
@@ -81,8 +80,7 @@
                                 Password:password
                                  Success:^(AFOAuthCredential * credential)
          {
-             GMMainViewController * mainView = [[GMMainViewController alloc] init];
-             [self.navigationController setViewControllers:@[mainView] animated:YES];
+             [self login];
          }
                                  Failure:^(NSError * error)
          {

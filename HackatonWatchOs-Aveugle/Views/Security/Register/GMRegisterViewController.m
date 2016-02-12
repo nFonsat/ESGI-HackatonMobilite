@@ -7,7 +7,6 @@
 //
 
 #import "GMRegisterViewController.h"
-#import "GMMainVIewController.h"
 #import "GMUserWebAPI.h"
 
 @interface GMRegisterViewController ()
@@ -109,8 +108,7 @@
                                      Password:self.passwordText.text
                                       Success:^(AFOAuthCredential * credential)
               {
-                  GMMainViewController * mainView = [[GMMainViewController alloc] init];
-                  [self.navigationController setViewControllers:@[mainView] animated:YES];
+                  [self login];
               }
                                       Failure:^(NSError * error)
               {
