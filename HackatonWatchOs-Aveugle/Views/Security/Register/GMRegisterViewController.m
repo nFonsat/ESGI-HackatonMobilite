@@ -8,12 +8,12 @@
 
 #import "GMRegisterViewController.h"
 #import "GMMainVIewController.h"
-#import "GMWebUserAPI.h"
+#import "GMUserWebAPI.h"
 
 @interface GMRegisterViewController ()
 {
     @private
-    GMWebUserAPI * _webUserManager;
+    GMUserWebAPI * _webUserManager;
     GMOAuth2Manager * _OAuth2Manager;
 }
 
@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _webUserManager = [[GMWebUserAPI alloc] init];
+    _webUserManager = [[GMUserWebAPI alloc] init];
     
     _OAuth2Manager = [[GMOAuth2Manager alloc] init];
 }

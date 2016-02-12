@@ -9,13 +9,13 @@
 #import "AppDelegate.h"
 #import "GMMainViewController.h"
 #import "GMNavigationController.h"
-#import "GMWebUserAPI.h"
+#import "GMUserWebAPI.h"
 #import "GMLoginViewController.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
 
-@property(nonatomic, strong) GMWebUserAPI * webUserManager;
+@property(nonatomic, strong) GMUserWebAPI * webUserManager;
 
 @end
 
@@ -26,7 +26,7 @@
     
     [GMSServices provideAPIKey:@"AIzaSyBlTArM1_K1_Eo6dYuRAWHvh_xqzN72hxs"];
     
-    _webUserManager = [[GMWebUserAPI alloc] init];
+    _webUserManager = [[GMUserWebAPI alloc] init];
     
     [_webUserManager getUserWithSuccess:^(id responseObject)
      {

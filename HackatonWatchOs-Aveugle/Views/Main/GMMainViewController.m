@@ -7,7 +7,7 @@
 //
 
 #import "GMMainViewController.h"
-#import "GMWebUserAPI.h"
+#import "GMUserWebAPI.h"
 #import "GMLoginViewController.h"
 #import "GMFavoriteListViewController.h"
 #import "GMLocationHomeViewController.h"

@@ -6,9 +6,9 @@
 //  Copyright © 2015 Etudiant. All rights reserved.
 //
 
-#import "GMWebUserAPI.h"
+#import "GMUserWebAPI.h"
 
-@implementation GMWebUserAPI
+@implementation GMUserWebAPI
 
 - (instancetype)init
 {

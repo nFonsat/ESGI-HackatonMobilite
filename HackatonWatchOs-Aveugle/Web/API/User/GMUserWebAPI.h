@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GMWebAPI.h"
 
-@interface GMWebUserAPI : GMWebAPI
+@interface GMUserWebAPI : GMWebAPI
 
 - (void) getUserWithSuccess:(void (^)(id responseObject))success
                     Failure:(void (^)(NSError *error))failure;
