@@ -10,6 +10,7 @@
 #import "GMLocationWebAPI.h"
 #import "GMDangerWebAPI.h"
 #import "GMDanger.h"
+#import "GMDangerAnnotation.h"
 #import "UIColor+GMColor.h"
 
 @interface GMLocationMapViewController ()
@@ -275,10 +276,11 @@
     if (![_dangersOnMap containsObject:danger]) {
         [_dangersOnMap addObject:danger];
         
-        MKPointAnnotation * point = [[MKPointAnnotation alloc] init];
+        GMDangerAnnotation * point = [[GMDangerAnnotation alloc] init];
         point.coordinate = danger.coordinate;
         point.title = danger.name;
         point.subtitle = danger.type.name;
+        point.danger = danger;
         
         [self.mapView addAnnotation:point];
     }
@@ -396,7 +398,7 @@
 {
     MKAnnotationView *pinView = nil;
     
-    if(annotation != mapView.userLocation)
+    if([annotation isKindOfClass: [GMDangerAnnotation class]])
     {
         static NSString * defaultPinID = @"com.invasivecode.pin";
         
