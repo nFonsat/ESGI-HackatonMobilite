@@ -72,7 +72,7 @@
 - (BOOL)formIsValid
 {
     NSString * name = self.nameField.text;
-    if (name == nil || [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0) {
+    if (name == nil || [name isEmpty]) {
         [self showErrorNotificationWithMessage:@"Name of danger is undefined"];
         return NO;
     }

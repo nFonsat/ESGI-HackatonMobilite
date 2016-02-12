@@ -12,4 +12,6 @@
 
 - (BOOL)isEmpty;
 
+- (BOOL)isEmailValid;
+
 @end
