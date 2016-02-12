@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <JFMinimalNotifications/JFMinimalNotification.h>
 #import "UIColor+GMColor.h"
+#import "NSString+String.h"
 
 @import CoreLocation;
 
