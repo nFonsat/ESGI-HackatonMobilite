@@ -50,6 +50,8 @@
     self.navigationController.navigationBar.translucent = NO;
     
     [self.view setBackgroundColor:[self getBackgroundColor]];
+    
+    [self initWCSession];
 }
 
 - (void)viewWillAppear:(BOOL)animated
