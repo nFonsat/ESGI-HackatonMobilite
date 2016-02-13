@@ -71,6 +71,15 @@
     [super touchesBegan:touches withEvent:event];
 }
 
+- (void) initWCSession
+{
+    if ([WCSession class] && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
+}
+
 #pragma mark - GMBaseViewController
 
 - (UIColor *)getBackgroundColor
@@ -98,6 +107,16 @@
     return [UIColor whiteColor];
 }
 
+#pragma mark - WCSession impl
+
+- (void)sendMessageToWatchWithKey:(NSString *)key Value:(NSString*)value
+{
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{key:value}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
 
 #pragma mark - JFMinimalNotification
 - (void)showDefaultNotificationWithTitle:(NSString *)title Message:(NSString *)msg

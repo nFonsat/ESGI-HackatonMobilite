@@ -196,12 +196,14 @@
 {
     _startNavigation = YES;
     [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+    [self sendMessageToWatchWithKey:@"isReady" Value:@"true"];
     [self showBarNavigationWithAnimation];
 }
 
 - (void) stopNavigation
 {
     _startNavigation = NO;
+    [self sendMessageToWatchWithKey:@"stopNavigation" Value:@"true"];
     [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self hideBarNavigationWithAnimation];
@@ -228,38 +230,49 @@
          else {
              _routeDetails = response.routes.lastObject;
              
-             [self.mapView removeOverlays:self.mapView.overlays];
-             [self.mapView addOverlay:_routeDetails.polyline];
-             
-             NSString * allSteps = @"";
-             for (int i = 0; i < _routeDetails.steps.count; i++) {
-                 MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
-                 NSString *newStep = step.instructions;
-                 
-                 allSteps = [allSteps stringByAppendingString:newStep];
-                 allSteps = [allSteps stringByAppendingString:@"\n\n"];
+             if (_routeDetails.distance < 5) {
+                 [self sendMessageToWatchWithKey:@"isFinish" Value:@"true"];
+                 _startNavigation = NO;
              }
-             
-             [self loadNextInstruction: _routeDetails.steps[1]];
-             [self loadGeneralInstruction:_routeDetails];
-             
-             [self startNavigation];
+             else {
+                 [self.mapView removeOverlays:self.mapView.overlays];
+                 [self.mapView addOverlay:_routeDetails.polyline];
+                 
+                 NSString * allSteps = @"";
+                 for (int i = 0; i < _routeDetails.steps.count; i++) {
+                     MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
+                     NSString *newStep = step.instructions;
+                     
+                     allSteps = [allSteps stringByAppendingString:newStep];
+                     allSteps = [allSteps stringByAppendingString:@"\n\n"];
+                 }
+                 
+                 [self loadNextInstruction: _routeDetails.steps[1]];
+                 [self loadGeneralInstruction:_routeDetails];
+                 
+                 [self startNavigation];
+             }
          }
      }];
 }
 
 - (void)loadNextInstruction:(MKRouteStep *)instruction
 {
-    _distanceToNextStepLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    NSString * distanceString = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    _distanceToNextStepLabel.text = distanceString;
+    [self sendMessageToWatchWithKey:@"distance" Value:distanceString];
     _directionLabel.text = instruction.instructions;
     
     if ([instruction.instructions rangeOfString:@"right"].location != NSNotFound) {
+        [self sendMessageToWatchWithKey:@"direction" Value:@"right"];
         [self turnArrowToRight];
     }
     else if ([instruction.instructions rangeOfString:@"left"].location != NSNotFound){
+        [self sendMessageToWatchWithKey:@"direction" Value:@"left"];
         [self turnArrowToLeft];
     }
     else {
+        [self sendMessageToWatchWithKey:@"direction" Value:@"center"];
         [self turnArrowToCenter];
     }
 }
@@ -299,6 +312,7 @@
     
     if (dangerSignal != nil) {
         NSString * signal = [NSString stringWithFormat:@"Danger ! ! ! %@", dangerSignal.name];
+        [self sendMessageToWatchWithKey:@"danger" Value:dangerSignal.type.name];
         [self showWarningNotificationMessage:signal];
     }
     

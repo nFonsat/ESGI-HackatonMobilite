@@ -45,7 +45,6 @@
 		37D2DFD61C24FC3600B9625F /* GMWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD11C24FC3600B9625F /* GMWebAPI.m */; };
 		37D2DFD71C24FC3600B9625F /* GMUserWebAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2DFD51C24FC3600B9625F /* GMUserWebAPI.m */; };
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
-		37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E9B70A1C18475500D7BE13 /* GMTestViewController.m */; };
 		90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAD1F7692EC5B3064D113BA /* libPods.a */; };
 		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; };
 		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; };
@@ -177,8 +176,6 @@
 		37D2DFD51C24FC3600B9625F /* GMUserWebAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUserWebAPI.m; sourceTree = "<group>"; };
 		37E4E5281C1F88B200421E79 /* GMOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMOAuth2Manager.h; sourceTree = "<group>"; };
 		37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMOAuth2Manager.m; sourceTree = "<group>"; };
-		37E9B7091C18475500D7BE13 /* GMTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTestViewController.h; sourceTree = "<group>"; };
-		37E9B70A1C18475500D7BE13 /* GMTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTestViewController.m; sourceTree = "<group>"; };
 		E414D77ACBA177619F005597 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -560,8 +557,6 @@
 				374EDE611C60E14000E96BEC /* Map */,
 				3710D1CF1C32507900307CD5 /* Security */,
 				37458BEA1C66B9B900B8549B /* TypeDanger */,
-				37E9B7091C18475500D7BE13 /* GMTestViewController.h */,
-				37E9B70A1C18475500D7BE13 /* GMTestViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -929,7 +924,6 @@
 				3710D1D81C32507900307CD5 /* GMLoginViewController.m in Sources */,
 				3710D1DA1C32507900307CD5 /* GMRegisterViewController.m in Sources */,
 				37B36AE01C42BAF700FC751C /* GMLocationHomeViewController.m in Sources */,
-				37E9B70D1C18475500D7BE13 /* GMTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
