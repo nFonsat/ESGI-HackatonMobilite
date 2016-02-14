@@ -116,6 +116,11 @@
 
 - (void)playNavigation
 {
+    if ([self distanceBetweenCoordinateSrc:_mapView.userLocation.coordinate CoordinateDest:_locationForZoom.coordinate] > 5000) {
+        [self showErrorNotificationWithMessage:@"Distance is too large"];
+        return;
+    }
+    
     [self sendMessageToWatchWithKey:kWatchStartNavigation Value:@"YES"];
     
     [_locationWeb playLocation:_locationForZoom.locationId
@@ -368,15 +373,23 @@
 
 - (BOOL)danger:(GMDanger *)danger isNearUserLocation:(MKUserLocation *)userLocation AndDistance:(CLLocationDistance)distance
 {
-    CLLocation * dangerLoc = [[CLLocation alloc]initWithLatitude:danger.coordinate.latitude
-                                                            longitude:danger.coordinate.longitude];
     
-    CLLocation * userLoc = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude
-                                                            longitude:userLocation.coordinate.longitude];
-    
-    CLLocationDistance distanceBetweenPoint = [dangerLoc distanceFromLocation:userLoc];
+    CLLocationDistance distanceBetweenPoint = [self distanceBetweenCoordinateSrc:userLocation.coordinate
+                                                                  CoordinateDest:danger.coordinate];
     
     return distanceBetweenPoint < distance;
+}
+
+- (CLLocationDistance)distanceBetweenCoordinateSrc:(CLLocationCoordinate2D)coordinateSrc
+                                    CoordinateDest:(CLLocationCoordinate2D)coordinateDest
+{
+    CLLocation * srcLoc = [[CLLocation alloc]initWithLatitude:coordinateSrc.latitude
+                                                       longitude:coordinateSrc.longitude];
+    
+    CLLocation * destLoc = [[CLLocation alloc]initWithLatitude:coordinateDest.latitude
+                                                     longitude:coordinateDest.longitude];
+    
+    return [srcLoc distanceFromLocation:destLoc];
 }
 
 #pragma mark - MapView
@@ -485,7 +498,7 @@
 {
     NSString * msg;
     
-    if ( (msg = [message objectForKey:kWatchStartNavigation]) != nil && [msg  isEqual: @"YES"]) {
+    if ( (msg = [message objectForKey:kWatchStartNavigation]) != nil) {
         [self playNavigation];
     }
     else {

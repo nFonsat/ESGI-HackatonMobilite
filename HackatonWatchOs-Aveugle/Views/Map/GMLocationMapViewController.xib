@@ -83,10 +83,10 @@
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Py-wr-7mA">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                         </mapView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmL-LB-B7u">
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BmL-LB-B7u">
                             <rect key="frame" x="550" y="459" width="30" height="31"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-W4-G83">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-W4-G83">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
                                     <state key="normal" image="map-locator"/>
                                     <connections>
