@@ -78,10 +78,10 @@
 {
     NSString* msg;
     
-    if ( (msg = [message objectForKey:@"isFinish"]) != nil){
+    if ( (msg = [message objectForKey:@"is_finish"]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"stopNavigation"]) != nil && [msg isEqual:@"YES"]){
+    else if ( (msg = [message objectForKey:@"stop_navigation"]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"ReadyItinaryController"] contexts:nil];
     }
     else if ( (msg = [message objectForKey:@"start_navigation"]) != nil){

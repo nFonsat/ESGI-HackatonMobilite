@@ -209,6 +209,16 @@
     [self hideBarNavigationWithAnimation];
 }
 
+- (void)finishNavigation
+{
+    _startNavigation = NO;
+    
+    [self sendMessageToWatchWithKey:@"is_finish" Value:@"YES"];
+    [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self hideBarNavigationWithAnimation];
+}
+
 - (void)calculateDirection
 {
     MKDirectionsRequest * directionsRequest = [[MKDirectionsRequest alloc] init];
@@ -230,9 +240,8 @@
          else {
              _routeDetails = response.routes.lastObject;
              
-             if (_routeDetails.distance < 5) {
-                 [self sendMessageToWatchWithKey:@"isFinish" Value:@"true"];
-                 _startNavigation = NO;
+             if (_routeDetails.distance < 10) {
+                 [self finishNavigation];
              }
              else {
                  [self.mapView removeOverlays:self.mapView.overlays];

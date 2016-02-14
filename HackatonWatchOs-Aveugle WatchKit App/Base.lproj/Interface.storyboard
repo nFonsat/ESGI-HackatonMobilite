@@ -30,11 +30,11 @@
             <objects>
                 <controller identifier="ItineraryController" hidesWhenLoading="NO" id="plb-dH-nWW" customClass="ItineraryInterfaceController">
                     <items>
-                        <label width="1" height="0.25" alignment="center" text="ESGI" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
+                        <label width="1" height="0.25" alignment="center" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
                             <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="16"/>
                         </label>
                         <imageView width="70" height="70" alignment="center" verticalAlignment="center" image="droite" id="qY4-Mp-m1J"/>
-                        <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" text="250m" textAlignment="center" id="3CM-wj-mvv">
+                        <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" textAlignment="center" id="3CM-wj-mvv">
                             <fontDescription key="font" type="boldSystem" pointSize="20"/>
                         </label>
                     </items>
