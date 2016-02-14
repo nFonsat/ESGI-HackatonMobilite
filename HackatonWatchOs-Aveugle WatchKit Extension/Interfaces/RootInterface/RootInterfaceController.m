@@ -81,8 +81,11 @@
     if ( (msg = [message objectForKey:@"isFinish"]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"stopNavigation"]) != nil && [msg isEqual:@"true"]){
+    else if ( (msg = [message objectForKey:@"stopNavigation"]) != nil && [msg isEqual:@"YES"]){
         [WKInterfaceController reloadRootControllersWithNames:@[@"ReadyItinaryController"] contexts:nil];
+    }
+    else if ( (msg = [message objectForKey:@"start_navigation"]) != nil){
+        [WKInterfaceController reloadRootControllersWithNames:@[@"ItineraryController"] contexts:nil];
     }
     else if ( (msg = [message objectForKey:@"danger"]) != nil){
         [self presentControllerWithName:@"DangerController" context:msg];

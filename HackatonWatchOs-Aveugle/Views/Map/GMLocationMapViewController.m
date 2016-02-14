@@ -115,6 +115,8 @@
 
 - (void)playNavigation
 {
+    [self sendMessageToWatchWithKey:@"start_navigation" Value:@"YES"];
+    
     [_locationWeb playLocation:_locationForZoom.locationId
                        Success:^(id responseObject)
      {
@@ -193,7 +195,6 @@
 {
     _startNavigation = YES;
     
-    [self sendMessageToWatchWithKey:@"start_navigation" Value:@"YES"];
     [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
     [self showBarNavigationWithAnimation];
 }
@@ -280,6 +281,7 @@
 {
     _distanceToDestinationLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _destinationLabel.text = _locationForZoom.name;
+    [self sendMessageToWatchWithKey:@"destination_name" Value:_locationForZoom.name];
 }
 
 - (void)needToGetDangers
