@@ -33,7 +33,7 @@
     
     _webUserManager = [[GMUserWebAPI alloc] init];
     
-    _OAuth2Manager = [[GMOAuth2Manager alloc] init];
+    _OAuth2Manager = [GMOAuth2Manager sharedOAuth2Manager];
 }
 
 #pragma mark - GMBaseViewController

@@ -13,6 +13,21 @@
     @private
 }
 
+
++ (instancetype)sharedOAuth2Manager
+{
+    static GMOAuth2Manager * sharedOAuth2Manager = nil;
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedOAuth2Manager = [[self alloc] init];
+    });
+    
+    return sharedOAuth2Manager;
+}
+
+
 - (instancetype)init
 {
     NSURL * baseURL = [NSURL URLWithString:@"http://95.85.51.133"];

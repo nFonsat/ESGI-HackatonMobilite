@@ -17,7 +17,7 @@
 {
     if (self = [super init]) {
         _baseURL = base;
-       _OAuth2Manager = [[GMOAuth2Manager alloc] init];
+       _OAuth2Manager = [GMOAuth2Manager sharedOAuth2Manager];
     }
     
     return self;
