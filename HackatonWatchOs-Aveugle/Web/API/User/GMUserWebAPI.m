@@ -10,6 +10,19 @@
 
 @implementation GMUserWebAPI
 
++ (instancetype)sharedUserWebAPI
+{
+    static GMUserWebAPI * sharedUserWebAPI = nil;
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedUserWebAPI = [[self alloc] init];
+    });
+    
+    return sharedUserWebAPI;
+}
+
 - (instancetype)init
 {
     return [super initWithBaseURL:@"/api/v1/user"];
