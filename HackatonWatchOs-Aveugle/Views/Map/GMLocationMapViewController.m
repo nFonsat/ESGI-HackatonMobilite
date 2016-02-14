@@ -12,6 +12,7 @@
 #import "GMDanger.h"
 #import "GMDangerAnnotation.h"
 #import "UIColor+GMColor.h"
+#import "GMWatch.h"
 
 @interface GMLocationMapViewController ()
 {
@@ -26,16 +27,15 @@
     BOOL _startNavigation;
     BOOL _bottomBarIsOpen;
     BOOL _mapFullyRendered;
+    BOOL _searchingDangers;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintBottomOnBottomBar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * constraintTopOnTopBar;
 
 @property (weak, nonatomic) IBOutlet MKMapView * mapView;
-@property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
 
 @property (weak, nonatomic) IBOutlet UIButton * navigateBtn;
-@property (weak, nonatomic) IBOutlet UIButton * magnifierBtn;
 
 @property (weak, nonatomic) IBOutlet UIView * bottomBar;
 @property (weak, nonatomic) IBOutlet UILabel * distanceToNextStepLabel;
@@ -47,7 +47,6 @@
 @property (weak, nonatomic) IBOutlet UILabel * distanceToDestinationLabel;
 
 - (IBAction)navigateAction:(UIButton *)sender;
-- (IBAction)magnifierAction:(UIButton *)sender;
 
 @end
 
@@ -61,6 +60,7 @@
         _startNavigation = NO;
         _centerOnUserPosition = YES;
         _mapFullyRendered = NO;
+        _searchingDangers = NO;
     }
 
     return self;
@@ -80,11 +80,9 @@
 {
     [super viewDidLoad];
     
-    self.searchBar.hidden = YES;
-    
     [self initMapView];
     
-    [self stopNavigation];
+    [self hideBarNavigationWithAnimation];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -109,24 +107,26 @@
 - (IBAction)navigateAction:(UIButton *)sender
 {
     if (!_startNavigation) {
-        [_locationWeb playLocation:_locationForZoom.locationId
-                           Success:^(id responseObject)
-        {
-            [self calculateDirection];
-        }
-                           Failure:^(NSError * error)
-        {
-            [self calculateDirection];
-        }];
+        [self playNavigation];
     }
     else {
         [self stopNavigation];
     }
 }
 
-- (IBAction)magnifierAction:(UIButton *)sender
+- (void)playNavigation
 {
-    self.searchBar.hidden = !self.searchBar.hidden;
+    [self sendMessageToWatchWithKey:kWatchStartNavigation Value:@"YES"];
+    
+    [_locationWeb playLocation:_locationForZoom.locationId
+                       Success:^(id responseObject)
+     {
+         [self calculateDirection];
+     }
+                       Failure:^(NSError * error)
+     {
+         [self calculateDirection];
+     }];
 }
 
 
@@ -192,16 +192,29 @@
     _arrowImg.transform = CGAffineTransformMakeRotation(-M_PI_2);
 }
 
-- (void) startNavigation
+- (void)startNavigation
 {
     _startNavigation = YES;
+    
     [self.navigateBtn setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
     [self showBarNavigationWithAnimation];
 }
 
-- (void) stopNavigation
+- (void)stopNavigation
 {
     _startNavigation = NO;
+    
+    [self sendMessageToWatchWithKey:kWatchStopNavigation Value:@"YES"];
+    [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self hideBarNavigationWithAnimation];
+}
+
+- (void)finishNavigation
+{
+    _startNavigation = NO;
+    
+    [self sendMessageToWatchWithKey:kWatchIsFinish Value:@"YES"];
     [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self hideBarNavigationWithAnimation];
@@ -228,39 +241,54 @@
          else {
              _routeDetails = response.routes.lastObject;
              
-             [self.mapView removeOverlays:self.mapView.overlays];
-             [self.mapView addOverlay:_routeDetails.polyline];
-             
-             NSString * allSteps = @"";
-             for (int i = 0; i < _routeDetails.steps.count; i++) {
-                 MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
-                 NSString *newStep = step.instructions;
-                 
-                 allSteps = [allSteps stringByAppendingString:newStep];
-                 allSteps = [allSteps stringByAppendingString:@"\n\n"];
+             if (_routeDetails.distance < 10) {
+                 [self finishNavigation];
              }
-             
-             [self loadNextInstruction: _routeDetails.steps[1]];
-             [self loadGeneralInstruction:_routeDetails];
-             
-             [self startNavigation];
+             else {
+                 [self.mapView removeOverlays:self.mapView.overlays];
+                 [self.mapView addOverlay:_routeDetails.polyline];
+                 
+                 NSString * allSteps = @"";
+                 for (int i = 0; i < _routeDetails.steps.count; i++) {
+                     MKRouteStep *step = [_routeDetails.steps objectAtIndex:i];
+                     NSString *newStep = step.instructions;
+                     
+                     allSteps = [allSteps stringByAppendingString:newStep];
+                     allSteps = [allSteps stringByAppendingString:@"\n\n"];
+                 }
+                 
+                 [self loadNextInstruction: _routeDetails.steps[1]];
+                 [self loadGeneralInstruction:_routeDetails];
+                 
+                 [self startNavigation];
+             }
          }
      }];
 }
 
 - (void)loadNextInstruction:(MKRouteStep *)instruction
 {
-    _distanceToNextStepLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    NSString * distanceString = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
+    _distanceToNextStepLabel.text = distanceString;
+    [self sendMessageToWatchWithKey:kWatchStepDistance Value:distanceString];
     _directionLabel.text = instruction.instructions;
+    NSString * valueForSendMessage = nil;
     
     if ([instruction.instructions rangeOfString:@"right"].location != NSNotFound) {
+        valueForSendMessage = @"right";
         [self turnArrowToRight];
     }
     else if ([instruction.instructions rangeOfString:@"left"].location != NSNotFound){
+        valueForSendMessage = @"left";
         [self turnArrowToLeft];
     }
     else {
+        valueForSendMessage = @"center";
         [self turnArrowToCenter];
+    }
+    
+    if (valueForSendMessage != nil) {
+        [self sendMessageToWatchWithKey:kWatchStepDirection Value:valueForSendMessage];
     }
 }
 
@@ -268,6 +296,35 @@
 {
     _distanceToDestinationLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _destinationLabel.text = _locationForZoom.name;
+    [self sendMessageToWatchWithKey:kWatchDestinationName Value:_locationForZoom.name];
+}
+
+- (void)needToGetDangers
+{
+    if (_mapFullyRendered && !_searchingDangers) {
+        _searchingDangers = YES;
+        MKMapRect mRect = self.mapView.visibleMapRect;
+        MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMinX(mRect), MKMapRectGetMidY(mRect));
+        MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMaxX(mRect), MKMapRectGetMidY(mRect));
+        CLLocationDistance distance = MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/2;
+        
+        [_dangerWebAPI getDangersFromCenter:self.mapView.region.center
+                                   Distance:@(distance)
+                                    Success:^(id responseObject)
+         {
+             for (NSDictionary * dangerJson in responseObject) {
+                 GMDanger * danger = [[GMDanger alloc]initFromJsonDictionary:dangerJson];
+                 [self addDangerOnMap:danger];
+             }
+             
+             _searchingDangers = NO;
+         }
+                                    Failure:^(AFHTTPRequestOperation * operation, NSError *error)
+         {
+             [self showErrorNotificationWithMessage:@"Impossible load danger"];
+             _searchingDangers = NO;
+         }];
+    }
 }
 
 - (void)addDangerOnMap:(GMDanger *)danger
@@ -288,6 +345,10 @@
 
 - (void)detectDangerForUserLocation:(MKUserLocation *)userLocation
 {
+    if (_dangersOnMap.count == 0) {
+        return;
+    }
+    
     GMDanger * dangerSignal = nil;
     
     for (GMDanger * danger in _dangersOnMap) {
@@ -299,6 +360,7 @@
     
     if (dangerSignal != nil) {
         NSString * signal = [NSString stringWithFormat:@"Danger ! ! ! %@", dangerSignal.name];
+        [self sendMessageToWatchWithKey:kWatchDanger Value:dangerSignal.type.name];
         [self showWarningNotificationMessage:signal];
     }
     
@@ -306,10 +368,15 @@
 
 - (BOOL)danger:(GMDanger *)danger isNearUserLocation:(MKUserLocation *)userLocation AndDistance:(CLLocationDistance)distance
 {
-    double xPosition = danger.coordinate.latitude - userLocation.coordinate.latitude;
-    double yPosition = danger.coordinate.longitude - userLocation.coordinate.longitude;
+    CLLocation * dangerLoc = [[CLLocation alloc]initWithLatitude:danger.coordinate.latitude
+                                                            longitude:danger.coordinate.longitude];
     
-    return sqrt(pow(xPosition, 2) + pow(yPosition, 2)) < distance;
+    CLLocation * userLoc = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude
+                                                            longitude:userLocation.coordinate.longitude];
+    
+    CLLocationDistance distanceBetweenPoint = [dangerLoc distanceFromLocation:userLoc];
+    
+    return distanceBetweenPoint < distance;
 }
 
 #pragma mark - MapView
@@ -331,6 +398,8 @@
         
         [self.mapView addAnnotation:point];
         [self enabledNavigateBtn:YES];
+        
+        [self sendMessageToWatchWithKey:kWatchReadyNavigation Value:@"YES"];
     }
 }
 
@@ -345,7 +414,9 @@
         [self calculateDirection];
     }
     
-    [self detectDangerForUserLocation:userLocation];
+    if (_mapFullyRendered) {
+        [self detectDangerForUserLocation:userLocation];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
@@ -367,31 +438,13 @@
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    if (_mapFullyRendered) {
-        MKMapRect mRect = self.mapView.visibleMapRect;
-        MKMapPoint eastMapPoint = MKMapPointMake(MKMapRectGetMinX(mRect), MKMapRectGetMidY(mRect));
-        MKMapPoint westMapPoint = MKMapPointMake(MKMapRectGetMaxX(mRect), MKMapRectGetMidY(mRect));
-        CLLocationDistance distance = MKMetersBetweenMapPoints(eastMapPoint, westMapPoint)/2;
-        
-        [_dangerWebAPI getDangersFromCenter:self.mapView.region.center
-                                   Distance:@(distance)
-                                    Success:^(id responseObject)
-         {
-             for (NSDictionary * dangerJson in responseObject) {
-                 GMDanger * danger = [[GMDanger alloc]initFromJsonDictionary:dangerJson];
-                 [self addDangerOnMap:danger];
-             }
-         }
-                                    Failure:^(AFHTTPRequestOperation * operation, NSError *error)
-         {
-             [self showErrorNotificationWithMessage:@"Impossible load danger"];
-         }];
-    }
+    [self needToGetDangers];
 }
 
 - (void)mapViewDidFinishRenderingMap:(MKMapView *)mapView fullyRendered:(BOOL)fullyRendered
 {
     _mapFullyRendered = fullyRendered;
+    [self needToGetDangers];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -424,6 +477,20 @@
     }
     
     return pinView;
+}
+
+#pragma mark - WCSession
+
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message
+{
+    NSString * msg;
+    
+    if ( (msg = [message objectForKey:kWatchStartNavigation]) != nil && [msg  isEqual: @"YES"]) {
+        [self playNavigation];
+    }
+    else {
+        [super inCommingMsg:message];
+    }
 }
 
 @end

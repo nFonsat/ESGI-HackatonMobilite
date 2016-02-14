@@ -32,7 +32,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="0ub-3M-b9b" secondAttribute="trailing" constant="20" id="3KR-wG-izd"/>
                                 <constraint firstItem="0ub-3M-b9b" firstAttribute="top" secondItem="Bo7-kb-BIx" secondAttribute="top" id="Gwv-8a-YRp"/>
@@ -110,7 +110,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Lqm-ci-fta" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="0hE-MS-HWy"/>
                 <constraint firstItem="5WT-Xr-KlB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gvq-Rx-PoC"/>

@@ -15,7 +15,8 @@
 
 @implementation RootInterfaceController
 
-- (void)awakeWithContext:(id)context {
+- (void)awakeWithContext:(id)context
+{
     [super awakeWithContext:context];
     
     [self initWCSession];
@@ -23,30 +24,35 @@
     [self addMenuItemWithItemIcon:WKMenuItemIconSpeaker
                             title:@"Parler"
                            action:@selector(speakerAction) ];
-    
-    // Configure interface objects here.
 }
 
-- (void)willActivate {
+- (void)willActivate
+{
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
 
-- (void)didDeactivate {
+- (void)didDeactivate
+{
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
 
-- (void) speakerAction {
-    [self presentTextInputControllerWithSuggestions:nil allowedInputMode:WKTextInputModePlain completion:^(NSArray *results) {
-        NSLog(@"%@", results);
+- (void) speakerAction
+{
+    [self presentTextInputControllerWithSuggestions:nil
+                                   allowedInputMode:WKTextInputModePlain
+                                         completion:^(NSArray *results)
+    {
+        //Implement Action
     }];
 }
 
 
 #pragma mark - WCSession impl
 
-- (void) initWCSession {
+- (void) initWCSession
+{
     if ([WCSession class] && [WCSession isSupported]) {
         WCSession* session = [WCSession defaultSession];
         session.delegate = self;
@@ -54,21 +60,34 @@
     }
 }
 
-- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message {
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message
+{
     [self inCommingMsg:message ];
 }
 
-- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message{
-    NSLog(@"RootInterfaceController => %@", message);
-    
+- (void)sendMessageToIphoneWithKey:(NSString *)key Value:(NSString*)value
+{
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{key:value}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message
+{
     NSString* msg;
-    if ( (msg = [message objectForKey:@"isFinish"]) != nil){
+    
+    if ( (msg = [message objectForKey:kWatchIsFinish]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"stopNavigation"]) != nil && [msg isEqual:@"true"]){
+    else if ( (msg = [message objectForKey:kWatchStopNavigation]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"ReadyItinaryController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"danger"]) != nil){
+    else if ( (msg = [message objectForKey:kWatchStartNavigation]) != nil){
+        [WKInterfaceController reloadRootControllersWithNames:@[@"ItineraryController"] contexts:nil];
+    }
+    else if ( (msg = [message objectForKey:kWatchDanger]) != nil){
         [self presentControllerWithName:@"DangerController" context:msg];
     }
 }

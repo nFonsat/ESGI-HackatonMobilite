@@ -50,6 +50,8 @@
     self.navigationController.navigationBar.translucent = NO;
     
     [self.view setBackgroundColor:[self getBackgroundColor]];
+    
+    [self initWCSession];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -69,6 +71,15 @@
     }
     
     [super touchesBegan:touches withEvent:event];
+}
+
+- (void) initWCSession
+{
+    if ([WCSession class] && [WCSession isSupported]) {
+        WCSession* session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 #pragma mark - GMBaseViewController
@@ -98,6 +109,25 @@
     return [UIColor whiteColor];
 }
 
+#pragma mark - WCSession
+- (void)sendMessageToWatchWithKey:(NSString *)key Value:(NSString*)value
+{
+    if ([WCSession defaultSession].reachable) {
+        [[WCSession defaultSession] sendMessage:@{key:value}
+                                   replyHandler:nil
+                                   errorHandler:nil];
+    }
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message
+{
+    [self inCommingMsg:message];
+}
+
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message
+{
+    
+}
 
 #pragma mark - JFMinimalNotification
 - (void)showDefaultNotificationWithTitle:(NSString *)title Message:(NSString *)msg

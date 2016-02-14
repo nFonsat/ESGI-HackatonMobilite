@@ -7,12 +7,7 @@
 //
 
 #import "RootInterfaceController.h"
-#import <WatchKit/WatchKit.h>
-#import <Foundation/Foundation.h>
 
 @interface ReadyItinaryInterfaceController : RootInterfaceController
-
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *logoApp;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *readyLabel;
 
 @end

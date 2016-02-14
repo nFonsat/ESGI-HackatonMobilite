@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k3Z-OW-iza">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--ReadyItinaryController-->
@@ -25,37 +25,27 @@
             </objects>
             <point key="canvasLocation" x="220" y="247"/>
         </scene>
-        <!--StartItinaryController-->
-        <scene sceneID="Nq3-4j-nQp">
-            <objects>
-                <controller identifier="StartItinaryController" hidesWhenLoading="NO" id="Oll-Rd-z3M" customClass="StartItineraryInterfaceController">
-                    <items>
-                        <imageView width="1" height="1" alignment="center" verticalAlignment="center" image="GO" id="bfv-s0-Qh5"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="468" y="247"/>
-        </scene>
-        <!--ItinaryController-->
+        <!--ItineraryController-->
         <scene sceneID="kYF-6P-8GI">
             <objects>
-                <controller identifier="ItinaryController" hidesWhenLoading="NO" id="plb-dH-nWW" customClass="ItinaryInterfaceController">
+                <controller identifier="ItineraryController" hidesWhenLoading="NO" id="plb-dH-nWW" customClass="ItineraryInterfaceController">
                     <items>
-                        <label width="1" height="0.25" alignment="center" text="ESGI" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
+                        <label width="1" height="0.25" alignment="center" textAlignment="justified" numberOfLines="5" id="Mh2-Lr-ibj">
                             <fontDescription key="font" type="italicSystem" weight="semibold" pointSize="16"/>
                         </label>
                         <imageView width="70" height="70" alignment="center" verticalAlignment="center" image="droite" id="qY4-Mp-m1J"/>
-                        <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" text="250m" textAlignment="center" id="3CM-wj-mvv">
+                        <label width="1" height="0.25" alignment="left" verticalAlignment="bottom" textAlignment="center" id="3CM-wj-mvv">
                             <fontDescription key="font" type="boldSystem" pointSize="20"/>
                         </label>
                     </items>
                     <connections>
                         <outlet property="directionImage" destination="qY4-Mp-m1J" id="RYp-Vk-F11"/>
                         <outlet property="distanceLabel" destination="3CM-wj-mvv" id="alF-Id-Gg9"/>
+                        <outlet property="nameLabel" destination="Mh2-Lr-ibj" id="7cI-oK-dod"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="667" y="643"/>
+            <point key="canvasLocation" x="449" y="247"/>
         </scene>
         <!--FinishController-->
         <scene sceneID="a17-QD-PpJ">

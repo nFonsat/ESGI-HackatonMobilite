@@ -1,5 +1,5 @@
 //
-//  StartItineraryInterfaceController.h
+//  ItinaryInterfaceController.h
 //  HackatonWatchOs-Aveugle
 //
 //  Created by Carole Carré on 07/10/2015.
@@ -7,9 +7,7 @@
 //
 
 #import "RootInterfaceController.h"
-#import <WatchKit/WatchKit.h>
-#import <Foundation/Foundation.h>
 
-@interface StartItineraryInterfaceController : RootInterfaceController
+@interface ItineraryInterfaceController : RootInterfaceController
 
 @end

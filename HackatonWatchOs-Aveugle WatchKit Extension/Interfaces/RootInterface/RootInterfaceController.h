@@ -8,9 +8,12 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import "GMWatch.h"
 
 @interface RootInterfaceController : WKInterfaceController
 
 - (void)inCommingMsg:(NSDictionary<NSString *, id> *)message;
+
+- (void)sendMessageToIphoneWithKey:(NSString *)key Value:(NSString*)value;
 
 @end
