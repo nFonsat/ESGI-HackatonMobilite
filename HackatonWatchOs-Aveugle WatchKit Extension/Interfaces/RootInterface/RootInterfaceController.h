@@ -8,6 +8,7 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import "GMWatch.h"
 
 @interface RootInterfaceController : WKInterfaceController
 

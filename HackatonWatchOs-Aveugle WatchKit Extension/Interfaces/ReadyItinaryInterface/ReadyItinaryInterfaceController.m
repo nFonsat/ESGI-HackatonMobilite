@@ -19,7 +19,7 @@
 
 - (IBAction)onTouchReadyButton
 {
-    [self sendMessageToIphoneWithKey:@"start_navigation" Value:@"YES"];
+    [self sendMessageToIphoneWithKey:kWatchStartNavigation Value:@"YES"];
 }
 
 #pragma mark - RootCommunication impl
@@ -28,7 +28,7 @@
     
     NSString * msg;
     
-    if ( (msg = [message objectForKey:@"ready_navigation"]) != nil && [msg  isEqual: @"YES"]) {
+    if ( (msg = [message objectForKey:kWatchReadyNavigation]) != nil) {
         [self.logoApp setHidden:true];
         [self.readyLabel setHidden:false];
     }

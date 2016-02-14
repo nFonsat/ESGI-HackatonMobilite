@@ -18,21 +18,39 @@
 
 @implementation ItineraryInterfaceController
 
+- (void)loadDirectionFromString:(NSString *)direction
+{
+    NSString * directionFound = nil;
+    
+    if ([direction isEqualToString:@"left"]) {
+        directionFound = @"gauche";
+    }
+    else if ([direction isEqualToString:@"right"]) {
+        directionFound = @"droite";
+    }
+    else if ([direction isEqualToString:@"center"]) {
+        directionFound = @"toutdroit";
+    }
+    
+    
+    if (directionFound != nil) {
+        [self.directionImage setImageNamed:directionFound];
+    }
+}
+
 #pragma mark - RootCommunication impl
 
 - (void)inCommingMsg:(NSDictionary<NSString *, id> *)message {
     
     NSString* msg;
     
-    if ( (msg = [message objectForKey:@"direction"]) != nil) {
-        if ([msg  isEqual: @"gauche"] ^ [msg  isEqual: @"toutdroit"] ^ [msg  isEqual: @"droite"]) {
-            [self.directionImage setImageNamed:msg];
-        }
+    if ( (msg = [message objectForKey:kWatchStepDirection]) != nil) {
+        [self loadDirectionFromString:msg];
     }
-    else if ( (msg = [message objectForKey:@"distance"]) != nil) {
+    else if ( (msg = [message objectForKey:kWatchStepDistance]) != nil) {
         [self.distanceLabel setText:msg];
     }
-    else if ((msg = [message objectForKey:@"destination_name"]) != nil){
+    else if ((msg = [message objectForKey:kWatchDestinationName]) != nil){
         [self.nameLabel setText:msg];
     }
     else {

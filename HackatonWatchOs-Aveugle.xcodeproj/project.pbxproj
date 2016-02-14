@@ -32,6 +32,7 @@
 		375480291C7000700019E367 /* ItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375480281C7000700019E367 /* ItineraryInterfaceController.m */; };
 		3754802D1C7002760019E367 /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3754802C1C7002760019E367 /* DangerInterfaceController.m */; };
 		375480311C7011980019E367 /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375480301C7011980019E367 /* FinishInterfaceController.m */; };
+		375480351C7012A70019E367 /* GMWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 375480341C7012A70019E367 /* GMWatch.m */; };
 		377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777649F1C6E5AB3002B7A3D /* NSString+String.m */; };
 		377764A41C6E67A5002B7A3D /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377764A21C6E67A5002B7A3D /* GMLocationAddViewController.m */; };
 		377764A51C6E67A5002B7A3D /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 377764A31C6E67A5002B7A3D /* GMLocationAddViewController.xib */; };
@@ -153,6 +154,8 @@
 		3754802C1C7002760019E367 /* DangerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DangerInterfaceController.m; sourceTree = "<group>"; };
 		3754802F1C7011980019E367 /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
 		375480301C7011980019E367 /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
+		375480331C7012A70019E367 /* GMWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWatch.h; sourceTree = "<group>"; };
+		375480341C7012A70019E367 /* GMWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWatch.m; sourceTree = "<group>"; };
 		3777649E1C6E5AB3002B7A3D /* NSString+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+String.h"; sourceTree = "<group>"; };
 		3777649F1C6E5AB3002B7A3D /* NSString+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+String.m"; sourceTree = "<group>"; };
 		377764A11C6E67A5002B7A3D /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 				37AB80DE1C62B809004F8353 /* Danger */,
 				372351A21C25BAE500799EC8 /* Location */,
 				37AB80E21C62BC04004F8353 /* TypeDanger */,
+				375480321C70124D0019E367 /* Watch */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -427,6 +431,15 @@
 				375480301C7011980019E367 /* FinishInterfaceController.m */,
 			);
 			path = FinishInterface;
+			sourceTree = "<group>";
+		};
+		375480321C70124D0019E367 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				375480331C7012A70019E367 /* GMWatch.h */,
+				375480341C7012A70019E367 /* GMWatch.m */,
+			);
+			path = Watch;
 			sourceTree = "<group>";
 		};
 		3777649D1C6E5A34002B7A3D /* String */ = {
@@ -935,6 +948,7 @@
 				372351AA1C2DCA7A00799EC8 /* GMLocationTableViewCell.m in Sources */,
 				374EDE651C60E14000E96BEC /* GMLocationMapViewController.m in Sources */,
 				377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */,
+				375480351C7012A70019E367 /* GMWatch.m in Sources */,
 				37AB80EA1C632AFC004F8353 /* GMDangerViewController.m in Sources */,
 				374EDE771C61073F00E96BEC /* GMHistoriesViewController.m in Sources */,
 				ECC99A331BC551E400E12082 /* main.m in Sources */,

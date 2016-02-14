@@ -78,16 +78,16 @@
 {
     NSString* msg;
     
-    if ( (msg = [message objectForKey:@"is_finish"]) != nil){
+    if ( (msg = [message objectForKey:kWatchIsFinish]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"FinishController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"stop_navigation"]) != nil){
+    else if ( (msg = [message objectForKey:kWatchStopNavigation]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"ReadyItinaryController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"start_navigation"]) != nil){
+    else if ( (msg = [message objectForKey:kWatchStartNavigation]) != nil){
         [WKInterfaceController reloadRootControllersWithNames:@[@"ItineraryController"] contexts:nil];
     }
-    else if ( (msg = [message objectForKey:@"danger"]) != nil){
+    else if ( (msg = [message objectForKey:kWatchDanger]) != nil){
         [self presentControllerWithName:@"DangerController" context:msg];
     }
 }

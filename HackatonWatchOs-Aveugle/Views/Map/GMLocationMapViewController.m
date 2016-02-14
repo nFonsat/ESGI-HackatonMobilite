@@ -12,6 +12,7 @@
 #import "GMDanger.h"
 #import "GMDangerAnnotation.h"
 #import "UIColor+GMColor.h"
+#import "GMWatch.h"
 
 @interface GMLocationMapViewController ()
 {
@@ -115,7 +116,7 @@
 
 - (void)playNavigation
 {
-    [self sendMessageToWatchWithKey:@"start_navigation" Value:@"YES"];
+    [self sendMessageToWatchWithKey:kWatchStartNavigation Value:@"YES"];
     
     [_locationWeb playLocation:_locationForZoom.locationId
                        Success:^(id responseObject)
@@ -203,7 +204,7 @@
 {
     _startNavigation = NO;
     
-    [self sendMessageToWatchWithKey:@"stop_navigation" Value:@"YES"];
+    [self sendMessageToWatchWithKey:kWatchStopNavigation Value:@"YES"];
     [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self hideBarNavigationWithAnimation];
@@ -213,7 +214,7 @@
 {
     _startNavigation = NO;
     
-    [self sendMessageToWatchWithKey:@"is_finish" Value:@"YES"];
+    [self sendMessageToWatchWithKey:kWatchIsFinish Value:@"YES"];
     [self.navigateBtn setImage:[UIImage imageNamed:@"map-locator"] forState:UIControlStateNormal];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self hideBarNavigationWithAnimation];
@@ -269,20 +270,25 @@
 {
     NSString * distanceString = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _distanceToNextStepLabel.text = distanceString;
-    [self sendMessageToWatchWithKey:@"distance" Value:distanceString];
+    [self sendMessageToWatchWithKey:kWatchStepDistance Value:distanceString];
     _directionLabel.text = instruction.instructions;
+    NSString * valueForSendMessage = nil;
     
     if ([instruction.instructions rangeOfString:@"right"].location != NSNotFound) {
-        [self sendMessageToWatchWithKey:@"direction" Value:@"right"];
+        valueForSendMessage = @"right";
         [self turnArrowToRight];
     }
     else if ([instruction.instructions rangeOfString:@"left"].location != NSNotFound){
-        [self sendMessageToWatchWithKey:@"direction" Value:@"left"];
+        valueForSendMessage = @"left";
         [self turnArrowToLeft];
     }
     else {
-        [self sendMessageToWatchWithKey:@"direction" Value:@"center"];
+        valueForSendMessage = @"center";
         [self turnArrowToCenter];
+    }
+    
+    if (valueForSendMessage != nil) {
+        [self sendMessageToWatchWithKey:kWatchStepDirection Value:valueForSendMessage];
     }
 }
 
@@ -290,7 +296,7 @@
 {
     _distanceToDestinationLabel.text = [NSString stringWithFormat:@"%ld m", (long)instruction.distance];
     _destinationLabel.text = _locationForZoom.name;
-    [self sendMessageToWatchWithKey:@"destination_name" Value:_locationForZoom.name];
+    [self sendMessageToWatchWithKey:kWatchDestinationName Value:_locationForZoom.name];
 }
 
 - (void)needToGetDangers
@@ -354,7 +360,7 @@
     
     if (dangerSignal != nil) {
         NSString * signal = [NSString stringWithFormat:@"Danger ! ! ! %@", dangerSignal.name];
-        [self sendMessageToWatchWithKey:@"danger" Value:dangerSignal.type.name];
+        [self sendMessageToWatchWithKey:kWatchDanger Value:dangerSignal.type.name];
         [self showWarningNotificationMessage:signal];
     }
     
@@ -393,7 +399,7 @@
         [self.mapView addAnnotation:point];
         [self enabledNavigateBtn:YES];
         
-        [self sendMessageToWatchWithKey:@"ready_navigation" Value:@"YES"];
+        [self sendMessageToWatchWithKey:kWatchReadyNavigation Value:@"YES"];
     }
 }
 
@@ -479,7 +485,7 @@
 {
     NSString * msg;
     
-    if ( (msg = [message objectForKey:@"start_navigation"]) != nil && [msg  isEqual: @"YES"]) {
+    if ( (msg = [message objectForKey:kWatchStartNavigation]) != nil && [msg  isEqual: @"YES"]) {
         [self playNavigation];
     }
     else {
