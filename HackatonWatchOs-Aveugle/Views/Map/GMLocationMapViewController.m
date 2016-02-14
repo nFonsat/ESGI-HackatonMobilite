@@ -330,6 +330,10 @@
 
 - (void)detectDangerForUserLocation:(MKUserLocation *)userLocation
 {
+    if (_dangersOnMap.count == 0) {
+        return;
+    }
+    
     GMDanger * dangerSignal = nil;
     
     for (GMDanger * danger in _dangersOnMap) {
@@ -349,10 +353,15 @@
 
 - (BOOL)danger:(GMDanger *)danger isNearUserLocation:(MKUserLocation *)userLocation AndDistance:(CLLocationDistance)distance
 {
-    double xPosition = danger.coordinate.latitude - userLocation.coordinate.latitude;
-    double yPosition = danger.coordinate.longitude - userLocation.coordinate.longitude;
+    CLLocation * dangerLoc = [[CLLocation alloc]initWithLatitude:danger.coordinate.latitude
+                                                            longitude:danger.coordinate.longitude];
     
-    return sqrt(pow(xPosition, 2) + pow(yPosition, 2)) < distance;
+    CLLocation * userLoc = [[CLLocation alloc]initWithLatitude:userLocation.coordinate.latitude
+                                                            longitude:userLocation.coordinate.longitude];
+    
+    CLLocationDistance distanceBetweenPoint = [dangerLoc distanceFromLocation:userLoc];
+    
+    return distanceBetweenPoint < distance;
 }
 
 #pragma mark - MapView
@@ -390,7 +399,9 @@
         [self calculateDirection];
     }
     
-    [self detectDangerForUserLocation:userLocation];
+    if (_mapFullyRendered) {
+        [self detectDangerForUserLocation:userLocation];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error
