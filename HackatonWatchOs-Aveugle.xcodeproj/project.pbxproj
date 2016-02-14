@@ -30,6 +30,7 @@
 		3754801D1C6FEE820019E367 /* RootInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3754801C1C6FEE820019E367 /* RootInterfaceController.m */; };
 		375480211C6FEEFB0019E367 /* ReadyItinaryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375480201C6FEEFB0019E367 /* ReadyItinaryInterfaceController.m */; };
 		375480291C7000700019E367 /* ItineraryInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375480281C7000700019E367 /* ItineraryInterfaceController.m */; };
+		3754802D1C7002760019E367 /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3754802C1C7002760019E367 /* DangerInterfaceController.m */; };
 		377764A01C6E5AB3002B7A3D /* NSString+String.m in Sources */ = {isa = PBXBuildFile; fileRef = 3777649F1C6E5AB3002B7A3D /* NSString+String.m */; };
 		377764A41C6E67A5002B7A3D /* GMLocationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377764A21C6E67A5002B7A3D /* GMLocationAddViewController.m */; };
 		377764A51C6E67A5002B7A3D /* GMLocationAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 377764A31C6E67A5002B7A3D /* GMLocationAddViewController.xib */; };
@@ -50,7 +51,6 @@
 		37E4E52A1C1F88B200421E79 /* GMOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E4E5291C1F88B200421E79 /* GMOAuth2Manager.m */; };
 		90E2ADC8CD66292055406C5B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAD1F7692EC5B3064D113BA /* libPods.a */; };
 		EB9529011BC6CF9500ECEE3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */; };
-		EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */; };
 		EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */; };
 		ECC99A331BC551E400E12082 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC99A321BC551E400E12082 /* main.m */; };
 		ECC99A3E1BC551E400E12082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC99A3D1BC551E400E12082 /* Assets.xcassets */; };
@@ -149,6 +149,8 @@
 		375480201C6FEEFB0019E367 /* ReadyItinaryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadyItinaryInterfaceController.m; sourceTree = "<group>"; };
 		375480271C7000700019E367 /* ItineraryInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItineraryInterfaceController.h; sourceTree = "<group>"; };
 		375480281C7000700019E367 /* ItineraryInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItineraryInterfaceController.m; sourceTree = "<group>"; };
+		3754802B1C7002760019E367 /* DangerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DangerInterfaceController.h; sourceTree = "<group>"; };
+		3754802C1C7002760019E367 /* DangerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DangerInterfaceController.m; sourceTree = "<group>"; };
 		3777649E1C6E5AB3002B7A3D /* NSString+String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+String.h"; sourceTree = "<group>"; };
 		3777649F1C6E5AB3002B7A3D /* NSString+String.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+String.m"; sourceTree = "<group>"; };
 		377764A11C6E67A5002B7A3D /* GMLocationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLocationAddViewController.h; sourceTree = "<group>"; };
@@ -184,8 +186,6 @@
 		E414D77ACBA177619F005597 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EB9528FB1BC6CF9500ECEE3C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB9528FC1BC6CF9500ECEE3C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DangerInterfaceController.h; sourceTree = "<group>"; };
-		EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DangerInterfaceController.m; sourceTree = "<group>"; };
 		EB9529071BC6D00300ECEE3C /* FinishInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishInterfaceController.h; sourceTree = "<group>"; };
 		EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishInterfaceController.m; sourceTree = "<group>"; };
 		ECC99A2E1BC551E400E12082 /* HackatonWatchOs-Aveugle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackatonWatchOs-Aveugle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,6 +411,15 @@
 			path = ItineraryInterface;
 			sourceTree = "<group>";
 		};
+		3754802A1C7002760019E367 /* DangerInterface */ = {
+			isa = PBXGroup;
+			children = (
+				3754802B1C7002760019E367 /* DangerInterfaceController.h */,
+				3754802C1C7002760019E367 /* DangerInterfaceController.m */,
+			);
+			path = DangerInterface;
+			sourceTree = "<group>";
+		};
 		3777649D1C6E5A34002B7A3D /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,11 +615,10 @@
 		EB9529041BC6D00300ECEE3C /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				3754802A1C7002760019E367 /* DangerInterface */,
 				375480261C7000700019E367 /* ItineraryInterface */,
 				3754801E1C6FEEFB0019E367 /* ReadyItinaryInterface */,
 				3754801A1C6FEE230019E367 /* RootInterface */,
-				EB9529051BC6D00300ECEE3C /* DangerInterfaceController.h */,
-				EB9529061BC6D00300ECEE3C /* DangerInterfaceController.m */,
 				EB9529071BC6D00300ECEE3C /* FinishInterfaceController.h */,
 				EB9529081BC6D00300ECEE3C /* FinishInterfaceController.m */,
 			);
@@ -953,8 +961,8 @@
 				375480211C6FEEFB0019E367 /* ReadyItinaryInterfaceController.m in Sources */,
 				EB9529121BC6D00300ECEE3C /* FinishInterfaceController.m in Sources */,
 				3754801D1C6FEE820019E367 /* RootInterfaceController.m in Sources */,
-				EB9529111BC6D00300ECEE3C /* DangerInterfaceController.m in Sources */,
 				375480291C7000700019E367 /* ItineraryInterfaceController.m in Sources */,
+				3754802D1C7002760019E367 /* DangerInterfaceController.m in Sources */,
 				ECC99A601BC551E400E12082 /* ExtensionDelegate.m in Sources */,
 				ECC99A7B1BC561FB00E12082 /* VibrationManager.m in Sources */,
 				ECC99A631BC551E400E12082 /* NotificationController.m in Sources */,

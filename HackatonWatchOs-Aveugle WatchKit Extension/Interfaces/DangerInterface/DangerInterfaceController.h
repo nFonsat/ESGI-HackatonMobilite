@@ -11,6 +11,5 @@
 
 @interface DangerInterfaceController : WKInterfaceController
 
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *dangerBtn;
 
 @end
