@@ -10,6 +10,19 @@
 
 @implementation GMLocationWebAPI
 
++ (instancetype)sharedLocationWebAPI
+{
+    static GMLocationWebAPI * sharedLocationWebAPI = nil;
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedLocationWebAPI = [[self alloc] init];
+    });
+    
+    return sharedLocationWebAPI;
+}
+
 - (instancetype)init
 {
     return [self initWithBaseURL:@"/api/v1/location"];

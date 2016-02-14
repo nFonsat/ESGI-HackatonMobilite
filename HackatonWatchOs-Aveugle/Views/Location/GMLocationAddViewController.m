@@ -32,7 +32,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _locationWebAPI = [[GMLocationWebAPI alloc] init];
+        _locationWebAPI = [GMLocationWebAPI sharedLocationWebAPI];
         _googleClient   = [[GMSPlacesClient alloc] init];
         _placeResults   = [NSMutableArray new];
         

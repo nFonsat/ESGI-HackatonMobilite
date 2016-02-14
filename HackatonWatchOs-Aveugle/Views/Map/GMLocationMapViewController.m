@@ -17,7 +17,7 @@
 @interface GMLocationMapViewController ()
 {
 @private
-    GMLocationWebAPI * _locationWeb;
+    GMLocationWebAPI * _locationWebAPI;
     GMDangerWebAPI * _dangerWebAPI;
     NSMutableArray<GMDanger *> * _dangersOnMap;
     MKRoute * _routeDetails;
@@ -55,7 +55,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _locationWeb = [[GMLocationWebAPI alloc] init];
+        _locationWebAPI = [GMLocationWebAPI sharedLocationWebAPI];
         _dangerWebAPI = [[GMDangerWebAPI alloc] init];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
@@ -123,7 +123,7 @@
     
     [self sendMessageToWatchWithKey:kWatchStartNavigation Value:@"YES"];
     
-    [_locationWeb playLocation:_locationForZoom.locationId
+    [_locationWebAPI playLocation:_locationForZoom.locationId
                        Success:^(id responseObject)
      {
          [self calculateDirection];
