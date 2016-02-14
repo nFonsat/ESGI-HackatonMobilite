@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
     
-    _dangerWebAPI = [[GMDangerWebAPI alloc]init];
+    _dangerWebAPI = [GMDangerWebAPI sharedDangerWebAPI];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

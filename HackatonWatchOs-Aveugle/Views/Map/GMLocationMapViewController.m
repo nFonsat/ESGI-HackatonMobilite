@@ -56,7 +56,7 @@
 {
     if (self = [super init]) {
         _locationWebAPI = [GMLocationWebAPI sharedLocationWebAPI];
-        _dangerWebAPI = [[GMDangerWebAPI alloc] init];
+        _dangerWebAPI = [GMDangerWebAPI sharedDangerWebAPI];
         _startNavigation = NO;
         _centerOnUserPosition = YES;
         _mapFullyRendered = NO;
