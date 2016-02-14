@@ -29,6 +29,8 @@
 
 - (void)sendMessageToWatchWithKey:(NSString *)key Value:(NSString*)value;
 
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message;
+
 - (void)login;
 
 - (void)logout;

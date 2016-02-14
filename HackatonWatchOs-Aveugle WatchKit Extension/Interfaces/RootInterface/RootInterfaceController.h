@@ -13,4 +13,6 @@
 
 - (void)inCommingMsg:(NSDictionary<NSString *, id> *)message;
 
+- (void)sendMessageToIphoneWithKey:(NSString *)key Value:(NSString*)value;
+
 @end

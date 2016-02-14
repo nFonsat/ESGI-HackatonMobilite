@@ -109,8 +109,7 @@
     return [UIColor whiteColor];
 }
 
-#pragma mark - WCSession impl
-
+#pragma mark - WCSession
 - (void)sendMessageToWatchWithKey:(NSString *)key Value:(NSString*)value
 {
     if ([WCSession defaultSession].reachable) {
@@ -118,6 +117,16 @@
                                    replyHandler:nil
                                    errorHandler:nil];
     }
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message
+{
+    [self inCommingMsg:message];
+}
+
+- (void)inCommingMsg:(NSDictionary<NSString *, id> *)message
+{
+    
 }
 
 #pragma mark - JFMinimalNotification
