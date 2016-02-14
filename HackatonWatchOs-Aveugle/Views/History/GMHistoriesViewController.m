@@ -31,7 +31,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        _locationWebAPI = [[GMLocationWebAPI alloc] init];
+        _locationWebAPI = [GMLocationWebAPI sharedLocationWebAPI];
         
         self.tableView.delegate = self;
         self.tableView.dataSource = self;

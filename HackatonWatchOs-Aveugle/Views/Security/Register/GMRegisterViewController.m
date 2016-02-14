@@ -31,9 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _webUserManager = [[GMUserWebAPI alloc] init];
+    _webUserManager = [GMUserWebAPI sharedUserWebAPI];
     
-    _OAuth2Manager = [[GMOAuth2Manager alloc] init];
+    _OAuth2Manager = [GMOAuth2Manager sharedOAuth2Manager];
 }
 
 #pragma mark - GMBaseViewController

@@ -12,6 +12,8 @@
 
 @interface GMDangerWebAPI : GMWebAPI
 
++ (instancetype)sharedDangerWebAPI;
+
 - (void)getTypeDangersSuccess:(void (^)(id responseObject))success
                   Failure:(void (^)(AFHTTPRequestOperation * operation, NSError *error))failure;
 

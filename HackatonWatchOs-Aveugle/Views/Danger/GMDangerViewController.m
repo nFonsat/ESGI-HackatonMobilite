@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     
-    _dangerWebAPI = [[GMDangerWebAPI alloc] init];
+    _dangerWebAPI = [GMDangerWebAPI sharedDangerWebAPI];
     
     [self initMapView];
     

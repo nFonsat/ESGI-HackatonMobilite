@@ -11,6 +11,8 @@
 
 @interface GMUserWebAPI : GMWebAPI
 
++ (instancetype)sharedUserWebAPI;
+
 - (void) getUserWithSuccess:(void (^)(id responseObject))success
                     Failure:(void (^)(NSError *error))failure;
 

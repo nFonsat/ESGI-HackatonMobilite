@@ -15,7 +15,7 @@
 
 @interface GMOAuth2Manager : AFOAuth2Manager
 
-- (instancetype)init;
++ (instancetype)sharedOAuth2Manager;
 
 - (void)loginWithUsername:(NSString *)username
                  Password:(NSString *)password

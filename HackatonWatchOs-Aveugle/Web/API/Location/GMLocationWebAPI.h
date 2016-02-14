@@ -13,6 +13,8 @@
 
 @interface GMLocationWebAPI : GMWebAPI
 
++ (instancetype)sharedLocationWebAPI;
+
 - (void)getLocationsSuccess:(void (^)(id responseObject))success
                      Failure:(void (^)(NSError *error))failure;
 

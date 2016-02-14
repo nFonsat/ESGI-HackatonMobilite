@@ -26,7 +26,7 @@
     
     [GMSServices provideAPIKey:@"AIzaSyBlTArM1_K1_Eo6dYuRAWHvh_xqzN72hxs"];
     
-    _webUserManager = [[GMUserWebAPI alloc] init];
+    _webUserManager = [GMUserWebAPI sharedUserWebAPI];
     
     [_webUserManager getUserWithSuccess:^(id responseObject)
      {

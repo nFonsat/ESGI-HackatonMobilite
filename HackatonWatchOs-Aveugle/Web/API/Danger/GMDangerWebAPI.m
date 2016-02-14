@@ -10,6 +10,19 @@
 
 @implementation GMDangerWebAPI
 
++ (instancetype)sharedDangerWebAPI
+{
+    static GMDangerWebAPI * sharedDangerWebAPI = nil;
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedDangerWebAPI = [[self alloc] init];
+    });
+    
+    return sharedDangerWebAPI;
+}
+
 - (instancetype)init
 {
     return [self initWithBaseURL:@"/api/v1/danger"];
