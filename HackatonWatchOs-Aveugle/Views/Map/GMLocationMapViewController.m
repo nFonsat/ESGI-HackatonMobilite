@@ -90,6 +90,11 @@
     _dangersOnMap = [NSMutableArray new];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self stopNavigation];
+}
+
 #pragma mark - GMBaseViewController
 
 - (UIColor *)getBarTintColor
