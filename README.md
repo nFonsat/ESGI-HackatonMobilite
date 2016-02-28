@@ -13,3 +13,6 @@ In this section, there are main screens for watch and iPhone. For watch all scre
 
 <img src="https://github.com/nFonsat/ESGI-HackatonMobilite/blob/master/Screenshot/watch/navigation_watch.png" width="250" alt="Image of Watch">
 </p>
+
+=======
+_This project created by Fonsat Nicolas **@nFonsat**_
